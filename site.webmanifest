@@ -1,0 +1,21 @@
+{
+  "name": "Velo — Jasa Pembuatan Website Profesional",
+  "short_name": "Velo",
+  "description": "Jasa pembuatan website profesional: landing page, company profile, dan web custom.",
+  "icons": [
+    {
+      "src": "/assets/img/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1d9bd8",
+  "background_color": "#0d1117",
+  "display": "standalone",
+  "start_url": "/"
+}

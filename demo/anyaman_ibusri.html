@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anyaman Ibu Sri - Katalog Produk Anyaman Tradisional</title>
+    <style>
+        :root {
+            --primary: #8B5E3C;
+            --primary-dark: #6B4226;
+            --primary-light: #C49A6C;
+            --accent: #D4A574;
+            --bg-cream: #FAF6F0;
+            --bg-warm: #F5EDE4;
+            --text-dark: #2C1810;
+            --text-medium: #5C4032;
+            --text-light: #8B7355;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.18);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* === PRELOADER === */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-cream);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader-weave {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--primary-light);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .loader-text {
+            font-family: var(--font-serif);
+            color: var(--primary);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        /* === NAVBAR === */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 246, 240, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(139, 94, 60, 0.15);
+            transition: var(--transition);
+        }
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            background: rgba(250, 246, 240, 0.98);
+        }
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        .navbar-brand:hover .brand-icon {
+            transform: rotate(15deg);
+            background: var(--primary-dark);
+        }
+        .brand-text {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+        .brand-sub {
+            font-size: 0.65rem;
+            font-family: var(--font-sans);
+            color: var(--text-light);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: block;
+            font-weight: 400;
+        }
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+        .navbar-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        .navbar-links a:hover,
+        .navbar-links a.active {
+            color: var(--primary);
+        }
+        .navbar-links a:hover::after,
+        .navbar-links a.active::after {
+            width: 100%;
+        }
+        .cart-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            position: relative;
+            font-family: var(--font-sans);
+        }
+        .cart-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 94, 60, 0.35);
+        }
+        .cart-count {
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--primary);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* === HERO === */
+        .hero {
+            min-height: 80vh;
+            background: linear-gradient(160deg, var(--bg-warm) 0%, var(--bg-cream) 40%, #EDE4D8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(196, 154, 108, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatBubble 8s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 94, 60, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatBubble 10s ease-in-out infinite reverse;
+        }
+        @keyframes floatBubble {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(20px, -30px) scale(1.05);
+            }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(139, 94, 60, 0.12);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(139, 94, 60, 0.25);
+        }
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+        .hero-title span {
+            color: var(--primary);
+            position: relative;
+        }
+        .hero-title span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: rgba(196, 154, 108, 0.4);
+            border-radius: 4px;
+            z-index: -1;
+        }
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: var(--font-sans);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.3px;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(139, 94, 60, 0.3);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(139, 94, 60, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 94, 60, 0.3);
+        }
+
+        /* === STATS BAR === */
+        .stats-bar {
+            background: var(--white);
+            padding: 32px 24px;
+            border-bottom: 1px solid rgba(139, 94, 60, 0.1);
+            box-shadow: var(--shadow-sm);
+        }
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* === FILTER SECTION === */
+        .filter-section {
+            padding: 40px 24px 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .filter-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .filter-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            border-radius: 50px;
+            padding: 6px 6px 6px 18px;
+            border: 2px solid rgba(139, 94, 60, 0.2);
+            transition: var(--transition);
+            min-width: 260px;
+        }
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(139, 94, 60, 0.1);
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            flex: 1;
+            padding: 6px 0;
+        }
+        .search-box input::placeholder {
+            color: var(--text-light);
+        }
+        .search-box button {
+            background: var(--primary);
+            border: none;
+            color: var(--white);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .search-box button:hover {
+            background: var(--primary-dark);
+        }
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 2px solid rgba(139, 94, 60, 0.25);
+            background: var(--white);
+            color: var(--text-medium);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-sans);
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(139, 94, 60, 0.05);
+        }
+        .filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 4px 14px rgba(139, 94, 60, 0.3);
+        }
+
+        /* === PRODUCTS GRID === */
+        .products-section {
+            padding: 20px 24px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 24px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba(139, 94, 60, 0.08);
+        }
+        .product-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+            border-color: rgba(139, 94, 60, 0.2);
+        }
+        .product-image {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image .weave-pattern {
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg,
+                    rgba(139, 94, 60, 0.06) 0px,
+                    rgba(139, 94, 60, 0.06) 2px,
+                    transparent 2px,
+                    transparent 8px);
+        }
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+        .product-badge.bestseller {
+            background: #C0392B;
+        }
+        .product-badge.new {
+            background: #27AE60;
+        }
+        .product-emoji {
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+        .product-card:hover .product-emoji {
+            transform: scale(1.1) rotate(-3deg);
+        }
+        .product-info {
+            padding: 18px 20px 20px;
+        }
+        .product-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .product-name {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .product-desc-short {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 4px;
+        }
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .add-to-cart-btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            font-family: var(--font-sans);
+        }
+        .add-to-cart-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(139, 94, 60, 0.35);
+        }
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            grid-column: 1 / -1;
+            color: var(--text-light);
+        }
+        .no-results .icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+        .no-results h3 {
+            font-family: var(--font-serif);
+            color: var(--text-medium);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        /* === SHIPPING CALCULATOR === */
+        .shipping-section {
+            padding: 60px 24px;
+            background: var(--bg-warm);
+            border-top: 1px solid rgba(139, 94, 60, 0.1);
+            border-bottom: 1px solid rgba(139, 94, 60, 0.1);
+        }
+        .shipping-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .shipping-title {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .shipping-sub {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+        .shipping-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(139, 94, 60, 0.1);
+        }
+        .shipping-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-medium);
+            letter-spacing: 0.3px;
+        }
+        .form-group select,
+        .form-group input {
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: 2px solid rgba(139, 94, 60, 0.2);
+            font-size: 0.9rem;
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            background: var(--bg-cream);
+            transition: var(--transition);
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B5E3C' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(139, 94, 60, 0.1);
+            background-color: var(--white);
+        }
+        .shipping-result {
+            grid-column: 1 / -1;
+            background: rgba(139, 94, 60, 0.06);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            text-align: center;
+            display: none;
+            animation: fadeInUp 0.4s ease;
+        }
+        .shipping-result.show {
+            display: block;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .shipping-result .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: var(--font-serif);
+        }
+        .shipping-result .detail {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+        .btn-calculate {
+            grid-column: 1 / -1;
+            padding: 16px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-sans);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-calculate:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(139, 94, 60, 0.3);
+        }
+
+        /* === CART DRAWER === */
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+        }
+        .cart-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 420px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--bg-cream);
+            z-index: 2001;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-drawer.show {
+            right: 0;
+        }
+        .cart-header {
+            padding: 20px 24px;
+            background: var(--white);
+            border-bottom: 1px solid rgba(139, 94, 60, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .cart-header h3 {
+            font-family: var(--font-serif);
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+        .cart-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-medium);
+            transition: var(--transition);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .cart-close:hover {
+            background: rgba(139, 94, 60, 0.1);
+            color: var(--primary);
+        }
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 24px;
+        }
+        .cart-empty {
+            text-align: center;
+            color: var(--text-light);
+            padding: 40px 20px;
+        }
+        .cart-empty .icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
+            animation: fadeInUp 0.3s ease;
+        }
+        .cart-item-emoji {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        .cart-item-info {
+            flex: 1;
+        }
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .qty-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid rgba(139, 94, 60, 0.3);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: var(--transition);
+            font-family: var(--font-sans);
+        }
+        .qty-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .qty-number {
+            font-weight: 700;
+            font-size: 0.9rem;
+            min-width: 24px;
+            text-align: center;
+        }
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #C0392B;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .cart-item-remove:hover {
+            background: rgba(192, 57, 43, 0.1);
+        }
+        .cart-footer {
+            padding: 20px 24px;
+            background: var(--white);
+            border-top: 1px solid rgba(139, 94, 60, 0.15);
+        }
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+        .cart-total-amount {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .btn-checkout {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-sans);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-checkout:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 6px 20px rgba(139, 94, 60, 0.3);
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 24px 24px;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand h3 {
+            font-family: var(--font-serif);
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.65);
+        }
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer-col a {
+            display: block;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .footer-col a:hover {
+            color: var(--accent);
+            padding-left: 4px;
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .footer-bottom a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* === TOAST === */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 3000;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .shipping-form {
+                grid-template-columns: 1fr;
+            }
+            .shipping-form .form-group.full-width,
+            .shipping-form .btn-calculate,
+            .shipping-form .shipping-result {
+                grid-column: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-cream);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 16px;
+                border-bottom: 1px solid rgba(139, 94, 60, 0.15);
+                box-shadow: var(--shadow-md);
+            }
+            .navbar-links.show {
+                display: flex;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-desc {
+                font-size: 0.95rem;
+            }
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 16px;
+            }
+            .filter-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-box {
+                min-width: 100%;
+            }
+            .cart-drawer {
+                width: 100%;
+                max-width: 100vw;
+                right: -100%;
+            }
+            .cart-drawer.show {
+                right: 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 100px 16px 40px;
+                min-height: 60vh;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .shipping-card {
+                padding: 20px;
+            }
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .stat-item h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="loader-weave"></div>
+        <div class="loader-text">Anyaman Ibu Sri</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a class="navbar-brand" onclick="scrollToTop()">
+                <div class="brand-icon">🧺</div>
+                <div>
+                    <span class="brand-text">Anyaman Ibu Sri</span>
+                    <span class="brand-sub">Karya Tangan Tradisional</span>
+                </div>
+            </a>
+            <div class="navbar-links" id="navbarLinks">
+                <a href="#beranda" class="active" onclick="navigateTo('beranda')">Beranda</a>
+                <a href="#katalog" onclick="navigateTo('katalog')">Katalog</a>
+                <a href="#ongkir" onclick="navigateTo('ongkir')">Cek Ongkir</a>
+                <a href="#tentang" onclick="navigateTo('tentang')">Tentang</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <button class="cart-btn" onclick="openCart()" aria-label="Buka keranjang">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()" aria-label="Menu">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <div class="hero-badge">✨ Sejak 1998 · Purbalingga, Jawa Tengah</div>
+            <h1 class="hero-title">Keindahan <span>Anyaman</span> Nusantara</h1>
+            <p class="hero-desc">
+                Setiap helai bambu dan rotan dianyam dengan penuh cinta dan ketelitian oleh Ibu Sri.
+                Temukan koleksi anyaman berkualitas tinggi yang menghadirkan kehangatan tradisi ke rumah Anda.
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="navigateTo('katalog')">
+                    🧺 Lihat Katalog
+                </button>
+                <button class="btn btn-outline" onclick="navigateTo('ongkir')">
+                    📦 Cek Estimasi Ongkir
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>25+</h3>
+                <p>Tahun Pengalaman</p>
+            </div>
+            <div class="stat-item">
+                <h3>150+</h3>
+                <p>Produk Anyaman</p>
+            </div>
+            <div class="stat-item">
+                <h3>5.000+</h3>
+                <p>Pelanggan Puas</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.9★</h3>
+                <p>Rating Rata-rata</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTER & KATALOG -->
+    <section class="filter-section" id="katalog">
+        <div class="filter-header">
+            <h2 class="filter-title">Katalog Produk</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari produk anyaman..." oninput="handleSearch()">
+                <button onclick="handleSearch()" aria-label="Cari">🔍</button>
+            </div>
+        </div>
+        <div class="filter-buttons" id="filterButtons">
+            <button class="filter-btn active" data-category="semua" onclick="setFilter('semua', this)">Semua</button>
+            <button class="filter-btn" data-category="tas" onclick="setFilter('tas', this)">Tas</button>
+            <button class="filter-btn" data-category="keranjang" onclick="setFilter('keranjang', this)">Keranjang</button>
+            <button class="filter-btn" data-category="tikar" onclick="setFilter('tikar', this)">Tikar</button>
+            <button class="filter-btn" data-category="dekorasi" onclick="setFilter('dekorasi', this)">Dekorasi</button>
+            <button class="filter-btn" data-category="peralatan" onclick="setFilter('peralatan', this)">Peralatan</button>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="products-grid" id="productsGrid">
+            <!-- Produk dirender oleh JS -->
+        </div>
+    </section>
+
+    <!-- SHIPPING CALCULATOR -->
+    <section class="shipping-section" id="ongkir">
+        <div class="shipping-container">
+            <h2 class="shipping-title">Estimasi Ongkos Kirim</h2>
+            <p class="shipping-sub">Hitung perkiraan biaya pengiriman ke daerah Anda</p>
+            <div class="shipping-card">
+                <div class="shipping-form">
+                    <div class="form-group">
+                        <label>🏙️ Provinsi Tujuan</label>
+                        <select id="provinceSelect" onchange="updateCities()">
+                            <option value="">-- Pilih Provinsi --</option>
+                            <option value="jawa-barat">Jawa Barat</option>
+                            <option value="jawa-tengah">Jawa Tengah</option>
+                            <option value="jawa-timur">Jawa Timur</option>
+                            <option value="dki-jakarta">DKI Jakarta</option>
+                            <option value="banten">Banten</option>
+                            <option value="sumatera-utara">Sumatera Utara</option>
+                            <option value="sumatera-selatan">Sumatera Selatan</option>
+                            <option value="bali">Bali</option>
+                            <option value="kalimantan-timur">Kalimantan Timur</option>
+                            <option value="sulawesi-selatan">Sulawesi Selatan</option>
+                            <option value="papua">Papua</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>📍 Kota / Kabupaten</label>
+                        <select id="citySelect" disabled>
+                            <option value="">-- Pilih Kota --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>📦 Berat Paket (gram)</label>
+                        <input type="number" id="weightInput" min="100" max="10000" step="100" value="500" placeholder="Contoh: 500">
+                    </div>
+                    <div class="form-group">
+                        <label>🚚 Kurir</label>
+                        <select id="courierSelect">
+                            <option value="jne">JNE</option>
+                            <option value="jnt">J&T Express</option>
+                            <option value="sicepat">SiCepat</option>
+                            <option value="pos">POS Indonesia</option>
+                        </select>
+                    </div>
+                    <button class="btn-calculate" onclick="calculateShipping()">
+                        📦 Hitung Estimasi Ongkir
+                    </button>
+                    <div class="shipping-result" id="shippingResult">
+                        <div class="amount" id="shippingAmount">Rp 0</div>
+                        <div class="detail" id="shippingDetail">Estimasi biaya pengiriman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="tentang">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>🧺 Anyaman Ibu Sri</h3>
+                <p>
+                    Berdiri sejak tahun 1998, Anyaman Ibu Sri telah menjadi bagian dari warisan budaya
+                    Purbalingga. Setiap produk dibuat dengan tangan menggunakan bahan alami berkualitas
+                    tinggi, menjaga tradisi anyaman Indonesia tetap hidup.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Kategori</h4>
+                <a onclick="navigateTo('katalog'); setFilter('tas')">Tas Anyaman</a>
+                <a onclick="navigateTo('katalog'); setFilter('keranjang')">Keranjang</a>
+                <a onclick="navigateTo('katalog'); setFilter('tikar')">Tikar</a>
+                <a onclick="navigateTo('katalog'); setFilter('dekorasi')">Dekorasi</a>
+                <a onclick="navigateTo('katalog'); setFilter('peralatan')">Peralatan</a>
+            </div>
+            <div class="footer-col">
+                <h4>Bantuan</h4>
+                <a onclick="navigateTo('ongkir')">Cek Ongkir</a>
+                <a onclick="navigateTo('tentang')">Cara Pemesanan</a>
+                <a onclick="navigateTo('tentang')">FAQ</a>
+                <a onclick="navigateTo('tentang')">Kebijakan Retur</a>
+                <a onclick="navigateTo('tentang')">Hubungi Kami</a>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <a>📍 Jl. Anyaman No. 15, Purbalingga</a>
+                <a>📱 +62 812-3456-7890</a>
+                <a>✉️ halo@anyamanibusri.id</a>
+                <a>🕐 Senin - Sabtu, 08.00 - 17.00</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 <a href="#">Anyaman Ibu Sri</a> · Semua hak dilindungi · Dibuat dengan ❤️ di Indonesia
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 Keranjang Belanja</h3>
+            <button class="cart-close" onclick="closeCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Item keranjang -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total Belanja</span>
+                <span class="cart-total-amount" id="cartTotalAmount">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">
+                ✅ Lanjutkan ke Pembayaran
+            </button>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ==================== DATA PRODUK ====================
+        const products = [{
+            id: 1,
+            name: 'Tas Belanja Anyaman Bambu',
+            category: 'tas',
+            price: 85000,
+            emoji: '👜',
+            badge: 'bestseller',
+            badgeLabel: 'Terlaris',
+            desc: 'Tas belanja ramah lingkungan dari anyaman bambu pilihan, kuat dan tahan lama.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, {
+            id: 2,
+            name: 'Keranjang Buah Rotan',
+            category: 'keranjang',
+            price: 65000,
+            emoji: '🧺',
+            badge: 'bestseller',
+            badgeLabel: 'Terlaris',
+            desc: 'Keranjang buah klasik dari rotan alami, cocok untuk hadiah atau dekorasi dapur.',
+            color1: '#C49A6C',
+            color2: '#6B4226'
+        }, {
+            id: 3,
+            name: 'Tikar Anyaman Pandan',
+            category: 'tikar',
+            price: 125000,
+            emoji: '🟫',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Tikar tradisional dari pandan wangi, nyaman untuk alas duduk atau tidur.',
+            color1: '#A0825A',
+            color2: '#5C4032'
+        }, {
+            id: 4,
+            name: 'Tudung Saji Anyaman',
+            category: 'peralatan',
+            price: 45000,
+            emoji: '🍽️',
+            badge: 'new',
+            badgeLabel: 'Baru',
+            desc: 'Tudung saji anyaman bambu untuk menjaga makanan tetap higienis dan hangat.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, {
+            id: 5,
+            name: 'Hiasan Dinding Anyaman',
+            category: 'dekorasi',
+            price: 55000,
+            emoji: '🖼️',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Hiasan dinding anyaman dengan pola tradisional yang memukau untuk memperindah ruangan.',
+            color1: '#C49A6C',
+            color2: '#6B4226'
+        }, {
+            id: 6,
+            name: 'Tas Jinjing Rotan Sintetis',
+            category: 'tas',
+            price: 95000,
+            emoji: '👛',
+            badge: 'new',
+            badgeLabel: 'Baru',
+            desc: 'Tas jinjing modern dari rotan sintetis, ringan namun kuat untuk aktivitas harian.',
+            color1: '#B8956A',
+            color2: '#7A5A3A'
+        }, {
+            id: 7,
+            name: 'Keranjang Pakaian Bambu',
+            category: 'keranjang',
+            price: 110000,
+            emoji: '🧺',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Keranjang pakaian kotor dengan kapasitas besar, anyaman rapat dan kokoh.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, {
+            id: 8,
+            name: 'Keset Anyaman Sabut Kelapa',
+            category: 'tikar',
+            price: 35000,
+            emoji: '🟤',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Keset kaki dari sabut kelapa yang kasar, efektif membersihkan alas kaki.',
+            color1: '#8B7355',
+            color2: '#5C4032'
+        }, {
+            id: 9,
+            name: 'Nampan Anyaman Rotan',
+            category: 'peralatan',
+            price: 40000,
+            emoji: '🍽️',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Nampan saji anyaman rotan untuk menyajikan hidangan dengan gaya tradisional.',
+            color1: '#C49A6C',
+            color2: '#6B4226'
+        }, {
+            id: 10,
+            name: 'Kotak Penyimpanan Anyaman',
+            category: 'dekorasi',
+            price: 75000,
+            emoji: '📦',
+            badge: 'bestseller',
+            badgeLabel: 'Terlaris',
+            desc: 'Kotak penyimpanan multifungsi dengan tutup, cocok untuk menyimpan barang kecil.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, {
+            id: 11,
+            name: 'Tas Pantai Anyaman',
+            category: 'tas',
+            price: 78000,
+            emoji: '🏖️',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Tas pantai besar dari anyaman pandan, ringan dan mudah dibersihkan.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, {
+            id: 12,
+            name: 'Keranjang Rotan Bundar',
+            category: 'keranjang',
+            price: 58000,
+            emoji: '🧺',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Keranjang bundar serbaguna dari rotan alami, cocok untuk dekorasi atau penyimpanan.',
+            color1: '#C49A6C',
+            color2: '#6B4226'
+        }, {
+            id: 13,
+            name: 'Tikar Lipat Anyaman',
+            category: 'tikar',
+            price: 98000,
+            emoji: '🟨',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Tikar lipat praktis dari anyaman bambu, mudah disimpan dan dibawa bepergian.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, {
+            id: 14,
+            name: 'Tempat Tisu Anyaman',
+            category: 'dekorasi',
+            price: 32000,
+            emoji: '🧻',
+            badge: 'new',
+            badgeLabel: 'Baru',
+            desc: 'Tempat tisu dari anyaman rotan untuk menambah sentuhan alami di meja Anda.',
+            color1: '#C49A6C',
+            color2: '#6B4226'
+        }, {
+            id: 15,
+            name: 'Lampu Hias Anyaman',
+            category: 'dekorasi',
+            price: 135000,
+            emoji: '🏮',
+            badge: 'bestseller',
+            badgeLabel: 'Terlaris',
+            desc: 'Lampu hias dengan kap anyaman bambu, menciptakan suasana hangat dan artistik.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, {
+            id: 16,
+            name: 'Alas Gelas Anyaman',
+            category: 'peralatan',
+            price: 18000,
+            emoji: '☕',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Set alas gelas dari anyaman rotan halus, melindungi meja Anda dengan gaya.',
+            color1: '#C49A6C',
+            color2: '#6B4226'
+        }, {
+            id: 17,
+            name: 'Tas Selempang Anyaman',
+            category: 'tas',
+            price: 72000,
+            emoji: '🎒',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Tas selempang stylish dari anyaman rotan sintetis, cocok untuk gaya kasual.',
+            color1: '#B8956A',
+            color2: '#7A5A3A'
+        }, {
+            id: 18,
+            name: 'Keranjang Telur Anyaman',
+            category: 'keranjang',
+            price: 28000,
+            emoji: '🥚',
+            badge: '',
+            badgeLabel: '',
+            desc: 'Keranjang telur klasik dari bambu, melindungi telur dengan aman dan alami.',
+            color1: '#D4A574',
+            color2: '#8B5E3C'
+        }, ];
+
+        // ==================== STATE ====================
+        let currentFilter = 'semua';
+        let searchQuery = '';
+        let cart = {};
+        let cityData = {};
+
+        // ==================== DATA KOTA UNTUK ONGKIR ====================
+        const provinceCities = {
+            'jawa-barat': [
+                { name: 'Bandung', distance: 350 },
+                { name: 'Bogor', distance: 400 },
+                { name: 'Bekasi', distance: 420 },
+                { name: 'Depok', distance: 410 },
+                { name: 'Cirebon', distance: 180 },
+                { name: 'Tasikmalaya', distance: 220 },
+                { name: 'Garut', distance: 260 },
+                { name: 'Sukabumi', distance: 380 },
+            ],
+            'jawa-tengah': [
+                { name: 'Semarang', distance: 220 },
+                { name: 'Solo', distance: 150 },
+                { name: 'Magelang', distance: 130 },
+                { name: 'Purwokerto', distance: 60 },
+                { name: 'Tegal', distance: 140 },
+                { name: 'Kudus', distance: 250 },
+                { name: 'Salatiga', distance: 170 },
+                { name: 'Cilacap', distance: 110 },
+            ],
+            'jawa-timur': [
+                { name: 'Surabaya', distance: 380 },
+                { name: 'Malang', distance: 300 },
+                { name: 'Kediri', distance: 270 },
+                { name: 'Madiun', distance: 230 },
+                { name: 'Jember', distance: 450 },
+                { name: 'Banyuwangi', distance: 520 },
+                { name: 'Probolinggo', distance: 410 },
+                { name: 'Blitar', distance: 290 },
+            ],
+            'dki-jakarta': [
+                { name: 'Jakarta Pusat', distance: 400 },
+                { name: 'Jakarta Selatan', distance: 410 },
+                { name: 'Jakarta Timur', distance: 420 },
+                { name: 'Jakarta Barat', distance: 405 },
+                { name: 'Jakarta Utara', distance: 415 },
+                { name: 'Kepulauan Seribu', distance: 450 },
+            ],
+            'banten': [
+                { name: 'Tangerang', distance: 390 },
+                { name: 'Serang', distance: 350 },
+                { name: 'Cilegon', distance: 340 },
+                { name: 'Lebak', distance: 320 },
+                { name: 'Pandeglang', distance: 310 },
+            ],
+            'sumatera-utara': [
+                { name: 'Medan', distance: 1600 },
+                { name: 'Binjai', distance: 1580 },
+                { name: 'Pematangsiantar', distance: 1550 },
+                { name: 'Tebing Tinggi', distance: 1620 },
+                { name: 'Padang Sidempuan', distance: 1400 },
+            ],
+            'sumatera-selatan': [
+                { name: 'Palembang', distance: 950 },
+                { name: 'Prabumulih', distance: 900 },
+                { name: 'Lubuklinggau', distance: 850 },
+                { name: 'Pagar Alam', distance: 920 },
+                { name: 'Baturaja', distance: 880 },
+            ],
+            'bali': [
+                { name: 'Denpasar', distance: 550 },
+                { name: 'Badung', distance: 560 },
+                { name: 'Gianyar', distance: 570 },
+                { name: 'Tabanan', distance: 530 },
+                { name: 'Buleleng', distance: 600 },
+                { name: 'Karangasem', distance: 620 },
+            ],
+            'kalimantan-timur': [
+                { name: 'Samarinda', distance: 1350 },
+                { name: 'Balikpapan', distance: 1300 },
+                { name: 'Bontang', distance: 1400 },
+                { name: 'Tenggarong', distance: 1330 },
+                { name: 'Berau', distance: 1550 },
+            ],
+            'sulawesi-selatan': [
+                { name: 'Makassar', distance: 1100 },
+                { name: 'Parepare', distance: 1050 },
+                { name: 'Palopo', distance: 1150 },
+                { name: 'Bone', distance: 1120 },
+                { name: 'Gowa', distance: 1100 },
+            ],
+            'papua': [
+                { name: 'Jayapura', distance: 3200 },
+                { name: 'Merauke', distance: 3100 },
+                { name: 'Timika', distance: 2800 },
+                { name: 'Sorong', distance: 2500 },
+                { name: 'Manokwari', distance: 2600 },
+            ],
+        };
+
+        const courierRates = {
+            'jne': { name: 'JNE', baseRate: 8000, perKm: 35, perKg: 2000 },
+            'jnt': { name: 'J&T Express', baseRate: 7500, perKm: 32, perKg: 1800 },
+            'sicepat': { name: 'SiCepat', baseRate: 7000, perKm: 30, perKg: 1700 },
+            'pos': { name: 'POS Indonesia', baseRate: 6500, perKm: 28, perKg: 1500 },
+        };
+
+        // ==================== INIT ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preloader
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 800);
+
+            // Navbar scroll
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            renderProducts();
+            updateCartUI();
+        });
+
+        // ==================== RENDER PRODUK ====================
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const filtered = products.filter(p => {
+                const matchCategory = currentFilter === 'semua' || p.category === currentFilter;
+                const matchSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    p.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    p.category.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCategory && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-results">
+                        <div class="icon">🔍</div>
+                        <h3>Produk Tidak Ditemukan</h3>
+                        <p>Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(product => {
+                const badgeHtml = product.badge ?
+                    `<span class="product-badge ${product.badge}">${product.badgeLabel}</span>` : '';
+                return `
+                    <div class="product-card" onclick="showProductDetail(${product.id})">
+                        <div class="product-image" style="background: linear-gradient(135deg, ${product.color1}22, ${product.color2}33);">
+                            <div class="weave-pattern"></div>
+                            ${badgeHtml}
+                            <span class="product-emoji">${product.emoji}</span>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">${getCategoryLabel(product.category)}</div>
+                            <h3 class="product-name">${product.name}</h3>
+                            <p class="product-desc-short">${product.desc}</p>
+                            <div class="product-footer">
+                                <span class="product-price">Rp ${formatRupiah(product.price)}</span>
+                                <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(${product.id})" title="Tambah ke keranjang">
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getCategoryLabel(cat) {
+            const labels = {
+                'tas': 'Tas Anyaman',
+                'keranjang': 'Keranjang',
+                'tikar': 'Tikar & Alas',
+                'dekorasi': 'Dekorasi',
+                'peralatan': 'Peralatan',
+            };
+            return labels[cat] || cat;
+        }
+
+        // ==================== FILTER & SEARCH ====================
+        function setFilter(category, btnElement) {
+            currentFilter = category;
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) {
+                btnElement.classList.add('active');
+            } else {
+                document.querySelector(`.filter-btn[data-category="${category}"]`)?.classList.add('active');
+            }
+            renderProducts();
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById('searchInput').value.trim();
+            renderProducts();
+        }
+
+        function navigateTo(section) {
+            document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+            // Close mobile menu
+            document.getElementById('navbarLinks')?.classList.remove('show');
+            // Update active nav
+            document.querySelectorAll('.navbar-links a').forEach(a => a.classList.remove('active'));
+            const activeLink = document.querySelector(`.navbar-links a[href="#${section}"]`);
+            if (activeLink) activeLink.classList.add('active');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('navbarLinks')?.classList.toggle('show');
+        }
+
+        // ==================== CART ====================
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            if (cart[productId]) {
+                cart[productId].qty += 1;
+            } else {
+                cart[productId] = { ...product, qty: 1 };
+            }
+            updateCartUI();
+            showToast(`${product.name} ditambahkan ke keranjang ✨`);
+        }
+
+        function removeFromCart(productId) {
+            if (cart[productId]) {
+                delete cart[productId];
+            }
+            updateCartUI();
+        }
+
+        function changeQty(productId, delta) {
+            if (cart[productId]) {
+                cart[productId].qty += delta;
+                if (cart[productId].qty <= 0) {
+                    delete cart[productId];
+                }
+            }
+            updateCartUI();
+        }
+
+        function getCartTotal() {
+            return Object.values(cart).reduce((sum, item) => sum + item.price * item.qty, 0);
+        }
+
+        function getCartCount() {
+            return Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+        }
+
+        function updateCartUI() {
+            const count = getCartCount();
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('cartTotalAmount').textContent = `Rp ${formatRupiah(getCartTotal())}`;
+
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartItems = Object.values(cart);
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <div class="icon">🧺</div>
+                        <p>Keranjang masih kosong.<br>Yuk, tambahkan produk anyaman favoritmu!</p>
+                    </div>
+                `;
+            } else {
+                cartItemsContainer.innerHTML = cartItems.map(item => `
+                    <div class="cart-item">
+                        <span class="cart-item-emoji">${item.emoji}</span>
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">Rp ${formatRupiah(item.price * item.qty)}</div>
+                        </div>
+                        <div class="cart-item-qty">
+                            <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+                            <span class="qty-number">${item.qty}</span>
+                            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeFromCart(${item.id})" title="Hapus">🗑️</button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function openCart() {
+            document.getElementById('cartOverlay').classList.add('show');
+            document.getElementById('cartDrawer').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cartOverlay').classList.remove('show');
+            document.getElementById('cartDrawer').classList.remove('show');
+            document.body.style.overflow = '';
+        }
+
+        function checkout() {
+            if (Object.keys(cart).length === 0) {
+                showToast('Keranjang masih kosong! 🧺');
+                return;
+            }
+            const total = getCartTotal();
+            showToast(`Total belanja Rp ${formatRupiah(total)}. Terima kasih! 🎉`);
+            closeCart();
+            cart = {};
+            updateCartUI();
+        }
+
+        // ==================== SHIPPING ====================
+        function updateCities() {
+            const province = document.getElementById('provinceSelect').value;
+            const citySelect = document.getElementById('citySelect');
+            const cities = provinceCities[province] || [];
+
+            citySelect.innerHTML = '<option value="">-- Pilih Kota --</option>';
+            cities.forEach(city => {
+                const option = document.createElement('option');
+                option.value = city.name;
+                option.textContent = city.name;
+                option.dataset.distance = city.distance;
+                citySelect.appendChild(option);
+            });
+            citySelect.disabled = cities.length === 0;
+
+            // Simpan data kota
+            cityData = {};
+            cities.forEach(city => {
+                cityData[city.name] = city.distance;
+            });
+        }
+
+        function calculateShipping() {
+            const province = document.getElementById('provinceSelect').value;
+            const city = document.getElementById('citySelect').value;
+            const weight = parseFloat(document.getElementById('weightInput').value) || 500;
+            const courierCode = document.getElementById('courierSelect').value;
+            const resultDiv = document.getElementById('shippingResult');
+            const amountSpan = document.getElementById('shippingAmount');
+            const detailSpan = document.getElementById('shippingDetail');
+
+            if (!province || !city) {
+                showToast('Silakan pilih provinsi dan kota tujuan terlebih dahulu 📍');
+                return;
+            }
+
+            const distance = cityData[city] || 100;
+            const courier = courierRates[courierCode];
+            const weightKg = weight / 1000;
+
+            // Hitung ongkir: base + (jarak * perKm) + (berat * perKg)
+            const baseCost = courier.baseRate;
+            const distanceCost = distance * courier.perKm;
+            const weightCost = weightKg * courier.perKg;
+            const totalCost = Math.round(baseCost + distanceCost + weightCost);
+
+            amountSpan.textContent = `Rp ${formatRupiah(totalCost)}`;
+            detailSpan.textContent =
+                `Estimasi ${courier.name} · ${city}, ${getProvinceName(province)} · Jarak ±${distance} km · Berat ${weight}g`;
+
+            resultDiv.classList.add('show');
+            showToast('Estimasi ongkir berhasil dihitung 📦');
+        }
+
+        function getProvinceName(code) {
+            const names = {
+                'jawa-barat': 'Jawa Barat',
+                'jawa-tengah': 'Jawa Tengah',
+                'jawa-timur': 'Jawa Timur',
+                'dki-jakarta': 'DKI Jakarta',
+                'banten': 'Banten',
+                'sumatera-utara': 'Sumatera Utara',
+                'sumatera-selatan': 'Sumatera Selatan',
+                'bali': 'Bali',
+                'kalimantan-timur': 'Kalimantan Timur',
+                'sulawesi-selatan': 'Sulawesi Selatan',
+                'papua': 'Papua',
+            };
+            return names[code] || code;
+        }
+
+        // ==================== PRODUCT DETAIL (Modal sederhana) ====================
+        function showProductDetail(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            showToast(`${product.name} · Rp ${formatRupiah(product.price)} · Klik + untuk menambahkan`);
+        }
+
+        // ==================== UTIL ====================
+        function formatRupiah(amount) {
+            return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        // ==================== KEYBOARD SHORTCUT ====================
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCart();
+            }
+            if (e.key === 'c' && e.ctrlKey) {
+                e.preventDefault();
+                openCart();
+            }
+        });
+    </script>
+</body>
+</html>

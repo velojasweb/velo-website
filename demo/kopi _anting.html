@@ -1,0 +1,1804 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Ranting - Kedai Kopi Natural</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --cream: #fdf8f0;
+            --cream-dark: #f5ebe0;
+            --brown-dark: #3e2c1c;
+            --brown-medium: #6b4f3a;
+            --brown-light: #8b6b4f;
+            --caramel: #c4956a;
+            --caramel-light: #d4a574;
+            --green-moss: #5a6e4a;
+            --green-dark: #3d4e2f;
+            --gold: #b8860b;
+            --whatsapp: #25d366;
+            --whatsapp-dark: #1ebe5d;
+            --shadow-sm: 0 4px 20px rgba(62, 44, 28, 0.08);
+            --shadow-md: 0 8px 40px rgba(62, 44, 28, 0.12);
+            --shadow-lg: 0 20px 60px rgba(62, 44, 28, 0.2);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--brown-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(253, 248, 240, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(62, 44, 28, 0.06);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 40px;
+            background: rgba(253, 248, 240, 0.95);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--brown-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo .logo-icon {
+            font-size: 1.8rem;
+            color: var(--green-moss);
+        }
+
+        .nav-logo span {
+            color: var(--brown-medium);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--brown-medium);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--green-moss);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--brown-dark);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--green-moss);
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0.3px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-dark) !important;
+            color: #fff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(90, 110, 74, 0.35);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--brown-dark);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 40px 80px;
+            background: linear-gradient(165deg, #fdf8f0 0%, #f5ebe0 30%, #ede3d5 60%, #e8ddd0 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse at center, rgba(196, 149, 106, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 50%;
+            height: 70%;
+            background: radial-gradient(ellipse at center, rgba(90, 110, 74, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            width: 100%;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(90, 110, 74, 0.12);
+            color: var(--green-dark);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            width: fit-content;
+            border: 1px solid rgba(90, 110, 74, 0.2);
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.4);
+            }
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--brown-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--green-moss);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-text h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: rgba(90, 110, 74, 0.18);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.15rem;
+            color: var(--brown-medium);
+            font-weight: 400;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--green-moss);
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(90, 110, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(90, 110, 74, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: #fff;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--brown-dark);
+            border: 2px solid var(--brown-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--brown-dark);
+            color: #fff;
+            border-color: var(--brown-dark);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(62, 44, 28, 0.1);
+        }
+
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-stat .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            line-height: 1.2;
+        }
+
+        .hero-stat .label {
+            font-size: 0.8rem;
+            color: var(--brown-medium);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+            aspect-ratio: 4/4.5;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, #6b4f3a 0%, #3e2c1c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(2deg);
+            transition: var(--transition);
+        }
+
+        .hero-image-wrapper:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 0 25px 70px rgba(62, 44, 28, 0.3);
+        }
+
+        .hero-image-wrapper .coffee-emoji {
+            font-size: 10rem;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .hero-image-wrapper .coffee-ring {
+            position: absolute;
+            width: 75%;
+            height: 75%;
+            border: 3px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            animation: spin-slow 30s linear infinite;
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .floating-card {
+            position: absolute;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            padding: 14px 20px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float-card 5s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        .floating-card.card-1 {
+            top: 8%;
+            left: -30px;
+            animation-delay: 0s;
+        }
+
+        .floating-card.card-2 {
+            bottom: 12%;
+            right: -20px;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes float-card {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .floating-card .fc-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .fc-icon.brown {
+            background: rgba(107, 79, 58, 0.12);
+            color: var(--brown-medium);
+        }
+        .fc-icon.green {
+            background: rgba(90, 110, 74, 0.12);
+            color: var(--green-moss);
+        }
+
+        .floating-card .fc-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            line-height: 1.3;
+        }
+        .floating-card .fc-text small {
+            display: block;
+            font-weight: 400;
+            color: var(--brown-medium);
+            font-size: 0.75rem;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .section-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--green-moss);
+            background: rgba(90, 110, 74, 0.1);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(90, 110, 74, 0.15);
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: var(--brown-medium);
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===== ABOUT / STORY ===== */
+        .story-section {
+            background: #fff;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #f5ebe0, #e8ddd0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .story-image .story-emoji {
+            font-size: 8rem;
+            filter: drop-shadow(0 10px 30px rgba(62, 44, 28, 0.2));
+        }
+
+        .story-image .story-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--green-moss);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .story-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .story-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            line-height: 1.3;
+        }
+
+        .story-content p {
+            color: var(--brown-medium);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .story-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .story-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--cream);
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--brown-dark);
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .story-feature:hover {
+            background: var(--cream-dark);
+            transform: translateX(4px);
+        }
+
+        .story-feature i {
+            color: var(--green-moss);
+            font-size: 1.1rem;
+        }
+
+        /* ===== MENU ===== */
+        .menu-section {
+            background: var(--cream);
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .menu-tab {
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            border: 2px solid rgba(62, 44, 28, 0.1);
+            background: #fff;
+            color: var(--brown-medium);
+            transition: var(--transition);
+        }
+
+        .menu-tab:hover {
+            border-color: var(--green-moss);
+            color: var(--green-moss);
+        }
+
+        .menu-tab.active {
+            background: var(--green-moss);
+            color: #fff;
+            border-color: var(--green-moss);
+            box-shadow: 0 8px 25px rgba(90, 110, 74, 0.3);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .menu-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 30px 24px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(62, 44, 28, 0.05);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .menu-card:nth-child(1) {
+            animation-delay: 0.05s;
+        }
+        .menu-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        .menu-card:nth-child(3) {
+            animation-delay: 0.15s;
+        }
+        .menu-card:nth-child(4) {
+            animation-delay: 0.2s;
+        }
+        .menu-card:nth-child(5) {
+            animation-delay: 0.25s;
+        }
+        .menu-card:nth-child(6) {
+            animation-delay: 0.3s;
+        }
+        .menu-card:nth-child(7) {
+            animation-delay: 0.35s;
+        }
+        .menu-card:nth-child(8) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(90, 110, 74, 0.2);
+        }
+
+        .menu-card .menu-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .menu-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            margin-bottom: 6px;
+        }
+
+        .menu-card .menu-desc {
+            font-size: 0.85rem;
+            color: var(--brown-medium);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .menu-card .menu-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--green-moss);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .menu-card .menu-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--caramel);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .menu-card .menu-badge.bestseller {
+            background: var(--gold);
+        }
+        .menu-card .menu-badge.new {
+            background: var(--green-moss);
+        }
+
+        /* ===== LOCATION ===== */
+        .location-section {
+            background: #fff;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: stretch;
+        }
+
+        .location-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .location-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--brown-dark);
+            line-height: 1.3;
+        }
+
+        .location-detail {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 16px 20px;
+            background: var(--cream);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .location-detail:hover {
+            background: var(--cream-dark);
+            transform: translateX(4px);
+        }
+
+        .location-detail .ld-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(90, 110, 74, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--green-moss);
+            flex-shrink: 0;
+        }
+
+        .location-detail .ld-text {
+            font-size: 0.9rem;
+            color: var(--brown-medium);
+            line-height: 1.6;
+        }
+
+        .location-detail .ld-text strong {
+            display: block;
+            color: var(--brown-dark);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .location-map {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            min-height: 350px;
+            background: linear-gradient(135deg, #f5ebe0, #ede3d5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .location-map .map-emoji {
+            font-size: 8rem;
+            opacity: 0.6;
+        }
+
+        .location-map .map-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            padding: 14px 24px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-md);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--brown-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--brown-dark) 0%, #2a1e12 100%);
+            border-radius: var(--radius-lg);
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 70px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse at center, rgba(196, 149, 106, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -15%;
+            width: 50%;
+            height: 70%;
+            background: radial-gradient(ellipse at center, rgba(90, 110, 74, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.05rem;
+            max-width: 520px;
+            margin: 0 auto 32px;
+            position: relative;
+            z-index: 2;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-whatsapp-lg {
+            background: var(--whatsapp);
+            color: #fff;
+            padding: 16px 36px;
+            font-size: 1rem;
+            border-radius: 40px;
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp-lg:hover {
+            background: var(--whatsapp-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 18px 50px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 16px 36px;
+            font-size: 1rem;
+            border-radius: 40px;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--brown-dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 50px 40px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .footer-logo span {
+            color: var(--caramel);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--green-moss);
+            color: #fff;
+            transform: translateY(-4px);
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            margin: 10px auto;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== FLOATING WHATSAPP BUTTON ===== */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--whatsapp);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.45);
+            transition: var(--transition);
+            animation: wa-pulse 2.5s ease-in-out infinite;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+            background: var(--whatsapp-dark);
+            box-shadow: 0 15px 45px rgba(37, 211, 102, 0.55);
+        }
+
+        @keyframes wa-pulse {
+            0%,
+            100% {
+                box-shadow: 0 10px 35px rgba(37, 211, 102, 0.45);
+            }
+            50% {
+                box-shadow: 0 10px 35px rgba(37, 211, 102, 0.6), 0 0 0 15px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+            .hero-text {
+                align-items: center;
+            }
+            .hero-text .subtitle {
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-badge {
+                justify-content: center;
+            }
+            .hero-image-wrapper {
+                max-width: 400px;
+            }
+            .floating-card.card-1 {
+                left: 10px;
+            }
+            .floating-card.card-2 {
+                right: 10px;
+            }
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 14px 20px;
+            }
+            .navbar.scrolled {
+                padding: 10px 20px;
+            }
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(253, 248, 240, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 24px 20px;
+                gap: 18px;
+                box-shadow: var(--shadow-md);
+                transform: translateY(-120%);
+                transition: var(--transition);
+                border-bottom: 1px solid rgba(62, 44, 28, 0.06);
+            }
+            .nav-links.open {
+                transform: translateY(0);
+            }
+            .nav-toggle {
+                display: flex;
+            }
+            .nav-logo {
+                font-size: 1.3rem;
+            }
+            .hero {
+                padding: 100px 20px 60px;
+                min-height: auto;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            .hero-stat .number {
+                font-size: 1.5rem;
+            }
+            .section {
+                padding: 60px 20px;
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+            }
+            .menu-card {
+                padding: 20px 16px;
+            }
+            .menu-card .menu-icon {
+                font-size: 2.2rem;
+            }
+            .cta-section {
+                padding: 50px 24px;
+                margin: 0 16px 60px;
+                border-radius: var(--radius-md);
+            }
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            .floating-wa {
+                bottom: 20px;
+                right: 20px;
+                width: 52px;
+                height: 52px;
+                font-size: 1.5rem;
+            }
+            .story-content h3 {
+                font-size: 1.5rem;
+            }
+            .story-features {
+                grid-template-columns: 1fr;
+            }
+            .floating-card {
+                display: none;
+            }
+            .hero-image-wrapper {
+                max-width: 300px;
+            }
+            .hero-image-wrapper .coffee-emoji {
+                font-size: 6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            .location-detail {
+                padding: 12px 14px;
+            }
+            .menu-tabs {
+                gap: 6px;
+            }
+            .menu-tab {
+                padding: 8px 16px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="nav-logo">
+            <i class="fa-solid fa-leaf logo-icon"></i>
+            Kopi <span>Ranting</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#lokasi">Lokasi</a></li>
+            <li><a href="#pesan" class="nav-cta"><i class="fa-brands fa-whatsapp"></i> Pesan Sekarang</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">
+                    <i class="fa-solid fa-circle"></i> Buka Setiap Hari · 07.00 - 22.00
+                </span>
+                <h1>
+                    Secangkir<br>
+                    <span class="highlight">Kehangatan</span><br>
+                    di Setiap Ranting
+                </h1>
+                <p class="subtitle">
+                    Kopi Ranting menghadirkan biji kopi pilihan dari petani lokal,
+                    diseduh dengan hati untuk menemani setiap cerita dan langkahmu.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">
+                        <i class="fa-solid fa-mug-hot"></i> Lihat Menu
+                    </a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Ranting!%20Saya%20mau%20pesan%20kopi%20nih%20%E2%98%95" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Pesan via WhatsApp
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="number">15+</span>
+                        <span class="label">Varian Menu</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">4.9</span>
+                        <span class="label">Rating Pelanggan</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="number">100%</span>
+                        <span class="label">Biji Lokal</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="coffee-ring"></div>
+                    <span class="coffee-emoji">☕</span>
+                </div>
+                <div class="floating-card card-1">
+                    <div class="fc-icon brown">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <div class="fc-text">
+                        Fresh Brewed
+                        <small>Setiap 15 menit</small>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="fc-icon green">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div class="fc-text">
+                        Biji Lokal
+                        <small>Dari petani sekitar</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STORY / ABOUT ===== -->
+    <section class="section story-section" id="tentang">
+        <div class="section-header">
+            <span class="section-tag">Tentang Kami</span>
+            <h2>Cerita dari Ranting</h2>
+            <p>Berawal dari kecintaan pada kopi dan alam, Kopi Ranting tumbuh menjadi ruang nyaman untuk semua orang.</p>
+        </div>
+        <div class="story-grid">
+            <div class="story-image">
+                <span class="story-emoji">🌿</span>
+                <div class="story-badge">
+                    <i class="fa-solid fa-heart"></i> Sejak 2021
+                </div>
+            </div>
+            <div class="story-content">
+                <h3>Bukan Sekadar Kedai Kopi,<br>Tapi Rumah Kedua</h3>
+                <p>
+                    Kopi Ranting lahir dari sebuah halaman kecil di pinggir kota. Kami percaya bahwa kopi terbaik
+                    bukan hanya soal rasa, tapi juga soal cerita, kebersamaan, dan ketenangan. Setiap biji kopi
+                    kami pilih langsung dari petani lokal yang merawat tanamannya dengan penuh cinta.
+                </p>
+                <p>
+                    Dari proses sangrai hingga seduhan, kami menjaga setiap detail agar secangkir kopi yang
+                    sampai di tanganmu membawa kehangatan yang sesungguhnya.
+                </p>
+                <div class="story-features">
+                    <div class="story-feature">
+                        <i class="fa-solid fa-seedling"></i> Biji kopi lokal pilihan
+                    </div>
+                    <div class="story-feature">
+                        <i class="fa-solid fa-fire"></i> Sangrai fresh setiap minggu
+                    </div>
+                    <div class="story-feature">
+                        <i class="fa-solid fa-hand-holding-heart"></i> Ramah untuk semua kalangan
+                    </div>
+                    <div class="story-feature">
+                        <i class="fa-solid fa-couch"></i> Suasana nyaman & tenang
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MENU ===== -->
+    <section class="section menu-section" id="menu">
+        <div class="section-header">
+            <span class="section-tag">Menu Kami</span>
+            <h2>Pilihan Favorit di Kopi Ranting</h2>
+            <p>Dari kopi klasik hingga kreasi spesial, semua dibuat dengan bahan berkualitas.</p>
+        </div>
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-category="semua">Semua</button>
+            <button class="menu-tab" data-category="kopi">Kopi</button>
+            <button class="menu-tab" data-category="non-kopi">Non-Kopi</button>
+            <button class="menu-tab" data-category="makanan">Makanan</button>
+        </div>
+        <div class="menu-grid" id="menuGrid">
+            <!-- Menu items will be populated by JS -->
+        </div>
+    </section>
+
+    <!-- ===== LOKASI ===== -->
+    <section class="section location-section" id="lokasi">
+        <div class="section-header">
+            <span class="section-tag">Lokasi</span>
+            <h2>Temukan Kami di Sini</h2>
+            <p>Lokasi strategis, mudah diakses, dan parkir luas untuk kenyamananmu.</p>
+        </div>
+        <div class="location-grid">
+            <div class="location-info">
+                <h3>Kunjungi Kedai<br>Kopi Ranting</h3>
+                <div class="location-detail">
+                    <div class="ld-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="ld-text">
+                        <strong>Alamat</strong>
+                        Jl. Ranting Indah No. 17, Kelurahan Hijau,<br>
+                        Kecamatan Damai, Kota Sejuk, Indonesia 12345
+                    </div>
+                </div>
+                <div class="location-detail">
+                    <div class="ld-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div class="ld-text">
+                        <strong>Jam Operasional</strong>
+                        Senin - Jumat: 07.00 - 22.00 WIB<br>
+                        Sabtu - Minggu: 06.30 - 23.00 WIB
+                    </div>
+                </div>
+                <div class="location-detail">
+                    <div class="ld-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="ld-text">
+                        <strong>Kontak</strong>
+                        WhatsApp: 0812-3456-7890<br>
+                        Email: halo@kopiranting.id
+                    </div>
+                </div>
+                <div class="location-detail">
+                    <div class="ld-icon">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <div class="ld-text">
+                        <strong>Fasilitas</strong>
+                        Parkir luas, Wi-Fi gratis, area outdoor,<br>stop kontak di setiap meja, musholla
+                    </div>
+                </div>
+            </div>
+            <div class="location-map">
+                <span class="map-emoji">🗺️</span>
+                <div class="map-overlay">
+                    <i class="fa-solid fa-map-pin" style="color: #e74c3c;"></i>
+                    Jl. Ranting Indah No. 17
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section" id="pesan">
+        <h2>Siap Menikmati Secangkir Kehangatan?</h2>
+        <p>
+            Pesan langsung via WhatsApp dan nikmati kopi favoritmu di kedai
+            atau bawa pulang. Kami siap menyambutmu!
+        </p>
+        <div class="cta-buttons">
+            <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Ranting!%20Saya%20mau%20pesan%20kopi%20%E2%98%95%20Bisa%20info%20menu%20hari%20ini?" target="_blank" class="btn btn-whatsapp btn-whatsapp-lg">
+                <i class="fa-brands fa-whatsapp"></i> Pesan Langsung ke WhatsApp
+            </a>
+            <a href="#menu" class="btn btn-outline-light">
+                <i class="fa-solid fa-utensils"></i> Lihat Menu Dulu
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-leaf"></i>
+                Kopi <span>Ranting</span>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footer-divider"></div>
+            <p class="footer-copy">
+                &copy; 2026 Kopi Ranting · Dibuat dengan <i class="fa-solid fa-heart" style="color: #c4956a;"></i> untuk pecinta kopi
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING WHATSAPP ===== -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Ranting!%20Saya%20mau%20pesan%20%E2%98%95" target="_blank" class="floating-wa" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== MENU DATA =====
+        const menuData = [{
+            id: 1,
+            name: 'Espresso Ranting',
+            desc: 'Espresso pekat dengan crema tebal dari biji Arabica lokal.',
+            price: 'Rp 18.000',
+            icon: '☕',
+            category: 'kopi',
+            badge: 'bestseller',
+            badgeText: 'Best Seller'
+        }, {
+            id: 2,
+            name: 'Cappuccino Lembut',
+            desc: 'Paduan espresso, susu steamed, dan foam halus yang creamy.',
+            price: 'Rp 25.000',
+            icon: '🥛',
+            category: 'kopi',
+            badge: '',
+            badgeText: ''
+        }, {
+            id: 3,
+            name: 'Kopi Susu Gula Aren',
+            desc: 'Kopi susu legendaris dengan gula aren asli, manisnya pas.',
+            price: 'Rp 22.000',
+            icon: '🍯',
+            category: 'kopi',
+            badge: 'bestseller',
+            badgeText: 'Best Seller'
+        }, {
+            id: 4,
+            name: 'V60 Manual Brew',
+            desc: 'Seduhan manual dengan biji pilihan, rasakan karakter aslinya.',
+            price: 'Rp 28.000',
+            icon: '🫖',
+            category: 'kopi',
+            badge: 'new',
+            badgeText: 'New'
+        }, {
+            id: 5,
+            name: 'Matcha Latte',
+            desc: 'Bubuk matcha premium dengan susu segar, earthy dan creamy.',
+            price: 'Rp 26.000',
+            icon: '🍵',
+            category: 'non-kopi',
+            badge: '',
+            badgeText: ''
+        }, {
+            id: 6,
+            name: 'Cokelat Panas',
+            desc: 'Dark chocolate 70% dilelehkan dengan susu, hangat dan kaya.',
+            price: 'Rp 24.000',
+            icon: '🍫',
+            category: 'non-kopi',
+            badge: '',
+            badgeText: ''
+        }, {
+            id: 7,
+            name: 'Teh Tarik Ranting',
+            desc: 'Teh hitam ditarik hingga berbusa, klasik yang selalu dirindukan.',
+            price: 'Rp 20.000',
+            icon: '🧋',
+            category: 'non-kopi',
+            badge: 'bestseller',
+            badgeText: 'Best Seller'
+        }, {
+            id: 8,
+            name: 'Roti Bakar Ranting',
+            desc: 'Roti bakar isi cokelat keju dengan butter melimpah.',
+            price: 'Rp 18.000',
+            icon: '🍞',
+            category: 'makanan',
+            badge: '',
+            badgeText: ''
+        }, {
+            id: 9,
+            name: 'Croissant Butter',
+            desc: 'Croissant flaky dengan butter Prancis, dipanggang fresh.',
+            price: 'Rp 22.000',
+            icon: '🥐',
+            category: 'makanan',
+            badge: 'new',
+            badgeText: 'New'
+        }, {
+            id: 10,
+            name: 'Pisang Goreng Keju',
+            desc: 'Pisang goreng renyah dengan taburan keju parut dan susu kental.',
+            price: 'Rp 20.000',
+            icon: '🍌',
+            category: 'makanan',
+            badge: 'bestseller',
+            badgeText: 'Best Seller'
+        }, {
+            id: 11,
+            name: 'Es Kopi Ranting',
+            desc: 'Kopi susu dingin dengan es batu kristal, segar maksimal.',
+            price: 'Rp 23.000',
+            icon: '🧊',
+            category: 'kopi',
+            badge: '',
+            badgeText: ''
+        }, {
+            id: 12,
+            name: 'Lemon Tea Segar',
+            desc: 'Teh lemon dingin dengan madu, pelepas dahaga sejati.',
+            price: 'Rp 19.000',
+            icon: '🍋',
+            category: 'non-kopi',
+            badge: '',
+            badgeText: ''
+        }];
+
+        const menuGrid = document.getElementById('menuGrid');
+        const menuTabs = document.querySelectorAll('.menu-tab');
+
+        function renderMenu(category = 'semua') {
+            const filtered = category === 'semua' ?
+                menuData :
+                menuData.filter(item => item.category === category);
+
+            menuGrid.innerHTML = filtered.map(item => `
+                        <div class="menu-card">
+                            ${item.badge ? `<span class="menu-badge ${item.badge}">${item.badgeText}</span>` : ''}
+                            <span class="menu-icon">${item.icon}</span>
+                            <h4>${item.name}</h4>
+                            <p class="menu-desc">${item.desc}</p>
+                            <span class="menu-price">${item.price}</span>
+                        </div>
+                    `).join('');
+        }
+
+        // Initial render
+        renderMenu('semua');
+
+        // Tab click handler
+        menuTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                menuTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.getAttribute('data-category');
+                renderMenu(category);
+            });
+        });
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== NAV TOGGLE MOBILE =====
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close nav when clicking a link (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // ===== SMOOTH SCROLL (native via CSS scroll-behavior) =====
+        // ===== INTERSECTION OBSERVER FOR MENU CARDS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -20px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe menu cards after render
+        function observeMenuCards() {
+            document.querySelectorAll('.menu-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Re-observe after render
+        const originalRender = renderMenu;
+        renderMenu = function(category) {
+            originalRender(category);
+            observeMenuCards();
+        };
+
+        // Re-run initial render with observer
+        renderMenu('semua');
+        observeMenuCards();
+
+        // Also observe story features and location details
+        document.querySelectorAll('.story-feature, .location-detail').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+
+        // ===== WA CLICK TRACKING (simple console) =====
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('📞 WhatsApp link diklik:', this.href);
+            });
+        });
+
+        // ===== DYNAMIC YEAR IN FOOTER =====
+        const footerYear = document.querySelector('.footer-copy');
+        if (footerYear) {
+            const currentYear = new Date().getFullYear();
+            footerYear.innerHTML =
+                `&copy; ${currentYear} Kopi Ranting · Dibuat dengan <i class="fa-solid fa-heart" style="color: #c4956a;"></i> untuk pecinta kopi`;
+        }
+
+        // ===== COUNTER ANIMATION FOR HERO STATS =====
+        const heroStatNumbers = document.querySelectorAll('.hero-stat .number');
+        const heroStatsSection = document.querySelector('.hero-stats');
+
+        function animateCounters() {
+            heroStatNumbers.forEach(stat => {
+                const text = stat.textContent;
+                const target = parseFloat(text.replace(/[^0-9.]/g, ''));
+                const suffix = text.replace(/[0-9.]/g, '').trim();
+                const isDecimal = text.includes('.');
+                const duration = 1500;
+                const startTime = performance.now();
+
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    let currentValue;
+                    if (isDecimal) {
+                        currentValue = (target * eased).toFixed(1);
+                    } else {
+                        currentValue = Math.round(target * eased);
+                    }
+                    stat.textContent = currentValue + (suffix ? ' ' + suffix : '');
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // Animate counters when hero stats scroll into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (heroStatsSection) {
+            statsObserver.observe(heroStatsSection);
+        }
+
+        console.log('☕ Kopi Ranting - Landing page loaded successfully!');
+        console.log('📱 WhatsApp: 0812-3456-7890');
+        console.log('📍 Lokasi: Jl. Ranting Indah No. 17');
+    </script>
+</body>
+</html>

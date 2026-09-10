@@ -1,0 +1,10 @@
+﻿User-agent: *
+Allow: /
+
+# Block folder yang nggak perlu di-index
+Disallow: /demo/
+Disallow: /assets/
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://velojasweb.my.id/sitemap.xml

@@ -82,4 +82,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url><loc>https://velojasweb.my.id/demo/landing-restoran.html</loc><priority>0.6</priority></url>
+  <url><loc>https://velojasweb.my.id/demo/landing-fotografer.html</loc><priority>0.6</priority></url>
+  <url><loc>https://velojasweb.my.id/demo/landing-event.html</loc><priority>0.6</priority></url>
 </urlset>

@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Rasa Nusantara — Restoran Masakan Indonesia | Reservasi Online
+    </title>
+    <meta
+      name="description"
+      content="Restoran masakan Indonesia otentik. Reservasi meja online, lihat menu, dan pesan langsung via WhatsApp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #1a0f0a;
+        --bg-soft: #2a1810;
+        --cream: #f5e6d3;
+        --gold: #d4a574;
+        --gold-bright: #e6b87f;
+        --text: #f5e6d3;
+        --text-dim: #b8a08a;
+        --line: rgba(212, 165, 116, 0.2);
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+      }
+
+      nav {
+        padding: 20px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+      }
+      .nav-links a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+      @media (max-width: 640px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background:
+          linear-gradient(rgba(26, 15, 10, 0.75), rgba(26, 15, 10, 0.9)),
+          url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1920&auto=format&fit=crop")
+            center/cover;
+        padding: 120px 0 80px;
+      }
+      .hero-content {
+        max-width: 640px;
+      }
+      .hero-tag {
+        display: inline-block;
+        padding: 8px 16px;
+        background: rgba(212, 165, 116, 0.15);
+        border: 1px solid var(--gold);
+        border-radius: 100px;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 24px;
+      }
+      .hero h1 {
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 1.05;
+        margin-bottom: 24px;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold-bright);
+      }
+      .hero-sub {
+        font-size: 18px;
+        color: var(--text-dim);
+        margin-bottom: 40px;
+        max-width: 50ch;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: var(--bg);
+      }
+      .btn-primary:hover {
+        background: var(--gold-bright);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(212, 165, 116, 0.3);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--text);
+        border-color: var(--gold);
+      }
+      .btn-ghost:hover {
+        background: var(--gold);
+        color: var(--bg);
+      }
+
+      section {
+        padding: 100px 0;
+      }
+      .section-head {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .section-label {
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 12px;
+      }
+      .section-head h2 {
+        font-size: clamp(32px, 5vw, 48px);
+        color: var(--cream);
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+      }
+      .menu-item {
+        text-align: center;
+      }
+      .menu-item img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+      .menu-item h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+        color: var(--cream);
+      }
+      .menu-item p {
+        color: var(--text-dim);
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      .menu-price {
+        color: var(--gold);
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      .about {
+        background: var(--bg-soft);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      @media (max-width: 800px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+      .about-img img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      .about-content h2 {
+        font-size: clamp(28px, 4vw, 40px);
+        margin-bottom: 20px;
+        color: var(--cream);
+      }
+      .about-content p {
+        color: var(--text-dim);
+        margin-bottom: 16px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+      }
+      .info-card {
+        padding: 32px;
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        text-align: center;
+      }
+      .info-card .icon {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+      .info-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: var(--cream);
+      }
+      .info-card p {
+        color: var(--text-dim);
+        font-size: 14px;
+      }
+
+      .cta {
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-bright) 100%
+        );
+        color: var(--bg);
+        text-align: center;
+      }
+      .cta h2 {
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 16px;
+      }
+      .cta p {
+        margin-bottom: 32px;
+        font-size: 17px;
+      }
+      .cta .btn-primary {
+        background: var(--bg);
+        color: var(--gold);
+      }
+      .cta .btn-primary:hover {
+        background: #000;
+      }
+
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+      footer a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="brand">Rasa Nusantara</div>
+        <div class="nav-links">
+          <a href="#menu">Menu</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#info">Info</a>
+          <a href="#reservasi">Reservasi</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-content">
+          <div class="hero-tag">🇮🇩 Masakan Indonesia Otentik</div>
+          <h1>Cita rasa <em>warisan</em> dalam setiap suapan.</h1>
+          <p class="hero-sub">
+            Restoran masakan Indonesia dengan resep turun-temurun dari berbagai
+            daerah. Dibuat fresh setiap hari dengan bahan pilihan.
+          </p>
+          <div class="hero-cta">
+            <a
+              href="https://wa.me/6282364967594?text=Halo%20Rasa%20Nusantara%2C%20saya%20mau%20reservasi%20meja"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+              >Reservasi via WhatsApp</a
+            >
+            <a href="#menu" class="btn btn-ghost">Lihat Menu</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="menu">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Menu Andalan</div>
+          <h2>Hidangan favorit</h2>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <img
+              src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop"
+              alt="Rendang"
+            />
+            <h3>Rendang Padang</h3>
+            <p>
+              Daging sapi empuk dengan bumbu rempah otentik Minang, dimasak 8
+              jam.
+            </p>
+            <div class="menu-price">Rp 85.000</div>
+          </div>
+          <div class="menu-item">
+            <img
+              src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=800&auto=format&fit=crop"
+              alt="Nasi Goreng"
+            />
+            <h3>Nasi Goreng Spesial</h3>
+            <p>
+              Nasi goreng dengan telur, ayam, udang, dan kerupuk. Disajikan
+              dengan acar.
+            </p>
+            <div class="menu-price">Rp 55.000</div>
+          </div>
+          <div class="menu-item">
+            <img
+              src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?q=80&w=800&auto=format&fit=crop"
+              alt="Sate Ayam"
+            />
+            <h3>Sate Ayam Madura</h3>
+            <p>Sate ayam dengan bumbu kacang legit, dibakar dengan arang.</p>
+            <div class="menu-price">Rp 65.000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="tentang">
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="about-img">
+            <img
+              src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=800&auto=format&fit=crop"
+              alt="Interior restoran"
+            />
+          </div>
+          <div class="about-content">
+            <div class="section-label">Tentang Kami</div>
+            <h2>Cerita di balik setiap hidangan</h2>
+            <p>
+              Berawal dari dapur rumah nenek di Padang, Rasa Nusantara hadir
+              untuk membawa kehangatan masakan keluarga ke meja Anda.
+            </p>
+            <p>
+              Kami hanya menggunakan bahan segar dari petani lokal, tanpa MSG,
+              dan dimasak dengan cinta oleh chef berpengalaman.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="info">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Informasi</div>
+          <h2>Kunjungi kami</h2>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="icon">📍</div>
+            <h3>Lokasi</h3>
+            <p>Jl. Malioboro No. 123<br />Yogyakarta</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">🕐</div>
+            <h3>Jam Buka</h3>
+            <p>Senin–Minggu<br />10.00 – 22.00 WIB</p>
+          </div>
+          <div class="info-card">
+            <div class="icon">📱</div>
+            <h3>Reservasi</h3>
+            <p>0823-6496-7594<br />WhatsApp only</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="reservasi">
+      <div class="wrap">
+        <h2>Reservasi meja sekarang</h2>
+        <p>Kami siap menyambut Anda dan keluarga.</p>
+        <a
+          href="https://wa.me/6282364967594?text=Halo%20Rasa%20Nusantara%2C%20saya%20mau%20reservasi%20meja"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          >💬 Reservasi via WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lensa Story — Fotografer Profesional | Wedding & Prewedding</title>
+    <meta
+      name="description"
+      content="Fotografer profesional untuk wedding, prewedding, dan event di Yogyakarta & sekitarnya. Booking online."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #faf8f5;
+        --ink: #1a1a1a;
+        --ink-soft: #6b6b6b;
+        --line: #e8e2da;
+        --accent: #8b7355;
+        --accent-soft: #f0ebe3;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+      }
+
+      nav {
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        background: rgba(250, 248, 245, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 50;
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 640px) {
+        .nav-links a:not(.nav-cta) {
+          display: none;
+        }
+      }
+      .nav-cta {
+        padding: 10px 20px;
+        background: var(--ink);
+        color: var(--bg) !important;
+        border-radius: 100px;
+        font-size: 13px !important;
+      }
+
+      .hero {
+        padding: 100px 0 80px;
+        text-align: center;
+      }
+      .hero-eyebrow {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 20px;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+      .hero h1 {
+        font-size: clamp(48px, 8vw, 96px);
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+        margin-bottom: 28px;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .hero-sub {
+        font-size: 18px;
+        color: var(--ink-soft);
+        max-width: 55ch;
+        margin: 0 auto 40px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--bg);
+      }
+      .btn-primary:hover {
+        background: var(--accent);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line);
+      }
+      .btn-ghost:hover {
+        border-color: var(--ink);
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 200px;
+        gap: 12px;
+        margin-top: 80px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.3s;
+      }
+      .gallery img:hover {
+        transform: scale(1.02);
+      }
+      .gallery .tall {
+        grid-row: span 2;
+      }
+      .gallery .wide {
+        grid-column: span 2;
+      }
+      @media (max-width: 800px) {
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 150px;
+        }
+      }
+
+      section {
+        padding: 100px 0;
+      }
+      .section-head {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .section-label {
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 12px;
+      }
+      .section-head h2 {
+        font-size: clamp(32px, 5vw, 52px);
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+      }
+      .service {
+        padding: 40px 32px;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .service:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      }
+      .service .icon {
+        font-size: 36px;
+        margin-bottom: 16px;
+      }
+      .service h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      .service p {
+        color: var(--ink-soft);
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+      .service .price {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 15px;
+        font-family: "Inter", sans-serif;
+      }
+
+      .cta-band {
+        background: var(--ink);
+        color: var(--bg);
+        text-align: center;
+      }
+      .cta-band h2 {
+        font-size: clamp(32px, 5vw, 52px);
+        margin-bottom: 16px;
+      }
+      .cta-band p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 32px;
+        font-size: 17px;
+      }
+      .cta-band .btn-primary {
+        background: var(--bg);
+        color: var(--ink);
+      }
+      .cta-band .btn-primary:hover {
+        background: var(--accent);
+        color: white;
+      }
+
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="brand">Lensa Story</div>
+        <div class="nav-links">
+          <a href="#layanan">Layanan</a>
+          <a href="#galeri">Galeri</a>
+          <a href="#kontak">Kontak</a>
+          <a
+            class="nav-cta"
+            href="https://wa.me/6282364967594?text=Halo%20Lensa%20Story%2C%20saya%20mau%20booking%20foto"
+            target="_blank"
+            rel="noopener"
+            >Booking</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-eyebrow">Wedding · Prewedding · Event</div>
+        <h1>Momen yang <em>tak</em> terulang.</h1>
+        <p class="hero-sub">
+          Fotografer profesional untuk wedding, prewedding, dan event.
+          Mengabadikan setiap momen berharga dengan sentuhan artistik.
+        </p>
+        <div class="hero-cta">
+          <a
+            href="https://wa.me/6282364967594?text=Halo%20Lensa%20Story%2C%20saya%20mau%20booking%20foto"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+            >Booking Sekarang</a
+          >
+          <a href="#galeri" class="btn btn-ghost">Lihat Galeri</a>
+        </div>
+
+        <div class="gallery">
+          <img
+            class="tall"
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop"
+            alt="Wedding"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=600&auto=format&fit=crop"
+            alt="Prewedding"
+          />
+          <img
+            class="wide"
+            src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=800&auto=format&fit=crop"
+            alt="Event"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop"
+            alt="Couple"
+          />
+          <img
+            class="tall"
+            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop"
+            alt="Wedding detail"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=600&auto=format&fit=crop"
+            alt="Portrait"
+          />
+        </div>
+      </div>
+    </header>
+
+    <section id="layanan">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Layanan</div>
+          <h2>Paket yang tersedia</h2>
+        </div>
+        <div class="services">
+          <div class="service">
+            <div class="icon">💍</div>
+            <h3>Wedding</h3>
+            <p>
+              Full day coverage untuk hari pernikahan Anda. Termasuk 2
+              fotografer + 1 videografer.
+            </p>
+            <div class="price">Mulai Rp 5.500.000</div>
+          </div>
+          <div class="service">
+            <div class="icon">💐</div>
+            <h3>Prewedding</h3>
+            <p>
+              Sesi foto prewedding dengan konsep custom. Include makeup &
+              wardrobe.
+            </p>
+            <div class="price">Mulai Rp 2.500.000</div>
+          </div>
+          <div class="service">
+            <div class="icon">📸</div>
+            <h3>Event</h3>
+            <p>
+              Dokumentasi event, seminar, atau gathering. Foto & video
+              highlight.
+            </p>
+            <div class="price">Mulai Rp 1.500.000</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="kontak">
+      <div class="wrap">
+        <h2>Punya tanggal spesial?</h2>
+        <p>Amankan slot Anda sekarang. Booking via WhatsApp.</p>
+        <a
+          href="https://wa.me/6282364967594?text=Halo%20Lensa%20Story%2C%20saya%20mau%20booking%20foto"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          >💬 Booking via WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

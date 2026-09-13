@@ -1,129 +1,121 @@
+// ===== NAV TOGGLE (Mobile Menu) =====
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
-navToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  navToggle.setAttribute("aria-expanded", isOpen);
-});
-navLinks.querySelectorAll("a").forEach((a) =>
-  a.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
-  }),
-);
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen);
+  });
+
+  navLinks.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }),
+  );
+}
 
 // ===== FILTER PORTFOLIO =====
-const filterButtons = document.querySelectorAll(".filter-btn");
-const portfolioItems = document.querySelectorAll(".mock");
-
-// ===== TOGGLE "LIHAT LEBIH BANYAK / SEDIKIT" =====
-const toggleBtn = document.getElementById("toggleMoreBtn");
-let showAll = false; // state: apakah sedang menampilkan semua item
-const INITIAL_VISIBLE = 3; // jumlah item yang ditampilkan awal
-
-function updateToggleButton() {
-  // Ambil semua item yang TIDAK sedang disembunyikan oleh filter (yaitu yang tidak punya class 'hide')
-  const visibleItems = Array.from(
-    document.querySelectorAll(".mock:not(.hide)"),
-  );
-  const totalVisible = visibleItems.length;
-
-  // Tampilkan tombol hanya jika total item yang tampil > INITIAL_VISIBLE
-  if (totalVisible > INITIAL_VISIBLE) {
-    toggleBtn.classList.remove("hidden");
-  } else {
-    toggleBtn.classList.add("hidden");
-    // Jika total <= batas, pastikan semua item yang tampil terlihat (tidak ada yang disembunyikan oleh toggle)
-    // dan reset state showAll
-    showAll = false;
-    // Hapus class 'extra' dari semua item
-    visibleItems.forEach((item) => item.classList.remove("extra"));
-    return;
-  }
-
-  // Atur teks tombol berdasarkan state
-  toggleBtn.textContent = showAll
-    ? "Lihat lebih sedikit"
-    : "Lihat lebih banyak";
-}
-
-// Fungsi untuk toggle tampilan
-function toggleMore() {
-  const visibleItems = Array.from(
-    document.querySelectorAll(".mock:not(.hide)"),
-  );
-  const totalVisible = visibleItems.length;
-
-  if (totalVisible <= INITIAL_VISIBLE) {
-    // Tidak perlu toggle, tapi amankan
-    return;
-  }
-
-  if (!showAll) {
-    // Tampilkan semua: hapus class 'extra' dari semua (karena 'extra' kita pakai untuk menyembunyikan)
-    // Kita akan gunakan class 'extra' untuk item yang melebihi batas awal.
-    // Saat "lihat lebih banyak", kita hapus class 'extra' dari semua item yang tampil.
-    visibleItems.forEach((item) => item.classList.remove("extra"));
-    showAll = true;
-  } else {
-    // Sembunyikan lagi: tambahkan class 'extra' pada item yang melebihi batas awal
-    visibleItems.forEach((item, index) => {
-      if (index >= INITIAL_VISIBLE) {
-        item.classList.add("extra");
-      }
-    });
-    showAll = false;
-  }
-  updateToggleButton();
-}
-
-// Refactor: kita ubah kode filter yang sudah ada menjadi fungsi applyFilter
-function applyFilter(filterValue) {
-  const items = document.querySelectorAll(".mock");
-  items.forEach((item) => {
-    if (filterValue === "all" || item.dataset.category === filterValue) {
-      item.classList.remove("hide");
-    } else {
-      item.classList.add("hide");
-      // Juga hapus class 'extra' jika item disembunyikan filter
-      item.classList.remove("extra");
-    }
-  });
-  // Setelah filter, reset state showAll dan update tombol
-  showAll = false;
-  // Terapkan batas awal: item index >= INITIAL_VISIBLE diberi class 'extra'
-  const visibleItems = Array.from(
-    document.querySelectorAll(".mock:not(.hide)"),
-  );
-  visibleItems.forEach((item, index) => {
-    if (index >= INITIAL_VISIBLE) {
-      item.classList.add("extra");
-    } else {
-      item.classList.remove("extra");
-    }
-  });
-  updateToggleButton();
-}
-
-// Event listener filter menggunakan applyFilter
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    filterButtons.forEach((b) => b.classList.remove("active"));
-    this.classList.add("active");
-    const filterValue = this.dataset.filter;
-    applyFilter(filterValue);
-  });
-});
-
-// Event listener tombol toggle
-toggleBtn.addEventListener("click", toggleMore);
-
-// Jalankan pertama kali saat halaman dimuat untuk mengatur state awal
 document.addEventListener("DOMContentLoaded", function () {
-  // Aktifkan filter "Semua" secara default
-  const defaultFilter = document.querySelector(".filter-btn.active");
-  if (defaultFilter) {
-    applyFilter(defaultFilter.dataset.filter);
-  } else {
-    applyFilter("all");
+  var grid = document.querySelector(".portfolio-grid");
+  var tabs = document.querySelector(".filter-tabs");
+  if (!grid || !tabs) return;
+
+  var pagination = document.getElementById("pagination");
+  var emptyState = document.getElementById("emptyState");
+  var countEl = document.getElementById("portfolioCount");
+  var PER_PAGE = pagination ? 6 : 999;
+  var activeFilter = "all";
+  var activePage = 1;
+
+  function allCards() {
+    return Array.prototype.slice.call(grid.querySelectorAll(".mock"));
   }
+
+  function render() {
+    var all = allCards();
+    var list =
+      activeFilter === "all"
+        ? all
+        : all.filter(function (c) {
+            return c.getAttribute("data-category") === activeFilter;
+          });
+
+    var totalPages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+    if (activePage > totalPages) activePage = totalPages;
+
+    var start = (activePage - 1) * PER_PAGE;
+    var visible = list.slice(start, start + PER_PAGE);
+
+    all.forEach(function (c) {
+      c.style.display = "none";
+    });
+    visible.forEach(function (c) {
+      c.style.display = "";
+    });
+
+    if (countEl) {
+      var label = "Menampilkan " + list.length + " project";
+      if (activeFilter !== "all") label += " · kategori: " + activeFilter;
+      countEl.textContent = label;
+    }
+    if (emptyState)
+      emptyState.style.display = list.length === 0 ? "block" : "none";
+
+    if (!pagination) return;
+    pagination.innerHTML = "";
+    if (totalPages <= 1) return;
+
+    function goTo(p) {
+      activePage = p;
+      render();
+      grid.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    var prev = document.createElement("button");
+    prev.type = "button";
+    prev.textContent = "←";
+    prev.disabled = activePage === 1;
+    prev.addEventListener("click", function () {
+      goTo(activePage - 1);
+    });
+    pagination.appendChild(prev);
+
+    for (var i = 1; i <= totalPages; i++) {
+      (function (n) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = n;
+        if (n === activePage) btn.classList.add("active");
+        btn.addEventListener("click", function () {
+          goTo(n);
+        });
+        pagination.appendChild(btn);
+      })(i);
+    }
+
+    var next = document.createElement("button");
+    next.type = "button";
+    next.textContent = "→";
+    next.disabled = activePage === totalPages;
+    next.addEventListener("click", function () {
+      goTo(activePage + 1);
+    });
+    pagination.appendChild(next);
+  }
+
+  tabs.addEventListener("click", function (e) {
+    var btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    tabs.querySelectorAll(".filter-btn").forEach(function (b) {
+      b.classList.remove("active", "is-active");
+    });
+    btn.classList.add("active");
+    activeFilter = btn.getAttribute("data-filter") || "all";
+    activePage = 1;
+    render();
+  });
+
+  render();
 });

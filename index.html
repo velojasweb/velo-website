@@ -38,7 +38,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/base.css" />
-    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link
       rel="icon"
@@ -58,6 +57,7 @@
       href="/assets/img/apple-touch-icon.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -68,14 +68,8 @@
         "image": "https://velojasweb.my.id/assets/img/logo.png",
         "telephone": "+62-823-6496-7594",
         "priceRange": "Rp1.999.000 - Rp4.999.000",
-        "areaServed": {
-          "@type": "Country",
-          "name": "Indonesia"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "ID"
-        },
+        "areaServed": { "@type": "Country", "name": "Indonesia" },
+        "address": { "@type": "PostalAddress", "addressCountry": "ID" },
         "sameAs": [
           "https://facebook.com/veloindo.id",
           "https://instagram.com/velojasweb",
@@ -84,7 +78,6 @@
       }
     </script>
 
-    <!-- Schema: WebSite -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -99,7 +92,6 @@
       }
     </script>
 
-    <!-- Schema: Organization -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -123,7 +115,6 @@
       }
     </script>
 
-    <!-- Schema: FAQPage -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -278,6 +269,30 @@
     </header>
 
     <main>
+      <!-- STATISTIK STRIP -->
+      <section class="stats-strip">
+        <div class="wrap">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-num">25+</div>
+              <div class="stat-label">Project Selesai</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">3–7</div>
+              <div class="stat-label">Hari Pengerjaan</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Mobile-Friendly</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">5.0</div>
+              <div class="stat-label">Rating Klien</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="layanan">
         <div class="wrap">
           <div class="head">
@@ -297,9 +312,9 @@
                 event, atau jasa spesifik.
               </p>
               <div class="price">
-                <small>Mulai dari</small>
-                <span class="harga-coret">Rp2.499.000</span>
-                <span class="harga-asli">Rp1.999.000</span>
+                <small>Mulai dari</small
+                ><span class="harga-coret">Rp2.499.000</span
+                ><span class="harga-asli">Rp1.999.000</span>
               </div>
             </div>
             <div class="service">
@@ -310,9 +325,9 @@
                 dipercaya calon klien.
               </p>
               <div class="price">
-                <small>Mulai dari</small>
-                <span class="harga-coret">Rp4.999.000</span>
-                <span class="harga-asli">Rp3.999.000</span>
+                <small>Mulai dari</small
+                ><span class="harga-coret">Rp4.999.000</span
+                ><span class="harga-asli">Rp3.999.000</span>
               </div>
             </div>
             <div class="service">
@@ -322,9 +337,9 @@
                 dashboard sederhana, sampai integrasi dengan sistem lain.
               </p>
               <div class="price">
-                <small>Mulai dari</small>
-                <span class="harga-coret">Rp6.500.000</span>
-                <span class="harga-asli">Rp4.999.000</span>
+                <small>Mulai dari</small
+                ><span class="harga-coret">Rp6.500.000</span
+                ><span class="harga-asli">Rp4.999.000</span>
               </div>
             </div>
           </div>
@@ -379,34 +394,106 @@
       <section id="portfolio">
         <div class="wrap">
           <div class="head">
-            <h2>Contoh gaya desain</h2>
+            <h2>Portfolio Velo</h2>
             <p>
-              Lihat bagaimana Velo mengeksekusi desain untuk berbagai jenis
-              bisnis. Setiap contoh menampilkan tata letak yang bersih,
-              pemilihan warna yang selaras, dan alur halaman yang memudahkan
-              pengunjung mengambil keputusan. Semua bisa disesuaikan dengan
-              brand dan kebutuhan kamu.
+              Beberapa project yang sudah dikerjakan Velo untuk bisnis dan UMKM.
+              Lihat semua di halaman portfolio lengkap.
             </p>
           </div>
-          <div class="filter-tabs">
-            <button class="filter-btn active" data-filter="all">Semua</button>
-            <button class="filter-btn" data-filter="landing-page">
-              Landing Page
-            </button>
-            <button class="filter-btn" data-filter="company-profile">
-              Company Profile
-            </button>
-            <button class="filter-btn" data-filter="web-custom">
-              Web Custom
-            </button>
-            <button class="filter-btn" data-filter="web-undangan">
-              Web Undangan Nikahan
-            </button>
-            <button class="filter-btn" data-filter="web-portfolio">
-              Web Portfolio
-            </button>
-          </div>
           <div class="portfolio-grid">
+            <a
+              class="mock"
+              data-category="web-portfolio"
+              href="demo/portfolio-minimalis.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
+                  alt="Template portfolio minimalis"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">web portfolio · minimalis</div>
+                <div class="mock-title">Portfolio Minimalis</div>
+                <p class="mock-caption">
+                  Gaya bersih & rapi. Cocok untuk content writer, editor, fresh
+                  graduate.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">template</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="web-portfolio"
+              href="demo/portfolio-kreatif.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop"
+                  alt="Template portfolio kreatif"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">web portfolio · kreatif</div>
+                <div class="mock-title">Portfolio Kreatif</div>
+                <p class="mock-caption">
+                  Gaya bold & playful. Cocok untuk designer, ilustrator, content
+                  creator.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">template</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="web-portfolio"
+              href="demo/portfolio-korporat.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                  alt="Template portfolio korporat"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">web portfolio · korporat</div>
+                <div class="mock-title">Portfolio Korporat</div>
+                <p class="mock-caption">
+                  Gaya formal & elegan. Cocok untuk konsultan, lawyer, manager,
+                  eksekutif.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">template</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
             <a
               class="mock"
               data-category="landing-page"
@@ -419,20 +506,21 @@
               </div>
               <div class="mock-preview">
                 <img
-                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1974&auto=format&fit=crop"
-                  alt="Mockup landing page Kopi Ranting — kedai kopi"
+                  src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop"
+                  alt="Landing page kedai kopi"
+                  loading="lazy"
                 />
               </div>
               <div class="mock-info">
-                <div class="mock-tag">landing-page · kedai kopi</div>
+                <div class="mock-tag">landing page · kedai kopi</div>
                 <div class="mock-title">Kopi Ranting</div>
                 <p class="mock-caption">
-                  Satu halaman promosi dengan menu, lokasi, dan tombol pesan
-                  langsung ke WhatsApp.
+                  Landing page promosi kedai kopi dengan menu, lokasi, dan
+                  tombol WhatsApp.
                 </p>
                 <div class="mock-foot">
-                  <span class="badge">view</span>
-                  <span class="demo-link">Lihat demo</span>
+                  <span class="badge">landing</span
+                  ><span class="demo-link">Lihat demo</span>
                 </div>
               </div>
             </a>
@@ -449,20 +537,21 @@
               </div>
               <div class="mock-preview">
                 <img
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop"
-                  alt="Mockup company profile Arka Consulting — konsultan bisnis"
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop"
+                  alt="Company profile konsultan"
+                  loading="lazy"
                 />
               </div>
               <div class="mock-info">
-                <div class="mock-tag">company-profile · konsultan</div>
+                <div class="mock-tag">company profile · konsultan</div>
                 <div class="mock-title">Arka Consulting</div>
                 <p class="mock-caption">
-                  Profil perusahaan, daftar layanan konsultasi, dan formulir
-                  kontak untuk klien korporat.
+                  Company profile firma konsultan bisnis — profil, layanan,
+                  formulir kontak.
                 </p>
                 <div class="mock-foot">
-                  <span class="badge">view</span>
-                  <span class="demo-link">Lihat demo</span>
+                  <span class="badge">company</span
+                  ><span class="demo-link">Lihat demo</span>
                 </div>
               </div>
             </a>
@@ -479,66 +568,80 @@
               </div>
               <div class="mock-preview">
                 <img
-                  src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop"
-                  alt="Mockup web custom Anyaman Ibu Sri — UMKM kerajinan"
+                  src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=800&auto=format&fit=crop"
+                  alt="Web custom UMKM"
+                  loading="lazy"
                 />
               </div>
               <div class="mock-info">
-                <div class="mock-tag">web-custom · UMKM kerajinan</div>
+                <div class="mock-tag">web custom · UMKM</div>
                 <div class="mock-title">Anyaman Ibu Sri</div>
                 <p class="mock-caption">
-                  Katalog produk dengan filter kategori dan estimasi ongkir
-                  sederhana.
+                  Katalog produk kerajinan anyaman dengan filter kategori dan
+                  ongkir.
                 </p>
                 <div class="mock-foot">
-                  <span class="badge">view</span>
-                  <span class="demo-link">Lihat demo</span>
-                </div>
-              </div>
-            </a>
-
-            <a
-              class="mock"
-              data-category="web-portfolio"
-              href="https://www.rianhidayatt.my.id"
-              target="_blank"
-              rel="noopener"
-            >
-              <div class="mock-bar">
-                <span></span><span></span><span></span>
-              </div>
-              <div class="mock-preview">
-                <img
-                  src="https://www.rianhidayatt.my.id/assets/image/profil.jpeg"
-                  alt="Portfolio Creative Designer — contoh web portfolio"
-                />
-              </div>
-              <div class="mock-info">
-                <div class="mock-tag">web-portfolio · server</div>
-                <div class="mock-title">Rian Hidayat</div>
-                <p class="mock-caption">
-                  Tampilan portfolio profesional di bidang Food & Beverage.
-                </p>
-                <div class="mock-foot">
-                  <span class="badge">view</span>
-                  <span class="demo-link">Lihat demo</span>
+                  <span class="badge">web custom</span
+                  ><span class="demo-link">Lihat demo</span>
                 </div>
               </div>
             </a>
           </div>
           <div class="portfolio-footer">
-            <a class="btn btn-ghost" href="/portfolio/">
-              Lihat semua portfolio →
-            </a>
+            <a class="btn btn-ghost" href="/portfolio/"
+              >Lihat semua portfolio →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- STANDAR KERJA -->
+      <section class="testimonials-section">
+        <div class="wrap">
+          <div class="head">
+            <h2>Standar kerja Velo di setiap project</h2>
+            <p>
+              Yang selalu Velo terapkan, dari project pertama sampai selesai.
+            </p>
+          </div>
+          <div class="testimonials-grid">
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Dikerjakan langsung oleh yang bikin. Komunikasi cepat lewat
+                WhatsApp, tanpa perantara atau agensi berlapis."
+              </p>
+              <div class="testimonial-author">
+                <strong>Dikerjakan Langsung</strong>
+                <span>Tanpa perantara</span>
+              </div>
+            </div>
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Kode bersih tanpa plugin berlebihan. Website jadi ringan, cepat
+                dibuka, dan ramah untuk SEO Google."
+              </p>
+              <div class="testimonial-author">
+                <strong>Kode Ringan &amp; Cepat</strong>
+                <span>Optimasi kecepatan</span>
+              </div>
+            </div>
+            <div class="testimonial">
+              <p class="testimonial-text">
+                "Harga transparan sejak awal. Nggak ada biaya tersembunyi di
+                tengah atau akhir project."
+              </p>
+              <div class="testimonial-author">
+                <strong>Harga Jujur</strong>
+                <span>Tanpa biaya tersembunyi</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="why">
         <div class="wrap">
-          <div class="head">
-            <h2>Kenapa pakai Velo</h2>
-          </div>
+          <div class="head"><h2>Kenapa pakai Velo</h2></div>
           <div class="why-grid">
             <div class="why-item">
               <h3>Dikerjakan langsung</h3>
@@ -596,7 +699,6 @@
                 >Tanya paket ini</a
               >
             </div>
-
             <div class="plan featured">
               <h3>Company Profile</h3>
               <div class="p">Rp3.999.000<small></small></div>
@@ -615,7 +717,6 @@
                 >Tanya paket ini</a
               >
             </div>
-
             <div class="plan">
               <h3>Web Custom</h3>
               <div class="p">
@@ -641,9 +742,7 @@
 
       <section id="faq">
         <div class="wrap">
-          <div class="head">
-            <h2>Pertanyaan yang sering ditanyakan</h2>
-          </div>
+          <div class="head"><h2>Pertanyaan yang sering ditanyakan</h2></div>
           <div class="faq">
             <details>
               <summary>Berapa lama pengerjaan website?</summary>
@@ -665,7 +764,7 @@
               <summary>Bisa minta revisi desain?</summary>
               <p>
                 Bisa. Setiap paket sudah termasuk sejumlah revisi sepuasnya
-                sampai website rilis. setelah rilis tidak dapat revisi lagi
+                sampai website rilis. Setelah rilis tidak dapat revisi lagi.
               </p>
             </details>
             <details>
@@ -724,9 +823,7 @@
             >
           </p>
         </div>
-        <div>
-          <p>© 2026 Velo. Semua hak dilindungi.</p>
-        </div>
+        <div><p>© 2026 Velo. Semua hak dilindungi.</p></div>
       </div>
     </footer>
 

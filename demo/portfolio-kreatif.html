@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarah Wijaya — Graphic Designer & Ilustrator | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio Sarah Wijaya, Graphic Designer & Ilustrator. Lihat karya, keahlian, dan download CV."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #f5e94d;
+        --ink: #0a0a0a;
+        --surface: #ffffff;
+        --pink: #ff3d7f;
+        --line: #0a0a0a;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      nav {
+        padding: 20px 0;
+        border-bottom: 2px solid var(--ink);
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-brand {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+      }
+      .nav-links a {
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .nav-links a:hover {
+        color: var(--pink);
+      }
+      @media (max-width: 640px) {
+        .nav-links a:not(.nav-cv) {
+          display: none;
+        }
+      }
+      .nav-cv {
+        padding: 8px 16px;
+        background: var(--ink);
+        color: var(--bg) !important;
+        border-radius: 100px;
+        font-weight: 600;
+        font-size: 13px !important;
+      }
+
+      .hero {
+        padding: 60px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 800px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .hero-tag {
+        display: inline-block;
+        padding: 6px 14px;
+        background: var(--ink);
+        color: var(--bg);
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 24px;
+      }
+      .hero h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(44px, 7vw, 84px);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+      }
+      .hero h1 span {
+        background: var(--pink);
+        padding: 0 12px;
+        display: inline-block;
+      }
+      .hero-sub {
+        font-size: 18px;
+        max-width: 50ch;
+        margin-bottom: 32px;
+      }
+      .btn {
+        display: inline-flex;
+        padding: 16px 32px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        transition: all 0.2s;
+        border: 2px solid var(--ink);
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--bg);
+      }
+      .btn-primary:hover {
+        background: var(--pink);
+        border-color: var(--pink);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+      }
+      .btn-ghost:hover {
+        background: var(--ink);
+        color: var(--bg);
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .hero-photo {
+        aspect-ratio: 1;
+        width: 100%;
+        object-fit: cover;
+        border: 4px solid var(--ink);
+        border-radius: 50%;
+        transform: rotate(-3deg);
+      }
+
+      section {
+        padding: 80px 0;
+        border-top: 2px solid var(--ink);
+      }
+      .section-head {
+        margin-bottom: 48px;
+      }
+      .section-label {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 12px;
+        color: var(--ink);
+      }
+      .section-label::before {
+        content: "→ ";
+        color: var(--pink);
+      }
+      .section-head h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: clamp(32px, 5vw, 56px);
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .about-text {
+        font-size: 20px;
+        max-width: 60ch;
+      }
+      .about-text p + p {
+        margin-top: 20px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 16px;
+      }
+      .skill {
+        padding: 24px;
+        background: var(--surface);
+        border: 2px solid var(--ink);
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 18px;
+        transition: transform 0.2s;
+      }
+      .skill:hover {
+        transform: translate(-4px, -4px);
+      }
+      .skill span {
+        display: block;
+        font-size: 13px;
+        color: #666;
+        margin-top: 6px;
+        font-weight: 400;
+      }
+
+      .exp-item {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 40px;
+        padding: 32px 0;
+        border-bottom: 2px solid var(--ink);
+      }
+      .exp-item:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 640px) {
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+      .exp-date {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+      }
+      .exp-role {
+        font-weight: 900;
+        font-size: 24px;
+        margin-bottom: 6px;
+        letter-spacing: -0.02em;
+      }
+      .exp-company {
+        color: var(--pink);
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .exp-desc {
+        font-size: 16px;
+      }
+
+      .port-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      .port-card {
+        background: var(--surface);
+        border: 2px solid var(--ink);
+        border-radius: 20px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s;
+      }
+      .port-card:hover {
+        transform: translate(-6px, -6px);
+      }
+      .port-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+      .port-body {
+        padding: 20px;
+      }
+      .port-tag {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--pink);
+      }
+      .port-title {
+        font-weight: 700;
+        font-size: 20px;
+        margin: 8px 0;
+        letter-spacing: -0.01em;
+      }
+      .port-desc {
+        font-size: 15px;
+        color: #555;
+      }
+
+      .cv-band {
+        background: var(--ink);
+        color: var(--bg);
+        padding: 60px 40px;
+        border-radius: 32px;
+        text-align: center;
+      }
+      .cv-band h3 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: clamp(28px, 4vw, 44px);
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+      }
+      .cv-band h3 span {
+        background: var(--pink);
+        padding: 0 12px;
+      }
+      .cv-band p {
+        color: #aaa;
+        margin-bottom: 24px;
+      }
+      .cv-band .btn-primary {
+        background: var(--pink);
+        border-color: var(--pink);
+        color: white;
+      }
+      .cv-band .btn-primary:hover {
+        background: var(--bg);
+        border-color: var(--bg);
+        color: var(--ink);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      .contact-card {
+        padding: 24px;
+        background: var(--surface);
+        border: 2px solid var(--ink);
+        border-radius: 20px;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s;
+      }
+      .contact-card:hover {
+        transform: translate(-4px, -4px);
+      }
+      .contact-label {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--pink);
+        margin-bottom: 8px;
+      }
+      .contact-value {
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      footer {
+        padding: 40px 0;
+        border-top: 2px solid var(--ink);
+        text-align: center;
+        font-size: 14px;
+      }
+      footer a {
+        color: var(--pink);
+        text-decoration: none;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="nav-brand">Sarah Wijaya</div>
+        <div class="nav-links">
+          <a href="#tentang">Tentang</a>
+          <a href="#keahlian">Keahlian</a>
+          <a href="#pengalaman">Pengalaman</a>
+          <a href="#portfolio">Karya</a>
+          <a href="#kontak">Kontak</a>
+          <a href="/assets/cv/sarah-wijaya.pdf" class="nav-cv" download>⬇ CV</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-tag">Graphic Designer · Ilustrator</div>
+            <h1>Bikin brand jadi <span>hidup</span> lewat visual.</h1>
+            <p class="hero-sub">
+              Saya Sarah, designer dengan 6 tahun pengalaman bikin brand
+              identity, ilustrasi, dan artwork untuk brand lokal &
+              internasional.
+            </p>
+            <div class="hero-cta">
+              <a href="#kontak" class="btn btn-primary">Hubungi Saya →</a>
+              <a
+                href="/assets/cv/sarah-wijaya.pdf"
+                class="btn btn-ghost"
+                download
+                >⬇ Download CV</a
+              >
+            </div>
+          </div>
+          <div>
+            <img
+              class="hero-photo"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop"
+              alt="Sarah Wijaya"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="tentang">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">01 — Tentang</div>
+          <h2>Cerita di balik karya</h2>
+        </div>
+        <div class="about-text">
+          <p>
+            Saya mulai dari menggambar di buku tulis, sampai akhirnya jadi
+            designer profesional. 6 tahun terakhir saya bantu brand-brand lokal
+            & internasional membangun identitas visual yang kuat.
+          </p>
+          <p>
+            Fokus saya: brand identity, ilustrasi editorial, dan artwork untuk
+            campaign digital.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="keahlian">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">02 — Keahlian</div>
+          <h2>Yang bisa saya kerjakan</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill">
+            Brand Identity <span>Logo, guideline, visual</span>
+          </div>
+          <div class="skill">Ilustrasi <span>Editorial & digital</span></div>
+          <div class="skill">UI Design <span>Web & mobile app</span></div>
+          <div class="skill">Motion <span>Animasi logo & reels</span></div>
+          <div class="skill">Packaging <span>Desain kemasan produk</span></div>
+          <div class="skill">
+            Print Design <span>Poster, buku, majalah</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">03 — Pengalaman</div>
+          <h2>Jejak profesional</h2>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2022 — Sekarang</div>
+          <div>
+            <div class="exp-role">Lead Designer</div>
+            <div class="exp-company">Studio Kreasi · Bandung</div>
+            <div class="exp-desc">
+              Memimpin tim 4 designer. Handle 20+ project brand identity untuk
+              klien lokal & Singapore.
+            </div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2020 — 2022</div>
+          <div>
+            <div class="exp-role">Visual Designer</div>
+            <div class="exp-company">Kopi Kita · Remote</div>
+            <div class="exp-desc">
+              Bikin artwork kampanye, ilustrasi menu, dan branding packaging.
+            </div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2018 — 2020</div>
+          <div>
+            <div class="exp-role">Freelance Ilustrator</div>
+            <div class="exp-company">Berbagai klien</div>
+            <div class="exp-desc">
+              Ilustrasi editorial untuk media online & cetak.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">04 — Karya</div>
+          <h2>Project pilihan</h2>
+        </div>
+        <div class="port-grid">
+          <a class="port-card" href="#">
+            <img
+              class="port-img"
+              src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600&auto=format&fit=crop"
+              alt="Brand identity"
+            />
+            <div class="port-body">
+              <div class="port-tag">Brand Identity</div>
+              <div class="port-title">Rebranding Kopi Lokal</div>
+              <div class="port-desc">
+                Identitas visual lengkap untuk kedai kopi spesialti.
+              </div>
+            </div>
+          </a>
+          <a class="port-card" href="#">
+            <img
+              class="port-img"
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"
+              alt="Ilustrasi editorial"
+            />
+            <div class="port-body">
+              <div class="port-tag">Ilustrasi</div>
+              <div class="port-title">Editorial Illustration</div>
+              <div class="port-desc">
+                Seri ilustrasi untuk artikel majalah digital.
+              </div>
+            </div>
+          </a>
+          <a class="port-card" href="#">
+            <img
+              class="port-img"
+              src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=600&auto=format&fit=crop"
+              alt="Packaging"
+            />
+            <div class="port-body">
+              <div class="port-tag">Packaging</div>
+              <div class="port-title">Skincare Packaging</div>
+              <div class="port-desc">
+                Desain kemasan untuk brand skincare lokal.
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border: none; padding: 40px 0">
+      <div class="wrap">
+        <div class="cv-band">
+          <h3>Mau kolaborasi <span>kreatif</span>?</h3>
+          <p>Download CV saya atau langsung hubungi untuk diskusi project.</p>
+          <a href="/assets/cv/sarah-wijaya.pdf" class="btn btn-primary" download
+            >⬇ Download CV (PDF)</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">05 — Kontak</div>
+          <h2>Mari terhubung</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:sarah@example.com">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">sarah@example.com</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">0812-3456-7890</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://dribbble.com/sarahwijaya"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">Dribbble</div>
+            <div class="contact-value">@sarahwijaya</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://instagram.com/sarahwijaya"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">Instagram</div>
+            <div class="contact-value">@sarahwijaya</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Template ini dibuat oleh <a href="https://velojasweb.my.id">Velo</a> —
+          Jasa Pembuatan Website Profesional.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

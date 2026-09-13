@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dewi Lestari — Marketing Manager | Resume Online</title>
+    <meta
+      name="description"
+      content="Resume online Dewi Lestari, Marketing Manager dengan 8 tahun pengalaman di FMCG. Download CV lengkap."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #f7f9fc;
+        --surface: #ffffff;
+        --ink: #1a2330;
+        --ink-soft: #4a5568;
+        --line: #e4e9f0;
+        --accent: #1e4e8c;
+        --accent-soft: #ebf2fb;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+        font-size: 15px;
+      }
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      nav {
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line);
+        background: var(--surface);
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-brand {
+        font-weight: 700;
+        font-size: 16px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 640px) {
+        .nav-links a:not(.nav-cv) {
+          display: none;
+        }
+      }
+      .nav-cv {
+        padding: 8px 16px;
+        background: var(--accent);
+        color: white !important;
+        border-radius: 6px;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+      }
+
+      /* HEADER */
+      .header {
+        background: var(--surface);
+        padding: 48px 0 40px;
+        border-bottom: 1px solid var(--line);
+      }
+      .header-grid {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+      @media (max-width: 640px) {
+        .header-grid {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      .header-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--bg);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        flex-shrink: 0;
+      }
+      .header-info h1 {
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 4px;
+      }
+      .header-role {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      .header-meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+      @media (max-width: 640px) {
+        .header-meta {
+          justify-content: center;
+        }
+      }
+      .header-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* BODY */
+      main {
+        padding: 48px 0;
+      }
+      section {
+        margin-bottom: 40px;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--accent-soft);
+      }
+
+      .summary {
+        color: var(--ink-soft);
+        font-size: 15px;
+      }
+
+      .exp-item {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 32px;
+        margin-bottom: 28px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--line);
+      }
+      .exp-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+      @media (max-width: 640px) {
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+      .exp-meta {
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+      .exp-meta strong {
+        color: var(--ink);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 2px;
+        font-size: 14px;
+      }
+      .exp-content h3 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .exp-content .company {
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      .exp-content ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .exp-content li {
+        color: var(--ink-soft);
+        font-size: 14px;
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 6px;
+      }
+      .exp-content li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      .skill-group {
+        background: var(--surface);
+        padding: 16px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+      }
+      .skill-group h4 {
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .skill-group p {
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      .edu-item {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 32px;
+        margin-bottom: 20px;
+      }
+      @media (max-width: 640px) {
+        .edu-item {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+      .edu-meta {
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+      .edu-content h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+      .edu-content p {
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      .cta-band {
+        background: var(--accent);
+        color: white;
+        padding: 40px 32px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 40px;
+      }
+      .cta-band h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .cta-band p {
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+      .btn-white {
+        display: inline-flex;
+        padding: 12px 24px;
+        background: white;
+        color: var(--accent);
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+      .btn-white:hover {
+        background: var(--ink);
+        color: white;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+      }
+      .contact-card {
+        padding: 16px 20px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.2s;
+      }
+      .contact-card:hover {
+        border-color: var(--accent);
+      }
+      .contact-label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 4px;
+        letter-spacing: 0.05em;
+      }
+      .contact-value {
+        font-weight: 600;
+        color: var(--accent);
+        font-size: 14px;
+      }
+
+      footer {
+        padding: 32px 0;
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="nav-brand">Dewi Lestari</div>
+        <div class="nav-links">
+          <a href="#ringkasan">Ringkasan</a>
+          <a href="#pengalaman">Pengalaman</a>
+          <a href="#keahlian">Keahlian</a>
+          <a href="#pendidikan">Pendidikan</a>
+          <a href="#kontak">Kontak</a>
+          <a href="/assets/cv/dewi-lestari.pdf" class="nav-cv" download
+            >⬇ Download CV</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="header">
+      <div class="wrap">
+        <div class="header-grid">
+          <img
+            class="header-photo"
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+            alt="Dewi Lestari"
+          />
+          <div class="header-info">
+            <h1>Dewi Lestari</h1>
+            <div class="header-role">Marketing Manager</div>
+            <div class="header-meta">
+              <span>📍 Jakarta, Indonesia</span>
+              <span>✉️ dewi@example.com</span>
+              <span>📱 0812-3456-7890</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <section id="ringkasan">
+          <div class="section-title">Ringkasan Profesional</div>
+          <p class="summary">
+            Marketing Manager dengan 8 tahun pengalaman di industri FMCG dan
+            e-commerce. Terbukti meningkatkan revenue 45% melalui strategi
+            omnichannel dan campaign digital. Memimpin tim 12 orang dan
+            mengelola budget marketing hingga Rp15 miliar/tahun.
+          </p>
+        </section>
+
+        <section id="pengalaman">
+          <div class="section-title">Pengalaman Kerja</div>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <strong>2022 — Sekarang</strong>
+              Jakarta, Indonesia
+            </div>
+            <div class="exp-content">
+              <h3>Marketing Manager</h3>
+              <div class="company">PT Unilever Indonesia</div>
+              <ul>
+                <li>
+                  Memimpin tim 12 orang untuk brand personal care senilai Rp500
+                  miliar/tahun.
+                </li>
+                <li>
+                  Meningkatkan brand awareness 38% melalui campaign digital
+                  omnichannel.
+                </li>
+                <li>
+                  Mengelola budget marketing Rp15 miliar dengan efisiensi biaya
+                  18%.
+                </li>
+                <li>
+                  Meluncurkan 5 produk baru dengan rata-rata 3 bulan lebih cepat
+                  dari target.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <strong>2019 — 2022</strong>
+              Jakarta, Indonesia
+            </div>
+            <div class="exp-content">
+              <h3>Assistant Marketing Manager</h3>
+              <div class="company">Tokopedia</div>
+              <ul>
+                <li>
+                  Mengelola campaign untuk kategori FMCG dengan GMV Rp2
+                  triliun/tahun.
+                </li>
+                <li>
+                  Berkolaborasi dengan 50+ brand untuk campaign 12.12 &
+                  Harbolnas.
+                </li>
+                <li>
+                  Meningkatkan conversion rate 25% melalui A/B testing dan
+                  optimasi funnel.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-meta">
+              <strong>2016 — 2019</strong>
+              Bandung, Indonesia
+            </div>
+            <div class="exp-content">
+              <h3>Marketing Executive</h3>
+              <div class="company">PT Kalbe Farma</div>
+              <ul>
+                <li>
+                  Menjalankan aktivasi brand di 200+ apotek & modern trade.
+                </li>
+                <li>
+                  Meraih penghargaan "Best Field Marketing 2018" dari internal.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="keahlian">
+          <div class="section-title">Keahlian</div>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h4>Marketing Strategy</h4>
+              <p>Brand positioning, go-to-market, campaign planning</p>
+            </div>
+            <div class="skill-group">
+              <h4>Digital Marketing</h4>
+              <p>Meta Ads, Google Ads, TikTok Ads, SEO</p>
+            </div>
+            <div class="skill-group">
+              <h4>Data & Analytics</h4>
+              <p>Google Analytics, Tableau, A/B testing</p>
+            </div>
+            <div class="skill-group">
+              <h4>Leadership</h4>
+              <p>Team management, mentoring, cross-functional collaboration</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="pendidikan">
+          <div class="section-title">Pendidikan</div>
+          <div class="edu-item">
+            <div class="edu-meta"><strong>2012 — 2016</strong></div>
+            <div class="edu-content">
+              <h3>S1 Manajemen</h3>
+              <p>Universitas Indonesia · IPK 3.75/4.00</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-meta"><strong>2018</strong></div>
+            <div class="edu-content">
+              <h3>Sertifikasi Digital Marketing</h3>
+              <p>Google & Meta Blueprint Certified</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="kontak">
+          <div class="section-title">Kontak</div>
+          <div class="contact-grid">
+            <a class="contact-card" href="mailto:dewi@example.com">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">dewi@example.com</div>
+            </a>
+            <a
+              class="contact-card"
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-value">0812-3456-7890</div>
+            </a>
+            <a
+              class="contact-card"
+              href="https://linkedin.com/in/dewilestari"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">in/dewilestari</div>
+            </a>
+          </div>
+        </section>
+
+        <div class="cta-band">
+          <h3>Siap bekerja sama?</h3>
+          <p>Download CV lengkap saya dalam format PDF.</p>
+          <a href="/assets/cv/dewi-lestari.pdf" class="btn-white" download
+            >⬇ Download CV (PDF)</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

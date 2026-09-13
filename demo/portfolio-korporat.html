@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budi Santoso — Business Consultant | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio Budi Santoso, Business Consultant dengan 12 tahun pengalaman. Download CV dan hubungi untuk konsultasi bisnis."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #ffffff;
+        --ink: #0f2c4c;
+        --ink-soft: #4a5f7a;
+        --line: #d9e1eb;
+        --gold: #c9a227;
+        --navy-soft: #f4f7fa;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+
+      nav {
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-brand {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+      }
+      .nav-links a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+      @media (max-width: 640px) {
+        .nav-links a:not(.nav-cv) {
+          display: none;
+        }
+      }
+      .nav-cv {
+        padding: 10px 20px;
+        background: var(--ink);
+        color: white !important;
+        border-radius: 6px;
+        font-size: 13px !important;
+      }
+
+      .hero {
+        padding: 80px 0;
+        background: var(--navy-soft);
+        border-bottom: 1px solid var(--line);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      @media (max-width: 800px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .hero-tag {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: clamp(36px, 5vw, 52px);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 24px;
+      }
+      .hero-sub {
+        font-size: 17px;
+        color: var(--ink-soft);
+        max-width: 50ch;
+        margin-bottom: 32px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        padding: 14px 28px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: white;
+      }
+      .btn-primary:hover {
+        background: var(--gold);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+      }
+      .btn-ghost:hover {
+        background: var(--ink);
+        color: white;
+      }
+
+      .hero-photo {
+        aspect-ratio: 4/5;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 24px 48px rgba(15, 44, 76, 0.15);
+      }
+
+      section {
+        padding: 80px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .section-head {
+        margin-bottom: 48px;
+      }
+      .section-label {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        margin-bottom: 12px;
+      }
+      .section-head h2 {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: clamp(28px, 4vw, 40px);
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+      }
+
+      .about-text {
+        font-size: 17px;
+        color: var(--ink-soft);
+        max-width: 65ch;
+      }
+      .about-text p + p {
+        margin-top: 16px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .skill {
+        padding: 28px;
+        background: white;
+      }
+      .skill-title {
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+      .skill span {
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      .exp-item {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 48px;
+        padding: 32px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .exp-item:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 640px) {
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+      .exp-date {
+        color: var(--ink-soft);
+        font-size: 14px;
+        padding-top: 4px;
+      }
+      .exp-role {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 4px;
+        letter-spacing: -0.01em;
+      }
+      .exp-company {
+        color: var(--gold);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .exp-desc {
+        color: var(--ink-soft);
+        font-size: 15px;
+      }
+
+      .port-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 32px;
+      }
+      .port-card {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+      .port-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 16px;
+      }
+      .port-tag {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .port-title {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+      .port-desc {
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      .cv-band {
+        background: var(--ink);
+        color: white;
+        padding: 64px 48px;
+        text-align: center;
+      }
+      .cv-band h3 {
+        font-family: "Fraunces", serif;
+        font-weight: 400;
+        font-size: clamp(28px, 4vw, 40px);
+        margin-bottom: 16px;
+        letter-spacing: -0.01em;
+      }
+      .cv-band p {
+        color: #a8b8cc;
+        margin-bottom: 24px;
+      }
+      .cv-band .btn-primary {
+        background: var(--gold);
+        color: var(--ink);
+      }
+      .cv-band .btn-primary:hover {
+        background: white;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .contact-card {
+        padding: 28px;
+        background: white;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.2s;
+      }
+      .contact-card:hover {
+        background: var(--navy-soft);
+      }
+      .contact-label {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+      .contact-value {
+        font-weight: 600;
+        font-size: 15px;
+      }
+
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+      footer a {
+        color: var(--gold);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="nav-brand">Budi Santoso</div>
+        <div class="nav-links">
+          <a href="#tentang">Tentang</a>
+          <a href="#keahlian">Keahlian</a>
+          <a href="#pengalaman">Pengalaman</a>
+          <a href="#portfolio">Studi Kasus</a>
+          <a href="#kontak">Kontak</a>
+          <a href="/assets/cv/budi-santoso.pdf" class="nav-cv" download>⬇ CV</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-tag">Business Consultant</div>
+            <h1>Membantu bisnis tumbuh dengan strategi yang terukur.</h1>
+            <p class="hero-sub">
+              Konsultan bisnis dengan 12 tahun pengalaman di FMCG, retail, dan
+              startup. Spesialisasi: business strategy, operational excellence,
+              dan growth.
+            </p>
+            <div class="hero-cta">
+              <a href="#kontak" class="btn btn-primary">Jadwalkan Konsultasi</a>
+              <a
+                href="/assets/cv/budi-santoso.pdf"
+                class="btn btn-ghost"
+                download
+                >⬇ Download CV</a
+              >
+            </div>
+          </div>
+          <div>
+            <img
+              class="hero-photo"
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop"
+              alt="Budi Santoso"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="tentang">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">01 — Tentang</div>
+          <h2>Latar belakang</h2>
+        </div>
+        <div class="about-text">
+          <p>
+            Saya Budi, konsultan bisnis dengan pengalaman 12 tahun di industri
+            FMCG, retail, dan startup. Saya percaya setiap bisnis punya potensi
+            untuk tumbuh — dengan strategi yang tepat dan eksekusi yang
+            disiplin.
+          </p>
+          <p>
+            Klien saya berkisar dari UMKM sampai perusahaan multinasional.
+            Fokus: business strategy, operational excellence, dan growth
+            strategy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="keahlian">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">02 — Keahlian</div>
+          <h2>Bidang keahlian</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill">
+            <div class="skill-title">Business Strategy</div>
+            <span>Roadmap & OKR</span>
+          </div>
+          <div class="skill">
+            <div class="skill-title">Operational Excellence</div>
+            <span>Proses & efisiensi</span>
+          </div>
+          <div class="skill">
+            <div class="skill-title">Growth Strategy</div>
+            <span>Go-to-market plan</span>
+          </div>
+          <div class="skill">
+            <div class="skill-title">Financial Modeling</div>
+            <span>Valuasi & forecast</span>
+          </div>
+          <div class="skill">
+            <div class="skill-title">Change Management</div>
+            <span>Transformasi organisasi</span>
+          </div>
+          <div class="skill">
+            <div class="skill-title">Team Leadership</div>
+            <span>Membangun & scale tim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">03 — Pengalaman</div>
+          <h2>Rekam jejak</h2>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2019 — Sekarang</div>
+          <div>
+            <div class="exp-role">Principal Consultant</div>
+            <div class="exp-company">Santoso Advisory · Jakarta</div>
+            <div class="exp-desc">
+              Memimpin 40+ project konsultasi untuk klien FMCG, retail, dan
+              startup. Rata-rata ROI klien: 3.2x dalam 18 bulan.
+            </div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2015 — 2019</div>
+          <div>
+            <div class="exp-role">Senior Manager, Strategy</div>
+            <div class="exp-company">Unilever Indonesia · Jakarta</div>
+            <div class="exp-desc">
+              Handle strategic planning untuk kategori personal care.
+              Bertanggung jawab atas P&L sebesar Rp500 miliar.
+            </div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2013 — 2015</div>
+          <div>
+            <div class="exp-role">Business Analyst</div>
+            <div class="exp-company">McKinsey & Company · Jakarta</div>
+            <div class="exp-desc">
+              Bergabung dalam tim konsultasi untuk klien banking dan FMCG di
+              Asia Tenggara.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">04 — Studi Kasus</div>
+          <h2>Project pilihan</h2>
+        </div>
+        <div class="port-grid">
+          <a class="port-card" href="#">
+            <img
+              class="port-img"
+              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=600&auto=format&fit=crop"
+              alt="Retail transformation"
+            />
+            <div class="port-tag">Retail</div>
+            <div class="port-title">Transformasi 50 Toko Retail</div>
+            <div class="port-desc">
+              Meningkatkan profitabilitas 40% dalam 12 bulan.
+            </div>
+          </a>
+          <a class="port-card" href="#">
+            <img
+              class="port-img"
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600&auto=format&fit=crop"
+              alt="Startup growth"
+            />
+            <div class="port-tag">Startup</div>
+            <div class="port-title">Go-to-Market Strategy</div>
+            <div class="port-desc">
+              Membantu startup B2B scale dari 10 ke 100 klien.
+            </div>
+          </a>
+          <a class="port-card" href="#">
+            <img
+              class="port-img"
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop"
+              alt="Ops excellence"
+            />
+            <div class="port-tag">Manufacturing</div>
+            <div class="port-title">Operational Excellence Program</div>
+            <div class="port-desc">
+              Mengurangi biaya operasional 22% dalam 6 bulan.
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border: none; padding: 0">
+      <div class="cv-band">
+        <h3>Siap diskusi bisnis Anda?</h3>
+        <p>
+          Download CV saya atau jadwalkan sesi konsultasi 30 menit — gratis.
+        </p>
+        <a href="/assets/cv/budi-santoso.pdf" class="btn btn-primary" download
+          >⬇ Download CV (PDF)</a
+        >
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">05 — Kontak</div>
+          <h2>Hubungi saya</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:budi@santosoadvisory.com">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">budi@santosoadvisory.com</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">0812-3456-7890</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://linkedin.com/in/budisantoso"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">in/budisantoso</div>
+          </a>
+          <a class="contact-card" href="#" target="_blank" rel="noopener">
+            <div class="contact-label">Calendly</div>
+            <div class="contact-value">Jadwalkan Sesi</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Template ini dibuat oleh <a href="https://velojasweb.my.id">Velo</a> —
+          Jasa Pembuatan Website Profesional.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

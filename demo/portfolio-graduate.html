@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aditya Nugraha — Fresh Graduate Informatika | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio Aditya Nugraha, fresh graduate S1 Informatika dengan pengalaman magang dan organisasi. Download CV."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f5f8fd;
+        --ink: #0f172a;
+        --ink-soft: #64748b;
+        --line: #e2e8f0;
+        --accent: #3b82f6;
+        --accent-2: #8b5cf6;
+        --accent-soft: #eff6ff;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      nav {
+        padding: 20px 0;
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-brand {
+        font-weight: 800;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+      }
+      .nav-brand span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 640px) {
+        .nav-links a:not(.nav-cv) {
+          display: none;
+        }
+      }
+      .nav-cv {
+        padding: 10px 20px;
+        background: var(--accent);
+        color: white !important;
+        border-radius: 100px;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+      }
+
+      .hero {
+        padding: 60px 0 80px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 800px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      .hero-badge {
+        display: inline-block;
+        padding: 6px 14px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 4.5vw, 48px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+      }
+      .hero h1 span {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-sub {
+        font-size: 17px;
+        color: var(--ink-soft);
+        margin-bottom: 32px;
+        max-width: 55ch;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        transition: all 0.2s;
+        border: 1.5px solid transparent;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+      .btn-primary:hover {
+        background: var(--accent-2);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line);
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .hero-photo-wrap {
+        position: relative;
+      }
+      .hero-photo {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 24px;
+        object-fit: cover;
+        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+      }
+      .hero-deco {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.4;
+      }
+      .hero-deco-1 {
+        width: 100px;
+        height: 100px;
+        background: var(--accent);
+        top: -30px;
+        right: -30px;
+      }
+      .hero-deco-2 {
+        width: 60px;
+        height: 60px;
+        background: var(--accent-2);
+        bottom: -20px;
+        left: -20px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+      .section-head {
+        margin-bottom: 40px;
+      }
+      .section-label {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+      }
+      .section-head h2 {
+        font-size: clamp(24px, 3.5vw, 32px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .about-text {
+        font-size: 16px;
+        color: var(--ink-soft);
+        max-width: 65ch;
+      }
+      .about-text p + p {
+        margin-top: 16px;
+      }
+      .about-text strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+      }
+      .skill {
+        padding: 16px 20px;
+        background: var(--bg-soft);
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+      .skill:hover {
+        background: var(--accent-soft);
+        color: var(--accent);
+      }
+      .skill span {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--ink-soft);
+        margin-top: 4px;
+      }
+
+      .exp-item {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 32px;
+        padding: 24px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .exp-item:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 640px) {
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+      .exp-date {
+        color: var(--ink-soft);
+        font-size: 13px;
+        font-weight: 600;
+        padding-top: 4px;
+      }
+      .exp-role {
+        font-weight: 700;
+        font-size: 17px;
+        margin-bottom: 4px;
+      }
+      .exp-company {
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .exp-desc {
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+      }
+      .project-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
+        text-decoration: none;
+        color: inherit;
+      }
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      }
+      .project-img {
+        width: 100%;
+        aspect-ratio: 16/10;
+        object-fit: cover;
+      }
+      .project-body {
+        padding: 20px;
+      }
+      .project-tag {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .project-title {
+        font-weight: 700;
+        font-size: 16px;
+        margin: 6px 0;
+      }
+      .project-desc {
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+
+      .cta-band {
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: white;
+        padding: 60px 40px;
+        border-radius: 24px;
+        text-align: center;
+        margin: 40px 0;
+      }
+      .cta-band h3 {
+        font-size: clamp(24px, 3.5vw, 32px);
+        font-weight: 800;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+      }
+      .cta-band p {
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 24px;
+      }
+      .cta-band .btn-white {
+        display: inline-flex;
+        padding: 14px 28px;
+        background: white;
+        color: var(--accent);
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        transition: all 0.2s;
+      }
+      .cta-band .btn-white:hover {
+        background: var(--ink);
+        color: white;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      .contact-card {
+        padding: 20px;
+        background: var(--bg-soft);
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s;
+      }
+      .contact-card:hover {
+        background: var(--accent-soft);
+      }
+      .contact-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 6px;
+      }
+      .contact-value {
+        font-weight: 600;
+        color: var(--accent);
+        font-size: 14px;
+      }
+
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 13px;
+      }
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="nav-brand">aditya<span>.</span>dev</div>
+        <div class="nav-links">
+          <a href="#tentang">Tentang</a>
+          <a href="#keahlian">Keahlian</a>
+          <a href="#pengalaman">Pengalaman</a>
+          <a href="#project">Project</a>
+          <a href="#kontak">Kontak</a>
+          <a href="/assets/cv/aditya-nugraha.pdf" class="nav-cv" download
+            >⬇ Download CV</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">🎓 Fresh Graduate · S1 Informatika</div>
+            <h1>Siap berkontribusi, siap <span>berkembang</span>.</h1>
+            <p class="hero-sub">
+              Halo! Saya Aditya, lulusan Informatika IPB dengan IPK 3.85.
+              Berpengalaman magang di startup teknologi & aktif di organisasi
+              kemahasiswaan.
+            </p>
+            <div class="hero-cta">
+              <a href="#kontak" class="btn btn-primary">Hubungi Saya →</a>
+              <a
+                href="/assets/cv/aditya-nugraha.pdf"
+                class="btn btn-ghost"
+                download
+                >⬇ Download CV</a
+              >
+            </div>
+          </div>
+          <div class="hero-photo-wrap">
+            <div class="hero-deco hero-deco-1"></div>
+            <div class="hero-deco hero-deco-2"></div>
+            <img
+              class="hero-photo"
+              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=500&auto=format&fit=crop"
+              alt="Aditya Nugraha"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="tentang">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">01 — Tentang</div>
+          <h2>Cerita singkat</h2>
+        </div>
+        <div class="about-text">
+          <p>
+            Saya fresh graduate S1 Informatika dari IPB University dengan
+            <strong>IPK 3.85/4.00</strong>. Selama kuliah, saya aktif sebagai
+            asisten dosen, anggota himpunan mahasiswa, dan mengikuti 3 kompetisi
+            hackathon nasional.
+          </p>
+          <p>
+            Fokus saya: <strong>backend development</strong> dan
+            <strong>data engineering</strong>. Saya senang membangun sistem yang
+            skalabel dan memecahkan masalah teknis yang menantang.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="keahlian" style="background: var(--bg-soft)">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">02 — Keahlian</div>
+          <h2>Apa yang saya kuasai</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill">Python <span>Intermediate</span></div>
+          <div class="skill">JavaScript <span>Intermediate</span></div>
+          <div class="skill">Node.js <span>Beginner</span></div>
+          <div class="skill">PostgreSQL <span>Intermediate</span></div>
+          <div class="skill">Git & GitHub <span>Advanced</span></div>
+          <div class="skill">Linux <span>Intermediate</span></div>
+          <div class="skill">Docker <span>Beginner</span></div>
+          <div class="skill">Figma <span>Intermediate</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">03 — Pengalaman</div>
+          <h2>Magang & organisasi</h2>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">Jun 2025 — Sep 2025</div>
+          <div>
+            <div class="exp-role">Backend Developer Intern</div>
+            <div class="exp-company">Tokopedia · Jakarta</div>
+            <div class="exp-desc">
+              Mengembangkan REST API untuk fitur internal menggunakan Node.js &
+              PostgreSQL. Menulis unit test dengan coverage 85%.
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">2023 — 2025</div>
+          <div>
+            <div class="exp-role">Ketua Divisi Teknologi</div>
+            <div class="exp-company">Himpunan Mahasiswa Informatika IPB</div>
+            <div class="exp-desc">
+              Memimpin tim 8 orang. Membangun website himpunan dari nol (Next.js
+              + PostgreSQL).
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">2024</div>
+          <div>
+            <div class="exp-role">Asisten Dosen</div>
+            <div class="exp-company">IPB University</div>
+            <div class="exp-desc">
+              Asisten mata kuliah Struktur Data untuk 120 mahasiswa. Membantu
+              sesi praktikum dan penilaian tugas.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project" style="background: var(--bg-soft)">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">04 — Project</div>
+          <h2>Karya pilihan</h2>
+        </div>
+        <div class="project-grid">
+          <a class="project-card" href="#">
+            <img
+              class="project-img"
+              src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=600&auto=format&fit=crop"
+              alt="Project 1"
+            />
+            <div class="project-body">
+              <div class="project-tag">Web App</div>
+              <div class="project-title">Sistem Informasi Kampus</div>
+              <div class="project-desc">
+                Web app untuk manajemen jadwal & nilai. Next.js + PostgreSQL.
+              </div>
+            </div>
+          </a>
+          <a class="project-card" href="#">
+            <img
+              class="project-img"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop"
+              alt="Project 2"
+            />
+            <div class="project-body">
+              <div class="project-tag">Data Science</div>
+              <div class="project-title">Analisis Sentimen Twitter</div>
+              <div class="project-desc">
+                Klasifikasi sentimen tweet Bahasa Indonesia dengan Python +
+                BERT.
+              </div>
+            </div>
+          </a>
+          <a class="project-card" href="#">
+            <img
+              class="project-img"
+              src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=600&auto=format&fit=crop"
+              alt="Project 3"
+            />
+            <div class="project-body">
+              <div class="project-tag">Mobile</div>
+              <div class="project-title">Aplikasi Resep Masakan</div>
+              <div class="project-desc">
+                Aplikasi mobile React Native dengan 500+ resep.
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap" style="padding: 0 24px">
+      <div class="cta-band">
+        <h3>Tertarik merekrut saya?</h3>
+        <p>Download CV lengkap atau hubungi saya langsung untuk diskusi.</p>
+        <a href="/assets/cv/aditya-nugraha.pdf" class="btn-white" download
+          >⬇ Download CV (PDF)</a
+        >
+      </div>
+    </div>
+
+    <section id="kontak">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">05 — Kontak</div>
+          <h2>Mari terhubung</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:aditya@example.com">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">aditya@example.com</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">0812-3456-7890</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://github.com/adityanugraha"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">@adityanugraha</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://linkedin.com/in/adityanugraha"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">in/adityanugraha</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

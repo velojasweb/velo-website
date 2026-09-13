@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reza Mahendra — Full Stack Developer | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio Reza Mahendra, Full Stack Developer. Lihat project, keahlian teknis, dan download CV."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #0a0e14;
+        --bg-soft: #11161f;
+        --ink: #e6edf3;
+        --ink-dim: #8b949e;
+        --line: #1f2937;
+        --accent: #00ff88;
+        --accent-dim: #00cc6a;
+        --amber: #ffb347;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      code,
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      nav {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        background: rgba(10, 14, 20, 0.9);
+        backdrop-filter: blur(12px);
+        z-index: 50;
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-brand {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--accent);
+      }
+      .nav-brand::before {
+        content: "~/ ";
+        color: var(--ink-dim);
+      }
+      .nav-links {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--ink-dim);
+        text-decoration: none;
+        font-size: 13px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 640px) {
+        .nav-links a:not(.nav-cv) {
+          display: none;
+        }
+      }
+      .nav-cv {
+        padding: 8px 16px;
+        background: var(--accent);
+        color: var(--bg) !important;
+        border-radius: 6px;
+        font-weight: 700 !important;
+      }
+
+      .hero {
+        padding: 80px 0 100px;
+      }
+      .hero-terminal {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: var(--ink-dim);
+        margin-bottom: 24px;
+      }
+      .hero-terminal::before {
+        content: "$ ";
+        color: var(--accent);
+      }
+      .hero-terminal::after {
+        content: "_";
+        animation: blink 1s infinite;
+        color: var(--accent);
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .hero h1 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: clamp(32px, 5vw, 52px);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 24px;
+      }
+      .hero h1 .accent {
+        color: var(--accent);
+      }
+      .hero h1 .amber {
+        color: var(--amber);
+      }
+      .hero-sub {
+        font-size: 17px;
+        color: var(--ink-dim);
+        max-width: 60ch;
+        margin-bottom: 32px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        font-family: "JetBrains Mono", monospace;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: var(--bg);
+      }
+      .btn-primary:hover {
+        background: var(--amber);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--line);
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      section {
+        padding: 80px 0;
+        border-top: 1px solid var(--line);
+      }
+      .section-head {
+        margin-bottom: 48px;
+      }
+      .section-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+      .section-label::before {
+        content: "// ";
+        color: var(--ink-dim);
+      }
+      .section-head h2 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: clamp(24px, 3.5vw, 36px);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+
+      .about-text {
+        font-size: 16px;
+        color: var(--ink-dim);
+        max-width: 65ch;
+      }
+      .about-text p + p {
+        margin-top: 16px;
+      }
+      .about-text strong {
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+      }
+      .skill {
+        padding: 20px;
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        transition: border-color 0.2s;
+      }
+      .skill:hover {
+        border-color: var(--accent);
+      }
+      .skill::before {
+        content: "▸ ";
+        color: var(--accent);
+      }
+      .skill span {
+        display: block;
+        font-size: 12px;
+        color: var(--ink-dim);
+        margin-top: 6px;
+        margin-left: 16px;
+      }
+
+      .exp-item {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 40px;
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .exp-item:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 640px) {
+        .exp-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+      }
+      .exp-date {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--ink-dim);
+        font-size: 13px;
+        padding-top: 4px;
+      }
+      .exp-role {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 4px;
+        color: var(--ink);
+      }
+      .exp-company {
+        color: var(--accent);
+        font-size: 13px;
+        font-family: "JetBrains Mono", monospace;
+        margin-bottom: 12px;
+      }
+      .exp-desc {
+        color: var(--ink-dim);
+        font-size: 14px;
+      }
+
+      .port-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .port-card {
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .port-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-4px);
+      }
+      .port-header {
+        padding: 12px 16px;
+        background: rgba(0, 255, 136, 0.05);
+        border-bottom: 1px solid var(--line);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--accent);
+        display: flex;
+        justify-content: space-between;
+      }
+      .port-header::before {
+        content: "● ● ●";
+        color: var(--ink-dim);
+        letter-spacing: 2px;
+      }
+      .port-body {
+        padding: 20px;
+      }
+      .port-title {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+      .port-desc {
+        color: var(--ink-dim);
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      .port-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .port-stack span {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        padding: 3px 8px;
+        background: rgba(255, 179, 71, 0.1);
+        color: var(--amber);
+        border-radius: 4px;
+      }
+
+      .cv-band {
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 64px 48px;
+        text-align: center;
+      }
+      .cv-band h3 {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: clamp(24px, 3.5vw, 36px);
+        margin-bottom: 16px;
+        letter-spacing: -0.02em;
+      }
+      .cv-band h3 span {
+        color: var(--accent);
+      }
+      .cv-band p {
+        color: var(--ink-dim);
+        margin-bottom: 24px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+      }
+      .contact-card {
+        padding: 20px;
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.2s;
+      }
+      .contact-card:hover {
+        border-color: var(--accent);
+      }
+      .contact-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--ink-dim);
+        margin-bottom: 6px;
+      }
+      .contact-label::before {
+        content: "▸ ";
+        color: var(--accent);
+      }
+      .contact-value {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--accent);
+      }
+
+      footer {
+        padding: 40px 0;
+        border-top: 1px solid var(--line);
+        text-align: center;
+        color: var(--ink-dim);
+        font-size: 13px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="nav-brand">reza-mahendra</div>
+        <div class="nav-links">
+          <a href="#tentang">.about()</a>
+          <a href="#keahlian">.skills()</a>
+          <a href="#pengalaman">.experience()</a>
+          <a href="#portfolio">.projects()</a>
+          <a href="#kontak">.contact()</a>
+          <a href="/assets/cv/reza-mahendra.pdf" class="nav-cv" download
+            >⬇ CV</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-terminal">whoami</div>
+        <h1>
+          Full Stack <span class="accent">Developer</span>,<br />Problem
+          <span class="amber">Solver</span>.
+        </h1>
+        <p class="hero-sub">
+          Saya Reza, full stack developer dengan 7 tahun pengalaman.
+          Spesialisasi: Node.js, React, dan cloud architecture. Fokus pada
+          performa & maintainability.
+        </p>
+        <div class="hero-cta">
+          <a href="#kontak" class="btn btn-primary">$ Hubungi Saya</a>
+          <a href="/assets/cv/reza-mahendra.pdf" class="btn btn-ghost" download
+            >⬇ Download CV</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <section id="tentang">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">01 — Tentang</div>
+          <h2>const about = { ... }</h2>
+        </div>
+        <div class="about-text">
+          <p>
+            Saya memulai coding sejak SMA — awalnya bikin bot Discord, sekarang
+            membangun <strong>sistem backend skala besar</strong> untuk startup
+            dan enterprise.
+          </p>
+          <p>
+            Saya percaya kode yang baik adalah kode yang
+            <strong>mudah dibaca</strong> oleh orang lain 6 bulan kemudian —
+            termasuk diri sendiri.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="keahlian">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">02 — Keahlian</div>
+          <h2>const skills = [ ... ]</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill">Node.js <span>Express, Fastify, NestJS</span></div>
+          <div class="skill">React <span>Next.js, Remix, Vite</span></div>
+          <div class="skill">PostgreSQL <span>Query optimization</span></div>
+          <div class="skill">AWS <span>Lambda, EC2, RDS</span></div>
+          <div class="skill">Docker <span>Container & orchestration</span></div>
+          <div class="skill">TypeScript <span>Type-safe codebase</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">03 — Pengalaman</div>
+          <h2>const experience = [ ... ]</h2>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2022 — Now</div>
+          <div>
+            <div class="exp-role">Senior Backend Engineer</div>
+            <div class="exp-company">// Tokopedia · Jakarta</div>
+            <div class="exp-desc">
+              Memimpin migrasi monolith ke microservices. Handle 50k RPS dengan
+              uptime 99.99%.
+            </div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2020 — 2022</div>
+          <div>
+            <div class="exp-role">Full Stack Engineer</div>
+            <div class="exp-company">// Ruangguru · Remote</div>
+            <div class="exp-desc">
+              Bikin platform kuis realtime. Handle 10k concurrent users saat
+              ujian nasional.
+            </div>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-date">2018 — 2020</div>
+          <div>
+            <div class="exp-role">Junior Developer</div>
+            <div class="exp-company">// Startup Lokal · Bandung</div>
+            <div class="exp-desc">
+              Bikin MVP untuk 3 startup. Stack: Node.js + PostgreSQL + React.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">04 — Projects</div>
+          <h2>const projects = [ ... ]</h2>
+        </div>
+        <div class="port-grid">
+          <a class="port-card" href="#">
+            <div class="port-header">project-01</div>
+            <div class="port-body">
+              <div class="port-title">Realtime Analytics</div>
+              <div class="port-desc">
+                Dashboard analytics realtime untuk 500k events/detik.
+              </div>
+              <div class="port-stack">
+                <span>Node.js</span><span>ClickHouse</span><span>Redis</span>
+              </div>
+            </div>
+          </a>
+          <a class="port-card" href="#">
+            <div class="port-header">project-02</div>
+            <div class="port-body">
+              <div class="port-title">E-Wallet API</div>
+              <div class="port-desc">
+                REST API untuk e-wallet dengan transaksi 100k/hari.
+              </div>
+              <div class="port-stack">
+                <span>NestJS</span><span>PostgreSQL</span><span>Kafka</span>
+              </div>
+            </div>
+          </a>
+          <a class="port-card" href="#">
+            <div class="port-header">project-03</div>
+            <div class="port-body">
+              <div class="port-title">DevOps Pipeline</div>
+              <div class="port-desc">
+                CI/CD otomatis untuk 20+ microservices.
+              </div>
+              <div class="port-stack">
+                <span>Docker</span><span>K8s</span><span>Terraform</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section style="border: none; padding: 20px 0">
+      <div class="wrap">
+        <div class="cv-band">
+          <h3>Let's <span>build</span> something.</h3>
+          <p>// Tersedia untuk freelance & kontrak</p>
+          <a
+            href="/assets/cv/reza-mahendra.pdf"
+            class="btn btn-primary"
+            download
+            >$ Download CV (PDF)</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">05 — Kontak</div>
+          <h2>const contact = { ... }</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:reza@example.com">
+            <div class="contact-label">email</div>
+            <div class="contact-value">reza@example.com</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">whatsapp</div>
+            <div class="contact-value">0812-3456-7890</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://github.com/rezamahendra"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">github</div>
+            <div class="contact-value">@rezamahendra</div>
+          </a>
+          <a
+            class="contact-card"
+            href="https://linkedin.com/in/rezamahendra"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="contact-label">linkedin</div>
+            <div class="contact-value">in/rezamahendra</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p>
+          // Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

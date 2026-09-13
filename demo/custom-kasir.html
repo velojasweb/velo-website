@@ -44,20 +44,122 @@
         height: 100vh;
       }
       @media (max-width: 900px) {
+        body {
+          height: auto;
+          overflow: auto;
+          padding-bottom: 90px;
+        }
         .app {
           grid-template-columns: 1fr;
+          height: auto;
+          min-height: 100vh;
+        }
+        .left {
+          padding: 16px;
+          overflow: visible;
+        }
+        .topbar h1 {
+          font-size: 18px;
+        }
+        .search {
+          width: 100%;
+        }
+        .products {
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+          gap: 10px;
+        }
+        .product {
+          padding: 12px 8px;
+        }
+        .product-emoji {
+          font-size: 28px;
+        }
+        .product-name {
+          font-size: 13px;
         }
         .cart {
-          display: none;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: auto;
+          max-height: 75vh;
+          border-left: none;
+          border-top: 1px solid var(--line);
+          border-radius: 20px 20px 0 0;
+          box-shadow: 0 -12px 40px rgba(15, 23, 42, 0.18);
+          transform: translateY(110%);
+          transition: transform 0.3s ease;
+          z-index: 100;
         }
         .cart.mobile-show {
-          display: flex;
-          position: fixed;
-          inset: 0;
-          z-index: 100;
+          transform: translateY(0);
+        }
+        .cart-header {
+          padding: 16px 20px;
+        }
+      }
+      @media (max-width: 900px) {
+        .cart-close-mobile {
+          display: flex !important;
+        }
+      }
+      @media (min-width: 901px) {
+        .cart-toggle,
+        .cart-close-mobile {
+          display: none !important;
         }
       }
 
+      /* Tombol toggle cart (mobile only) */
+      .cart-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 100px;
+        padding: 14px 20px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        box-shadow: 0 8px 24px rgba(5, 150, 105, 0.45);
+        z-index: 90;
+        transition: all 0.2s;
+      }
+      .cart-toggle:active {
+        transform: scale(0.95);
+      }
+      .cart-toggle .badge {
+        background: white;
+        color: var(--accent);
+        border-radius: 100px;
+        padding: 2px 9px;
+        font-size: 12px;
+        font-weight: 800;
+        min-width: 22px;
+        text-align: center;
+      }
+      .cart-close-mobile {
+        display: none;
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--line);
+        background: white;
+        border-radius: 50%;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink-soft);
+      }
       /* LEFT */
       .left {
         padding: 24px;
@@ -433,6 +535,13 @@
         <div class="cart-header">
           <h2>🛒 Pesanan</h2>
           <span class="count" id="cartCount">0 item</span>
+          <button
+            class="cart-close-mobile"
+            onclick="toggleCart()"
+            aria-label="Tutup"
+          >
+            ✕
+          </button>
         </div>
         <div class="cart-items" id="cartItems">
           <div class="empty-cart">
@@ -460,6 +569,9 @@
       </aside>
     </div>
 
+    <button class="cart-toggle" id="cartToggle" onclick="toggleCart()">
+      🛒 <span class="badge" id="toggleCount">0</span>
+    </button>
     <div class="modal" id="receiptModal">
       <div class="modal-content">
         <div class="receipt" id="receipt"></div>
@@ -632,6 +744,10 @@
         renderCart();
       }
 
+      function toggleCart() {
+        document.getElementById("cartPanel").classList.toggle("mobile-show");
+      }
+
       function renderCart() {
         const el = document.getElementById("cartItems");
         if (cart.length === 0) {
@@ -659,6 +775,7 @@
 
         const totalItems = cart.reduce((s, i) => s + i.qty, 0);
         document.getElementById("cartCount").textContent = `${totalItems} item`;
+        document.getElementById("toggleCount").textContent = totalItems;
 
         const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
         const tax = Math.round(subtotal * 0.1);
@@ -720,6 +837,7 @@
         document.getElementById("receiptModal").classList.remove("show");
         cart = [];
         renderCart();
+        document.getElementById("cartPanel").classList.remove("mobile-show");
       }
 
       renderProducts();

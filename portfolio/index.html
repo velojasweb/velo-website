@@ -267,6 +267,50 @@
         font-size: 15px;
       }
 
+      /* ===== PAGINATION ===== */
+      .pagination {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 48px;
+        flex-wrap: wrap;
+      }
+      .pagination:empty {
+        display: none;
+      }
+      .pagination button {
+        min-width: 42px;
+        height: 42px;
+        padding: 0 14px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text);
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: 0 1px 2px rgba(13, 43, 58, 0.04);
+      }
+      .pagination button:hover:not(:disabled):not(.active) {
+        border-color: var(--blue);
+        color: var(--blue);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(29, 155, 216, 0.15);
+      }
+      .pagination button.active {
+        background: var(--gradient);
+        color: white;
+        border-color: transparent;
+        box-shadow: 0 6px 16px rgba(29, 155, 216, 0.3);
+      }
+      .pagination button:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+        background: var(--surface);
+      }
+
       /* ===== CARD FALLBACK GRADIENT ===== */
       .portfolio-grid .mock-preview {
         background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 100%);
@@ -824,6 +868,192 @@
                 </p>
                 <div class="mock-foot">
                   <span class="badge">landing</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="company-profile"
+              href="/demo/cp-klinik.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+                  alt="Company profile klinik"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">company profile · klinik</div>
+                <div class="mock-title">Klinik Sehat Bersama</div>
+                <p class="mock-caption">
+                  Company profile klinik gigi & umum. Layanan, dokter, jadwal,
+                  dan booking online.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">company</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="company-profile"
+              href="/demo/cp-konstruksi.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
+                  alt="Company profile konstruksi"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">company profile · konstruksi</div>
+                <div class="mock-title">Bangun Jaya Kontraktor</div>
+                <p class="mock-caption">
+                  Company profile kontraktor bangun rumah & renovasi. Portfolio
+                  project + konsultasi.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">company</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="company-profile"
+              href="/demo/cp-lawfirm.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop"
+                  alt="Company profile law firm"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">company profile · law firm</div>
+                <div class="mock-title">Lex & Partners</div>
+                <p class="mock-caption">
+                  Company profile kantor hukum. Bidang praktik, tim advokat, dan
+                  konsultasi awal.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">company</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="web-custom"
+              href="/demo/custom-booking.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?q=80&w=800&auto=format&fit=crop"
+                  alt="Sistem booking online"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">web custom · booking</div>
+                <div class="mock-title">Sistem Booking Online</div>
+                <p class="mock-caption">
+                  Pilih layanan, tanggal, jam — konfirmasi via WhatsApp. Cocok
+                  untuk klinik, salon, bengkel.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">web custom</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="web-custom"
+              href="/demo/custom-dashboard.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+                  alt="Dashboard admin"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">web custom · dashboard</div>
+                <div class="mock-title">Dashboard Admin</div>
+                <p class="mock-caption">
+                  Dashboard dengan statistik, chart realtime, dan tabel data.
+                  Cocok untuk SaaS & agency.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">web custom</span
+                  ><span class="demo-link">Lihat demo</span>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="mock"
+              data-category="web-custom"
+              href="/demo/custom-kasir.html"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="mock-bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mock-preview">
+                <img
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop"
+                  alt="Sistem kasir POS"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mock-info">
+                <div class="mock-tag">web custom · kasir</div>
+                <div class="mock-title">Sistem Kasir (POS)</div>
+                <p class="mock-caption">
+                  Klik produk, hitung total, cetak struk. Cocok untuk cafe,
+                  restoran, dan toko.
+                </p>
+                <div class="mock-foot">
+                  <span class="badge">web custom</span
                   ><span class="demo-link">Lihat demo</span>
                 </div>
               </div>

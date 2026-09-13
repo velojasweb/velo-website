@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klinik Sehat Bersama — Klinik Gigi & Umum di Yogyakarta</title>
+    <meta
+      name="description"
+      content="Klinik Sehat Bersama — layanan kesehatan gigi, umum, dan kecantikan. Dokter berpengalaman, peralatan modern, buka setiap hari."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f0f9ff;
+        --ink: #0c2f4a;
+        --ink-soft: #5b7588;
+        --line: #d8e8f2;
+        --accent: #0ea5e9;
+        --accent-2: #06b6d4;
+        --gradient: linear-gradient(135deg, #0ea5e9, #06b6d4);
+        --mint: #e0f7f5;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      /* NAV */
+      nav {
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 20px;
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .brand-icon {
+        width: 36px;
+        height: 36px;
+        background: var(--gradient);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 720px) {
+        .nav-links a:not(.nav-cta) {
+          display: none;
+        }
+      }
+      .nav-cta {
+        padding: 10px 22px;
+        background: var(--gradient);
+        color: white !important;
+        border-radius: 100px;
+        font-size: 13px !important;
+        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+      }
+
+      /* HERO */
+      .hero {
+        padding: 80px 0 100px;
+        background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(14, 165, 233, 0.12) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero .wrap {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      @media (max-width: 860px) {
+        .hero .wrap {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--accent);
+        margin-bottom: 24px;
+      }
+      .hero-badge::before {
+        content: "✓";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        background: var(--mint);
+        border-radius: 50%;
+        color: var(--accent-2);
+        font-size: 11px;
+      }
+      .hero h1 {
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+      .hero h1 span {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-sub {
+        font-size: 18px;
+        color: var(--ink-soft);
+        margin-bottom: 32px;
+        max-width: 50ch;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 100px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        transition: all 0.2s;
+        border: 1.5px solid transparent;
+      }
+      .btn-primary {
+        background: var(--gradient);
+        color: white;
+        box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(14, 165, 233, 0.35);
+      }
+      .btn-ghost {
+        background: white;
+        color: var(--ink);
+        border-color: var(--line);
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .hero-img {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 24px 48px rgba(12, 47, 74, 0.15);
+        background: var(--bg-soft);
+      }
+      .hero-img img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+      }
+
+      /* TRUST BAR */
+      .trust-bar {
+        padding: 32px 0;
+        background: white;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        text-align: center;
+      }
+      @media (max-width: 640px) {
+        .trust-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
+        }
+      }
+      .trust-num {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+      .trust-num span {
+        color: var(--accent);
+      }
+      .trust-label {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        font-weight: 500;
+        margin-top: 4px;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 100px 0;
+      }
+      .section-head {
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto 64px;
+      }
+      .section-label {
+        display: inline-block;
+        padding: 6px 14px;
+        background: var(--mint);
+        color: var(--accent-2);
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+      }
+      .section-head h2 {
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 16px;
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        font-size: 17px;
+      }
+
+      /* SERVICES */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+      .service-card {
+        padding: 36px 28px;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        transition: all 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(12, 47, 74, 0.08);
+        border-color: var(--accent);
+      }
+      .service-icon {
+        width: 56px;
+        height: 56px;
+        background: var(--mint);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+      .service-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .service-card p {
+        color: var(--ink-soft);
+        font-size: 15px;
+      }
+
+      /* DOKTER */
+      .doctors {
+        background: var(--bg-soft);
+      }
+      .doctor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+      }
+      .doctor {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .doctor:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(12, 47, 74, 0.1);
+      }
+      .doctor img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+      .doctor-info {
+        padding: 24px;
+      }
+      .doctor-info h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .doctor-role {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      /* CTA */
+      .cta-band {
+        background: var(--gradient);
+        color: white;
+        text-align: center;
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-band::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(255, 255, 255, 0.15) 0%,
+          transparent 50%
+        );
+      }
+      .cta-band .wrap {
+        position: relative;
+        z-index: 2;
+      }
+      .cta-band h2 {
+        color: white;
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 16px;
+      }
+      .cta-band p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 17px;
+        margin-bottom: 32px;
+      }
+      .cta-band .btn-primary {
+        background: white;
+        color: var(--accent);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+      .cta-band .btn-primary:hover {
+        background: var(--ink);
+        color: white;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--ink);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 60px 0 32px;
+      }
+      footer .wrap {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 48px;
+      }
+      @media (max-width: 720px) {
+        footer .wrap {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+      footer h4 {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+      footer p,
+      footer a {
+        color: rgba(255, 255, 255, 0.65);
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+      footer a:hover {
+        color: white;
+      }
+      footer .copyright {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 13px;
+      }
+      footer .copyright a {
+        color: var(--accent-2);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <a href="#" class="brand"
+          ><span class="brand-icon">✚</span> Klinik Sehat Bersama</a
+        >
+        <div class="nav-links">
+          <a href="#layanan">Layanan</a>
+          <a href="#dokter">Dokter</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#kontak">Kontak</a>
+          <a
+            class="nav-cta"
+            href="https://wa.me/6282364967594?text=Halo%20Klinik%20Sehat%2C%20saya%20mau%20booking"
+            target="_blank"
+            rel="noopener"
+            >Booking Sekarang</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div>
+          <div class="hero-badge">Buka Setiap Hari · 08.00 – 21.00</div>
+          <h1>Kesehatan gigi & <span>senyum</span> Anda, prioritas kami.</h1>
+          <p class="hero-sub">
+            Klinik Sehat Bersama hadir dengan dokter berpengalaman dan peralatan
+            modern untuk memberikan perawatan terbaik bagi keluarga Anda.
+          </p>
+          <div class="hero-cta">
+            <a
+              href="https://wa.me/6282364967594?text=Halo%20Klinik%20Sehat%2C%20saya%20mau%20booking"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary"
+              >📱 Booking via WhatsApp</a
+            >
+            <a href="#layanan" class="btn btn-ghost">Lihat Layanan</a>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
+            alt="Klinik Sehat Bersama"
+          />
+        </div>
+      </div>
+    </header>
+
+    <section class="trust-bar">
+      <div class="wrap">
+        <div class="trust-grid">
+          <div>
+            <div class="trust-num">12<span>+</span></div>
+            <div class="trust-label">Dokter Spesialis</div>
+          </div>
+          <div>
+            <div class="trust-num">5000<span>+</span></div>
+            <div class="trust-label">Pasien Puas</div>
+          </div>
+          <div>
+            <div class="trust-num">8<span>th</span></div>
+            <div class="trust-label">Pengalaman</div>
+          </div>
+          <div>
+            <div class="trust-num">4.9<span>★</span></div>
+            <div class="trust-label">Rating Google</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Layanan Kami</div>
+          <h2>Perawatan lengkap untuk keluarga</h2>
+          <p>
+            Dari pemeriksaan rutin sampai perawatan estetika, semua tersedia di
+            satu tempat.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Kedokteran Gigi</h3>
+            <p>
+              Tambal, cabut, scaling, dan perawatan saluran akar dengan
+              teknologi modern.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Estetika Gigi</h3>
+            <p>
+              Veneer, whitening, dan smile design untuk senyum yang lebih
+              percaya diri.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🩺</div>
+            <h3>Pemeriksaan Umum</h3>
+            <p>
+              Konsultasi dokter umum, cek tekanan darah, gula darah, dan
+              kolesterol.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">👶</div>
+            <h3>Perawatan Anak</h3>
+            <p>
+              Pemeriksaan gigi anak dengan pendekatan ramah dan menyenangkan.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💎</div>
+            <h3>Behel & Ortho</h3>
+            <p>
+              Pemasangan behel estetik dan metal dengan dokter orthodontist
+              berpengalaman.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💉</div>
+            <h3>Implan Gigi</h3>
+            <p>
+              Solusi permanen untuk gigi yang hilang dengan implan titanium
+              berkualitas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doctors" id="dokter">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Tim Medis</div>
+          <h2>Dokter berpengalaman kami</h2>
+          <p>
+            Semua dokter kami tersertifikasi dan aktif mengikuti pelatihan
+            terbaru.
+          </p>
+        </div>
+        <div class="doctor-grid">
+          <div class="doctor">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600&auto=format&fit=crop"
+              alt="dr. Andini Putri"
+            />
+            <div class="doctor-info">
+              <h3>dr. Andini Putri</h3>
+              <div class="doctor-role">Dokter Gigi Umum</div>
+            </div>
+          </div>
+          <div class="doctor">
+            <img
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600&auto=format&fit=crop"
+              alt="dr. Bayu Pratama"
+            />
+            <div class="doctor-info">
+              <h3>dr. Bayu Pratama</h3>
+              <div class="doctor-role">Orthodontist</div>
+            </div>
+          </div>
+          <div class="doctor">
+            <img
+              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=600&auto=format&fit=crop"
+              alt="dr. Citra Dewi"
+            />
+            <div class="doctor-info">
+              <h3>dr. Citra Dewi</h3>
+              <div class="doctor-role">Dokter Umum</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Tentang Kami</div>
+          <h2>Melayani dengan sepenuh hati</h2>
+          <p>
+            Sejak 2018, Klinik Sehat Bersama telah dipercaya ribuan keluarga di
+            Yogyakarta untuk perawatan kesehatan gigi dan umum dengan pelayanan
+            ramah dan peralatan modern.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="kontak">
+      <div class="wrap">
+        <h2>Siap periksa kesehatan?</h2>
+        <p>Booking sekarang, tanpa antri lama. Respon cepat via WhatsApp.</p>
+        <a
+          href="https://wa.me/6282364967594?text=Halo%20Klinik%20Sehat%2C%20saya%20mau%20booking"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          >📱 Booking via WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div>
+          <h4>Klinik Sehat Bersama</h4>
+          <p>
+            Jl. Kaliurang No. 88, Sleman, Yogyakarta<br />Senin–Minggu, 08.00 –
+            21.00 WIB
+          </p>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <p><a href="https://wa.me/6282364967594">0823-6496-7594</a></p>
+          <p>
+            <a href="mailto:halo@velojasweb.my.id">halo@velojasweb.my.id</a>
+          </p>
+        </div>
+        <div>
+          <h4>Ikuti Kami</h4>
+          <p><a href="https://instagram.com/velojasweb">Instagram</a></p>
+          <p><a href="https://facebook.com/veloindo.id">Facebook</a></p>
+        </div>
+      </div>
+      <div class="wrap copyright">
+        <p>
+          Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Halaman Utama -->
   <url>
     <loc>https://velojasweb.my.id/</loc>
     <changefreq>weekly</changefreq>
@@ -18,7 +20,7 @@
   <url>
     <loc>https://velojasweb.my.id/portfolio/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://velojasweb.my.id/blog/</loc>
@@ -36,6 +38,7 @@
     <priority>0.5</priority>
   </url>
 
+  <!-- Demo: Web Portfolio -->
   <url>
     <loc>https://velojasweb.my.id/demo/portfolio-minimalis.html</loc>
     <changefreq>monthly</changefreq>
@@ -67,22 +70,70 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Demo: Landing Page -->
   <url>
     <loc>https://velojasweb.my.id/demo/kopi_anting.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/landing-restoran.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/landing-fotografer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/landing-event.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Demo: Company Profile -->
   <url>
     <loc>https://velojasweb.my.id/demo/arka_konsulting.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/cp-klinik.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/cp-konstruksi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/cp-lawfirm.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Demo: Web Custom -->
   <url>
     <loc>https://velojasweb.my.id/demo/anyaman_ibusri.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
-  <url><loc>https://velojasweb.my.id/demo/landing-restoran.html</loc><priority>0.6</priority></url>
-  <url><loc>https://velojasweb.my.id/demo/landing-fotografer.html</loc><priority>0.6</priority></url>
-  <url><loc>https://velojasweb.my.id/demo/landing-event.html</loc><priority>0.6</priority></url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/custom-booking.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/custom-dashboard.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://velojasweb.my.id/demo/custom-kasir.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

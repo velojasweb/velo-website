@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Bangun Jaya Kontraktor — Jasa Konstruksi & Renovasi Profesional
+    </title>
+    <meta
+      name="description"
+      content="Bangun Jaya Kontraktor — jasa bangun rumah, renovasi, dan konstruksi komersial di Yogyakarta. Berpengalaman 15 tahun, 200+ project."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #ffffff;
+        --ink: #0f0f0f;
+        --ink-soft: #666666;
+        --line: #e5e5e5;
+        --orange: #ff6b1a;
+        --orange-dark: #e85a0c;
+        --yellow: #ffc107;
+        --dark: #1a1a1a;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+      }
+
+      /* NAV */
+      nav {
+        padding: 20px 0;
+        background: var(--dark);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: "Anton", sans-serif;
+        font-size: 22px;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--orange);
+      }
+      @media (max-width: 720px) {
+        .nav-links a:not(.nav-cta) {
+          display: none;
+        }
+      }
+      .nav-cta {
+        padding: 10px 22px;
+        background: var(--orange);
+        color: white !important;
+        font-size: 13px !important;
+        transition: all 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--orange-dark);
+      }
+
+      /* HERO */
+      .hero {
+        background: var(--dark);
+        color: white;
+        padding: 100px 0 120px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        background: linear-gradient(
+          135deg,
+          transparent 0%,
+          rgba(255, 107, 26, 0.15) 100%
+        );
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      @media (max-width: 860px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+      .hero-tag {
+        display: inline-block;
+        padding: 8px 16px;
+        background: var(--orange);
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 24px;
+      }
+      .hero h1 {
+        font-size: clamp(48px, 7vw, 88px);
+        line-height: 0.95;
+        margin-bottom: 24px;
+      }
+      .hero h1 span {
+        color: var(--orange);
+      }
+      .hero-sub {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 32px;
+        max-width: 50ch;
+        text-transform: none;
+        font-family: "Inter", sans-serif;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 18px 36px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.2s;
+        border: 2px solid transparent;
+      }
+      .btn-primary {
+        background: var(--orange);
+        color: white;
+      }
+      .btn-primary:hover {
+        background: var(--orange-dark);
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: white;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      .btn-ghost:hover {
+        border-color: var(--orange);
+        color: var(--orange);
+      }
+      .hero-img {
+        aspect-ratio: 3/4;
+        background: linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--orange-dark) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        mix-blend-mode: luminosity;
+        opacity: 0.85;
+      }
+
+      /* STATS STRIP */
+      .stats-strip {
+        background: var(--orange);
+        color: white;
+        padding: 40px 0;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        text-align: center;
+      }
+      @media (max-width: 640px) {
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .stat-num {
+        font-family: "Anton", sans-serif;
+        font-size: 2.6rem;
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        margin-top: 6px;
+        opacity: 0.9;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 100px 0;
+      }
+      .section-head {
+        margin-bottom: 64px;
+      }
+      .section-head h2 {
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        font-size: 17px;
+        max-width: 60ch;
+      }
+
+      /* LAYANAN */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2px;
+        background: var(--line);
+      }
+      .service-card {
+        padding: 40px 32px;
+        background: white;
+        transition: all 0.3s;
+        border-left: 4px solid transparent;
+      }
+      .service-card:hover {
+        border-left-color: var(--orange);
+        background: #fafafa;
+      }
+      .service-num {
+        font-family: "Anton", sans-serif;
+        font-size: 3rem;
+        color: var(--line);
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+      .service-card:hover .service-num {
+        color: var(--orange);
+      }
+      .service-card h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      .service-card p {
+        color: var(--ink-soft);
+        font-size: 15px;
+        text-transform: none;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* PROJECTS */
+      .projects {
+        background: var(--dark);
+        color: white;
+      }
+      .projects .section-head h2 {
+        color: white;
+      }
+      .projects .section-head p {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        background: #2a2a2a;
+      }
+      .project-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s;
+      }
+      .project-card:hover img {
+        transform: scale(1.08);
+      }
+      .project-overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 24px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      }
+      .project-cat {
+        font-size: 11px;
+        color: var(--orange);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .project-title {
+        font-family: "Anton", sans-serif;
+        font-size: 22px;
+        text-transform: uppercase;
+      }
+
+      /* CTA */
+      .cta-band {
+        background: var(--orange);
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+      .cta-band h2 {
+        color: white;
+        font-size: clamp(36px, 5vw, 56px);
+        margin-bottom: 20px;
+      }
+      .cta-band p {
+        font-size: 18px;
+        margin-bottom: 32px;
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-band .btn-primary {
+        background: var(--dark);
+      }
+      .cta-band .btn-primary:hover {
+        background: black;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--dark);
+        color: rgba(255, 255, 255, 0.65);
+        padding: 60px 0 32px;
+      }
+      footer .wrap {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 48px;
+      }
+      @media (max-width: 720px) {
+        footer .wrap {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+      footer h4 {
+        color: white;
+        font-size: 15px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      footer p,
+      footer a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      footer a:hover {
+        color: var(--orange);
+      }
+      footer .copyright {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 13px;
+      }
+      footer .copyright a {
+        color: var(--orange);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <a href="#" class="brand"
+          ><span class="brand-icon">🏗</span> Bangun Jaya</a
+        >
+        <div class="nav-links">
+          <a href="#layanan">Layanan</a>
+          <a href="#project">Project</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#kontak">Kontak</a>
+          <a
+            class="nav-cta"
+            href="https://wa.me/6282364967594?text=Halo%20Bangun%20Jaya%2C%20saya%20mau%20konsultasi%20proyek"
+            target="_blank"
+            rel="noopener"
+            >Konsultasi Gratis</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-tag">Kontraktor Berpengalaman Sejak 2010</div>
+            <h1>Bangun rumah <span>impian</span>, tanpa drama.</h1>
+            <p class="hero-sub">
+              Spesialis jasa bangun rumah, renovasi, dan konstruksi komersial di
+              Yogyakarta & sekitarnya. 200+ project selesai, 100% garansi.
+            </p>
+            <div class="hero-cta">
+              <a
+                href="https://wa.me/6282364967594?text=Halo%20Bangun%20Jaya%2C%20saya%20mau%20konsultasi%20proyek"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+                >📱 Konsultasi Gratis</a
+              >
+              <a href="#project" class="btn btn-ghost">Lihat Project</a>
+            </div>
+          </div>
+          <div class="hero-img">
+            <img
+              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
+              alt="Konstruksi Bangun Jaya"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="stats-strip">
+      <div class="wrap">
+        <div class="stats-grid">
+          <div>
+            <div class="stat-num">200+</div>
+            <div class="stat-label">Project Selesai</div>
+          </div>
+          <div>
+            <div class="stat-num">15</div>
+            <div class="stat-label">Tahun Pengalaman</div>
+          </div>
+          <div>
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Tim Profesional</div>
+          </div>
+          <div>
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Garansi Kerja</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Layanan Kami</h2>
+          <p>
+            Dari desain sampai serah terima, semua dikerjakan tim berpengalaman.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-num">01</div>
+            <h3>Bangun Rumah</h3>
+            <p>
+              Bangun rumah dari nol — struktur, finishing, dan MEP. Free desain
+              & RAB.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">02</div>
+            <h3>Renovasi</h3>
+            <p>
+              Renovasi total atau sebagian. Perluasan, perbaikan, dan upgrade
+              tampilan.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">03</div>
+            <h3>Konstruksi Komersial</h3>
+            <p>
+              Ruko, kantor, cafe, dan gedung usaha. Handle penuh dari izin
+              sampai selesai.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">04</div>
+            <h3>Desain Interior</h3>
+            <p>
+              Custom interior untuk rumah & kantor. Konsep modern, klasik, atau
+              industrial.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="project">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Project Pilihan</h2>
+          <p>Beberapa project terbaru yang sudah kami selesaikan.</p>
+        </div>
+        <div class="project-grid">
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
+              alt="Rumah modern"
+            />
+            <div class="project-overlay">
+              <div class="project-cat">Rumah Tinggal</div>
+              <div class="project-title">Rumah Modern Sleman</div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop"
+              alt="Renovasi rumah"
+            />
+            <div class="project-overlay">
+              <div class="project-cat">Renovasi</div>
+              <div class="project-title">Renovasi Rumah Bantul</div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
+              alt="Ruko"
+            />
+            <div class="project-overlay">
+              <div class="project-cat">Komersial</div>
+              <div class="project-title">Ruko 3 Lantai Yogyakarta</div>
+            </div>
+          </div>
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop"
+              alt="Interior"
+            />
+            <div class="project-overlay">
+              <div class="project-cat">Interior</div>
+              <div class="project-title">Kantor Startup Jogja</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Tentang Bangun Jaya</h2>
+          <p>
+            Sejak 2010, kami sudah menyelesaikan 200+ project konstruksi di
+            Yogyakarta dan sekitarnya. Setiap project dikerjakan dengan standar
+            kualitas tinggi, transparansi biaya, dan komunikasi yang jelas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="kontak">
+      <div class="wrap">
+        <h2>Punya rencana bangun?</h2>
+        <p>
+          Konsultasi gratis — kami bantu hitung estimasi biaya dan timeline
+          proyek Anda.
+        </p>
+        <a
+          href="https://wa.me/6282364967594?text=Halo%20Bangun%20Jaya%2C%20saya%20mau%20konsultasi%20proyek"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          >📱 Konsultasi via WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div>
+          <h4>Bangun Jaya Kontraktor</h4>
+          <p>
+            Jl. Ring Road Utara No. 45, Sleman, Yogyakarta<br />Senin–Sabtu,
+            08.00 – 17.00 WIB
+          </p>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <p><a href="https://wa.me/6282364967594">0823-6496-7594</a></p>
+          <p>
+            <a href="mailto:halo@velojasweb.my.id">halo@velojasweb.my.id</a>
+          </p>
+        </div>
+        <div>
+          <h4>Ikuti Kami</h4>
+          <p><a href="https://instagram.com/velojasweb">Instagram</a></p>
+          <p><a href="https://facebook.com/veloindo.id">Facebook</a></p>
+        </div>
+      </div>
+      <div class="wrap copyright">
+        <p>
+          Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

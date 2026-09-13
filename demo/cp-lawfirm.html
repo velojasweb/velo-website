@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Lex & Partners — Kantor Hukum & Konsultan Bisnis di Yogyakarta
+    </title>
+    <meta
+      name="description"
+      content="Lex & Partners — kantor hukum spesialis hukum bisnis, pertanahan, dan litigasi. Konsultasi awal gratis."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f8f6f1;
+        --ink: #142b47;
+        --ink-soft: #5a6b7f;
+        --line: #ddd6c9;
+        --gold: #b8945f;
+        --gold-bright: #d4af7a;
+        --navy-deep: #0a1e35;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.7;
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      /* NAV */
+      nav {
+        padding: 24px 0;
+        background: var(--navy-deep);
+        color: white;
+      }
+      nav .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+      .brand em {
+        color: var(--gold-bright);
+        font-style: italic;
+      }
+      .nav-links {
+        display: flex;
+        gap: 36px;
+        align-items: center;
+      }
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--gold-bright);
+      }
+      @media (max-width: 720px) {
+        .nav-links a:not(.nav-cta) {
+          display: none;
+        }
+      }
+      .nav-cta {
+        padding: 12px 24px;
+        border: 1px solid var(--gold);
+        color: var(--gold-bright) !important;
+        font-size: 13px !important;
+        transition: all 0.2s;
+      }
+      .nav-cta:hover {
+        background: var(--gold);
+        color: var(--navy-deep) !important;
+      }
+
+      /* HERO */
+      .hero {
+        background: var(--navy-deep);
+        color: white;
+        padding: 120px 0 140px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          transparent 40%,
+          rgba(184, 148, 95, 0.08) 100%
+        );
+      }
+      .hero .wrap {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+      }
+      .hero-eyebrow {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-size: 22px;
+        color: var(--gold-bright);
+        margin-bottom: 20px;
+      }
+      .hero h1 {
+        font-size: clamp(44px, 6vw, 76px);
+        line-height: 1.05;
+        margin-bottom: 28px;
+        letter-spacing: -0.02em;
+      }
+      .hero h1 em {
+        color: var(--gold-bright);
+        font-style: italic;
+        font-weight: 500;
+      }
+      .hero-sub {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 40px;
+        max-width: 60ch;
+        font-family: "Inter", sans-serif;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+        transition: all 0.3s;
+        letter-spacing: 0.03em;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: var(--navy-deep);
+      }
+      .btn-primary:hover {
+        background: var(--gold-bright);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold-bright);
+      }
+
+      /* DIVIDER */
+      .divider {
+        border-top: 1px solid var(--line);
+        max-width: 80px;
+        margin: 0 auto;
+      }
+
+      /* SECTIONS */
+      section {
+        padding: 120px 0;
+      }
+      .section-head {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 72px;
+      }
+      .section-label {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        color: var(--gold);
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+      .section-head h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        margin-bottom: 16px;
+        color: var(--ink);
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        font-size: 17px;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* SERVICES */
+      .practice-areas {
+        background: var(--bg-soft);
+      }
+      .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0;
+        border-top: 1px solid var(--line);
+      }
+      .area-card {
+        padding: 48px 36px;
+        border-bottom: 1px solid var(--line);
+        border-right: 1px solid var(--line);
+        transition: background 0.3s;
+      }
+      .area-card:hover {
+        background: white;
+      }
+      .area-icon {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 40px;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+      .area-card h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+        color: var(--ink);
+      }
+      .area-card p {
+        color: var(--ink-soft);
+        font-size: 15px;
+      }
+
+      /* TEAM */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 40px;
+      }
+      .team-member {
+        text-align: center;
+      }
+      .team-member img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        filter: grayscale(100%);
+        transition: filter 0.4s;
+        margin-bottom: 24px;
+      }
+      .team-member:hover img {
+        filter: grayscale(0%);
+      }
+      .team-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .team-role {
+        font-size: 12px;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+        margin-top: 6px;
+      }
+
+      /* ABOUT / QUOTE */
+      .quote-section {
+        background: var(--navy-deep);
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+      }
+      .quote-section .wrap {
+        max-width: 800px;
+      }
+      .quote-mark {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 80px;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 20px;
+      }
+      .quote-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(24px, 3vw, 36px);
+        font-style: italic;
+        line-height: 1.4;
+        color: white;
+        margin-bottom: 32px;
+      }
+      .quote-author {
+        font-size: 14px;
+        color: var(--gold-bright);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* CTA */
+      .cta-band {
+        background: var(--bg-soft);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 100px 0;
+        text-align: center;
+      }
+      .cta-band h2 {
+        font-size: clamp(32px, 4vw, 48px);
+        margin-bottom: 16px;
+        color: var(--ink);
+      }
+      .cta-band p {
+        color: var(--ink-soft);
+        font-size: 17px;
+        margin-bottom: 32px;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--navy-deep);
+        color: rgba(255, 255, 255, 0.65);
+        padding: 80px 0 40px;
+      }
+      footer .wrap {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 48px;
+      }
+      @media (max-width: 720px) {
+        footer .wrap {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+      }
+      footer h4 {
+        color: var(--gold-bright);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      footer p,
+      footer a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      footer a:hover {
+        color: var(--gold-bright);
+      }
+      footer .copyright {
+        margin-top: 56px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 13px;
+      }
+      footer .copyright a {
+        color: var(--gold-bright);
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <a href="#" class="brand">Lex <em>&</em> Partners</a>
+        <div class="nav-links">
+          <a href="#layanan">Bidang Praktik</a>
+          <a href="#tim">Tim</a>
+          <a href="#tentang">Tentang</a>
+          <a href="#kontak">Kontak</a>
+          <a
+            class="nav-cta"
+            href="https://wa.me/6282364967594?text=Halo%20Lex%20%26%20Partners%2C%20saya%20butuh%20konsultasi%20hukum"
+            target="_blank"
+            rel="noopener"
+            >Konsultasi Awal</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero-eyebrow">Kantor Hukum & Konsultan Bisnis</div>
+        <h1>Solusi hukum yang <em>tegas</em>, jelas, dan terpercaya.</h1>
+        <p class="hero-sub">
+          Lex & Partners hadir sejak 2008 untuk mendampingi perusahaan, UMKM,
+          dan individu dalam menghadapi berbagai persoalan hukum di Indonesia.
+        </p>
+        <div class="hero-cta">
+          <a
+            href="https://wa.me/6282364967594?text=Halo%20Lex%20%26%20Partners%2C%20saya%20butuh%20konsultasi%20hukum"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary"
+            >Konsultasi Awal Gratis</a
+          >
+          <a href="#layanan" class="btn btn-ghost">Bidang Praktik</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="practice-areas" id="layanan">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Bidang Praktik</div>
+          <h2>Keahlian kami</h2>
+          <p>
+            Kami fokus pada bidang hukum yang paling relevan untuk bisnis dan
+            individu di Indonesia.
+          </p>
+        </div>
+        <div class="areas-grid">
+          <div class="area-card">
+            <div class="area-icon">I.</div>
+            <h3>Hukum Bisnis & Korporat</h3>
+            <p>
+              Pendirian PT/CV, drafting kontrak, due diligence, dan structuring
+              bisnis.
+            </p>
+          </div>
+          <div class="area-card">
+            <div class="area-icon">II.</div>
+            <h3>Hukum Pertanahan</h3>
+            <p>
+              Sertifikasi tanah, sengketa kepemilikan, dan transaksi properti.
+            </p>
+          </div>
+          <div class="area-card">
+            <div class="area-icon">III.</div>
+            <h3>Litigasi & Arbitrase</h3>
+            <p>
+              Pendampingan perkara perdata, pidana, dan penyelesaian sengketa
+              bisnis.
+            </p>
+          </div>
+          <div class="area-card">
+            <div class="area-icon">IV.</div>
+            <h3>Hukum Ketenagakerjaan</h3>
+            <p>
+              Perjanjian kerja, PHK, dan penyelesaian perselisihan industrial.
+            </p>
+          </div>
+          <div class="area-card">
+            <div class="area-icon">V.</div>
+            <h3>Hukum Pajak</h3>
+            <p>
+              Perencanaan pajak, pemeriksaan pajak, dan sengketa dengan DJP.
+            </p>
+          </div>
+          <div class="area-card">
+            <div class="area-icon">VI.</div>
+            <h3>Kekayaan Intelektual</h3>
+            <p>
+              Pendaftaran merek, hak cipta, dan perlindungan kekayaan
+              intelektual.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tim">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Tim Kami</div>
+          <h2>Advokat berpengalaman</h2>
+          <p>
+            Semua advokat kami terdaftar di PERADI dengan pengalaman lebih dari
+            10 tahun di bidangnya masing-masing.
+          </p>
+        </div>
+        <div class="team-grid">
+          <div class="team-member">
+            <img
+              src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=600&auto=format&fit=crop"
+              alt="Adv. Rudi Hartono"
+            />
+            <div class="team-name">Adv. Rudi Hartono, S.H., M.H.</div>
+            <div class="team-role">Managing Partner</div>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=600&auto=format&fit=crop"
+              alt="Adv. Maya Sari"
+            />
+            <div class="team-name">Adv. Maya Sari, S.H.</div>
+            <div class="team-role">Senior Partner — Korporat</div>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop"
+              alt="Adv. Bayu Wijaya"
+            />
+            <div class="team-name">Adv. Bayu Wijaya, S.H.</div>
+            <div class="team-role">Partner — Litigasi</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="wrap">
+        <div class="quote-mark">"</div>
+        <p class="quote-text">
+          Keadilan bukan sekadar menang di pengadilan — tapi memastikan setiap
+          klien mendapat kepastian hukum dan solusi terbaik.
+        </p>
+        <div class="quote-author">— Adv. Rudi Hartono, Managing Partner</div>
+      </div>
+    </section>
+
+    <section id="tentang">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label">Tentang Kami</div>
+          <h2>Firma hukum yang bisa Anda percaya</h2>
+          <p>
+            Sejak 2008, Lex & Partners telah menangani 500+ perkara untuk klien
+            korporat dan individu. Kami berkomitmen pada integritas,
+            kerahasiaan, dan hasil terbaik untuk setiap klien.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="kontak">
+      <div class="wrap">
+        <h2>Butuh konsultasi hukum?</h2>
+        <p>Konsultasi awal 30 menit — gratis, rahasia, tanpa komitmen.</p>
+        <a
+          href="https://wa.me/6282364967594?text=Halo%20Lex%20%26%20Partners%2C%20saya%20butuh%20konsultasi%20hukum"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary"
+          >Jadwalkan Konsultasi</a
+        >
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div>
+          <h4>Lex & Partners</h4>
+          <p>
+            Jl. Jenderal Sudirman No. 45, Yogyakarta<br />Senin–Jumat, 09.00 –
+            18.00 WIB
+          </p>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <p><a href="https://wa.me/6282364967594">0823-6496-7594</a></p>
+          <p>
+            <a href="mailto:halo@velojasweb.my.id">halo@velojasweb.my.id</a>
+          </p>
+        </div>
+        <div>
+          <h4>Ikuti Kami</h4>
+          <p><a href="https://instagram.com/velojasweb">Instagram</a></p>
+          <p><a href="https://facebook.com/veloindo.id">Facebook</a></p>
+        </div>
+      </div>
+      <div class="wrap copyright">
+        <p>
+          Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa
+          Pembuatan Website
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

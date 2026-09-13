@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Online — Sistem Reservasi Klinik & Salon</title>
+    <meta
+      name="description"
+      content="Sistem booking online untuk klinik, salon, dan bengkel. Pilih tanggal, jam, dan konfirmasi via WhatsApp."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --ink: #0f172a;
+        --ink-soft: #64748b;
+        --line: #e2e8f0;
+        --accent: #6366f1;
+        --accent-soft: #eef2ff;
+        --green: #10b981;
+        --green-soft: #ecfdf5;
+        --red: #ef4444;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 32px 20px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .header .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        border-radius: 100px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .header h1 {
+        font-size: clamp(24px, 4vw, 36px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 8px;
+      }
+      .header p {
+        color: var(--ink-soft);
+        font-size: 15px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 28px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      }
+      .card-title {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .card-title .num {
+        width: 26px;
+        height: 26px;
+        background: var(--accent);
+        color: white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      /* Layanan */
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+      }
+      .service {
+        padding: 18px;
+        border: 2px solid var(--line);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+      }
+      .service:hover {
+        border-color: var(--accent);
+      }
+      .service.active {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+      .service-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+      .service h4 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .service p {
+        font-size: 12px;
+        color: var(--ink-soft);
+      }
+
+      /* Tanggal */
+      .dates {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+      }
+      @media (max-width: 500px) {
+        .dates {
+          grid-template-columns: repeat(5, 1fr);
+        }
+      }
+      .date {
+        padding: 12px 8px;
+        border: 2px solid var(--line);
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s;
+        background: white;
+      }
+      .date:hover {
+        border-color: var(--accent);
+      }
+      .date.active {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: white;
+      }
+      .date .day {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+      .date.active .day {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .date .num {
+        font-size: 18px;
+        font-weight: 800;
+        margin-top: 2px;
+      }
+
+      /* Slot waktu */
+      .slots {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+      }
+      .slot {
+        padding: 12px;
+        border: 2px solid var(--line);
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.2s;
+        background: white;
+      }
+      .slot:hover:not(.booked) {
+        border-color: var(--accent);
+      }
+      .slot.active {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: white;
+      }
+      .slot.booked {
+        background: #f1f5f9;
+        color: #cbd5e1;
+        cursor: not-allowed;
+        text-decoration: line-through;
+      }
+
+      /* Form */
+      .form-row {
+        margin-bottom: 16px;
+      }
+      .form-row label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      .form-row input,
+      .form-row select,
+      .form-row textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 2px solid var(--line);
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 14px;
+        transition: border-color 0.2s;
+        background: white;
+      }
+      .form-row input:focus,
+      .form-row select:focus,
+      .form-row textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      .btn {
+        width: 100%;
+        padding: 16px;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-family: inherit;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-top: 8px;
+      }
+      .btn:hover:not(:disabled) {
+        background: #4f46e5;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+      }
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* Success */
+      .success {
+        background: var(--green-soft);
+        border: 2px solid var(--green);
+        border-radius: 16px;
+        padding: 32px;
+        text-align: center;
+        display: none;
+        margin-bottom: 20px;
+      }
+      .success.show {
+        display: block;
+        animation: slideIn 0.4s;
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .success-icon {
+        width: 64px;
+        height: 64px;
+        background: var(--green);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: white;
+        margin-bottom: 16px;
+      }
+      .success h3 {
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 8px;
+        color: #065f46;
+      }
+      .success p {
+        color: #047857;
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      .success-detail {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      .success-detail .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        font-size: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+      .success-detail .row:last-child {
+        border-bottom: none;
+      }
+      .success-detail .row span:first-child {
+        color: var(--ink-soft);
+      }
+      .success-detail .row span:last-child {
+        font-weight: 700;
+      }
+      .btn-wa {
+        background: var(--green);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      /* Footer */
+      .footer-note {
+        text-align: center;
+        margin-top: 32px;
+        font-size: 13px;
+        color: var(--ink-soft);
+      }
+      .footer-note a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="brand">✨ Booking Online</div>
+        <h1>Reservasi Mudah & Cepat</h1>
+        <p>Pilih layanan, tanggal, dan jam — konfirmasi via WhatsApp</p>
+      </div>
+
+      <div class="success" id="success">
+        <div class="success-icon">✓</div>
+        <h3>Booking Berhasil!</h3>
+        <p>Terima kasih. Detail booking Anda:</p>
+        <div class="success-detail" id="detail"></div>
+        <a
+          href="#"
+          id="waLink"
+          class="btn btn-wa"
+          target="_blank"
+          rel="noopener"
+          >📱 Konfirmasi via WhatsApp</a
+        >
+      </div>
+
+      <div class="card" id="step1">
+        <div class="card-title"><span class="num">1</span> Pilih Layanan</div>
+        <div class="services" id="services">
+          <div
+            class="service"
+            data-service="Konsultasi Dokter"
+            data-price="150000"
+          >
+            <div class="service-icon">🩺</div>
+            <h4>Konsultasi</h4>
+            <p>Rp 150.000</p>
+          </div>
+          <div
+            class="service"
+            data-service="Pembersihan Gigi"
+            data-price="250000"
+          >
+            <div class="service-icon">🦷</div>
+            <h4>Pembersihan Gigi</h4>
+            <p>Rp 250.000</p>
+          </div>
+          <div
+            class="service"
+            data-service="Perawatan Wajah"
+            data-price="200000"
+          >
+            <div class="service-icon">💆</div>
+            <h4>Perawatan Wajah</h4>
+            <p>Rp 200.000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="step2">
+        <div class="card-title"><span class="num">2</span> Pilih Tanggal</div>
+        <div class="dates" id="dates"></div>
+      </div>
+
+      <div class="card" id="step3">
+        <div class="card-title"><span class="num">3</span> Pilih Jam</div>
+        <div class="slots" id="slots">
+          <div class="slot">09:00</div>
+          <div class="slot">10:00</div>
+          <div class="slot booked">11:00</div>
+          <div class="slot">13:00</div>
+          <div class="slot">14:00</div>
+          <div class="slot">15:00</div>
+          <div class="slot booked">16:00</div>
+          <div class="slot">17:00</div>
+        </div>
+      </div>
+
+      <div class="card" id="step4">
+        <div class="card-title"><span class="num">4</span> Data Pemesan</div>
+        <div class="form-row">
+          <label>Nama Lengkap</label>
+          <input type="text" id="nama" placeholder="Nama Anda" />
+        </div>
+        <div class="form-row">
+          <label>No. WhatsApp</label>
+          <input type="tel" id="wa" placeholder="08xxxxxxxxxx" />
+        </div>
+        <div class="form-row">
+          <label>Catatan (opsional)</label>
+          <textarea
+            id="catatan"
+            rows="3"
+            placeholder="Keluhan atau permintaan khusus"
+          ></textarea>
+        </div>
+        <button class="btn" id="submitBtn" disabled>Konfirmasi Booking</button>
+      </div>
+
+      <div class="footer-note">
+        Template by <a href="https://velojasweb.my.id">Velo</a> — Jasa Pembuatan
+        Website
+      </div>
+    </div>
+
+    <script>
+      let selectedService = null;
+      let selectedDate = null;
+      let selectedTime = null;
+
+      // Generate 7 hari ke depan
+      const datesEl = document.getElementById("dates");
+      const days = ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
+      const months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "Mei",
+        "Jun",
+        "Jul",
+        "Agu",
+        "Sep",
+        "Okt",
+        "Nov",
+        "Des",
+      ];
+      for (let i = 0; i < 7; i++) {
+        const d = new Date();
+        d.setDate(d.getDate() + i);
+        const div = document.createElement("div");
+        div.className = "date";
+        div.dataset.date = d.toISOString().split("T")[0];
+        div.dataset.display = `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+        div.innerHTML = `<div class="day">${days[d.getDay()]}</div><div class="num">${d.getDate()}</div>`;
+        datesEl.appendChild(div);
+      }
+
+      // Service click
+      document.querySelectorAll(".service").forEach((el) => {
+        el.addEventListener("click", () => {
+          document
+            .querySelectorAll(".service")
+            .forEach((s) => s.classList.remove("active"));
+          el.classList.add("active");
+          selectedService = {
+            name: el.dataset.service,
+            price: parseInt(el.dataset.price),
+          };
+          updateBtn();
+        });
+      });
+
+      // Date click
+      datesEl.addEventListener("click", (e) => {
+        const d = e.target.closest(".date");
+        if (!d) return;
+        datesEl
+          .querySelectorAll(".date")
+          .forEach((x) => x.classList.remove("active"));
+        d.classList.add("active");
+        selectedDate = d.dataset.display;
+        updateBtn();
+      });
+
+      // Slot click
+      document.getElementById("slots").addEventListener("click", (e) => {
+        const s = e.target.closest(".slot");
+        if (!s || s.classList.contains("booked")) return;
+        document
+          .querySelectorAll(".slot")
+          .forEach((x) => x.classList.remove("active"));
+        s.classList.add("active");
+        selectedTime = s.textContent;
+        updateBtn();
+      });
+
+      function updateBtn() {
+        const btn = document.getElementById("submitBtn");
+        const nama = document.getElementById("nama").value;
+        const wa = document.getElementById("wa").value;
+        btn.disabled = !(
+          selectedService &&
+          selectedDate &&
+          selectedTime &&
+          nama &&
+          wa
+        );
+      }
+
+      document.getElementById("nama").addEventListener("input", updateBtn);
+      document.getElementById("wa").addEventListener("input", updateBtn);
+
+      // Submit
+      document.getElementById("submitBtn").addEventListener("click", () => {
+        const nama = document.getElementById("nama").value;
+        const wa = document.getElementById("wa").value;
+        const catatan = document.getElementById("catatan").value;
+
+        document.getElementById("detail").innerHTML = `
+      <div class="row"><span>Layanan</span><span>${selectedService.name}</span></div>
+      <div class="row"><span>Tanggal</span><span>${selectedDate}</span></div>
+      <div class="row"><span>Jam</span><span>${selectedTime} WIB</span></div>
+      <div class="row"><span>Nama</span><span>${nama}</span></div>
+      <div class="row"><span>WhatsApp</span><span>${wa}</span></div>
+      <div class="row"><span>Total</span><span>Rp ${selectedService.price.toLocaleString("id-ID")}</span></div>
+    `;
+
+        const text = `Halo, saya mau konfirmasi booking:%0A%0ALayanan: ${selectedService.name}%0ATanggal: ${selectedDate}%0AJam: ${selectedTime} WIB%0ANama: ${nama}%0AWhatsApp: ${wa}${catatan ? `%0ACatatan: ${catatan}` : ""}`;
+        document.getElementById("waLink").href =
+          `https://wa.me/6282364967594?text=${text}`;
+
+        document.getElementById("success").classList.add("show");
+        document
+          .getElementById("success")
+          .scrollIntoView({ behavior: "smooth" });
+        ["step1", "step2", "step3", "step4"].forEach(
+          (id) => (document.getElementById(id).style.display = "none"),
+        );
+      });
+    </script>
+  </body>
+</html>

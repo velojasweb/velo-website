@@ -1,59 +1,154 @@
-﻿<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 — Halaman Tidak Ditemukan | Velo</title>
-  <meta name="robots" content="noindex, follow" />
-  <meta name="description" content="Halaman yang kamu cari nggak ada di Velo. Balik ke home atau lihat layanan kami." />
-  <link rel="icon" href="/assets/img/logo.png" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
-      background: #0d1117;
-      color: #e6edf3;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-    .container { max-width: 560px; text-align: center; }
-    .code {
-      font-size: 120px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #1d9bd8, #1eb894);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    h1 { font-size: 24px; margin-bottom: 12px; }
-    p { color: #8b949e; margin-bottom: 32px; line-height: 1.6; }
-    .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    a {
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-    a:hover { opacity: 0.85; }
-    .btn-primary { background: #1d9bd8; color: #fff; }
-    .btn-ghost { background: transparent; color: #e6edf3; border: 1px solid #30363d; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="code">404</div>
-    <h1>Halaman Tidak Ditemukan</h1>
-    <p>Sepertinya halaman yang kamu cari udah pindah, dihapus, atau memang nggak pernah ada.</p>
-    <div class="btns">
-      <a href="/" class="btn-primary">Balik ke Home</a>
-      <a href="/kontak/" class="btn-ghost">Hubungi Kami</a>
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Halaman Tidak Ditemukan | Velo</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta
+      name="description"
+      content="Halaman yang kamu cari nggak ada. Balik ke beranda Velo."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem("velo-theme");
+        var prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        var theme = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 24px;
+        background: var(--bg);
+        position: relative;
+        overflow: hidden;
+      }
+      .not-found {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 560px;
+      }
+      .error-code {
+        font-family: "JetBrains Mono", monospace;
+        font-size: clamp(5rem, 15vw, 10rem);
+        font-weight: 700;
+        line-height: 1;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+        letter-spacing: -0.05em;
+      }
+      .not-found h1 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 14px;
+        color: var(--ink);
+      }
+      .not-found p {
+        color: var(--ink-soft);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 32px;
+      }
+      .not-found-cta {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .brand-mini {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+      }
+      .brand-mini-mark {
+        width: 32px;
+        height: 32px;
+        background: var(--gradient);
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        box-shadow: var(--shadow-glow);
+      }
+      .brand-mini-text {
+        color: var(--ink);
+      }
+      .brand-mini-dot {
+        color: var(--cyan);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="not-found">
+      <a href="/" class="brand-mini">
+        <span class="brand-mini-mark">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+        </span>
+        <span class="brand-mini-text"
+          >Velo<span class="brand-mini-dot">.</span></span
+        >
+      </a>
+
+      <div class="error-code">404</div>
+      <h1>Halaman yang kamu cari nggak ada.</h1>
+      <p>
+        Mungkin URL-nya salah ketik, atau halamannya udah pindah. Coba balik ke
+        beranda, atau lihat halaman lain di bawah ini.
+      </p>
+
+      <div class="not-found-cta">
+        <a href="/" class="btn btn-primary">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M3 12l9-9 9 9M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"
+            />
+          </svg>
+          Balik ke Beranda
+        </a>
+        <a href="/kontak/" class="btn btn-ghost">Hubungi Kami</a>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

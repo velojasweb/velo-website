@@ -228,19 +228,37 @@ h3 {
   box-shadow: var(--shadow-glow);
   transition: transform 0.3s;
 }
-/* ===== LOGO GAMBAR (override gradient brand-mark) ===== */
+/* LOGO GAMBAR */
 .brand-mark.brand-logo {
-  background: none; /* hapus gradient biru */
-  box-shadow: none; /* hapus glow biru */
+  background: none;
+  box-shadow: none;
   border-radius: 0;
   padding: 0;
   overflow: hidden;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .brand-mark.brand-logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* logo nggak kepotong */
-  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Hover cuma zoom, nggak muter (karena logo PNG) */
+.brand:hover .brand-mark.brand-logo {
+  transform: scale(1.05);
+}
+
+/* Logo di footer */
+.footer-brand .brand-mark.brand-logo {
+  width: 40px;
+  height: 40px;
 }
 .brand:hover .brand-mark.brand-logo {
   transform: scale(1.05); /* hover cuma zoom, nggak muter */

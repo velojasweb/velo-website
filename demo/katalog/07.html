@@ -1,0 +1,2910 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fleur Studio — Florist & Botanical Atelier Jakarta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["DM Serif Display", "Georgia", "serif"],
+              sans: ["Karla", "system-ui", "sans-serif"],
+            },
+            colors: {
+              sage: {
+                50: "#f6f8f4",
+                100: "#e8eee3",
+                200: "#d1ddc8",
+                300: "#b0c4a2",
+                400: "#8ea87a",
+                500: "#6f8c5c",
+                600: "#567045",
+                700: "#445a39",
+                800: "#384a30",
+                900: "#2f3e2a",
+                950: "#1a2418",
+              },
+              blush: {
+                50: "#fdf6f5",
+                100: "#fbebe9",
+                200: "#f6d8d3",
+                300: "#eeb8af",
+                400: "#e29183",
+                500: "#d17061",
+                600: "#b85447",
+                700: "#9a443b",
+                800: "#803c35",
+                900: "#6b362f",
+              },
+              cream: {
+                50: "#fdfcf8",
+                100: "#faf7ef",
+                200: "#f4eeda",
+                300: "#ebe1c3",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #faf7ef;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #b0c4a2;
+        border-radius: 8px;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .img-fallback {
+        background: #e8eee3;
+      }
+      .botanical-bg {
+        background-image:
+          radial-gradient(
+            circle at 15% 25%,
+            rgba(176, 196, 162, 0.14) 0,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 85% 75%,
+            rgba(238, 184, 175, 0.14) 0,
+            transparent 40%
+          );
+      }
+      .leaf-divider {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 12' fill='none'%3E%3Cpath d='M0 6 Q 15 0, 30 6 T 60 6' stroke='%236f8c5c' stroke-width='1' opacity='.5'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        height: 12px;
+      }
+      .arch-top {
+        border-top-left-radius: 9999px;
+        border-top-right-radius: 9999px;
+      }
+      .soft-shadow {
+        box-shadow: 0 20px 50px -20px rgba(47, 62, 42, 0.2);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-cream-50 text-sage-950 antialiased">
+    <!-- ============== TOP STRIP ============== -->
+    <div class="bg-sage-950 text-cream-100 text-xs sm:text-[13px]">
+      <div
+        class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-center gap-2 text-center"
+      >
+        <span
+          class="w-1.5 h-1.5 rounded-full bg-blush-300 animate-pulse"
+        ></span>
+        Free delivery Jakarta area · Same-day order sebelum 12.00 · Bunga segar
+        dipetik pagi
+      </div>
+    </div>
+
+    <!-- ============== NAVBAR ============== -->
+    <header
+      class="sticky top-0 z-40 bg-cream-50/90 backdrop-blur-md border-b border-sage-100"
+    >
+      <nav class="max-w-7xl mx-auto px-4 h-20 flex items-center gap-6">
+        <a href="#" class="flex items-center gap-3 shrink-0">
+          <svg
+            class="w-8 h-8 text-sage-600"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 22V12m0 0c0-3 1-6 4-8 0 3-1 6-4 8Zm0 0c0-3-1-6-4-8 0 3 1 6 4 8Z"
+            />
+          </svg>
+          <div class="leading-tight">
+            <p class="font-serif text-2xl tracking-tight">Fleur Studio</p>
+            <p
+              class="text-[9px] tracking-[0.35em] text-sage-500 uppercase font-medium"
+            >
+              Florist · Jakarta
+            </p>
+          </div>
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center gap-1 ml-6 text-sm font-medium text-sage-800"
+        >
+          <li>
+            <a
+              href="#occasion"
+              class="px-3 py-2 hover:text-blush-500 transition"
+              >Occasion</a
+            >
+          </li>
+          <li>
+            <a
+              href="#collection"
+              class="px-3 py-2 hover:text-blush-500 transition"
+              >Collection</a
+            >
+          </li>
+          <li>
+            <a href="#builder" class="px-3 py-2 hover:text-blush-500 transition"
+              >Custom</a
+            >
+          </li>
+          <li>
+            <a
+              href="#subscription"
+              class="px-3 py-2 hover:text-blush-500 transition"
+              >Subscription</a
+            >
+          </li>
+          <li>
+            <a href="#cerita" class="px-3 py-2 hover:text-blush-500 transition"
+              >Cerita</a
+            >
+          </li>
+        </ul>
+
+        <div class="hidden md:flex flex-1 max-w-xs ml-auto">
+          <div class="relative w-full">
+            <svg
+              class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path stroke-linecap="round" d="m20 20-3.5-3.5" />
+            </svg>
+            <input
+              id="search"
+              type="text"
+              placeholder="Cari bunga atau occasion…"
+              class="w-full pl-10 pr-4 py-2.5 text-sm rounded-full bg-cream-100 border border-sage-200 focus:border-sage-500 outline-none transition placeholder:text-sage-400"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 ml-auto md:ml-0">
+          <button
+            onclick="openCart()"
+            aria-label="Keranjang"
+            class="relative w-11 h-11 rounded-full bg-cream-100 hover:bg-cream-200 border border-sage-200 flex items-center justify-center transition"
+          >
+            <svg
+              class="w-[18px] h-[18px] text-sage-800"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13 5.4 5M7 13l-2 5h14M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+              />
+            </svg>
+            <span
+              id="cartCount"
+              class="hidden absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-blush-500 text-white text-[10px] font-bold flex items-center justify-center"
+            ></span>
+          </button>
+          <a
+            href="#builder"
+            class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-sage-900 text-cream-50 text-sm font-semibold hover:bg-sage-800 transition"
+          >
+            Buat Bouquet
+          </a>
+          <button
+            id="menuBtn"
+            aria-label="Menu"
+            class="lg:hidden w-11 h-11 rounded-full bg-cream-100 border border-sage-200 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-sage-800"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden border-t border-sage-100 bg-cream-50"
+      >
+        <div class="px-4 py-4 space-y-1 text-sm">
+          <div class="relative mb-3">
+            <svg
+              class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path stroke-linecap="round" d="m20 20-3.5-3.5" />
+            </svg>
+            <input
+              id="searchMobile"
+              type="text"
+              placeholder="Cari bunga…"
+              class="w-full pl-10 pr-4 py-2.5 text-sm rounded-full bg-cream-100 border border-sage-200 outline-none"
+            />
+          </div>
+          <a
+            href="#occasion"
+            class="block px-4 py-3 rounded-xl hover:bg-cream-100"
+            >Occasion</a
+          >
+          <a
+            href="#collection"
+            class="block px-4 py-3 rounded-xl hover:bg-cream-100"
+            >Collection</a
+          >
+          <a
+            href="#builder"
+            class="block px-4 py-3 rounded-xl hover:bg-cream-100"
+            >Custom Bouquet</a
+          >
+          <a
+            href="#subscription"
+            class="block px-4 py-3 rounded-xl hover:bg-cream-100"
+            >Subscription</a
+          >
+          <a
+            href="#cerita"
+            class="block px-4 py-3 rounded-xl hover:bg-cream-100"
+            >Cerita</a
+          >
+          <a
+            href="#lokasi"
+            class="block px-4 py-3 rounded-xl hover:bg-cream-100"
+            >Lokasi</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- ============== HERO ============== -->
+    <section class="relative overflow-hidden botanical-bg">
+      <div class="relative max-w-7xl mx-auto px-4 pt-12 sm:pt-16 pb-16">
+        <div class="grid lg:grid-cols-12 gap-10 items-end">
+          <div class="lg:col-span-5 pb-4">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-100 border border-sage-200 text-xs font-semibold text-sage-700 mb-6"
+            >
+              <span class="w-1.5 h-1.5 rounded-full bg-blush-400"></span>
+              Handcrafted daily · Sejak 2018
+            </div>
+
+            <h1
+              class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-sage-950"
+            >
+              Bunga segar,<br />
+              <em class="text-blush-500 italic">dikirim dengan</em><br />
+              penuh makna.
+            </h1>
+
+            <p
+              class="mt-6 text-sage-700/80 text-base sm:text-lg leading-relaxed max-w-lg"
+            >
+              Setiap rangkaian dirangkai tangan oleh florist kami menggunakan
+              bunga yang dipetik segar dari kebun pagi itu juga. Untuk momen
+              yang layak dikenang.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#collection"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-sage-900 text-cream-50 text-sm font-semibold hover:bg-sage-800 transition soft-shadow"
+              >
+                Lihat Collection
+              </a>
+              <a
+                href="#builder"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-sage-300 text-sage-800 text-sm font-semibold hover:border-blush-400 hover:text-blush-500 transition"
+              >
+                Buat Custom Bouquet
+              </a>
+            </div>
+
+            <div class="mt-10 grid grid-cols-3 gap-4 max-w-md">
+              <div>
+                <p class="font-serif text-3xl text-sage-950">7</p>
+                <p class="text-xs text-sage-600 mt-1 tracking-wider uppercase">
+                  Tahun
+                </p>
+              </div>
+              <div class="border-l border-sage-200 pl-4">
+                <p class="font-serif text-3xl text-sage-950">18K+</p>
+                <p class="text-xs text-sage-600 mt-1 tracking-wider uppercase">
+                  Bouquet
+                </p>
+              </div>
+              <div class="border-l border-sage-200 pl-4">
+                <p class="font-serif text-3xl text-sage-950">4.9</p>
+                <p class="text-xs text-sage-600 mt-1 tracking-wider uppercase">
+                  Rating
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero asymmetric image grid -->
+          <div class="lg:col-span-7">
+            <div
+              class="grid grid-cols-12 grid-rows-6 gap-3 sm:gap-4 h-[460px] sm:h-[580px]"
+            >
+              <div
+                class="col-span-6 row-span-6 rounded-t-full overflow-hidden img-fallback border border-sage-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=700&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src =
+                      'https://picsum.photos/seed/florist-hero1/700/1200';
+                  "
+                  alt="Bouquet"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-6 row-span-3 rounded-2xl overflow-hidden img-fallback border border-sage-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src =
+                      'https://picsum.photos/seed/florist-hero2/700/700';
+                  "
+                  alt="Flowers"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-6 row-span-3 rounded-2xl overflow-hidden img-fallback border border-sage-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=700&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src =
+                      'https://picsum.photos/seed/florist-hero3/700/700';
+                  "
+                  alt="Pink roses"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TRUST STRIP ============== -->
+    <section class="border-y border-sage-100 bg-cream-100/50">
+      <div
+        class="max-w-7xl mx-auto px-4 py-6 flex items-center gap-10 overflow-x-auto no-scrollbar"
+      >
+        <span
+          class="shrink-0 text-[10px] tracking-[0.3em] text-sage-500 uppercase font-semibold"
+          >Dipercaya oleh</span
+        >
+        <div
+          class="flex items-center gap-10 text-sage-700 font-serif text-xl whitespace-nowrap"
+        >
+          <span>Grand Hyatt</span><span class="text-sage-300">✦</span>
+          <span>Plataran</span><span class="text-sage-300">✦</span>
+          <span>Ritz Carlton</span><span class="text-sage-300">✦</span>
+          <span>Amanjiwo</span><span class="text-sage-300">✦</span>
+          <span>Fairmont</span><span class="text-sage-300">✦</span>
+          <span>The Langham</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== OCCASIONS ============== -->
+    <section id="occasion" class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+          >
+            Occasions
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Bunga untuk setiap momen
+          </h2>
+          <div class="mt-5 mx-auto w-24 leaf-divider"></div>
+          <p class="mt-5 text-sage-700/70">
+            Pilih berdasarkan momen, kami bantu pilih bunga yang paling tepat.
+          </p>
+        </div>
+
+        <div
+          id="occasionGrid"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== SIGNATURE COLLECTION ============== -->
+    <section class="py-16 sm:py-20 bg-cream-100/60 border-y border-sage-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12"
+        >
+          <div>
+            <p
+              class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+            >
+              Signature
+            </p>
+            <h2 class="mt-3 font-serif text-4xl sm:text-5xl tracking-tight">
+              Pilihan florist kami
+            </h2>
+          </div>
+          <p class="text-sm text-sage-700/70 max-w-xs">
+            Tiga rangkaian yang paling banyak dipesan — dirangkai dengan bunga
+            musiman pilihan.
+          </p>
+        </div>
+
+        <div
+          id="signatureGrid"
+          class="grid grid-cols-1 md:grid-cols-3 gap-5"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== FULL COLLECTION ============== -->
+    <section id="collection" class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8"
+        >
+          <div>
+            <p
+              class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+            >
+              Collection
+            </p>
+            <h2 class="mt-3 font-serif text-4xl sm:text-5xl tracking-tight">
+              Semua rangkaian
+            </h2>
+            <p class="mt-3 text-sm text-sage-700/70">
+              Menampilkan
+              <span id="resultCount" class="font-semibold text-sage-900"
+                >0</span
+              >
+              bouquet
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="relative">
+              <select
+                id="sortSelect"
+                class="appearance-none pl-5 pr-10 py-2.5 text-sm rounded-full bg-cream-100 border border-sage-200 outline-none focus:border-sage-500 cursor-pointer"
+              >
+                <option value="populer">Paling Populer</option>
+                <option value="termurah">Harga Terendah</option>
+                <option value="termahal">Harga Tertinggi</option>
+                <option value="baru">Terbaru</option>
+              </select>
+              <svg
+                class="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-sage-500"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m6 9 6 6 6-6"
+                />
+              </svg>
+            </div>
+            <button
+              id="resetBtn"
+              class="px-4 py-2.5 text-sm rounded-full border border-sage-200 bg-cream-100 hover:border-sage-400 transition"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="categoryPills"
+          class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-8"
+        ></div>
+
+        <div
+          id="productGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5"
+        ></div>
+
+        <div id="emptyState" class="hidden text-center py-20">
+          <p class="font-serif text-2xl">Tidak ada yang cocok</p>
+          <p class="mt-2 text-sm text-sage-600">
+            Coba kata kunci atau kategori lain.
+          </p>
+          <button
+            onclick="resetFilters()"
+            class="mt-6 px-6 py-3 rounded-full bg-sage-900 text-cream-50 text-sm font-semibold"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CUSTOM BOUQUET BUILDER ============== -->
+    <section id="builder" class="py-20 sm:py-24 bg-sage-900 text-cream-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-300 uppercase font-semibold"
+          >
+            Custom Bouquet
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Rangkai bouquet-mu sendiri
+          </h2>
+          <div class="mt-5 mx-auto w-24 leaf-divider opacity-60"></div>
+          <p class="mt-5 text-cream-100/70">
+            Pilih bunga, ukuran, wrapping, dan pesan. Harga muncul otomatis.
+            Kami akan konfirmasi via WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-6 lg:gap-8">
+          <!-- Builder Form -->
+          <div class="lg:col-span-3 space-y-5">
+            <!-- Step 1: Jenis Rangkaian -->
+            <div class="p-6 rounded-3xl bg-sage-950/40 border border-sage-800">
+              <div class="flex items-center gap-3 mb-5">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-sage-950 text-xs font-bold flex items-center justify-center"
+                  >1</span
+                >
+                <p
+                  class="text-xs tracking-widest uppercase font-bold text-blush-300"
+                >
+                  Jenis Rangkaian
+                </p>
+              </div>
+              <div
+                id="typeOptions"
+                class="grid grid-cols-2 sm:grid-cols-4 gap-2"
+              ></div>
+            </div>
+
+            <!-- Step 2: Bunga Utama -->
+            <div class="p-6 rounded-3xl bg-sage-950/40 border border-sage-800">
+              <div class="flex items-center gap-3 mb-5">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-sage-950 text-xs font-bold flex items-center justify-center"
+                  >2</span
+                >
+                <p
+                  class="text-xs tracking-widest uppercase font-bold text-blush-300"
+                >
+                  Bunga Utama
+                </p>
+              </div>
+              <div
+                id="flowerOptions"
+                class="grid grid-cols-2 sm:grid-cols-3 gap-2"
+              ></div>
+            </div>
+
+            <!-- Step 3: Ukuran -->
+            <div class="p-6 rounded-3xl bg-sage-950/40 border border-sage-800">
+              <div class="flex items-center gap-3 mb-5">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-sage-950 text-xs font-bold flex items-center justify-center"
+                  >3</span
+                >
+                <p
+                  class="text-xs tracking-widest uppercase font-bold text-blush-300"
+                >
+                  Ukuran
+                </p>
+              </div>
+              <div
+                id="sizeOptions"
+                class="grid grid-cols-2 sm:grid-cols-4 gap-2"
+              ></div>
+            </div>
+
+            <!-- Step 4: Wrapping -->
+            <div class="p-6 rounded-3xl bg-sage-950/40 border border-sage-800">
+              <div class="flex items-center gap-3 mb-5">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-sage-950 text-xs font-bold flex items-center justify-center"
+                  >4</span
+                >
+                <p
+                  class="text-xs tracking-widest uppercase font-bold text-blush-300"
+                >
+                  Wrapping & Add-on
+                </p>
+              </div>
+              <div
+                id="wrappingOptions"
+                class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3"
+              ></div>
+              <div id="addonOptions" class="space-y-2"></div>
+            </div>
+
+            <!-- Step 5: Info -->
+            <div class="p-6 rounded-3xl bg-sage-950/40 border border-sage-800">
+              <div class="flex items-center gap-3 mb-5">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-sage-950 text-xs font-bold flex items-center justify-center"
+                  >5</span
+                >
+                <p
+                  class="text-xs tracking-widest uppercase font-bold text-blush-300"
+                >
+                  Info Pengiriman
+                </p>
+              </div>
+              <div class="grid sm:grid-cols-2 gap-3">
+                <input
+                  id="bName"
+                  placeholder="Nama kamu *"
+                  class="px-4 py-3 rounded-xl bg-sage-950 border border-sage-800 focus:border-blush-400 outline-none text-sm text-cream-50 placeholder:text-cream-100/40"
+                />
+                <input
+                  id="bPhone"
+                  placeholder="No. WhatsApp *"
+                  class="px-4 py-3 rounded-xl bg-sage-950 border border-sage-800 focus:border-blush-400 outline-none text-sm text-cream-50 placeholder:text-cream-100/40"
+                />
+                <input
+                  id="bRecipient"
+                  placeholder="Nama penerima bunga"
+                  class="px-4 py-3 rounded-xl bg-sage-950 border border-sage-800 focus:border-blush-400 outline-none text-sm text-cream-50 placeholder:text-cream-100/40"
+                />
+                <input
+                  id="bDate"
+                  type="date"
+                  class="px-4 py-3 rounded-xl bg-sage-950 border border-sage-800 focus:border-blush-400 outline-none text-sm text-cream-50"
+                />
+                <input
+                  id="bAddress"
+                  placeholder="Alamat pengiriman"
+                  class="sm:col-span-2 px-4 py-3 rounded-xl bg-sage-950 border border-sage-800 focus:border-blush-400 outline-none text-sm text-cream-50 placeholder:text-cream-100/40"
+                />
+                <textarea
+                  id="bMessage"
+                  rows="2"
+                  placeholder="Pesan di kartu (opsional)"
+                  class="sm:col-span-2 px-4 py-3 rounded-xl bg-sage-950 border border-sage-800 focus:border-blush-400 outline-none text-sm text-cream-50 placeholder:text-cream-100/40 resize-none"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="lg:col-span-2">
+            <div
+              class="sticky top-24 p-6 sm:p-8 rounded-3xl bg-cream-50 text-sage-950 soft-shadow"
+            >
+              <p
+                class="text-xs tracking-widest text-blush-500 uppercase font-bold"
+              >
+                Bouquet Kamu
+              </p>
+
+              <div
+                class="mt-5 rounded-2xl overflow-hidden aspect-[4/3] img-fallback"
+              >
+                <img
+                  id="builderPreview"
+                  src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src =
+                      'https://picsum.photos/seed/bouquet-preview/600/450';
+                  "
+                  class="w-full h-full object-cover transition-opacity duration-300"
+                  alt="Preview bouquet"
+                />
+              </div>
+
+              <div class="mt-6 space-y-3 text-sm pb-5 border-b border-sage-200">
+                <div class="flex justify-between gap-3">
+                  <span class="text-sage-600">Jenis</span
+                  ><span id="sumType" class="font-semibold text-right">—</span>
+                </div>
+                <div class="flex justify-between gap-3">
+                  <span class="text-sage-600">Bunga</span
+                  ><span id="sumFlower" class="font-semibold text-right"
+                    >—</span
+                  >
+                </div>
+                <div class="flex justify-between gap-3">
+                  <span class="text-sage-600">Ukuran</span
+                  ><span id="sumSize" class="font-semibold text-right">—</span>
+                </div>
+                <div class="flex justify-between gap-3">
+                  <span class="text-sage-600">Wrapping</span
+                  ><span id="sumWrap" class="font-semibold text-right">—</span>
+                </div>
+                <div
+                  id="sumAddonsBox"
+                  class="pt-3 border-t border-sage-200 space-y-2"
+                ></div>
+              </div>
+
+              <div class="py-5 flex items-baseline justify-between">
+                <span class="text-xs tracking-widest text-sage-600 uppercase"
+                  >Total</span
+                >
+                <span id="builderPrice" class="font-serif text-3xl">Rp 0</span>
+              </div>
+
+              <button
+                onclick="submitBuilder()"
+                class="w-full py-4 rounded-full bg-blush-500 hover:bg-blush-600 text-white text-sm font-bold transition"
+              >
+                Order via WhatsApp
+              </button>
+              <p
+                class="mt-3 text-[11px] text-sage-600 text-center leading-relaxed"
+              >
+                Kami konfirmasi ketersediaan & final price dalam 30 menit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FLOWER MEANINGS LIBRARY ============== -->
+    <section class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+          >
+            Flower Library
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Arti di balik setiap bunga
+          </h2>
+          <div class="mt-5 mx-auto w-24 leaf-divider"></div>
+          <p class="mt-5 text-sage-700/70">
+            Setiap bunga punya makna. Kami bantu kamu memilih yang tepat untuk
+            pesan yang ingin disampaikan.
+          </p>
+        </div>
+
+        <div
+          id="flowerLibrary"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== SAME-DAY DELIVERY CHECKER ============== -->
+    <section class="py-16 sm:py-20 bg-cream-100/70 border-y border-sage-100">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="p-8 sm:p-12 rounded-3xl bg-cream-50 border border-sage-200">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <p
+                class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+              >
+                Same-Day Delivery
+              </p>
+              <h3 class="mt-3 font-serif text-3xl sm:text-4xl tracking-tight">
+                Cek area pengirimanmu
+              </h3>
+              <p class="mt-3 text-sm text-sage-700/80 leading-relaxed">
+                Masukkan kecamatan atau kode pos. Kami akan beritahu apakah bisa
+                same-day (order sebelum 12.00 WIB).
+              </p>
+            </div>
+            <div>
+              <div class="flex gap-2">
+                <input
+                  id="areaCheck"
+                  placeholder="Cth: Kemang / 12730"
+                  class="flex-1 px-4 py-3.5 rounded-full bg-cream-100 border border-sage-200 focus:border-sage-500 outline-none text-sm"
+                />
+                <button
+                  onclick="checkArea()"
+                  class="px-6 py-3.5 rounded-full bg-sage-900 hover:bg-sage-800 text-cream-50 text-sm font-bold transition whitespace-nowrap"
+                >
+                  Cek
+                </button>
+              </div>
+              <div
+                id="areaResult"
+                class="hidden mt-4 p-4 rounded-2xl text-sm"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SUBSCRIPTION ============== -->
+    <section id="subscription" class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+          >
+            Subscription
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Bunga segar setiap minggu
+          </h2>
+          <div class="mt-5 mx-auto w-24 leaf-divider"></div>
+          <p class="mt-5 text-sage-700/70">
+            Langganan bunga untuk rumah, kantor, atau kafe. Bebas atur jadwal &
+            jenis bunga.
+          </p>
+        </div>
+
+        <div
+          id="subscriptionGrid"
+          class="grid grid-cols-1 md:grid-cols-3 gap-5"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== TESTIMONI ============== -->
+    <section class="py-20 sm:py-24 bg-cream-100/60 border-y border-sage-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+          >
+            Testimoni
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Kata pelanggan kami
+          </h2>
+          <div class="mt-5 mx-auto w-24 leaf-divider"></div>
+        </div>
+        <div
+          id="testimonialGrid"
+          class="grid grid-cols-1 md:grid-cols-3 gap-5"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== GALERI ============== -->
+    <section class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+          >
+            Galeri
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Dari studio kami
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div
+            class="col-span-2 row-span-2 rounded-3xl overflow-hidden aspect-square img-fallback"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=1000&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-florist1/1000/1000';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-florist2/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1454944338482-a69bb95894af?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-florist3/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-florist4/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1524594154908-edd0b0b7f1e9?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-florist5/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CERITA ============== -->
+    <section id="cerita" class="py-20 sm:py-28 bg-sage-900 text-cream-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p
+              class="text-xs tracking-[0.35em] text-blush-300 uppercase font-semibold"
+            >
+              Cerita Kami
+            </p>
+            <h2
+              class="mt-4 font-serif text-4xl sm:text-5xl leading-tight tracking-tight"
+            >
+              Bunga adalah cara kami
+              <em class="text-blush-300 italic">berbicara tanpa kata.</em>
+            </h2>
+            <div class="mt-5 w-24 leaf-divider opacity-60"></div>
+
+            <div class="mt-8 space-y-5 text-cream-100/80 leading-relaxed">
+              <p>
+                Fleur Studio dimulai tahun 2018 dari kekaguman kami pada bunga.
+                Kami percaya bahwa setiap tangkai punya bahasa — dan kami di
+                sini untuk menerjemahkannya menjadi rangkaian yang tepat.
+              </p>
+              <p>
+                Setiap pagi kami datang ke pasar bunga sebelum matahari terbit,
+                memilih satu-satu bunga terbaik. Lalu di studio, tangan-tangan
+                florist kami merangkainya menjadi bouquet yang
+                <em class="text-blush-300"
+                  >bukan sekadar indah, tapi bermakna</em
+                >.
+              </p>
+            </div>
+
+            <div
+              class="mt-10 pt-8 border-t border-cream-100/15 grid grid-cols-3 gap-6"
+            >
+              <div>
+                <p class="font-serif text-3xl text-blush-300">100%</p>
+                <p
+                  class="text-xs text-cream-100/60 mt-1 tracking-wider uppercase"
+                >
+                  Fresh cut
+                </p>
+              </div>
+              <div>
+                <p class="font-serif text-3xl text-blush-300">48h</p>
+                <p
+                  class="text-xs text-cream-100/60 mt-1 tracking-wider uppercase"
+                >
+                  Freshness
+                </p>
+              </div>
+              <div>
+                <p class="font-serif text-3xl text-blush-300">100%</p>
+                <p
+                  class="text-xs text-cream-100/60 mt-1 tracking-wider uppercase"
+                >
+                  Sustainable
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-12 grid-rows-6 gap-3 sm:gap-4 h-[440px] sm:h-[560px]"
+          >
+            <div
+              class="col-span-7 row-span-4 rounded-3xl overflow-hidden img-fallback"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=900&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/studio1/900/900';
+                "
+                alt="Florist at work"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="col-span-5 row-span-3 rounded-3xl overflow-hidden img-fallback"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1567696153798-9111f9cd3d0d?w=700&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/studio2/700/700';
+                "
+                alt="Flowers market"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="col-span-5 row-span-3 rounded-3xl overflow-hidden img-fallback"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1524594154908-edd0b0b7f1e9?w=700&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/studio3/700/700';
+                "
+                alt="Bouquet detail"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="col-span-7 row-span-2 rounded-3xl overflow-hidden img-fallback"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1560717845-968823efbee1?w=900&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/studio4/900/900';
+                "
+                alt="Studio interior"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FAQ ============== -->
+    <section class="py-20 sm:py-24">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+          >
+            FAQ
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Pertanyaan umum
+          </h2>
+          <div class="mt-5 mx-auto w-24 leaf-divider"></div>
+        </div>
+        <div id="faqList" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- ============== LOKASI + MAP ============== -->
+    <section
+      id="lokasi"
+      class="py-16 sm:py-20 bg-cream-100/70 border-t border-sage-100"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p
+            class="text-xs tracking-[0.35em] text-blush-500 uppercase font-semibold"
+          >
+            Studio
+          </p>
+          <h2
+            class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight leading-tight"
+          >
+            Kunjungi studio kami
+          </h2>
+          <div class="mt-5 mx-auto w-24 leaf-divider"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-8 items-stretch">
+          <div
+            class="lg:col-span-3 rounded-3xl overflow-hidden border border-sage-200 min-h-[380px] lg:min-h-[520px] relative bg-cream-100"
+          >
+            <iframe
+              src="https://www.google.com/maps?q=Senopati+Jakarta+Selatan&output=embed"
+              class="absolute inset-0 w-full h-full"
+              style="border: 0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Peta lokasi Fleur Studio"
+            >
+            </iframe>
+          </div>
+
+          <div class="lg:col-span-2 flex flex-col justify-center">
+            <p class="text-sage-700/80 leading-relaxed">
+              Studio kami buka untuk kamu yang mau lihat langsung koleksi bunga,
+              atau konsultasi wedding & event. Silakan mampir, atau buat
+              appointment.
+            </p>
+
+            <div class="mt-6 space-y-5">
+              <div class="pb-5 border-b border-sage-200">
+                <p class="text-xs tracking-widest text-sage-500 uppercase mb-1">
+                  Studio
+                </p>
+                <p class="font-semibold">
+                  Jl. Senopati No. 45, Kebayoran Baru<br />Jakarta Selatan 12190
+                </p>
+              </div>
+              <div class="pb-5 border-b border-sage-200">
+                <p class="text-xs tracking-widest text-sage-500 uppercase mb-1">
+                  Jam Buka
+                </p>
+                <p class="font-semibold">Senin – Sabtu, 09.00 – 20.00 WIB</p>
+              </div>
+              <div>
+                <p class="text-xs tracking-widest text-sage-500 uppercase mb-1">
+                  Kontak
+                </p>
+                <p class="font-semibold">
+                  +62 812 3456 7890 · hello@fleurstudio.id
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Fleur%20Studio%2C%20saya%20ingin%20tanya%20bunga"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1ebe5b] transition"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+                  />
+                </svg>
+                Chat WhatsApp
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Senopati+Jakarta+Selatan"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full border border-sage-300 text-sage-800 text-sm font-semibold hover:border-blush-400 hover:text-blush-500 transition"
+              >
+                Petunjuk Arah
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CTA ============== -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="relative overflow-hidden rounded-3xl bg-blush-500 px-6 sm:px-12 py-14 sm:py-20 text-center"
+        >
+          <div
+            class="absolute inset-0 opacity-20"
+            style="
+              background-image: radial-gradient(
+                circle,
+                white 1px,
+                transparent 1px
+              );
+              background-size: 24px 24px;
+            "
+          ></div>
+          <div class="relative">
+            <p
+              class="text-xs tracking-[0.35em] text-white/80 uppercase font-semibold"
+            >
+              Momen spesial menanti
+            </p>
+            <h2
+              class="mt-4 font-serif text-4xl sm:text-5xl tracking-tight text-white leading-tight"
+            >
+              Kirim bunga hari ini, buat mereka tersenyum.
+            </h2>
+            <p class="mt-4 text-white/80 max-w-lg mx-auto">
+              Order sebelum jam 12.00 WIB untuk pengiriman same-day di area
+              Jakarta.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+              <a
+                href="#collection"
+                class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-blush-600 text-sm font-bold hover:bg-cream-50 transition"
+              >
+                Lihat Collection
+              </a>
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Fleur%20Studio%2C%20saya%20ingin%20order%20bunga%20hari%20ini"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/40 text-white text-sm font-semibold hover:bg-white/10 transition"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+                  />
+                </svg>
+                Order Sekarang
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="bg-sage-950 text-cream-100">
+      <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3">
+              <svg
+                class="w-9 h-9 text-blush-300"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 22V12m0 0c0-3 1-6 4-8 0 3-1 6-4 8Zm0 0c0-3-1-6-4-8 0 3 1 6 4 8Z"
+                />
+              </svg>
+              <div>
+                <p class="font-serif text-2xl">Fleur Studio</p>
+                <p
+                  class="text-[9px] tracking-[0.35em] text-blush-300 uppercase"
+                >
+                  Florist · Jakarta
+                </p>
+              </div>
+            </div>
+            <p class="mt-5 text-sm text-cream-100/60 max-w-sm leading-relaxed">
+              Florist butik yang merangkai bunga dengan makna. Sejak 2018 di
+              Jakarta Selatan.
+            </p>
+
+            <div class="mt-6">
+              <p
+                class="text-xs tracking-widest text-blush-300 uppercase font-semibold mb-3"
+              >
+                Newsletter
+              </p>
+              <div class="flex gap-2 max-w-sm">
+                <input
+                  id="newsletterEmail"
+                  type="email"
+                  placeholder="Email kamu"
+                  class="flex-1 px-4 py-3 rounded-full bg-sage-900 border border-sage-800 focus:border-blush-400 outline-none text-sm text-cream-50 placeholder:text-cream-100/30"
+                />
+                <button
+                  onclick="subscribeNewsletter()"
+                  class="px-5 py-3 rounded-full bg-blush-400 hover:bg-blush-300 text-sage-950 text-sm font-bold transition whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs tracking-[0.28em] text-blush-300 uppercase font-semibold"
+            >
+              Layanan
+            </h4>
+            <ul class="mt-5 space-y-3 text-sm text-cream-100/70">
+              <li>
+                <a href="#collection" class="hover:text-blush-300 transition"
+                  >Ready Bouquet</a
+                >
+              </li>
+              <li>
+                <a href="#builder" class="hover:text-blush-300 transition"
+                  >Custom Bouquet</a
+                >
+              </li>
+              <li>
+                <a href="#subscription" class="hover:text-blush-300 transition"
+                  >Subscription</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-blush-300 transition"
+                  >Wedding Flowers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-blush-300 transition"
+                  >Corporate & Event</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs tracking-[0.28em] text-blush-300 uppercase font-semibold"
+            >
+              Hubungi
+            </h4>
+            <ul class="mt-5 space-y-3 text-sm text-cream-100/70">
+              <li>
+                <a
+                  href="https://wa.me/6281234567890"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-blush-300 transition"
+                  >WhatsApp</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-blush-300 transition"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://pinterest.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-blush-300 transition"
+                  >Pinterest</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@fleurstudio.id"
+                  class="hover:text-blush-300 transition"
+                  >hello@fleurstudio.id</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 pt-6 border-t border-cream-100/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-xs text-cream-100/50">
+            © 2026 Fleur Studio. Semua hak dilindungi.
+          </p>
+          <p class="font-serif italic text-cream-100/60 text-sm">
+            Say it with flowers.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============== FLOATING WHATSAPP ============== -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20Fleur%20Studio%2C%20saya%20ingin%20order%20bunga"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat WhatsApp"
+      class="fixed bottom-6 right-6 z-40 group"
+    >
+      <span
+        class="absolute right-0 bottom-0 w-14 h-14 rounded-full bg-[#25D366] opacity-50 animate-ping"
+      ></span>
+      <span
+        class="relative flex items-center gap-2.5 pl-3.5 pr-4 py-3 rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 hover:bg-[#1ebe5b] transition"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+          />
+        </svg>
+        <span class="text-sm font-semibold hidden sm:inline">Chat</span>
+      </span>
+    </a>
+
+    <!-- ============== CART DRAWER ============== -->
+    <div id="cartDrawer" class="hidden fixed inset-0 z-50">
+      <div
+        class="absolute inset-0 bg-sage-950/60 backdrop-blur-sm"
+        onclick="closeCart()"
+      ></div>
+      <div
+        class="absolute right-0 top-0 h-full w-full max-w-md bg-cream-50 border-l border-sage-200 flex flex-col"
+      >
+        <div
+          class="flex items-center justify-between px-6 py-5 border-b border-sage-200"
+        >
+          <h3 class="font-serif text-2xl">Pesanan Kamu</h3>
+          <button
+            onclick="closeCart()"
+            class="w-10 h-10 rounded-full hover:bg-cream-100 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-sage-700"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+        <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+        <div
+          id="cartFooter"
+          class="border-t border-sage-200 p-6 space-y-3"
+        ></div>
+      </div>
+    </div>
+
+    <!-- ============== QUICK VIEW ============== -->
+    <div id="quickView" class="hidden fixed inset-0 z-50">
+      <div
+        class="absolute inset-0 bg-sage-950/60 backdrop-blur-sm"
+        onclick="closeQuickView()"
+      ></div>
+      <div class="relative h-full w-full flex items-center justify-center p-4">
+        <div
+          class="w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-cream-50 border border-sage-200 shadow-2xl"
+        >
+          <div id="quickViewContent"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== TOAST ============== -->
+    <div
+      id="toast"
+      class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] px-6 py-3 rounded-full bg-sage-900 text-cream-50 text-sm font-medium shadow-xl"
+    ></div>
+
+    <script>
+      /* =========================================================
+   HELPER
+   ========================================================= */
+      function imgTag(src, fallbackSeed, alt, cls) {
+        const fb = `https://picsum.photos/seed/${fallbackSeed}/800/800`;
+        return `<img src="${src}" alt="${alt}" loading="lazy" class="${cls}" onerror="this.onerror=null;this.src='${fb}';" />`;
+      }
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => document.querySelectorAll(s);
+      const rp = (n) => n.toLocaleString("id-ID");
+
+      /* =========================================================
+   DATA
+   ========================================================= */
+      const occasions = [
+        {
+          name: "Romance",
+          desc: "Untuk yang tersayang",
+          image:
+            "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500&q=80",
+          fb: "occ-romance",
+        },
+        {
+          name: "Anniversary",
+          desc: "Rayakan cinta",
+          image:
+            "https://images.unsplash.com/photo-1509719662282-e8c69d8f7c6a?w=500&q=80",
+          fb: "occ-anniv",
+        },
+        {
+          name: "Birthday",
+          desc: "Hari bahagia",
+          image:
+            "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=500&q=80",
+          fb: "occ-bday",
+        },
+        {
+          name: "Congrats",
+          desc: "Untuk keberhasilan",
+          image:
+            "https://images.unsplash.com/photo-1533616688419-b7a585564566?w=500&q=80",
+          fb: "occ-congrats",
+        },
+        {
+          name: "Sympathy",
+          desc: "Ungkapan duka",
+          image:
+            "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=500&q=80",
+          fb: "occ-sympathy",
+        },
+        {
+          name: "Just Because",
+          desc: "Tanpa alasan",
+          image:
+            "https://images.unsplash.com/photo-1560717845-968823efbee1?w=500&q=80",
+          fb: "occ-just",
+        },
+      ];
+
+      const categories = [
+        "Semua",
+        "Romance",
+        "Anniversary",
+        "Birthday",
+        "Congrats",
+        "Sympathy",
+      ];
+
+      const products = [
+        {
+          id: 1,
+          name: "Blush Romance",
+          category: "Romance",
+          price: 485000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 412,
+          badge: "Signature",
+          desc: "Buket 12 tangkai pink roses premium dengan baby breath dan eucalyptus. Wrapping korean style.",
+          image:
+            "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80",
+          fb: "p-romance1",
+        },
+        {
+          id: 2,
+          name: "Pink Peony Dream",
+          category: "Romance",
+          price: 650000,
+          oldPrice: 0,
+          rating: 5.0,
+          reviews: 287,
+          badge: "Best Seller",
+          desc: "Buket 8 tangkai peony pink yang mekar penuh. Aroma lembut, cocok untuk momen romantis.",
+          image:
+            "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=80",
+          fb: "p-romance2",
+        },
+        {
+          id: 3,
+          name: "Sunset Garden",
+          category: "Romance",
+          price: 425000,
+          oldPrice: 0,
+          rating: 4.8,
+          reviews: 198,
+          badge: "",
+          desc: "Mix bunga warna sunset — peach roses, ranunculus, dan dried flowers.",
+          image:
+            "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=80",
+          fb: "p-romance3",
+        },
+        {
+          id: 4,
+          name: "Anniversary Rose",
+          category: "Anniversary",
+          price: 585000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 342,
+          badge: "Best Seller",
+          desc: "24 tangkai red roses dalam vase kaca premium. Momen anniversary yang tak terlupakan.",
+          image:
+            "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&q=80",
+          fb: "p-anniv1",
+        },
+        {
+          id: 5,
+          name: "Eternal Love",
+          category: "Anniversary",
+          price: 850000,
+          oldPrice: 1050000,
+          rating: 5.0,
+          reviews: 156,
+          badge: "Promo",
+          desc: "Kombinasi red & white roses dengan gold accent. Bouquet terbesar kami untuk anniversary spesial.",
+          image:
+            "https://images.unsplash.com/photo-1509719662282-e8c69d8f7c6a?w=600&q=80",
+          fb: "p-anniv2",
+        },
+        {
+          id: 6,
+          name: "Birthday Sunflower",
+          category: "Birthday",
+          price: 385000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 512,
+          badge: "Best Seller",
+          desc: "5 tangkai sunflower besar dikelilingi baby breath. Bikin hari ulang tahun makin ceria.",
+          image:
+            "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&q=80",
+          fb: "p-bday1",
+        },
+        {
+          id: 7,
+          name: "Pastel Birthday Box",
+          category: "Birthday",
+          price: 445000,
+          oldPrice: 0,
+          rating: 4.8,
+          reviews: 289,
+          badge: "",
+          desc: "Bouquet box pastel dengan mix tulip, ranunculus, dan lisianthus. Instagenic!",
+          image:
+            "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
+          fb: "p-bday2",
+        },
+        {
+          id: 8,
+          name: "Congrats Celebration",
+          category: "Congrats",
+          price: 495000,
+          oldPrice: 0,
+          rating: 4.8,
+          reviews: 167,
+          badge: "",
+          desc: "Mix bunga warna cerah untuk merayakan kesuksesan. Cocok untuk wisuda, promosi, grand opening.",
+          image:
+            "https://images.unsplash.com/photo-1533616688419-b7a585564566?w=600&q=80",
+          fb: "p-congrats1",
+        },
+        {
+          id: 9,
+          name: "White Lilies Elegant",
+          category: "Sympathy",
+          price: 520000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 98,
+          badge: "",
+          desc: "Rangkaian white lilies dan chrysanthemum. Untuk mengungkapkan duka cita yang tulus.",
+          image:
+            "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=600&q=80",
+          fb: "p-sympathy1",
+        },
+        {
+          id: 10,
+          name: "Just Because Tulip",
+          category: "Romance",
+          price: 355000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 378,
+          badge: "Best Seller",
+          desc: "10 tangkai tulip import Holland pilihan. Tanpa alasan khusus — hanya ingin bahagiakan.",
+          image:
+            "https://images.unsplash.com/photo-1524594154908-edd0b0b7f1e9?w=600&q=80",
+          fb: "p-just1",
+        },
+        {
+          id: 11,
+          name: "Mixed Wildflowers",
+          category: "Birthday",
+          price: 365000,
+          oldPrice: 445000,
+          rating: 4.7,
+          reviews: 212,
+          badge: "Promo",
+          desc: "Mix wildflowers dan dried flowers dalam vase rustic. Tahan lama hingga 2 minggu.",
+          image:
+            "https://images.unsplash.com/photo-1454944338482-a69bb95894af?w=600&q=80",
+          fb: "p-mixed1",
+        },
+        {
+          id: 12,
+          name: "Grand Opening Stand",
+          category: "Congrats",
+          price: 1450000,
+          oldPrice: 0,
+          rating: 5.0,
+          reviews: 76,
+          badge: "Signature",
+          desc: "Flower stand 2 meter untuk grand opening. Custom warna dan desain sesuai brand.",
+          image:
+            "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=600&q=80",
+          fb: "p-congrats2",
+        },
+      ];
+
+      const flowerLibrary = [
+        {
+          name: "Rose",
+          meaning: "Cinta & hasrat",
+          image:
+            "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=400&q=80",
+          fb: "fl-rose",
+        },
+        {
+          name: "Peony",
+          meaning: "Romansa & kemakmuran",
+          image:
+            "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80",
+          fb: "fl-peony",
+        },
+        {
+          name: "Tulip",
+          meaning: "Cinta sempurna",
+          image:
+            "https://images.unsplash.com/photo-1524594154908-edd0b0b7f1e9?w=400&q=80",
+          fb: "fl-tulip",
+        },
+        {
+          name: "Sunflower",
+          meaning: "Kesetiaan & keceriaan",
+          image:
+            "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&q=80",
+          fb: "fl-sunflower",
+        },
+        {
+          name: "Lily",
+          meaning: "Kemurnian & ketulusan",
+          image:
+            "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80",
+          fb: "fl-lily",
+        },
+        {
+          name: "Baby's Breath",
+          meaning: "Cinta abadi",
+          image:
+            "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=400&q=80",
+          fb: "fl-baby",
+        },
+      ];
+
+      const bouquets = [
+        {
+          name: "Petite",
+          price: 350000,
+          period: "/bulan",
+          popular: false,
+          desc: "1 bouquet kecil setiap minggu — sempurna untuk meja kerja atau meja makan.",
+          features: [
+            "4 bouquet/bulan",
+            "Mix seasonal flowers",
+            "Vase free 1x",
+            "Free delivery",
+            "Skip/cancel kapan saja",
+          ],
+        },
+        {
+          name: "Signature",
+          price: 650000,
+          period: "/bulan",
+          popular: true,
+          desc: "1 bouquet ukuran medium setiap 2 minggu — untuk rumah yang selalu segar.",
+          features: [
+            "2 bouquet/bulan",
+            "Premium seasonal mix",
+            "Vase ceramic free",
+            "Free delivery",
+            "Prioritas florist",
+            "Skip/cancel kapan saja",
+          ],
+        },
+        {
+          name: "Luxe",
+          price: 1250000,
+          period: "/bulan",
+          popular: false,
+          desc: "Bouquet besar setiap minggu dengan bunga premium & tema custom per bulan.",
+          features: [
+            "4 bouquet besar/bulan",
+            "Premium imported flowers",
+            "Vase designer free",
+            "Free same-day delivery",
+            "Curated by senior florist",
+            "Konsultasi tema bulanan",
+            "Skip/cancel kapan saja",
+          ],
+        },
+      ];
+
+      const testimonials = [
+        {
+          name: "Sarah Anindya",
+          role: "Wedding Client",
+          text: "Fleur Studio merangkai bunga untuk wedding saya dan hasilnya melebihi ekspektasi. Setiap detail diperhatikan, dari warna sampai aroma. Tamu banyak yang memuji.",
+          avatar:
+            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80",
+          fb: "t1",
+        },
+        {
+          name: "Andra Pratama",
+          role: "Langganan Signature",
+          text: "Sudah 1 tahun langganan subscription. Setiap 2 minggu rumah saya selalu segar dengan bunga baru. Florist-nya paham selera saya tanpa perlu banyak diskusi lagi.",
+          avatar:
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80",
+          fb: "t2",
+        },
+        {
+          name: "Maya Chandra",
+          role: "Cafe Owner",
+          text: "Kami order bunga rutin untuk cafe dan selalu puas. Konsisten segar, rangkaiannya cantik, dan pengiriman on-time. Recommended banget untuk bisnis F&B.",
+          avatar:
+            "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&q=80",
+          fb: "t3",
+        },
+      ];
+
+      const faqs = [
+        {
+          q: "Berapa lama bunga bisa bertahan setelah pengiriman?",
+          a: "Bunga kami fresh cut dari pasar pagi itu juga. Dengan perawatan yang tepat (ganti air tiap 2 hari, potong batang miring, hindari sinar matahari langsung), bisa tahan 5-7 hari. Peony dan tulip bisa lebih lama lagi.",
+        },
+        {
+          q: "Apakah bisa order hari ini untuk pengiriman hari ini?",
+          a: "Bisa! Selama order sebelum jam 12.00 WIB dan area pengiriman masuk jangkauan same-day kami (Jakarta, Depok, Tangerang, Bekasi). Cek di fitur same-day check di atas.",
+        },
+        {
+          q: "Bisakah custom warna dan jenis bunga?",
+          a: "Tentu. Itu justru spesialisasi kami. Kamu bisa langsung pakai custom bouquet builder di halaman ini, atau chat kami untuk diskusi lebih detail.",
+        },
+        {
+          q: "Bagaimana kalau bunga yang saya mau sedang tidak musimnya?",
+          a: "Kami akan menyarankan alternatif dengan warna dan karakteristik serupa. Untuk bunga musiman tertentu, bisa pre-order 1-2 minggu sebelumnya.",
+        },
+        {
+          q: "Apakah ada garansi kalau bunga rusak saat pengiriman?",
+          a: "Ya. Kalau bunga tiba dalam kondisi tidak layak, hubungi kami dalam 3 jam dengan foto. Kami akan kirim ulang atau refund penuh sesuai kebijakan.",
+        },
+        {
+          q: "Bisa langganan untuk kantor atau cafe?",
+          a: "Bisa. Kami punya paket corporate subscription dengan invoice bulanan, pilihan faktur pajak, dan jadwal pengiriman yang bisa disesuaikan dengan jam operasional bisnis kamu.",
+        },
+      ];
+
+      /* =========================================================
+   STATE
+   ========================================================= */
+      const state = {
+        category: "Semua",
+        search: "",
+        sort: "populer",
+        cart: [],
+      };
+
+      /* =========================================================
+   OCCASIONS
+   ========================================================= */
+      function renderOccasions() {
+        $("#occasionGrid").innerHTML = occasions
+          .map(
+            (o) => `
+    <button onclick="setCategory('${o.name === "Just Because" ? "Semua" : o.name}')" class="group text-left relative overflow-hidden rounded-2xl aspect-[3/4] img-fallback">
+      ${imgTag(o.image, o.fb, o.name, "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700")}
+      <div class="absolute inset-0 bg-gradient-to-t from-sage-950/80 via-sage-950/10 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-4 text-cream-50">
+        <p class="font-serif text-xl leading-tight">${o.name}</p>
+        <p class="text-[11px] text-blush-200/90 mt-1">${o.desc}</p>
+      </div>
+    </button>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   SIGNATURE
+   ========================================================= */
+      function renderSignature() {
+        const featured = [products[1], products[9], products[4]]; // Peony, Tulip, Eternal Love
+        $("#signatureGrid").innerHTML = featured
+          .map(
+            (p) => `
+    <article onclick="openQuickView(${p.id})" class="group cursor-pointer relative overflow-hidden rounded-3xl aspect-[3/4] img-fallback border border-sage-200">
+      ${imgTag(p.image, p.fb, p.name, "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700")}
+      <div class="absolute inset-0 bg-gradient-to-t from-sage-950/85 via-sage-950/20 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 text-cream-50">
+        <p class="text-[10px] tracking-[0.3em] text-blush-300 uppercase font-semibold">${p.category}</p>
+        <h3 class="mt-2 font-serif text-2xl leading-tight">${p.name}</h3>
+        <div class="mt-3 flex items-center justify-between">
+          <p class="font-serif text-xl">Rp ${rp(p.price)}</p>
+          <span class="text-xs tracking-wider border-b border-cream-50/40 pb-0.5 group-hover:border-blush-300 group-hover:text-blush-300 transition">Lihat detail</span>
+        </div>
+      </div>
+    </article>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   PILLS
+   ========================================================= */
+      function renderPills() {
+        $("#categoryPills").innerHTML = categories
+          .map((c) => {
+            const active = state.category === c;
+            return `<button onclick="setCategory('${c}')"
+      class="shrink-0 px-5 py-2.5 text-sm rounded-full font-medium transition border ${
+        active
+          ? "bg-sage-900 text-cream-50 border-sage-900"
+          : "bg-cream-100 text-sage-800 border-sage-200 hover:border-sage-400"
+      }">${c}</button>`;
+          })
+          .join("");
+      }
+
+      function setCategory(cat) {
+        state.category = cat;
+        renderPills();
+        renderProducts();
+        document
+          .getElementById("collection")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      /* =========================================================
+   PRODUCTS
+   ========================================================= */
+      function getFiltered() {
+        let list = [...products];
+        if (state.category !== "Semua")
+          list = list.filter((p) => p.category === state.category);
+        if (state.search.trim()) {
+          const q = state.search.toLowerCase();
+          list = list.filter(
+            (p) =>
+              p.name.toLowerCase().includes(q) ||
+              p.category.toLowerCase().includes(q) ||
+              p.desc.toLowerCase().includes(q),
+          );
+        }
+        switch (state.sort) {
+          case "termurah":
+            list.sort((a, b) => a.price - b.price);
+            break;
+          case "termahal":
+            list.sort((a, b) => b.price - a.price);
+            break;
+          case "baru":
+            list.sort((a, b) => b.id - a.id);
+            break;
+          default:
+            list.sort((a, b) => b.reviews - a.reviews);
+        }
+        return list;
+      }
+
+      function productCard(p) {
+        const discount = p.oldPrice
+          ? Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100)
+          : 0;
+        return `
+    <article class="group flex flex-col rounded-3xl overflow-hidden bg-cream-50 border border-sage-200 hover:border-sage-400 transition">
+      <div class="relative aspect-[4/5] bg-sage-100 overflow-hidden img-fallback">
+        ${imgTag(p.image, p.fb, p.name, "w-full h-full object-cover group-hover:scale-105 transition duration-700")}
+        ${
+          p.badge
+            ? `<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                p.badge === "Best Seller"
+                  ? "bg-blush-500 text-white"
+                  : p.badge === "Promo"
+                    ? "bg-rose-500 text-white"
+                    : p.badge === "Signature"
+                      ? "bg-sage-900 text-cream-50"
+                      : "bg-cream-50 text-sage-900"
+              }">${p.badge}</span>`
+            : ""
+        }
+        ${discount ? `<span class="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-cream-50 text-sage-900 text-[10px] font-bold">-${discount}%</span>` : ""}
+
+        <button onclick="event.stopPropagation(); openQuickView(${p.id})" class="absolute inset-x-4 bottom-4 py-2.5 rounded-full bg-cream-50/95 backdrop-blur text-sage-900 text-xs font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition">
+          Lihat Detail
+        </button>
+      </div>
+
+      <div class="p-5 flex flex-col flex-1">
+        <p class="text-[10px] tracking-[0.25em] text-blush-500 uppercase font-semibold">${p.category}</p>
+        <h3 class="mt-1.5 font-serif text-xl leading-snug">${p.name}</h3>
+        <p class="mt-2 text-xs text-sage-700/70 leading-relaxed line-clamp-2">${p.desc}</p>
+
+        <div class="mt-auto pt-4 flex items-end justify-between gap-2">
+          <div>
+            <p class="font-serif text-lg text-sage-950">Rp ${rp(p.price)}</p>
+            ${p.oldPrice ? `<p class="text-xs text-sage-400 line-through">Rp ${rp(p.oldPrice)}</p>` : ""}
+          </div>
+          <button onclick="addToCart(${p.id})" aria-label="Tambah" class="w-10 h-10 rounded-full bg-sage-900 hover:bg-blush-500 text-cream-50 flex items-center justify-center transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+    </article>`;
+      }
+
+      function renderProducts() {
+        const list = getFiltered();
+        const el = $("#productGrid");
+        $("#resultCount").textContent = list.length;
+        if (list.length === 0) {
+          el.innerHTML = "";
+          $("#emptyState").classList.remove("hidden");
+          return;
+        }
+        $("#emptyState").classList.add("hidden");
+        el.innerHTML = list.map(productCard).join("");
+      }
+
+      function resetFilters() {
+        state.category = "Semua";
+        state.search = "";
+        state.sort = "populer";
+        $("#search").value = "";
+        $("#searchMobile").value = "";
+        $("#sortSelect").value = "populer";
+        renderPills();
+        renderProducts();
+      }
+
+      /* =========================================================
+   FLOWER LIBRARY
+   ========================================================= */
+      function renderFlowerLibrary() {
+        $("#flowerLibrary").innerHTML = flowerLibrary
+          .map(
+            (f) => `
+    <div class="group text-center">
+      <div class="relative rounded-t-full rounded-b-3xl overflow-hidden aspect-[3/4] img-fallback border border-sage-200">
+        ${imgTag(f.image, f.fb, f.name, "w-full h-full object-cover group-hover:scale-105 transition duration-700")}
+      </div>
+      <p class="mt-4 font-serif text-lg">${f.name}</p>
+      <p class="text-xs text-sage-600 mt-1 italic">"${f.meaning}"</p>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   SUBSCRIPTIONS
+   ========================================================= */
+      function renderSubscriptions() {
+        $("#subscriptionGrid").innerHTML = bouquets
+          .map(
+            (s) => `
+    <div class="relative flex flex-col p-8 rounded-3xl transition ${
+      s.popular
+        ? "bg-sage-900 text-cream-50 border-2 border-blush-400 soft-shadow"
+        : "bg-cream-50 border border-sage-200 hover:border-sage-400"
+    }">
+      ${s.popular ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-blush-400 text-sage-950 text-[10px] font-bold uppercase tracking-widest">Favorit</span>` : ""}
+
+      <p class="text-xs tracking-[0.35em] uppercase font-semibold ${s.popular ? "text-blush-300" : "text-blush-500"}">${s.name}</p>
+
+      <div class="mt-5 flex items-baseline gap-1">
+        <span class="text-sm ${s.popular ? "text-cream-100/60" : "text-sage-500"}">Rp</span>
+        <span class="font-serif text-4xl">${rp(s.price)}</span>
+      </div>
+      <p class="text-xs mt-1 ${s.popular ? "text-cream-100/60" : "text-sage-500"}">${s.period}</p>
+
+      <p class="mt-5 text-sm leading-relaxed ${s.popular ? "text-cream-100/80" : "text-sage-700"}">${s.desc}</p>
+
+      <ul class="mt-6 space-y-3 flex-1">
+        ${s.features
+          .map(
+            (f) => `
+          <li class="flex items-start gap-3 text-sm">
+            <span class="mt-0.5 shrink-0 w-4 h-4 rounded-full ${s.popular ? "bg-blush-400/20 text-blush-300" : "bg-sage-100 text-sage-600"} flex items-center justify-center">
+              <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>
+            </span>
+            <span class="${s.popular ? "text-cream-100/80" : "text-sage-700"}">${f}</span>
+          </li>
+        `,
+          )
+          .join("")}
+      </ul>
+
+      <button onclick="subscribePlan('${s.name}', ${s.price})" class="mt-8 w-full py-4 rounded-full text-sm font-bold transition ${
+        s.popular
+          ? "bg-blush-400 text-sage-950 hover:bg-blush-300"
+          : "bg-sage-900 text-cream-50 hover:bg-sage-800"
+      }">
+        Langganan ${s.name}
+      </button>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      function subscribePlan(name, price) {
+        const text = `Halo Fleur Studio, saya ingin berlangganan paket *${name}* (Rp ${rp(price)}/bulan). Mohon info cara pendaftarannya.`;
+        window.open(
+          `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`,
+          "_blank",
+        );
+        showToast(`Membuka WhatsApp untuk paket ${name}…`);
+      }
+
+      /* =========================================================
+   TESTIMONI + FAQ
+   ========================================================= */
+      function renderTestimonials() {
+        $("#testimonialGrid").innerHTML = testimonials
+          .map(
+            (t) => `
+    <div class="p-7 rounded-3xl bg-cream-50 border border-sage-200">
+      <div class="font-serif text-5xl text-blush-300 leading-none">"</div>
+      <p class="mt-4 text-sage-800 leading-relaxed text-sm">${t.text}</p>
+      <div class="mt-6 flex items-center gap-3 pt-6 border-t border-sage-200">
+        <div class="w-12 h-12 rounded-full overflow-hidden img-fallback shrink-0">
+          ${imgTag(t.avatar, t.fb, t.name, "w-full h-full object-cover")}
+        </div>
+        <div>
+          <p class="font-semibold text-sm">${t.name}</p>
+          <p class="text-xs text-sage-500">${t.role}</p>
+        </div>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      function renderFaqs() {
+        $("#faqList").innerHTML = faqs
+          .map(
+            (f) => `
+    <details class="group rounded-2xl bg-cream-50 border border-sage-200 overflow-hidden">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none">
+        <span class="font-medium text-sage-900 pr-4">${f.q}</span>
+        <span class="shrink-0 w-9 h-9 rounded-full border border-sage-300 group-open:bg-sage-900 group-open:border-sage-900 group-open:text-cream-50 flex items-center justify-center transition">
+          <svg class="w-4 h-4 group-open:rotate-45 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 text-sm text-sage-700/90 leading-relaxed">${f.a}</div>
+    </details>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   SAME-DAY DELIVERY CHECKER
+   ========================================================= */
+      const sameDayAreas = [
+        "jakarta",
+        "kemang",
+        "senopati",
+        "kebayoran",
+        "scbd",
+        "sudirman",
+        "menteng",
+        "tebet",
+        "cilandak",
+        "pondok indah",
+        "depok",
+        "tangerang",
+        "bekasi",
+        "bsd",
+        "bintaro",
+        "kuningan",
+        "setiabudi",
+        "casablanca",
+        "plaza",
+        "121",
+        "122",
+        "123",
+        "124",
+        "125",
+        "126",
+        "127",
+        "128",
+        "129",
+        "151",
+        "152",
+        "153",
+        "154",
+        "155",
+      ];
+
+      function checkArea() {
+        const input = $("#areaCheck").value.toLowerCase().trim();
+        const result = $("#areaResult");
+        result.classList.remove("hidden");
+
+        if (!input) {
+          result.className =
+            "mt-4 p-4 rounded-2xl text-sm bg-cream-100 border border-sage-200 text-sage-800";
+          result.innerHTML = "Masukkan kecamatan atau kode pos dulu ya.";
+          return;
+        }
+
+        const isAvailable = sameDayAreas.some(
+          (a) => input.includes(a) || a.includes(input),
+        );
+
+        if (isAvailable) {
+          result.className =
+            "mt-4 p-4 rounded-2xl text-sm bg-sage-100 border border-sage-300 text-sage-900";
+          result.innerHTML = `
+      <p class="font-semibold flex items-center gap-2">
+        <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>
+        Same-day tersedia!
+      </p>
+      <p class="mt-2 text-sage-700">Order sebelum <strong>12.00 WIB</strong> untuk pengiriman hari ini. Free ongkir.</p>
+    `;
+        } else {
+          result.className =
+            "mt-4 p-4 rounded-2xl text-sm bg-blush-100 border border-blush-200 text-blush-800";
+          result.innerHTML = `
+      <p class="font-semibold">Di luar jangkauan same-day</p>
+      <p class="mt-2">Tapi tenang, kami tetap bisa kirim H+1 dengan biaya kurir. <a href="https://wa.me/6281234567890?text=Halo%20Fleur%20Studio%2C%20area%20saya%20${encodeURIComponent(input)}%2C%20bisa%20kirim%20H%2B1%3F" target="_blank" class="font-semibold underline">Chat kami</a> untuk konfirmasi.</p>
+    `;
+        }
+      }
+
+      /* =========================================================
+   BOUQUET BUILDER
+   ========================================================= */
+      const builderTypes = [
+        {
+          id: "hand",
+          label: "Hand-tied",
+          price: 0,
+          img: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80",
+        },
+        {
+          id: "vase",
+          label: "Vase",
+          price: 80000,
+          img: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=600&q=80",
+        },
+        {
+          id: "box",
+          label: "Box",
+          price: 50000,
+          img: "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
+        },
+        {
+          id: "basket",
+          label: "Basket",
+          price: 70000,
+          img: "https://images.unsplash.com/photo-1524594154908-edd0b0b7f1e9?w=600&q=80",
+        },
+      ];
+
+      const builderFlowers = [
+        {
+          id: "rose",
+          label: "Roses",
+          price: 0,
+          img: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&q=80",
+        },
+        {
+          id: "peony",
+          label: "Peonies",
+          price: 120000,
+          img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=80",
+        },
+        {
+          id: "tulip",
+          label: "Tulips",
+          price: 60000,
+          img: "https://images.unsplash.com/photo-1524594154908-edd0b0b7f1e9?w=600&q=80",
+        },
+        {
+          id: "sun",
+          label: "Sunflowers",
+          price: 0,
+          img: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&q=80",
+        },
+        {
+          id: "lily",
+          label: "Lilies",
+          price: 40000,
+          img: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=600&q=80",
+        },
+        {
+          id: "mix",
+          label: "Mixed",
+          price: 20000,
+          img: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=80",
+        },
+      ];
+
+      const builderSizes = [
+        { id: "s", label: "Small", price: 250000, desc: "±8 tangkai" },
+        { id: "m", label: "Medium", price: 420000, desc: "±15 tangkai" },
+        { id: "l", label: "Large", price: 650000, desc: "±25 tangkai" },
+        { id: "xl", label: "Grande", price: 950000, desc: "±40 tangkai" },
+      ];
+
+      const builderWraps = [
+        { id: "kraft", label: "Kraft paper", price: 0 },
+        { id: "korean", label: "Korean style", price: 30000 },
+        { id: "silk", label: "Silk premium", price: 60000 },
+        { id: "clear", label: "Clear plastic", price: 0 },
+      ];
+
+      const builderAddons = [
+        { id: "card", label: "Kartu ucapan handwritten", price: 15000 },
+        { id: "choco", label: "Cokelat praline box", price: 85000 },
+        { id: "perfume", label: "Room perfume mini", price: 45000 },
+        { id: "same", label: "Same-day delivery priority", price: 50000 },
+        { id: "photo", label: "Polaroid photo card", price: 35000 },
+      ];
+
+      const builderState = {
+        type: "hand",
+        flower: "rose",
+        size: "m",
+        wrap: "kraft",
+        addons: [],
+      };
+
+      function renderTypeOptions() {
+        $("#typeOptions").innerHTML = builderTypes
+          .map(
+            (t) => `
+    <label class="cursor-pointer">
+      <input type="radio" name="bType" value="${t.id}" ${builderState.type === t.id ? "checked" : ""} class="peer sr-only" />
+      <div class="text-center px-3 py-3 rounded-xl border-2 border-sage-800 bg-sage-950 peer-checked:border-blush-400 peer-checked:bg-sage-900 transition">
+        <p class="font-serif text-base">${t.label}</p>
+        <p class="text-[10px] text-blush-300 mt-0.5">${t.price === 0 ? "Gratis" : "+Rp " + rp(t.price)}</p>
+      </div>
+    </label>
+  `,
+          )
+          .join("");
+        $$('input[name="bType"]').forEach((el) =>
+          el.addEventListener("change", (e) => {
+            builderState.type = e.target.value;
+            updateBuilder();
+          }),
+        );
+      }
+
+      function renderFlowerOptions() {
+        $("#flowerOptions").innerHTML = builderFlowers
+          .map(
+            (f) => `
+    <label class="cursor-pointer">
+      <input type="radio" name="bFlower" value="${f.id}" ${builderState.flower === f.id ? "checked" : ""} class="peer sr-only" />
+      <div class="text-center px-3 py-3 rounded-xl border-2 border-sage-800 bg-sage-950 peer-checked:border-blush-400 peer-checked:bg-sage-900 transition">
+        <p class="font-serif text-base">${f.label}</p>
+        <p class="text-[10px] text-blush-300 mt-0.5">${f.price === 0 ? "Gratis" : "+Rp " + rp(f.price)}</p>
+      </div>
+    </label>
+  `,
+          )
+          .join("");
+        $$('input[name="bFlower"]').forEach((el) =>
+          el.addEventListener("change", (e) => {
+            builderState.flower = e.target.value;
+            updateBuilder();
+          }),
+        );
+      }
+
+      function renderSizeOptions() {
+        $("#sizeOptions").innerHTML = builderSizes
+          .map(
+            (s) => `
+    <label class="cursor-pointer">
+      <input type="radio" name="bSize" value="${s.id}" ${builderState.size === s.id ? "checked" : ""} class="peer sr-only" />
+      <div class="text-center px-3 py-3 rounded-xl border-2 border-sage-800 bg-sage-950 peer-checked:border-blush-400 peer-checked:bg-sage-900 transition">
+        <p class="font-serif text-base">${s.label}</p>
+        <p class="text-[10px] text-cream-100/60 mt-0.5">${s.desc}</p>
+        <p class="text-xs font-bold text-blush-300 mt-1">Rp ${rp(s.price)}</p>
+      </div>
+    </label>
+  `,
+          )
+          .join("");
+        $$('input[name="bSize"]').forEach((el) =>
+          el.addEventListener("change", (e) => {
+            builderState.size = e.target.value;
+            updateBuilder();
+          }),
+        );
+      }
+
+      function renderWrappingOptions() {
+        $("#wrappingOptions").innerHTML = builderWraps
+          .map(
+            (w) => `
+    <label class="cursor-pointer">
+      <input type="radio" name="bWrap" value="${w.id}" ${builderState.wrap === w.id ? "checked" : ""} class="peer sr-only" />
+      <div class="text-center px-3 py-2.5 rounded-xl border-2 border-sage-800 bg-sage-950 peer-checked:border-blush-400 peer-checked:bg-sage-900 transition">
+        <p class="font-serif text-sm">${w.label}</p>
+        <p class="text-[10px] text-blush-300 mt-0.5">${w.price === 0 ? "Gratis" : "+Rp " + rp(w.price)}</p>
+      </div>
+    </label>
+  `,
+          )
+          .join("");
+        $$('input[name="bWrap"]').forEach((el) =>
+          el.addEventListener("change", (e) => {
+            builderState.wrap = e.target.value;
+            updateBuilder();
+          }),
+        );
+      }
+
+      function renderBuilderAddons() {
+        $("#addonOptions").innerHTML = builderAddons
+          .map(
+            (a) => `
+    <label class="flex items-center justify-between p-3 rounded-xl border border-sage-800 bg-sage-950 hover:border-blush-400/50 cursor-pointer transition">
+      <div class="flex items-center gap-3">
+        <input type="checkbox" data-baddon="${a.id}" data-price="${a.price}" class="accent-blush-400 w-4 h-4" />
+        <span class="text-sm text-cream-100/90">${a.label}</span>
+      </div>
+      <span class="text-xs font-bold text-blush-300">+Rp ${rp(a.price)}</span>
+    </label>
+  `,
+          )
+          .join("");
+        $$('#addonOptions input[type="checkbox"]').forEach((c) =>
+          c.addEventListener("change", updateBuilder),
+        );
+      }
+
+      function updateBuilder() {
+        const type =
+          builderTypes.find((t) => t.id === builderState.type) ||
+          builderTypes[0];
+        const flower =
+          builderFlowers.find((f) => f.id === builderState.flower) ||
+          builderFlowers[0];
+        const size =
+          builderSizes.find((s) => s.id === builderState.size) ||
+          builderSizes[1];
+        const wrap =
+          builderWraps.find((w) => w.id === builderState.wrap) ||
+          builderWraps[0];
+
+        let total = type.price + flower.price + size.price + wrap.price;
+        const selectedAddons = [];
+
+        $$('#addonOptions input[type="checkbox"]:checked').forEach((c) => {
+          const price = parseInt(c.dataset.price);
+          total += price;
+          selectedAddons.push({
+            label: c.parentElement.querySelector("span").textContent,
+            amount: price,
+          });
+        });
+
+        $("#builderPrice").textContent = "Rp " + rp(total);
+        $("#sumType").textContent = type.label;
+        $("#sumFlower").textContent = flower.label;
+        $("#sumSize").textContent = size.label + " · " + size.desc;
+        $("#sumWrap").textContent = wrap.label;
+
+        // Preview = flower utama
+        const previewImg = $("#builderPreview");
+        previewImg.style.opacity = "0.3";
+        setTimeout(() => {
+          previewImg.src = flower.img;
+          previewImg.onerror = function () {
+            this.onerror = null;
+            this.src =
+              "https://picsum.photos/seed/bouquet-" + flower.id + "/600/450";
+          };
+          previewImg.style.opacity = "1";
+        }, 150);
+
+        const box = $("#sumAddonsBox");
+        if (selectedAddons.length === 0) box.innerHTML = "";
+        else
+          box.innerHTML = selectedAddons
+            .map(
+              (a) => `
+    <div class="flex justify-between text-xs">
+      <span class="text-sage-600">+ ${a.label}</span>
+      <span class="font-semibold">Rp ${rp(a.amount)}</span>
+    </div>
+  `,
+            )
+            .join("");
+      }
+
+      function submitBuilder() {
+        const name = $("#bName").value.trim();
+        const phone = $("#bPhone").value.trim();
+        const recipient = $("#bRecipient").value.trim();
+        const date = $("#bDate").value;
+        const address = $("#bAddress").value.trim();
+        const message = $("#bMessage").value.trim();
+
+        if (!name) {
+          showToast("Isi nama kamu dulu");
+          return;
+        }
+        if (!phone) {
+          showToast("Isi no. WhatsApp");
+          return;
+        }
+        if (!address) {
+          showToast("Isi alamat pengiriman");
+          return;
+        }
+
+        const type = builderTypes.find((t) => t.id === builderState.type);
+        const flower = builderFlowers.find((f) => f.id === builderState.flower);
+        const size = builderSizes.find((s) => s.id === builderState.size);
+        const wrap = builderWraps.find((w) => w.id === builderState.wrap);
+
+        const addonLines = [];
+        $$('#addonOptions input[type="checkbox"]:checked').forEach((c) => {
+          const label = c.parentElement.querySelector("span").textContent;
+          addonLines.push(
+            `  · ${label} (+Rp ${rp(parseInt(c.dataset.price))})`,
+          );
+        });
+
+        const text =
+          `Halo Fleur Studio, saya ingin order custom bouquet.\n\n` +
+          `*Nama:* ${name}\n` +
+          `*WhatsApp:* ${phone}\n` +
+          (recipient ? `*Penerima:* ${recipient}\n` : "") +
+          (date ? `*Tanggal kirim:* ${date}\n` : "") +
+          `*Alamat:* ${address}\n\n` +
+          `*Jenis:* ${type.label}\n` +
+          `*Bunga utama:* ${flower.label}\n` +
+          `*Ukuran:* ${size.label} (${size.desc})\n` +
+          `*Wrapping:* ${wrap.label}\n` +
+          (addonLines.length
+            ? `*Tambahan:*\n${addonLines.join("\n")}\n\n`
+            : "\n") +
+          (message ? `*Pesan di kartu:*\n"${message}"\n\n` : "") +
+          `*Estimasi total:* ${$("#builderPrice").textContent}`;
+
+        window.open(
+          `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`,
+          "_blank",
+        );
+        showToast("Membuka WhatsApp…");
+      }
+
+      /* =========================================================
+   CART
+   ========================================================= */
+      function addToCart(id) {
+        const item = state.cart.find((c) => c.id === id);
+        if (item) item.qty += 1;
+        else state.cart.push({ id, qty: 1 });
+        renderCart();
+        updateCartCount();
+        showToast(`"${products.find((p) => p.id === id).name}" ditambahkan`);
+      }
+
+      function updateQty(id, delta) {
+        const item = state.cart.find((c) => c.id === id);
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) state.cart = state.cart.filter((c) => c.id !== id);
+        renderCart();
+        updateCartCount();
+      }
+
+      function removeFromCart(id) {
+        state.cart = state.cart.filter((c) => c.id !== id);
+        renderCart();
+        updateCartCount();
+      }
+
+      function renderCart() {
+        const el = $("#cartItems");
+        const footer = $("#cartFooter");
+
+        if (state.cart.length === 0) {
+          el.innerHTML = `<div class="text-center py-16">
+      <div class="mx-auto w-16 h-16 rounded-full bg-cream-100 flex items-center justify-center">
+        <svg class="w-7 h-7 text-sage-400" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13 5.4 5M7 13l-2 5h14M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+      </div>
+      <p class="mt-4 font-serif text-xl">Keranjang masih kosong</p>
+      <p class="mt-2 text-sm text-sage-600">Yuk pilih bouquet favoritmu.</p>
+    </div>`;
+          footer.innerHTML = "";
+          return;
+        }
+
+        el.innerHTML = state.cart
+          .map((c) => {
+            const p = products.find((x) => x.id === c.id);
+            return `
+      <div class="flex gap-3 p-3 rounded-2xl bg-cream-100 border border-sage-200">
+        <div class="w-20 h-20 rounded-xl overflow-hidden img-fallback shrink-0">
+          ${imgTag(p.image, p.fb, p.name, "w-full h-full object-cover")}
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="font-serif text-sm truncate">${p.name}</p>
+          <p class="text-xs text-sage-500">${p.category}</p>
+          <div class="mt-2 flex items-center justify-between gap-2">
+            <div class="flex items-center rounded-full border border-sage-200 bg-cream-50">
+              <button onclick="updateQty(${p.id}, -1)" class="w-7 h-7 text-sm hover:bg-cream-100 rounded-l-full">−</button>
+              <span class="w-7 text-center text-xs font-semibold">${c.qty}</span>
+              <button onclick="updateQty(${p.id}, 1)" class="w-7 h-7 text-sm hover:bg-cream-100 rounded-r-full">+</button>
+            </div>
+            <p class="text-sm font-bold">Rp ${rp(p.price * c.qty)}</p>
+          </div>
+        </div>
+        <button onclick="removeFromCart(${p.id})" class="self-start text-sage-400 hover:text-blush-500 transition text-xs">Hapus</button>
+      </div>`;
+          })
+          .join("");
+
+        const total = state.cart.reduce(
+          (s, c) => s + products.find((p) => p.id === c.id).price * c.qty,
+          0,
+        );
+        const itemCount = state.cart.reduce((s, c) => s + c.qty, 0);
+
+        const lines = state.cart
+          .map((c) => {
+            const p = products.find((x) => x.id === c.id);
+            return `• ${p.name} x${c.qty} = Rp ${rp(p.price * c.qty)}`;
+          })
+          .join("\n");
+
+        const waText = encodeURIComponent(
+          `Halo Fleur Studio, saya ingin pesan:\n\n${lines}\n\nTotal: Rp ${rp(total)}\n\nMohon konfirmasi ketersediaan & info pengiriman. Terima kasih!`,
+        );
+
+        footer.innerHTML = `
+    <div class="flex items-center justify-between pb-3 border-b border-sage-200">
+      <span class="text-sm text-sage-600">Total (${itemCount} item)</span>
+      <span class="font-serif text-2xl">Rp ${rp(total)}</span>
+    </div>
+    <a href="https://wa.me/6281234567890?text=${waText}" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] text-white text-sm font-bold transition">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"/></svg>
+      Order via WhatsApp
+    </a>
+    <button onclick="state.cart=[];renderCart();updateCartCount();" class="w-full py-2 text-xs text-sage-500 hover:text-sage-900 transition">Kosongkan</button>
+  `;
+      }
+
+      function updateCartCount() {
+        const n = state.cart.reduce((s, c) => s + c.qty, 0);
+        const el = $("#cartCount");
+        el.textContent = n;
+        el.classList.toggle("hidden", n === 0);
+      }
+
+      /* =========================================================
+   QUICK VIEW
+   ========================================================= */
+      function openQuickView(id) {
+        const p = products.find((x) => x.id === id);
+        const discount = p.oldPrice
+          ? Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100)
+          : 0;
+        const waText = encodeURIComponent(
+          `Halo Fleur Studio, saya ingin tanya tentang *${p.name}* (Rp ${rp(p.price)}). Apakah ready hari ini?`,
+        );
+        const waLink = `https://wa.me/6281234567890?text=${waText}`;
+
+        $("#quickViewContent").innerHTML = `
+    <div class="grid md:grid-cols-2">
+      <div class="relative aspect-square md:aspect-auto md:min-h-full bg-sage-100 img-fallback">
+        ${imgTag(p.image, p.fb, p.name, "absolute inset-0 w-full h-full object-cover")}
+        <button onclick="closeQuickView()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-cream-50/90 backdrop-blur flex items-center justify-center md:hidden">
+          <svg class="w-5 h-5 text-sage-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="p-8 sm:p-10 flex flex-col">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="text-[10px] tracking-[0.35em] text-blush-500 uppercase font-semibold">${p.category}</p>
+            <h3 class="mt-2 font-serif text-3xl leading-tight">${p.name}</h3>
+          </div>
+          <button onclick="closeQuickView()" class="hidden md:flex w-10 h-10 rounded-full hover:bg-cream-100 items-center justify-center">
+            <svg class="w-5 h-5 text-sage-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+
+        <p class="mt-6 text-sage-700 leading-relaxed text-sm">${p.desc}</p>
+
+        <div class="mt-6 flex items-baseline gap-3">
+          <span class="font-serif text-4xl">Rp ${rp(p.price)}</span>
+          ${p.oldPrice ? `<span class="text-sage-400 line-through text-sm">Rp ${rp(p.oldPrice)}</span>` : ""}
+          ${discount ? `<span class="px-2.5 py-1 rounded-full bg-rose-100 text-rose-600 text-xs font-bold">-${discount}%</span>` : ""}
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-sage-200 grid grid-cols-3 gap-4 text-center">
+          <div><p class="text-[10px] tracking-widest text-sage-500 uppercase">Rating</p><p class="font-serif text-xl mt-1">${p.rating}</p></div>
+          <div class="border-x border-sage-200"><p class="text-[10px] tracking-widest text-sage-500 uppercase">Terjual</p><p class="font-serif text-xl mt-1">${p.reviews}+</p></div>
+          <div><p class="text-[10px] tracking-widest text-sage-500 uppercase">Fresh</p><p class="font-serif text-xl mt-1">48 jam</p></div>
+        </div>
+
+        <div class="mt-8 space-y-2.5">
+          <button onclick="addToCart(${p.id}); closeQuickView();" class="w-full py-4 rounded-full bg-sage-900 hover:bg-blush-500 text-cream-50 text-sm font-bold transition">
+            Tambah ke Keranjang
+          </button>
+          <a href="${waLink}" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] text-white text-sm font-semibold transition">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"/></svg>
+            Tanya via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+        $("#quickView").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+      function closeQuickView() {
+        $("#quickView").classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      /* =========================================================
+   CART DRAWER
+   ========================================================= */
+      function openCart() {
+        renderCart();
+        $("#cartDrawer").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+      function closeCart() {
+        $("#cartDrawer").classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      /* =========================================================
+   NEWSLETTER
+   ========================================================= */
+      function subscribeNewsletter() {
+        const email = $("#newsletterEmail").value.trim();
+        if (!email || !email.includes("@")) {
+          showToast("Masukkan email yang valid");
+          return;
+        }
+        $("#newsletterEmail").value = "";
+        showToast("Terima kasih! Cek inbox kamu 🌸");
+      }
+
+      /* =========================================================
+   TOAST
+   ========================================================= */
+      let toastTimer;
+      function showToast(msg) {
+        const el = $("#toast");
+        el.textContent = msg;
+        el.classList.remove("hidden");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => el.classList.add("hidden"), 2400);
+      }
+
+      /* =========================================================
+   EVENTS
+   ========================================================= */
+      ["search", "searchMobile"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener("input", (e) => {
+          state.search = e.target.value;
+          ["search", "searchMobile"].forEach((o) => {
+            if (o !== id) document.getElementById(o).value = e.target.value;
+          });
+          renderProducts();
+        });
+      });
+
+      $("#sortSelect").addEventListener("change", (e) => {
+        state.sort = e.target.value;
+        renderProducts();
+      });
+      $("#resetBtn").addEventListener("click", resetFilters);
+      $("#menuBtn").addEventListener("click", () =>
+        $("#mobileMenu").classList.toggle("hidden"),
+      );
+      $("#mobileMenu")
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () =>
+            $("#mobileMenu").classList.add("hidden"),
+          ),
+        );
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeQuickView();
+          closeCart();
+          $("#mobileMenu").classList.add("hidden");
+        }
+      });
+
+      // Set min date = today
+      const todayISO = new Date().toISOString().split("T")[0];
+      $("#bDate").min = todayISO;
+
+      /* =========================================================
+   INIT
+   ========================================================= */
+      renderOccasions();
+      renderSignature();
+      renderPills();
+      renderProducts();
+      renderFlowerLibrary();
+      renderSubscriptions();
+      renderTestimonials();
+      renderFaqs();
+      renderTypeOptions();
+      renderFlowerOptions();
+      renderSizeOptions();
+      renderWrappingOptions();
+      renderBuilderAddons();
+      renderCart();
+      updateCartCount();
+      updateBuilder();
+    </script>
+  </body>
+</html>

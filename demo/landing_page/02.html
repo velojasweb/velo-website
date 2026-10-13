@@ -1,0 +1,1788 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitTrack — Aplikasi Fitness Tracker #1 di Indonesia</title>
+    <meta
+      name="description"
+      content="FitTrack adalah aplikasi fitness tracker dengan AI coach, 500+ workout, dan food scanner. Download gratis di App Store & Google Play."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              jakarta: ['"Plus Jakarta Sans"', "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              forest: {
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                200: "#bbf7d0",
+                300: "#86efac",
+                400: "#4ade80",
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                800: "#166534",
+                900: "#14532d",
+                950: "#052e16",
+              },
+              lime: {
+                300: "#bef264",
+                400: "#a3e635",
+                500: "#84cc16",
+                600: "#65a30d",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f0fdf4;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #16a34a;
+        border-radius: 4px;
+      }
+
+      #navbar.scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 2px 20px rgba(20, 83, 45, 0.08);
+      }
+
+      /* Grid pattern */
+      .dot-grid {
+        background-image: radial-gradient(
+          circle,
+          rgba(34, 197, 94, 0.15) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 24px 24px;
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #16a34a 0%, #84cc16 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Phone mockup float */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-16px) rotate(-2deg);
+        }
+      }
+      .float-phone {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float2 {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(2deg);
+        }
+        50% {
+          transform: translateY(-12px) rotate(2deg);
+        }
+      }
+      .float-phone-2 {
+        animation: float2 7s ease-in-out infinite;
+      }
+
+      /* Blob background */
+      @keyframes blob {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+      }
+      .animate-blob {
+        animation: blob 10s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+
+      /* Feature card hover */
+      .feature-card {
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 48px -12px rgba(22, 163, 74, 0.2);
+      }
+
+      /* Store buttons */
+      .store-btn {
+        transition: all 0.3s ease;
+      }
+      .store-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(20, 83, 45, 0.2);
+      }
+
+      /* Marquee */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        animation: marquee 40s linear infinite;
+      }
+
+      /* Screenshot scroll */
+      @keyframes screenshotScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-screenshot {
+        animation: screenshotScroll 30s linear infinite;
+      }
+
+      /* Progress ring animation */
+      @keyframes progressRing {
+        from {
+          stroke-dashoffset: 251;
+        }
+        to {
+          stroke-dashoffset: 60;
+        }
+      }
+      .progress-ring {
+        animation: progressRing 2.5s ease-out forwards;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #16a34a;
+        box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-700 antialiased overflow-x-hidden">
+    <!-- ===================== NAVBAR ===================== -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 py-4 transition-all"
+    >
+      <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-forest-600 to-lime-500 flex items-center justify-center shadow-lg shadow-forest-500/30"
+          >
+            <i class="fa-solid fa-heart-pulse text-white text-base"></i>
+          </div>
+          <span class="text-xl font-bold jakarta text-slate-900 tracking-tight"
+            >Fit<span class="text-forest-600">Track</span></span
+          >
+        </a>
+
+        <!-- Nav -->
+        <ul
+          class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600"
+        >
+          <li>
+            <a href="#fitur" class="hover:text-forest-600 transition">Fitur</a>
+          </li>
+          <li>
+            <a href="#screenshots" class="hover:text-forest-600 transition"
+              >Screenshots</a
+            >
+          </li>
+          <li>
+            <a href="#testimoni" class="hover:text-forest-600 transition"
+              >Testimoni</a
+            >
+          </li>
+          <li>
+            <a href="#faq" class="hover:text-forest-600 transition">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <a
+          href="#download"
+          class="px-5 py-2.5 rounded-xl bg-forest-600 text-white text-sm font-bold hover:bg-forest-700 transition shadow-lg shadow-forest-600/20 flex items-center gap-2"
+        >
+          <i class="fa-solid fa-download text-xs"></i>
+          Download Gratis
+        </a>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+      <!-- BG blobs -->
+      <div
+        class="absolute top-0 -left-20 w-96 h-96 bg-forest-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"
+      ></div>
+      <div
+        class="absolute top-40 right-0 w-96 h-96 bg-lime-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"
+      ></div>
+      <div
+        class="absolute bottom-0 left-1/2 w-96 h-96 bg-forest-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div data-aos="fade-right">
+            <!-- Badge -->
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-forest-50 border border-forest-100 text-forest-700 text-xs font-bold mb-6"
+            >
+              <span
+                class="w-2 h-2 rounded-full bg-forest-500 animate-pulse"
+              ></span>
+              #1 Fitness App di Indonesia 2025
+            </div>
+
+            <h1
+              class="text-4xl md:text-5xl lg:text-6xl font-extrabold jakarta text-slate-900 leading-[1.1] tracking-tight mb-6"
+            >
+              Ubah Tubuh & Hidup Anda dengan
+              <span class="gradient-text">AI Coach</span> Pribadi
+            </h1>
+
+            <p class="text-lg text-slate-600 leading-relaxed mb-8 max-w-lg">
+              FitTrack adalah fitness tracker dengan AI yang membuat program
+              latihan & nutrisi khusus untuk Anda. Tidak perlu gym, tidak perlu
+              alat mahal.
+            </p>
+
+            <!-- Store Buttons -->
+            <div class="flex flex-wrap gap-3 mb-8">
+              <a
+                href="#"
+                class="store-btn flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900 text-white"
+              >
+                <i class="fa-brands fa-apple text-2xl"></i>
+                <div class="text-left">
+                  <p class="text-[10px] leading-none opacity-80 mb-1">
+                    Download di
+                  </p>
+                  <p class="font-bold leading-none text-base">App Store</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                class="store-btn flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900 text-white"
+              >
+                <i class="fa-brands fa-google-play text-xl"></i>
+                <div class="text-left">
+                  <p class="text-[10px] leading-none opacity-80 mb-1">
+                    Get it on
+                  </p>
+                  <p class="font-bold leading-none text-base">Google Play</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- Trust info -->
+            <div
+              class="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-100"
+            >
+              <div class="flex items-center gap-3">
+                <div class="flex -space-x-2">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                    class="w-8 h-8 rounded-full border-2 border-white object-cover"
+                    alt=""
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                    class="w-8 h-8 rounded-full border-2 border-white object-cover"
+                    alt=""
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                    class="w-8 h-8 rounded-full border-2 border-white object-cover"
+                    alt=""
+                  />
+                  <div
+                    class="w-8 h-8 rounded-full border-2 border-white bg-forest-600 flex items-center justify-center text-white text-[10px] font-bold"
+                  >
+                    +1M
+                  </div>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-slate-900">1.2 juta+</p>
+                  <p class="text-xs text-slate-500">pengguna aktif</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="flex text-amber-400 text-xs">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-sm font-bold text-slate-900">
+                  4.9 <span class="text-slate-500 font-normal">/ 5</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right - Phone Mockup -->
+          <div
+            class="relative h-[560px] lg:h-[640px]"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <!-- Background circle -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div
+                class="w-[420px] h-[420px] rounded-full bg-gradient-to-br from-forest-500/20 to-lime-400/20"
+              ></div>
+            </div>
+
+            <!-- Main Phone -->
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[280px] float-phone"
+            >
+              <div
+                class="bg-slate-900 rounded-[3rem] p-3 shadow-2xl shadow-forest-900/30"
+              >
+                <div class="bg-white rounded-[2.5rem] overflow-hidden">
+                  <!-- Notch -->
+                  <div
+                    class="bg-slate-900 h-7 flex items-center justify-center"
+                  >
+                    <div
+                      class="w-24 h-4 bg-slate-900 rounded-b-2xl -mt-1"
+                    ></div>
+                  </div>
+                  <!-- Screen -->
+                  <div
+                    class="bg-gradient-to-b from-forest-50 to-white p-5 aspect-[9/19]"
+                  >
+                    <!-- App Header -->
+                    <div class="flex items-center justify-between mb-4">
+                      <div>
+                        <p class="text-[10px] text-slate-500">Selamat pagi,</p>
+                        <p class="text-sm font-bold jakarta text-slate-900">
+                          Andi Pratama
+                        </p>
+                      </div>
+                      <div
+                        class="w-9 h-9 rounded-full bg-gradient-to-br from-forest-500 to-lime-500 flex items-center justify-center text-white text-xs font-bold"
+                      >
+                        AP
+                      </div>
+                    </div>
+
+                    <!-- Progress Ring -->
+                    <div
+                      class="bg-white rounded-2xl p-4 shadow-sm mb-3 flex items-center gap-3"
+                    >
+                      <div class="relative w-16 h-16">
+                        <svg class="w-16 h-16 -rotate-90" viewBox="0 0 100 100">
+                          <circle
+                            cx="50"
+                            cy="50"
+                            r="40"
+                            stroke="#dcfce7"
+                            stroke-width="8"
+                            fill="none"
+                          />
+                          <circle
+                            cx="50"
+                            cy="50"
+                            r="40"
+                            stroke="#16a34a"
+                            stroke-width="8"
+                            fill="none"
+                            stroke-dasharray="251"
+                            stroke-dashoffset="60"
+                            stroke-linecap="round"
+                            class="progress-ring"
+                          />
+                        </svg>
+                        <div
+                          class="absolute inset-0 flex items-center justify-center"
+                        >
+                          <span
+                            class="text-sm font-bold jakarta text-forest-600"
+                            >76%</span
+                          >
+                        </div>
+                      </div>
+                      <div>
+                        <p class="text-[10px] text-slate-500 mb-0.5">
+                          Kalori hari ini
+                        </p>
+                        <p class="text-lg font-bold jakarta text-slate-900">
+                          1,240
+                        </p>
+                        <p class="text-[10px] text-slate-500">
+                          dari 1,800 kkal
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Stats mini -->
+                    <div class="grid grid-cols-2 gap-2 mb-3">
+                      <div class="bg-white rounded-xl p-3 shadow-sm">
+                        <i
+                          class="fa-solid fa-shoe-prints text-forest-500 text-xs mb-1"
+                        ></i>
+                        <p class="text-sm font-bold jakarta text-slate-900">
+                          8,432
+                        </p>
+                        <p class="text-[9px] text-slate-500">Langkah</p>
+                      </div>
+                      <div class="bg-white rounded-xl p-3 shadow-sm">
+                        <i
+                          class="fa-solid fa-heart-pulse text-red-500 text-xs mb-1"
+                        ></i>
+                        <p class="text-sm font-bold jakarta text-slate-900">
+                          72 bpm
+                        </p>
+                        <p class="text-[9px] text-slate-500">Detak</p>
+                      </div>
+                    </div>
+
+                    <!-- Workout card -->
+                    <div
+                      class="bg-gradient-to-br from-forest-600 to-lime-500 rounded-2xl p-3 text-white mb-2"
+                    >
+                      <p class="text-[9px] opacity-90 mb-1">Workout hari ini</p>
+                      <p class="text-xs font-bold jakarta mb-2">
+                        Full Body HIIT
+                      </p>
+                      <div class="flex items-center justify-between">
+                        <span class="text-[9px] opacity-90"
+                          >30 menit • 250 kkal</span
+                        >
+                        <span
+                          class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center"
+                        >
+                          <i class="fa-solid fa-play text-[8px]"></i>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Card 1 - Achievement -->
+            <div
+              class="absolute top-8 left-0 bg-white rounded-2xl p-4 shadow-xl border border-forest-100 flex items-center gap-3 float-phone-2"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fa-solid fa-trophy text-amber-500"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold jakarta text-slate-900">
+                  Streak 30 hari!
+                </p>
+                <p class="text-[10px] text-slate-500">Keep it up 🔥</p>
+              </div>
+            </div>
+
+            <!-- Floating Card 2 - Heart Rate -->
+            <div
+              class="absolute bottom-16 right-0 bg-white rounded-2xl p-4 shadow-xl border border-forest-100 w-44"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <p class="text-[10px] text-slate-500">Heart Rate</p>
+                <i class="fa-solid fa-heart-pulse text-red-500 text-xs"></i>
+              </div>
+              <p class="text-lg font-bold jakarta text-slate-900 mb-2">
+                124 <span class="text-xs font-normal text-slate-500">bpm</span>
+              </p>
+              <div class="flex items-end gap-0.5 h-8">
+                <div
+                  class="flex-1 bg-forest-200 rounded-t"
+                  style="height: 40%"
+                ></div>
+                <div
+                  class="flex-1 bg-forest-300 rounded-t"
+                  style="height: 60%"
+                ></div>
+                <div
+                  class="flex-1 bg-forest-400 rounded-t"
+                  style="height: 80%"
+                ></div>
+                <div
+                  class="flex-1 bg-forest-500 rounded-t"
+                  style="height: 55%"
+                ></div>
+                <div
+                  class="flex-1 bg-forest-600 rounded-t"
+                  style="height: 90%"
+                ></div>
+                <div
+                  class="flex-1 bg-lime-500 rounded-t"
+                  style="height: 100%"
+                ></div>
+                <div
+                  class="flex-1 bg-forest-500 rounded-t"
+                  style="height: 70%"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Floating Badge - Calories -->
+            <div
+              class="absolute top-1/2 right-2 lg:right-4 bg-lime-400 text-forest-900 rounded-2xl px-4 py-3 shadow-xl"
+            >
+              <p
+                class="text-[10px] font-bold uppercase tracking-wider opacity-80"
+              >
+                Burn today
+              </p>
+              <p class="text-xl font-black jakarta">
+                480 <span class="text-xs font-bold">kkal</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AS SEEN ON ===================== -->
+    <section class="py-10 border-y border-slate-100 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <p
+          class="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6"
+        >
+          Diliput oleh media
+        </p>
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 opacity-60"
+        >
+          <span class="text-lg font-bold text-slate-500">Kompas</span>
+          <span class="text-lg font-bold text-slate-500">Detik</span>
+          <span class="text-lg font-bold text-slate-500">CNN Indonesia</span>
+          <span class="text-lg font-bold text-slate-500">Tempo</span>
+          <span class="text-lg font-bold text-slate-500">Bisnis.com</span>
+          <span class="text-lg font-bold text-slate-500">Kontan</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATURES ===================== -->
+    <section id="fitur" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+          <span
+            class="inline-block text-forest-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Fitur Utama</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-slate-900 mb-4 tracking-tight"
+          >
+            Semua yang Anda Butuhkan untuk
+            <span class="gradient-text">Hidup Sehat</span>
+          </h2>
+          <p class="text-slate-600 text-lg">
+            Latihan, nutrisi, dan tracking dalam satu aplikasi. Tidak perlu
+            download banyak app lagi.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Feature 1 -->
+          <div
+            class="feature-card p-8 rounded-2xl bg-gradient-to-br from-forest-600 to-forest-700 text-white lg:col-span-2"
+            data-aos="fade-up"
+          >
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="flex-1">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center mb-5"
+                >
+                  <i class="fa-solid fa-robot text-2xl text-lime-300"></i>
+                </div>
+                <h3 class="text-2xl font-bold jakarta mb-3">
+                  AI Personal Coach
+                </h3>
+                <p class="text-forest-50 leading-relaxed mb-6">
+                  AI kami menganalisis level fitness, tujuan, dan waktu luang
+                  Anda untuk membuat program 100% personal. Berubah otomatis
+                  setiap 2 minggu sesuai progress.
+                </p>
+                <ul class="space-y-2 text-sm">
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-check text-lime-400"></i> Program
+                    dinamis sesuai progress
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-check text-lime-400"></i> Adjust
+                    otomatis saat skip latihan
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-check text-lime-400"></i> Rekomendasi
+                    recovery & rest day
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="hidden md:block w-48 h-48 rounded-2xl bg-white/10 backdrop-blur flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fa-solid fa-brain text-8xl text-white/30"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="feature-card p-8 rounded-2xl border border-slate-100 bg-white"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-forest-50 flex items-center justify-center mb-5"
+            >
+              <i class="fa-solid fa-dumbbell text-2xl text-forest-600"></i>
+            </div>
+            <h3 class="text-xl font-bold jakarta text-slate-900 mb-3">
+              500+ Workout Video
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Dari HIIT 15 menit sampai yoga 60 menit. Semua dipandu trainer
+              bersertifikat.
+            </p>
+            <span
+              class="inline-flex items-center gap-2 text-forest-600 font-bold text-sm"
+            >
+              Lihat Library <i class="fa-solid fa-arrow-right text-xs"></i>
+            </span>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="feature-card p-8 rounded-2xl border border-slate-100 bg-white"
+            data-aos="fade-up"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-forest-50 flex items-center justify-center mb-5"
+            >
+              <i class="fa-solid fa-camera text-2xl text-forest-600"></i>
+            </div>
+            <h3 class="text-xl font-bold jakarta text-slate-900 mb-3">
+              Food Scanner AI
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Foto makanan Anda, AI langsung hitung kalori & nutrisi. Support
+              5.000+ makanan Indonesia.
+            </p>
+            <span
+              class="inline-flex items-center gap-2 text-forest-600 font-bold text-sm"
+            >
+              Coba Sekarang <i class="fa-solid fa-arrow-right text-xs"></i>
+            </span>
+          </div>
+
+          <!-- Feature 4 -->
+          <div
+            class="feature-card p-8 rounded-2xl border border-slate-100 bg-white"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-forest-50 flex items-center justify-center mb-5"
+            >
+              <i class="fa-solid fa-chart-line text-2xl text-forest-600"></i>
+            </div>
+            <h3 class="text-xl font-bold jakarta text-slate-900 mb-3">
+              Progress Tracking
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Track berat, lingkar tubuh, dan foto progress. Lihat perubahan
+              Anda dalam grafik cantik.
+            </p>
+            <span
+              class="inline-flex items-center gap-2 text-forest-600 font-bold text-sm"
+            >
+              Lihat Contoh <i class="fa-solid fa-arrow-right text-xs"></i>
+            </span>
+          </div>
+
+          <!-- Feature 5 -->
+          <div
+            class="feature-card p-8 rounded-2xl border border-slate-100 bg-white"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-forest-50 flex items-center justify-center mb-5"
+            >
+              <i class="fa-solid fa-users text-2xl text-forest-600"></i>
+            </div>
+            <h3 class="text-xl font-bold jakarta text-slate-900 mb-3">
+              Community & Challenges
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Gabung challenge bulanan, sharing progress, dan dukung sesama
+              pengguna FitTrack.
+            </p>
+            <span
+              class="inline-flex items-center gap-2 text-forest-600 font-bold text-sm"
+            >
+              Gabung <i class="fa-solid fa-arrow-right text-xs"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SCREENSHOTS SCROLL ===================== -->
+    <section
+      id="screenshots"
+      class="py-20 bg-gradient-to-b from-slate-50 to-white overflow-hidden"
+    >
+      <div class="max-w-6xl mx-auto px-6 text-center mb-14" data-aos="fade-up">
+        <span
+          class="inline-block text-forest-600 text-xs font-bold uppercase tracking-widest mb-3"
+          >Screenshots</span
+        >
+        <h2
+          class="text-3xl lg:text-5xl font-extrabold jakarta text-slate-900 mb-4 tracking-tight"
+        >
+          Cantik, Simpel, Powerful
+        </h2>
+        <p class="text-slate-600 text-lg max-w-xl mx-auto">
+          Desain yang fokus ke pengalaman Anda. Tidak bikin bingung, tidak penuh
+          iklan.
+        </p>
+      </div>
+
+      <!-- Scrolling screenshots -->
+      <div class="relative">
+        <div class="flex animate-screenshot gap-6 whitespace-nowrap">
+          <!-- Screenshot 1 -->
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 1"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Dashboard
+            </p>
+          </div>
+
+          <!-- Screenshot 2 -->
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 2"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Workout
+            </p>
+          </div>
+
+          <!-- Screenshot 3 -->
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 3"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Progress
+            </p>
+          </div>
+
+          <!-- Screenshot 4 -->
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 4"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Nutrition
+            </p>
+          </div>
+
+          <!-- Screenshot 5 -->
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 5"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Community
+            </p>
+          </div>
+
+          <!-- Duplicate for seamless loop -->
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 1"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Dashboard
+            </p>
+          </div>
+
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 2"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Workout
+            </p>
+          </div>
+
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 3"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Progress
+            </p>
+          </div>
+
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 4"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Nutrition
+            </p>
+          </div>
+
+          <div class="inline-block w-56 flex-shrink-0">
+            <div class="bg-slate-900 rounded-3xl p-2 shadow-xl">
+              <div class="rounded-2xl overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80"
+                  class="w-full h-96 object-cover"
+                  alt="Screen 5"
+                />
+              </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-3 font-medium">
+              Community
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+          <span
+            class="inline-block text-forest-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Cara Kerja</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-slate-900 mb-4 tracking-tight"
+          >
+            Mulai Perjalanan Fitness Anda
+          </h2>
+          <p class="text-slate-600 text-lg">
+            Dari download sampai workout pertama, cuma butuh 5 menit.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center relative" data-aos="fade-up">
+            <div
+              class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-forest-500 to-lime-500 flex items-center justify-center text-white text-3xl mb-5 shadow-xl shadow-forest-500/30"
+            >
+              <i class="fa-solid fa-download"></i>
+            </div>
+            <p
+              class="text-xs font-bold text-forest-600 uppercase tracking-widest mb-2"
+            >
+              Langkah 01
+            </p>
+            <h3 class="font-bold jakarta text-slate-900 text-xl mb-3">
+              Download Gratis
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Download FitTrack di App Store atau Google Play. Tanpa biaya,
+              tanpa iklan mengganggu.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-forest-500 to-lime-500 flex items-center justify-center text-white text-3xl mb-5 shadow-xl shadow-forest-500/30"
+            >
+              <i class="fa-solid fa-clipboard-question"></i>
+            </div>
+            <p
+              class="text-xs font-bold text-forest-600 uppercase tracking-widest mb-2"
+            >
+              Langkah 02
+            </p>
+            <h3 class="font-bold jakarta text-slate-900 text-xl mb-3">
+              Isi Kuesioner Singkat
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Jawab 8 pertanyaan tentang tujuan, level fitness, dan waktu Anda.
+              Cuma 2 menit.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-forest-500 to-lime-500 flex items-center justify-center text-white text-3xl mb-5 shadow-xl shadow-forest-500/30"
+            >
+              <i class="fa-solid fa-play"></i>
+            </div>
+            <p
+              class="text-xs font-bold text-forest-600 uppercase tracking-widest mb-2"
+            >
+              Langkah 03
+            </p>
+            <h3 class="font-bold jakarta text-slate-900 text-xl mb-3">
+              Mulai Workout!
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              AI Coach langsung kasih program personalized. Tinggal ikuti video
+              workout pertama Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section
+      class="py-20 bg-gradient-to-br from-forest-800 via-forest-700 to-lime-700 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 dot-grid opacity-10"></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2
+            class="text-3xl lg:text-4xl font-extrabold jakarta text-white mb-3 tracking-tight"
+          >
+            Angka yang Membuktikan
+          </h2>
+          <p class="text-forest-100/80">
+            Ribuan orang telah mengubah hidup mereka dengan FitTrack
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="text-center p-6 rounded-2xl bg-white/10 backdrop-blur border border-white/10"
+            data-aos="zoom-in"
+          >
+            <i class="fa-solid fa-users text-lime-300 text-2xl mb-3"></i>
+            <p
+              class="text-3xl lg:text-4xl font-black jakarta text-white mb-1"
+              data-counter="1200000"
+            >
+              0
+            </p>
+            <p
+              class="text-xs text-forest-100/80 font-medium uppercase tracking-wider"
+            >
+              Pengguna Aktif
+            </p>
+          </div>
+          <div
+            class="text-center p-6 rounded-2xl bg-white/10 backdrop-blur border border-white/10"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+          >
+            <i class="fa-solid fa-dumbbell text-lime-300 text-2xl mb-3"></i>
+            <p
+              class="text-3xl lg:text-4xl font-black jakarta text-white mb-1"
+              data-counter="50000000"
+            >
+              0
+            </p>
+            <p
+              class="text-xs text-forest-100/80 font-medium uppercase tracking-wider"
+            >
+              Workout Selesai
+            </p>
+          </div>
+          <div
+            class="text-center p-6 rounded-2xl bg-white/10 backdrop-blur border border-white/10"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <i class="fa-solid fa-fire text-lime-300 text-2xl mb-3"></i>
+            <p
+              class="text-3xl lg:text-4xl font-black jakarta text-white mb-1"
+              data-counter="2300000000"
+            >
+              0
+            </p>
+            <p
+              class="text-xs text-forest-100/80 font-medium uppercase tracking-wider"
+            >
+              Kalori Terbakar
+            </p>
+          </div>
+          <div
+            class="text-center p-6 rounded-2xl bg-white/10 backdrop-blur border border-white/10"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+          >
+            <i class="fa-solid fa-star text-lime-300 text-2xl mb-3"></i>
+            <p class="text-3xl lg:text-4xl font-black jakarta text-white mb-1">
+              4.9
+            </p>
+            <p
+              class="text-xs text-forest-100/80 font-medium uppercase tracking-wider"
+            >
+              Rating Rata-rata
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section id="testimoni" class="py-20 lg:py-28 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-forest-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Testimoni</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-slate-900 mb-4 tracking-tight"
+          >
+            Cerita Mereka yang Berhasil
+          </h2>
+          <p class="text-slate-600 text-lg">
+            Bukan kami yang bilang — dengar langsung dari pengguna FitTrack.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+          >
+            <div class="flex items-center gap-3 mb-5">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                class="w-12 h-12 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-slate-900 text-sm">
+                  Nadia Safira
+                </p>
+                <p class="text-xs text-slate-500">Karyawan Swasta, Jakarta</p>
+              </div>
+            </div>
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-5">
+              "Turun 12 kg dalam 4 bulan tanpa gym. AI coach-nya benar-benar
+              paham kondisi saya. Setiap hari programnya berubah sesuai progress
+              — nggak bosen!"
+            </p>
+            <div
+              class="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500"
+            >
+              <i class="fa-solid fa-arrow-trend-down text-forest-500"></i>
+              <span>-12 kg dalam 4 bulan</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex items-center gap-3 mb-5">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                class="w-12 h-12 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-slate-900 text-sm">
+                  Bagas Pratama
+                </p>
+                <p class="text-xs text-slate-500">Mahasiswa, Bandung</p>
+              </div>
+            </div>
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-5">
+              "Awalnya cuma iseng, sekarang jadi kebutuhan. Fitur food
+              scanner-nya menyelamatkan hidup saya sebagai anak kos yang suka
+              makan sembarangan."
+            </p>
+            <div
+              class="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500"
+            >
+              <i class="fa-solid fa-arrow-trend-up text-forest-500"></i>
+              <span>+5 kg massa otot</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center gap-3 mb-5">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                class="w-12 h-12 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-slate-900 text-sm">
+                  Ibu Sari Dewi
+                </p>
+                <p class="text-xs text-slate-500">Ibu Rumah Tangga, Surabaya</p>
+              </div>
+            </div>
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-5">
+              "Umur 45 dan baru mulai olahraga lagi. Workout-nya bisa
+              disesuaikan dengan kondisi lutut saya yang pernah cedera. Nggak
+              ada alasan buat nggak mulai."
+            </p>
+            <div
+              class="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500"
+            >
+              <i class="fa-solid fa-heart-pulse text-forest-500"></i>
+              <span>Tekanan darah normal kembali</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-forest-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >FAQ</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-slate-900 mb-4 tracking-tight"
+          >
+            Pertanyaan Umum
+          </h2>
+          <p class="text-slate-600">
+            Belum ketemu jawabannya?
+            <a href="#" class="text-forest-600 font-semibold hover:underline"
+              >Chat support kami →</a
+            >
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden active"
+            data-aos="fade-up"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-slate-900 text-sm pr-4"
+                >Apakah FitTrack benar-benar gratis?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ya, FitTrack bisa digunakan 100% gratis selamanya untuk fitur
+                dasar: workout library, tracking, dan community. Untuk AI Coach,
+                Food Scanner, dan program advanced, tersedia FitTrack Premium
+                dengan harga Rp 79rb/bulan atau Rp 549rb/tahun.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-slate-900 text-sm pr-4"
+                >Apakah perlu alat gym?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Tidak sama sekali! Banyak program kami dirancang khusus untuk
+                workout di rumah tanpa alat (bodyweight only). Tapi jika Anda
+                punya dumbbell atau resistance band, ada juga program yang
+                memanfaatkannya.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-slate-900 text-sm pr-4"
+                >Berapa lama sampai lihat hasil?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Tergantung konsistensi. Pengguna yang konsisten workout 3-4x
+                seminggu biasanya melihat perubahan berat badan dalam 2-4 minggu
+                dan perubahan bentuk tubuh dalam 6-8 minggu. Yang penting
+                konsisten!
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-slate-900 text-sm pr-4"
+                >Apakah bisa sinkron dengan smartwatch?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ya! FitTrack tersinkron dengan Apple Health, Google Fit, Garmin,
+                Fitbit, dan Samsung Health. Data langkah, detak jantung, dan
+                tidur otomatis masuk ke dashboard FitTrack.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-slate-900 text-sm pr-4"
+                >Apakah data saya aman?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Sangat aman. Data Anda dienkripsi end-to-end dan kami tidak
+                pernah menjual data ke pihak ketiga. Kami juga comply dengan UU
+                PDP Indonesia dan GDPR. Anda bisa hapus akun dan semua data
+                kapan saja.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DOWNLOAD CTA ===================== -->
+    <section id="download" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="rounded-3xl bg-gradient-to-br from-forest-800 via-forest-700 to-lime-700 p-8 lg:p-16 relative overflow-hidden"
+          data-aos="fade-up"
+        >
+          <div class="absolute inset-0 dot-grid opacity-10"></div>
+          <div
+            class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-lime-400/20 blur-3xl"
+          ></div>
+          <div
+            class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-forest-500/30 blur-3xl"
+          ></div>
+
+          <div class="relative grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left -->
+            <div>
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur text-white text-xs font-bold mb-6"
+              >
+                <i class="fa-solid fa-bolt text-lime-300"></i>
+                Mulai Gratis Sekarang
+              </div>
+              <h2
+                class="text-3xl lg:text-5xl font-extrabold jakarta text-white leading-tight mb-5 tracking-tight"
+              >
+                Tubuh Impian Dimulai<br />
+                <span class="text-lime-300">Hari Ini</span>
+              </h2>
+              <p class="text-forest-100/90 text-lg mb-8 leading-relaxed">
+                Download FitTrack sekarang dan dapatkan program 7 hari pertama
+                gratis. Tidak perlu kartu kredit, tidak ada iklan mengganggu.
+              </p>
+
+              <!-- Store buttons -->
+              <div class="flex flex-wrap gap-3 mb-8">
+                <a
+                  href="#"
+                  class="store-btn flex items-center gap-3 px-5 py-3 rounded-xl bg-white text-slate-900 hover:bg-slate-100"
+                >
+                  <i class="fa-brands fa-apple text-2xl"></i>
+                  <div class="text-left">
+                    <p class="text-[10px] leading-none opacity-70 mb-1">
+                      Download di
+                    </p>
+                    <p class="font-bold leading-none text-base">App Store</p>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="store-btn flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-black"
+                >
+                  <i class="fa-brands fa-google-play text-xl"></i>
+                  <div class="text-left">
+                    <p class="text-[10px] leading-none opacity-70 mb-1">
+                      Get it on
+                    </p>
+                    <p class="font-bold leading-none text-base">Google Play</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Trust badges -->
+              <div
+                class="flex flex-wrap gap-6 pt-6 border-t border-white/10 text-xs text-forest-100"
+              >
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-shield-halved text-lime-300"></i>
+                  Data Encrypted
+                </span>
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-star text-lime-300"></i>
+                  4.9/5 Rating
+                </span>
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-users text-lime-300"></i>
+                  1.2M+ Users
+                </span>
+              </div>
+            </div>
+
+            <!-- Right - QR & Phone -->
+            <div class="relative flex justify-center">
+              <div class="relative">
+                <!-- Phone mockup -->
+                <div class="w-56 bg-slate-900 rounded-[2.5rem] p-2 shadow-2xl">
+                  <div
+                    class="rounded-[2rem] overflow-hidden bg-white aspect-[9/19]"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+                      class="w-full h-full object-cover"
+                      alt="FitTrack App"
+                    />
+                  </div>
+                </div>
+
+                <!-- QR Code floating -->
+                <div
+                  class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl border border-slate-100"
+                >
+                  <div
+                    class="w-24 h-24 bg-slate-100 rounded-lg flex items-center justify-center mb-2"
+                  >
+                    <!-- Simple QR representation -->
+                    <div class="grid grid-cols-5 gap-0.5">
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                      <div class="w-4 h-4 bg-white"></div>
+                      <div class="w-4 h-4 bg-slate-900"></div>
+                    </div>
+                  </div>
+                  <p class="text-[10px] font-bold text-slate-900 text-center">
+                    Scan untuk download
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div>
+            <div class="flex items-center gap-2.5 mb-5">
+              <div
+                class="w-10 h-10 rounded-xl bg-gradient-to-br from-forest-600 to-lime-500 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-heart-pulse text-white text-base"></i>
+              </div>
+              <span class="text-xl font-bold jakarta text-white tracking-tight"
+                >Fit<span class="text-lime-400">Track</span></span
+              >
+            </div>
+            <p class="text-sm leading-relaxed mb-6">
+              Aplikasi fitness tracker #1 di Indonesia. Membantu 1.2 juta+ orang
+              hidup lebih sehat melalui AI coach dan program personalized.
+            </p>
+            <div class="flex gap-2">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-forest-600 hover:text-white transition text-sm"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-forest-600 hover:text-white transition text-sm"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-forest-600 hover:text-white transition text-sm"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-forest-600 hover:text-white transition text-sm"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold jakarta mb-5 text-sm">Produk</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Fitur</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Premium</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition"
+                  >Workout Library</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition"
+                  >Food Database</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Integrasi</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold jakarta mb-5 text-sm">
+              Perusahaan
+            </h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="hover:text-lime-400 transition"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Karier</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Press Kit</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Kontak</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold jakarta mb-5 text-sm">Dukungan</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="hover:text-lime-400 transition"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-lime-400 transition">Status</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs"
+        >
+          <p>© 2025 FitTrack Indonesia. Seluruh hak cipta dilindungi.</p>
+          <div class="flex gap-6">
+            <span>PT FitTrack Digital Indonesia</span>
+            <a href="#" class="hover:text-lime-400 transition"
+              >NPWP: 04.567.890.1-023.000</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Download Button (Mobile) -->
+    <a
+      href="#download"
+      class="fixed bottom-6 right-6 flex items-center gap-3 px-5 py-3.5 rounded-full bg-forest-600 text-white font-bold shadow-2xl shadow-forest-600/40 hover:bg-forest-700 transition z-40 md:hidden"
+    >
+      <i class="fa-solid fa-download"></i>
+      <span class="text-sm">Download</span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      // Counter
+      const counters = document.querySelectorAll("[data-counter]");
+      const animateCounter = (el) => {
+        const target = +el.getAttribute("data-counter");
+        const step = target / (2200 / 16);
+        let current = 0;
+        const update = () => {
+          current += step;
+          if (current < target) {
+            if (target >= 1000000) {
+              el.textContent = (current / 1000000).toFixed(1) + "M";
+            } else if (target >= 1000) {
+              el.textContent = Math.floor(current / 1000) + "K";
+            } else {
+              el.textContent = Math.floor(current);
+            }
+            requestAnimationFrame(update);
+          } else {
+            if (target >= 1000000) {
+              el.textContent = (target / 1000000).toFixed(1) + "M";
+            } else if (target >= 1000) {
+              el.textContent = Math.floor(target / 1000) + "K";
+            } else {
+              el.textContent = target;
+            }
+          }
+        };
+        update();
+      };
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      counters.forEach((c) => counterObserver.observe(c));
+
+      // FAQ Accordion
+      document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

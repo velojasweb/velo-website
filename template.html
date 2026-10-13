@@ -1,0 +1,2754 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeri Template Website Profesional — VELO Web Development</title>
+    <meta
+      name="description"
+      content="Jelajahi koleksi template website profesional VELO: landing page bisnis, company profile, dan katalog digital. Mulai Rp 899.000, pengerjaan 1–3 hari, SEO friendly & responsif."
+    />
+    <meta
+      name="keywords"
+      content="template website, template landing page, template company profile, template katalog digital, galeri template website, jasa website murah"
+    />
+    <meta name="author" content="VELO Web Development" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#2563eb" />
+    <link rel="canonical" href="https://velo.id/templates.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="VELO Web Development" />
+    <meta
+      property="og:title"
+      content="Galeri Template Website Profesional — VELO"
+    />
+    <meta
+      property="og:description"
+      content="Pilih template landing page, company profile, atau katalog digital. Mulai Rp 899.000, selesai 1–3 hari."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=80"
+    />
+    <meta property="og:locale" content="id_ID" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Galeri Template Website Profesional — VELO"
+    />
+    <meta
+      name="twitter:description"
+      content="Pilih template landing page, company profile, atau katalog digital."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=80"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("velo-theme");
+          if (
+            saved === "dark" ||
+            (!saved &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+            colors: {
+              ink: {
+                50: "#f6f7f9",
+                100: "#eceef2",
+                200: "#d5d9e2",
+                300: "#b0b8c9",
+                400: "#8590a8",
+                500: "#66738e",
+                600: "#505b75",
+                700: "#41495f",
+                800: "#383e50",
+                900: "#1b1f2a",
+                950: "#101319",
+              },
+            },
+            keyframes: {
+              softPulse: {
+                "0%,100%": { opacity: 0.55 },
+                "50%": { opacity: 1 },
+              },
+              ring: {
+                "0%": { transform: "scale(.9)", opacity: 0.8 },
+                "100%": { transform: "scale(1.6)", opacity: 0 },
+              },
+              popIn: {
+                "0%": { opacity: 0, transform: "scale(.94) translateY(12px)" },
+                "100%": { opacity: 1, transform: "none" },
+              },
+            },
+            animation: {
+              softPulse: "softPulse 2.4s ease-in-out infinite",
+              ring: "ring 1.8s ease-out infinite",
+              popIn: "popIn .4s cubic-bezier(.22,1,.36,1) both",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal[data-delay="1"] {
+        transition-delay: 0.08s;
+      }
+      .reveal[data-delay="2"] {
+        transition-delay: 0.16s;
+      }
+      .reveal[data-delay="3"] {
+        transition-delay: 0.24s;
+      }
+      .reveal[data-delay="4"] {
+        transition-delay: 0.32s;
+      }
+      .reveal[data-delay="5"] {
+        transition-delay: 0.4s;
+      }
+
+      #navbar {
+        transition:
+          background-color 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      #navbar.scrolled {
+        box-shadow: 0 8px 30px -12px rgba(16, 19, 25, 0.18);
+      }
+
+      #mobileMenu {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.35s ease;
+      }
+      #mobileMenu.open {
+        max-height: 560px;
+        opacity: 1;
+      }
+
+      .burger span {
+        display: block;
+        height: 2px;
+        width: 22px;
+        background: currentColor;
+        border-radius: 999px;
+        transition:
+          transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.25s ease;
+      }
+      .burger span + span {
+        margin-top: 5px;
+      }
+      .burger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .burger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .burger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        height: 2px;
+        width: 100%;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        transform: scaleX(1);
+      }
+
+      .tpl-preview {
+        overflow: hidden;
+      }
+      .tpl-preview img {
+        transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .tpl-card:hover .tpl-preview img {
+        transform: scale(1.06);
+      }
+
+      .tpl-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(16, 19, 25, 0.55);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(2px);
+      }
+      .tpl-card:hover .tpl-overlay {
+        opacity: 1;
+      }
+
+      .filter-btn {
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .filter-btn.active {
+        background: #2563eb;
+        color: #fff;
+        border-color: #2563eb;
+      }
+
+      /* Pagination */
+      .page-btn {
+        min-width: 40px;
+        height: 40px;
+        padding: 0 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: 1px solid;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .page-btn:not(:disabled):hover {
+        border-color: #2563eb;
+        color: #2563eb;
+      }
+      .page-btn:not(:disabled):active {
+        transform: scale(0.95);
+      }
+      .page-btn.active {
+        background: #2563eb;
+        color: #fff;
+        border-color: #2563eb;
+      }
+      .page-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+      .page-btn-arrow {
+        padding: 0 14px;
+      }
+
+      #previewModal {
+        display: none;
+      }
+      #previewModal.open {
+        display: flex;
+      }
+      #previewModal.open .modal-card {
+        animation: popIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      #backToTop {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(8px);
+        transition:
+          opacity 0.35s ease,
+          transform 0.35s ease;
+      }
+      #backToTop.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd2dd;
+        border-radius: 999px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #2a3040;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Galeri Template Website VELO",
+        "url": "https://velo.id/templates.html",
+        "description": "Koleksi template website profesional: landing page, company profile, dan katalog digital.",
+        "inLanguage": "id-ID"
+      }
+    </script>
+  </head>
+
+  <body
+    class="bg-white text-ink-900 dark:bg-ink-950 dark:text-ink-100 antialiased selection:bg-blue-600 selection:text-white pb-20 lg:pb-0"
+  >
+    <!-- ============ NAVBAR ============ -->
+    <header
+      id="navbar"
+      class="fixed top-0 inset-x-0 z-50 border-b border-transparent bg-white/70 dark:bg-ink-950/70 backdrop-blur-md"
+    >
+      <nav class="max-w-7xl mx-auto px-6" aria-label="Navigasi utama">
+        <div class="flex items-center justify-between h-20">
+          <a
+            href="index.html"
+            class="flex items-center gap-2.5 group"
+            aria-label="VELO Web Development"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&q=80"
+              alt="Logo VELO Web Development"
+              class="w-9 h-9 rounded-lg object-cover ring-1 ring-ink-900/5 dark:ring-white/10 transition-transform duration-500 group-hover:rotate-[-6deg]"
+            />
+            <span class="text-lg font-extrabold tracking-tight"
+              >VELO<span class="text-blue-600">.</span></span
+            >
+          </a>
+
+          <ul
+            class="hidden lg:flex items-center gap-9 text-sm font-medium text-ink-600 dark:text-ink-300"
+          >
+            <li>
+              <a
+                href="index.html#beranda"
+                class="nav-link hover:text-ink-900 dark:hover:text-white transition"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#layanan"
+                class="nav-link hover:text-ink-900 dark:hover:text-white transition"
+                >Layanan</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#keunggulan"
+                class="nav-link hover:text-ink-900 dark:hover:text-white transition"
+                >Keunggulan</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#testimoni"
+                class="nav-link hover:text-ink-900 dark:hover:text-white transition"
+                >Testimoni</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#portofolio"
+                class="nav-link hover:text-ink-900 dark:hover:text-white transition"
+                >Portofolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#harga"
+                class="nav-link hover:text-ink-900 dark:hover:text-white transition"
+                >Harga</a
+              >
+            </li>
+            <li>
+              <a
+                href="templates.html"
+                class="nav-link active text-ink-900 dark:text-white"
+                >Template</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#kontak"
+                class="nav-link hover:text-ink-900 dark:hover:text-white transition"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+
+          <div class="flex items-center gap-2.5">
+            <button
+              id="themeToggle"
+              type="button"
+              aria-label="Ganti mode terang/gelap"
+              class="grid place-items-center w-10 h-10 rounded-full border border-ink-200 dark:border-ink-800 text-ink-600 dark:text-ink-300 hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+            >
+              <svg
+                class="w-[18px] h-[18px] hidden dark:block"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path
+                  d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+                />
+              </svg>
+              <svg
+                class="w-[18px] h-[18px] block dark:hidden"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+              </svg>
+            </button>
+
+            <a
+              href="index.html#kontak"
+              class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+            >
+              Konsultasi Gratis
+            </a>
+
+            <button
+              id="burgerBtn"
+              type="button"
+              aria-label="Buka menu"
+              aria-expanded="false"
+              class="burger lg:hidden grid place-items-center w-10 h-10 rounded-full border border-ink-200 dark:border-ink-800 text-ink-700 dark:text-ink-200"
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+
+        <div id="mobileMenu" class="lg:hidden">
+          <ul class="pb-6 pt-1 flex flex-col gap-1 text-[15px] font-medium">
+            <li>
+              <a
+                href="index.html#beranda"
+                class="block px-4 py-3 rounded-xl hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#layanan"
+                class="block px-4 py-3 rounded-xl hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+                >Layanan</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#keunggulan"
+                class="block px-4 py-3 rounded-xl hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+                >Keunggulan</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#testimoni"
+                class="block px-4 py-3 rounded-xl hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+                >Testimoni</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#portofolio"
+                class="block px-4 py-3 rounded-xl hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+                >Portofolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#harga"
+                class="block px-4 py-3 rounded-xl hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+                >Harga</a
+              >
+            </li>
+            <li>
+              <a
+                href="templates.html"
+                class="block px-4 py-3 rounded-xl bg-blue-600/10 text-blue-700 dark:text-blue-400 font-semibold"
+                >Template</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#kontak"
+                class="block px-4 py-3 rounded-xl hover:bg-ink-50 dark:hover:bg-ink-900 transition"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="relative pt-36 pb-14 md:pt-40 md:pb-16 overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10 bg-gradient-to-b from-ink-50 via-white to-white dark:from-ink-900 dark:via-ink-950 dark:to-ink-950"
+      ></div>
+      <div
+        class="absolute -top-40 -right-32 -z-10 w-[520px] h-[520px] rounded-full bg-blue-500/10 blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6">
+        <nav
+          aria-label="Breadcrumb"
+          class="reveal text-xs text-ink-500 dark:text-ink-400 flex items-center gap-2"
+        >
+          <a href="index.html" class="hover:text-blue-600 transition"
+            >Beranda</a
+          >
+          <svg
+            class="w-3 h-3"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+          <span class="text-ink-800 dark:text-ink-200 font-semibold"
+            >Galeri Template</span
+          >
+        </nav>
+
+        <div class="mt-8 max-w-3xl">
+          <span
+            class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-ink-200 dark:border-ink-800 bg-white/70 dark:bg-ink-900/60 text-xs font-semibold tracking-wide text-ink-600 dark:text-ink-300"
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"
+            ></span>
+            Paket Template · Pengerjaan 1–3 Hari
+          </span>
+
+          <h1
+            class="reveal mt-6 text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.08] tracking-tight"
+            data-delay="1"
+          >
+            Galeri Template Website
+            <span class="relative inline-block">
+              <span class="relative z-10">Siap Pakai</span>
+              <span
+                class="absolute left-0 bottom-1.5 -z-0 h-3 w-full bg-blue-600/20 dark:bg-blue-500/25 rounded"
+              ></span>
+            </span>
+          </h1>
+
+          <p
+            class="reveal mt-6 text-[17px] leading-relaxed text-ink-600 dark:text-ink-300 max-w-2xl"
+            data-delay="2"
+          >
+            Pilih desain yang paling sesuai dengan karakter bisnis Anda, lalu
+            kami sesuaikan warna, konten, dan logo — siap online dalam 1–3 hari
+            kerja.
+          </p>
+
+          <div
+            class="reveal mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-ink-500 dark:text-ink-400"
+            data-delay="3"
+          >
+            <span class="inline-flex items-center gap-1.5">
+              <svg
+                class="w-3.5 h-3.5 text-green-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              SEO friendly &amp; responsif
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg
+                class="w-3.5 h-3.5 text-green-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Bebas kustomisasi warna &amp; konten
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg
+                class="w-3.5 h-3.5 text-green-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+              Garansi maintenance 1 bulan
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg
+                class="w-3.5 h-3.5 text-blue-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path
+                  d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18"
+                />
+              </svg>
+              Live demo tersedia
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FILTER + GRID + PAGINATION ============ -->
+    <section class="pb-20 md:pb-28">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Filter bar -->
+        <div
+          class="reveal sticky top-20 z-30 -mx-6 px-6 py-4 bg-white/85 dark:bg-ink-950/85 backdrop-blur-md border-y border-ink-100 dark:border-ink-900"
+        >
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div
+              id="filterBar"
+              class="flex flex-wrap items-center gap-2"
+              role="tablist"
+              aria-label="Filter kategori template"
+            >
+              <button
+                type="button"
+                class="filter-btn active px-4 py-2 rounded-full border border-ink-200 dark:border-ink-800 text-xs font-semibold text-ink-700 dark:text-ink-200 hover:border-blue-600"
+                data-filter="all"
+              >
+                Semua
+                <span
+                  class="ml-1 text-[10px] opacity-70"
+                  data-count="all"
+                ></span>
+              </button>
+              <button
+                type="button"
+                class="filter-btn px-4 py-2 rounded-full border border-ink-200 dark:border-ink-800 text-xs font-semibold text-ink-700 dark:text-ink-200 hover:border-blue-600"
+                data-filter="landing"
+              >
+                Landing Page
+                <span
+                  class="ml-1 text-[10px] opacity-70"
+                  data-count="landing"
+                ></span>
+              </button>
+              <button
+                type="button"
+                class="filter-btn px-4 py-2 rounded-full border border-ink-200 dark:border-ink-800 text-xs font-semibold text-ink-700 dark:text-ink-200 hover:border-blue-600"
+                data-filter="company"
+              >
+                Company Profile
+                <span
+                  class="ml-1 text-[10px] opacity-70"
+                  data-count="company"
+                ></span>
+              </button>
+              <button
+                type="button"
+                class="filter-btn px-4 py-2 rounded-full border border-ink-200 dark:border-ink-800 text-xs font-semibold text-ink-700 dark:text-ink-200 hover:border-blue-600"
+                data-filter="katalog"
+              >
+                Katalog Digital
+                <span
+                  class="ml-1 text-[10px] opacity-70"
+                  data-count="katalog"
+                ></span>
+              </button>
+            </div>
+
+            <p class="text-xs text-ink-500 dark:text-ink-400">
+              <span id="resultCount">12</span> template tersedia
+            </p>
+          </div>
+        </div>
+
+        <!-- Anchor untuk scroll setelah ganti halaman -->
+        <div id="gridAnchor" class="h-0"></div>
+
+        <!-- Grid -->
+        <div
+          id="templateGrid"
+          class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-7"
+        >
+          <!-- ============ LANDING PAGE ============ -->
+
+          <!-- 1. Aurora -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="landing"
+            data-name="Aurora"
+            data-tag="Landing Page · SaaS/Startup"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/aurora"
+            data-desc="Template landing page minimalis dengan hero besar, section fitur, pricing, dan CTA yang kuat. Ideal untuk produk digital, SaaS, atau startup teknologi."
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80"
+                alt="Template landing page Aurora untuk SaaS dan startup"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Landing Page
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">Aurora</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    SaaS / Startup
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Hero besar, section fitur, pricing, dan CTA kuat. Ideal untuk
+                produk digital &amp; startup.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/aurora"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="Aurora — Landing Page SaaS/Startup (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Bistro -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="landing"
+            data-name="Bistro"
+            data-tag="Landing Page · Kuliner"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/bistro"
+            data-desc="Template landing page untuk restoran, kafe, dan bisnis kuliner. Menampilkan menu unggulan, galeri suasana, dan tombol reservasi WhatsApp langsung."
+            data-delay="1"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80"
+                alt="Template landing page Bistro untuk restoran dan kafe"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Landing Page
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">Bistro</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Restoran / Kafe
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Menu unggulan, galeri suasana, dan tombol reservasi WhatsApp
+                langsung.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/bistro"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="Bistro — Landing Page Kuliner (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. FitPro -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="landing"
+            data-name="FitPro"
+            data-tag="Landing Page · Fitness"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/fitpro"
+            data-desc="Template landing page dinamis untuk gym, personal trainer, atau studio fitness. Menampilkan program, jadwal kelas, harga membership, dan testimoni member."
+            data-delay="2"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80"
+                alt="Template landing page FitPro untuk gym dan studio fitness"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Landing Page
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">FitPro</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Gym / Fitness
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Program, jadwal kelas, harga membership, dan testimoni member.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/fitpro"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="FitPro — Landing Page Gym/Fitness (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. EduPrime -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="landing"
+            data-name="EduPrime"
+            data-tag="Landing Page · Pendidikan"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/eduprime"
+            data-desc="Template landing page untuk kursus online, bimbel, atau akademi. Menampilkan kurikulum, mentor, harga kelas, dan formulir pendaftaran."
+            data-delay="3"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80"
+                alt="Template landing page EduPrime untuk kursus dan akademi"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Landing Page
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">EduPrime</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Kursus / Akademi
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Kurikulum, mentor, harga kelas, dan formulir pendaftaran online.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/eduprime"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="EduPrime — Landing Page Kursus/Akademi (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ COMPANY PROFILE ============ -->
+
+          <!-- 5. Korpora -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="company"
+            data-name="Korpora"
+            data-tag="Company Profile · Korporat"
+            data-price="Rp 1.499.000"
+            data-image="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/korpora"
+            data-desc="Template company profile multi-halaman bergaya korporat. Cocok untuk perusahaan jasa, manufaktur, dan holding. Struktur rapi dan formal."
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
+                alt="Template company profile Korpora untuk perusahaan jasa dan manufaktur"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Company Profile
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">Korpora</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Korporat / Jasa
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 1.499.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Multi-halaman bergaya korporat formal. Cocok untuk perusahaan
+                jasa &amp; holding.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/korpora"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="Korpora — Company Profile Korporat (Rp 1.499.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Arsitek+ -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="company"
+            data-name="Arsitek+"
+            data-tag="Company Profile · Arsitektur"
+            data-price="Rp 1.499.000"
+            data-image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/arsitek"
+            data-desc="Template company profile elegan untuk studio arsitektur, desain interior, dan kontraktor. Fokus visual dengan galeri proyek besar."
+            data-delay="1"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80"
+                alt="Template company profile Arsitek+ untuk studio arsitektur dan interior"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Company Profile
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">Arsitek+</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Arsitektur / Interior
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 1.499.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Elegan dan fokus visual — galeri proyek besar, cocok untuk
+                studio desain.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/arsitek"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="Arsitek+ — Company Profile Arsitektur (Rp 1.499.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Medika -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="company"
+            data-name="Medika"
+            data-tag="Company Profile · Klinik"
+            data-price="Rp 1.499.000"
+            data-image="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/medika"
+            data-desc="Template company profile untuk klinik, rumah sakit, atau praktik dokter. Menampilkan layanan, dokter, jadwal, dan booking online."
+            data-delay="2"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80"
+                alt="Template company profile Medika untuk klinik dan rumah sakit"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Company Profile
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">Medika</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Klinik / Kesehatan
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 1.499.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Layanan, dokter, jadwal, dan booking online untuk klinik &amp;
+                rumah sakit.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/medika"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="Medika — Company Profile Klinik/Kesehatan (Rp 1.499.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Konsultan Pro -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="company"
+            data-name="Konsultan Pro"
+            data-tag="Company Profile · Konsultan"
+            data-price="Rp 1.499.000"
+            data-image="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/konsultan"
+            data-desc="Template company profile untuk firma konsultan, akuntan, dan notaris. Menampilkan keahlian tim, studi kasus, dan form konsultasi."
+            data-delay="3"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
+                alt="Template company profile Konsultan Pro untuk firma konsultan"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Company Profile
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">Konsultan Pro</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Konsultan / Firma
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 1.499.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Keahlian tim, studi kasus, dan form konsultasi untuk firma
+                profesional.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/konsultan"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="Konsultan Pro — Company Profile Firma/Konsultan (Rp 1.499.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ============ KATALOG DIGITAL ============ -->
+
+          <!-- 9. MenuKu -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="katalog"
+            data-name="MenuKu"
+            data-tag="Katalog Digital · Restoran"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/menuku"
+            data-desc="Katalog digital untuk restoran dan kafe. Menampilkan seluruh menu dengan kategori, foto, harga, dan tombol order langsung ke WhatsApp."
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80"
+                alt="Template katalog digital MenuKu untuk restoran dan kafe"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Katalog Digital
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">MenuKu</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Restoran / Kafe
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Katalog menu dengan kategori, foto, harga, dan tombol order
+                WhatsApp.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/menuku"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="MenuKu — Katalog Digital Restoran (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. Boutique -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="katalog"
+            data-name="Boutique"
+            data-tag="Katalog Digital · Fashion"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/boutique"
+            data-desc="Katalog digital untuk butik dan brand fashion. Grid produk rapi, detail warna/ukuran, dan integrasi order via WhatsApp atau Instagram."
+            data-delay="1"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80"
+                alt="Template katalog digital Boutique untuk brand fashion"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Katalog Digital
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">Boutique</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Fashion / Butik
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Grid produk rapi, detail warna/ukuran, order via WhatsApp atau
+                IG.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/boutique"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="Boutique — Katalog Digital Fashion (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 11. GadgetList -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="katalog"
+            data-name="GadgetList"
+            data-tag="Katalog Digital · Elektronik"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/gadgetlist"
+            data-desc="Katalog digital untuk toko elektronik dan gadget. Menampilkan spesifikasi, stok, harga, dan filter pencarian cepat berdasarkan kategori."
+            data-delay="2"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+                alt="Template katalog digital GadgetList untuk toko elektronik"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Katalog Digital
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">GadgetList</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Elektronik / Gadget
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Spesifikasi, stok, harga, dan filter pencarian cepat berdasarkan
+                kategori.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/gadgetlist"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="GadgetList — Katalog Digital Elektronik (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 12. PropertiView -->
+          <article
+            class="tpl-card reveal group rounded-2xl overflow-hidden bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 hover:ring-blue-600/40 hover:-translate-y-1 transition-all duration-500"
+            data-category="katalog"
+            data-name="PropertiView"
+            data-tag="Katalog Digital · Properti"
+            data-price="Rp 899.000"
+            data-image="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80"
+            data-demo="https://demo.velo.id/propertiview"
+            data-desc="Katalog digital untuk agen properti. Menampilkan daftar rumah, apartemen, atau ruko dengan foto, spesifikasi, harga, dan kontak agen."
+            data-delay="3"
+          >
+            <div
+              class="tpl-preview relative aspect-[4/3] bg-ink-100 dark:bg-ink-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80"
+                alt="Template katalog digital PropertiView untuk agen properti"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="tpl-overlay">
+                <button
+                  type="button"
+                  class="tpl-open px-5 py-2.5 rounded-full bg-white text-ink-950 text-xs font-semibold hover:bg-ink-100 active:scale-95 transition"
+                >
+                  Lihat Detail
+                </button>
+              </div>
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-[10px] font-bold tracking-wider uppercase text-ink-700 dark:text-ink-200"
+              >
+                Katalog Digital
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="font-bold tracking-tight">PropertiView</h3>
+                  <p class="text-[11px] text-ink-500 dark:text-ink-400 mt-0.5">
+                    Properti / Agen
+                  </p>
+                </div>
+                <p
+                  class="text-sm font-extrabold tracking-tight whitespace-nowrap"
+                >
+                  Rp 899.000
+                </p>
+              </div>
+              <p
+                class="mt-3 text-xs leading-relaxed text-ink-600 dark:text-ink-300"
+              >
+                Daftar rumah, apartemen, atau ruko lengkap dengan kontak agen.
+              </p>
+              <div class="mt-5 grid grid-cols-3 gap-2">
+                <button
+                  type="button"
+                  class="tpl-open px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+                >
+                  Preview
+                </button>
+                <a
+                  href="https://demo.velo.id/propertiview"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center justify-center gap-1 px-2 py-2.5 rounded-full border border-ink-200 dark:border-ink-800 text-[11px] font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+                >
+                  Demo
+                  <svg
+                    class="w-3 h-3"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    />
+                    <path d="M15 3h6v6" />
+                    <path d="M10 14L21 3" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  data-wa="PropertiView — Katalog Digital Properti (Rp 899.000)"
+                  class="pilih-tpl text-center px-2 py-2.5 rounded-full bg-blue-600 text-white text-[11px] font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+                >
+                  Pilih
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Empty state -->
+        <div id="emptyState" class="hidden text-center py-20">
+          <p class="text-sm text-ink-500 dark:text-ink-400">
+            Tidak ada template untuk kategori ini.
+          </p>
+        </div>
+
+        <!-- ============ PAGINATION ============ -->
+        <div id="paginationWrap" class="mt-14 flex flex-col items-center gap-5">
+          <p id="pageInfo" class="text-xs text-ink-500 dark:text-ink-400">
+            Menampilkan 1–6 dari 12 template
+          </p>
+
+          <nav
+            id="paginationNav"
+            class="flex flex-wrap items-center justify-center gap-2"
+            aria-label="Navigasi halaman"
+          ></nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA CUSTOM ============ -->
+    <section class="relative py-24 overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80"
+        alt="Ruang kerja pengembangan website modern"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-ink-950/85"></div>
+
+      <div class="relative max-w-4xl mx-auto px-6 text-center text-white">
+        <p
+          class="reveal text-xs font-bold tracking-[.18em] text-blue-400 uppercase"
+        >
+          Belum Menemukan yang Cocok?
+        </p>
+        <h2
+          class="reveal mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight"
+          data-delay="1"
+        >
+          Kami Bisa Bangun Desain Custom dari Nol
+        </h2>
+        <p
+          class="reveal mt-5 text-ink-200 leading-relaxed max-w-2xl mx-auto"
+          data-delay="2"
+        >
+          Jika template di atas belum sesuai visi Anda, tim VELO siap merancang
+          desain eksklusif yang benar-benar mencerminkan identitas brand Anda.
+          Paket Custom
+          <span class="font-semibold text-white"
+            >sudah termasuk Domain &amp; Hosting</span
+          >.
+        </p>
+        <div
+          class="reveal mt-9 flex flex-wrap items-center justify-center gap-3"
+          data-delay="3"
+        >
+          <a
+            href="index.html#kontak"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+          >
+            Konsultasi Desain Custom
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a
+            href="index.html#harga"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/25 text-white text-sm font-semibold hover:bg-white/10 active:scale-[.97] transition"
+          >
+            Lihat Paket Custom
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-ink-950 text-ink-300 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+          <div class="md:col-span-5">
+            <a href="index.html" class="flex items-center gap-2.5">
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&q=80"
+                alt="Logo VELO Web Development"
+                class="w-9 h-9 rounded-lg object-cover ring-1 ring-white/10"
+              />
+              <span class="text-lg font-extrabold tracking-tight text-white"
+                >VELO<span class="text-blue-500">.</span></span
+              >
+            </a>
+            <p class="mt-5 text-sm leading-relaxed text-ink-400 max-w-sm">
+              Jasa pembuatan website profesional untuk UMKM, personal branding,
+              dan perusahaan. Cepat, elegan, SEO friendly, dan tepat waktu.
+            </p>
+            <p class="mt-4 text-xs text-ink-500">
+              Paket Custom sudah termasuk Domain &amp; Hosting. Garansi
+              maintenance gratis 1 bulan.
+            </p>
+          </div>
+
+          <div class="md:col-span-2">
+            <h4 class="text-sm font-bold text-white tracking-tight">
+              Navigasi
+            </h4>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              <li>
+                <a href="index.html#beranda" class="hover:text-white transition"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a href="index.html#layanan" class="hover:text-white transition"
+                  >Layanan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#keunggulan"
+                  class="hover:text-white transition"
+                  >Keunggulan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#testimoni"
+                  class="hover:text-white transition"
+                  >Testimoni</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#portofolio"
+                  class="hover:text-white transition"
+                  >Portofolio</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-2">
+            <h4 class="text-sm font-bold text-white tracking-tight">Layanan</h4>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              <li>
+                <a href="index.html#harga" class="hover:text-white transition"
+                  >Landing Page</a
+                >
+              </li>
+              <li>
+                <a href="index.html#harga" class="hover:text-white transition"
+                  >Katalog Digital</a
+                >
+              </li>
+              <li>
+                <a href="index.html#harga" class="hover:text-white transition"
+                  >Company Profile</a
+                >
+              </li>
+              <li>
+                <a href="index.html#harga" class="hover:text-white transition"
+                  >Custom Web Apps</a
+                >
+              </li>
+              <li>
+                <a href="index.html#faq" class="hover:text-white transition"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="md:col-span-3">
+            <h4 class="text-sm font-bold text-white tracking-tight">
+              Mulai Proyek
+            </h4>
+            <p class="mt-4 text-sm text-ink-400 leading-relaxed">
+              Konsultasi awal gratis. Ceritakan kebutuhan Anda, kami bantu
+              tentukan solusi terbaik.
+            </p>
+            <a
+              href="index.html#kontak"
+              class="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+            >
+              Hubungi Kami
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="pt-7 flex flex-wrap items-center justify-between gap-4 text-xs text-ink-500"
+        >
+          <p>
+            © <span id="year"></span> VELO Web Development. Seluruh hak cipta
+            dilindungi.
+          </p>
+          <p>Dibuat dengan standar kualitas tinggi di Indonesia.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ STICKY MOBILE CTA ============ -->
+    <div
+      class="lg:hidden fixed bottom-0 inset-x-0 z-40 border-t border-ink-200 dark:border-ink-800 bg-white/95 dark:bg-ink-950/95 backdrop-blur-md"
+    >
+      <div class="flex items-center gap-2 p-3">
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20VELO%2C%20saya%20ingin%20konsultasi%20pilihan%20template."
+          target="_blank"
+          rel="noopener"
+          class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-blue-600 text-white text-sm font-semibold active:scale-[.97] transition"
+        >
+          <svg
+            class="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"
+            />
+            <path
+              d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"
+            />
+          </svg>
+          Tanya Template
+        </a>
+        <a
+          href="index.html#harga"
+          class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-ink-200 dark:border-ink-800 text-sm font-semibold active:scale-[.97] transition"
+        >
+          Lihat Harga
+        </a>
+      </div>
+    </div>
+
+    <!-- ============ FLOATING WA DESKTOP ============ -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20VELO%2C%20saya%20ingin%20konsultasi%20pilihan%20template."
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat WhatsApp"
+      class="hidden lg:grid fixed bottom-6 right-6 z-40 place-items-center w-14 h-14 rounded-full bg-blue-600 text-white hover:bg-blue-700 hover:scale-105 active:scale-95 transition"
+    >
+      <span
+        class="absolute inset-0 rounded-full bg-blue-600/40 animate-ring"
+      ></span>
+      <svg
+        class="relative w-6 h-6"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"
+        />
+        <path
+          d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"
+        />
+      </svg>
+    </a>
+
+    <!-- ============ BACK TO TOP ============ -->
+    <button
+      id="backToTop"
+      type="button"
+      aria-label="Kembali ke atas"
+      class="fixed bottom-24 right-6 z-40 grid place-items-center w-11 h-11 rounded-full bg-ink-900 dark:bg-white text-white dark:text-ink-950 shadow-lg"
+    >
+      <svg
+        class="w-5 h-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <!-- ============ PREVIEW MODAL ============ -->
+    <div
+      id="previewModal"
+      class="fixed inset-0 z-[100] items-center justify-center p-4 bg-ink-950/70 backdrop-blur-sm"
+    >
+      <div
+        class="modal-card relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-white dark:bg-ink-900 ring-1 ring-ink-900/5 dark:ring-white/10 shadow-2xl"
+      >
+        <button
+          id="previewClose"
+          type="button"
+          aria-label="Tutup"
+          class="absolute top-4 right-4 z-10 grid place-items-center w-9 h-9 rounded-full bg-white/90 dark:bg-ink-950/90 backdrop-blur text-ink-700 dark:text-ink-200 hover:bg-white dark:hover:bg-ink-950 transition"
+        >
+          <svg
+            class="w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+
+        <div
+          class="aspect-[16/10] bg-ink-100 dark:bg-ink-800 overflow-hidden rounded-t-3xl"
+        >
+          <img
+            id="previewImage"
+            src=""
+            alt="Preview template"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="p-7 sm:p-9">
+          <span
+            id="previewTag"
+            class="inline-block px-2.5 py-1 rounded-full bg-blue-600/10 dark:bg-blue-500/15 text-[10px] font-bold tracking-wider uppercase text-blue-700 dark:text-blue-400"
+          >
+            Kategori
+          </span>
+          <h3
+            id="previewName"
+            class="mt-3 text-2xl font-extrabold tracking-tight"
+          >
+            Nama Template
+          </h3>
+          <p
+            id="previewDesc"
+            class="mt-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300"
+          >
+            Deskripsi template.
+          </p>
+
+          <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+            <div class="rounded-xl bg-ink-50 dark:bg-ink-950 p-4">
+              <p
+                class="text-[10px] font-bold tracking-wider uppercase text-ink-500 dark:text-ink-400"
+              >
+                Harga
+              </p>
+              <p id="previewPrice" class="mt-1 font-extrabold tracking-tight">
+                Rp 0
+              </p>
+            </div>
+            <div class="rounded-xl bg-ink-50 dark:bg-ink-950 p-4">
+              <p
+                class="text-[10px] font-bold tracking-wider uppercase text-ink-500 dark:text-ink-400"
+              >
+                Pengerjaan
+              </p>
+              <p class="mt-1 font-extrabold tracking-tight">1–3 Hari</p>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-col gap-3">
+            <a
+              id="previewWa"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+            >
+              <svg
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"
+                />
+                <path
+                  d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"
+                />
+              </svg>
+              Pilih Template Ini
+            </a>
+            <div class="grid grid-cols-2 gap-3">
+              <a
+                id="previewDemo"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full border border-ink-200 dark:border-ink-800 text-sm font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 hover:border-blue-600 hover:text-blue-600 dark:hover:text-blue-400 active:scale-[.97] transition"
+              >
+                <svg
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                  <path d="M15 3h6v6" />
+                  <path d="M10 14L21 3" />
+                </svg>
+                Lihat Demo
+              </a>
+              <button
+                id="previewSecondaryClose"
+                type="button"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full border border-ink-200 dark:border-ink-800 text-sm font-semibold hover:bg-ink-50 dark:hover:bg-ink-800 active:scale-[.97] transition"
+              >
+                Tutup
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SCRIPT ============ -->
+    <script>
+      (function () {
+        "use strict";
+
+        /* ---------- Nomor WhatsApp Tujuan (GANTI sesuai nomor Anda) ---------- */
+        const WA_NUMBER = "6281234567890";
+
+        /* ---------- Konfigurasi Pagination ---------- */
+        const PER_PAGE = 6; // jumlah template per halaman
+
+        /* ---------- Tahun footer ---------- */
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        /* ---------- Dark / Light Mode ---------- */
+        const root = document.documentElement;
+        document
+          .getElementById("themeToggle")
+          .addEventListener("click", function () {
+            const isDark = root.classList.toggle("dark");
+            try {
+              localStorage.setItem("velo-theme", isDark ? "dark" : "light");
+            } catch (e) {}
+          });
+
+        /* ---------- Navbar scroll ---------- */
+        const navbar = document.getElementById("navbar");
+        const onScroll = () =>
+          navbar.classList.toggle("scrolled", window.scrollY > 12);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+        /* ---------- Mobile menu ---------- */
+        const burgerBtn = document.getElementById("burgerBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        burgerBtn.addEventListener("click", function () {
+          const open = mobileMenu.classList.toggle("open");
+          burgerBtn.classList.toggle("active", open);
+          burgerBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        mobileMenu.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            mobileMenu.classList.remove("open");
+            burgerBtn.classList.remove("active");
+            burgerBtn.setAttribute("aria-expanded", "false");
+          });
+        });
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 1024) {
+            mobileMenu.classList.remove("open");
+            burgerBtn.classList.remove("active");
+            burgerBtn.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        /* ---------- Scroll reveal ---------- */
+        const revealEls = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("in");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+          );
+          revealEls.forEach(function (el) {
+            io.observe(el);
+          });
+        } else {
+          revealEls.forEach(function (el) {
+            el.classList.add("in");
+          });
+        }
+
+        /* ---------- Back to top ---------- */
+        const backToTop = document.getElementById("backToTop");
+        const toggleBtt = () =>
+          backToTop.classList.toggle("show", window.scrollY > 600);
+        toggleBtt();
+        window.addEventListener("scroll", toggleBtt, { passive: true });
+        backToTop.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        /* ============================================================
+     FILTER KATEGORI + PAGINATION
+     ============================================================ */
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const allCards = Array.from(document.querySelectorAll(".tpl-card"));
+        const resultCountEl = document.getElementById("resultCount");
+        const emptyState = document.getElementById("emptyState");
+        const pageInfo = document.getElementById("pageInfo");
+        const paginationNav = document.getElementById("paginationNav");
+        const paginationWrap = document.getElementById("paginationWrap");
+        const gridAnchor = document.getElementById("gridAnchor");
+
+        let currentFilter = "all";
+        let currentPage = 1;
+        let filteredCards = [];
+
+        // Hitung jumlah per kategori
+        const counts = {
+          all: allCards.length,
+          landing: 0,
+          company: 0,
+          katalog: 0,
+        };
+        allCards.forEach(function (c) {
+          const cat = c.getAttribute("data-category");
+          if (counts[cat] !== undefined) counts[cat]++;
+        });
+        document.querySelectorAll("[data-count]").forEach(function (el) {
+          const k = el.getAttribute("data-count");
+          el.textContent = "(" + (counts[k] || 0) + ")";
+        });
+
+        /* -- Bangun daftar kartu sesuai filter aktif -- */
+        function buildFilteredList() {
+          filteredCards = allCards.filter(function (c) {
+            return (
+              currentFilter === "all" ||
+              c.getAttribute("data-category") === currentFilter
+            );
+          });
+        }
+
+        /* -- Render halaman saat ini -- */
+        function renderPage(scrollToGrid) {
+          const total = filteredCards.length;
+          const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
+
+          // Safety: jika currentPage melebihi total halaman
+          if (currentPage > totalPages) currentPage = totalPages;
+          if (currentPage < 1) currentPage = 1;
+
+          const start = (currentPage - 1) * PER_PAGE;
+          const end = Math.min(start + PER_PAGE, total);
+
+          // Sembunyikan semua dulu
+          allCards.forEach(function (c) {
+            c.style.display = "none";
+          });
+
+          // Tampilkan hanya kartu pada rentang halaman ini
+          for (let i = start; i < end; i++) {
+            filteredCards[i].style.display = "";
+          }
+
+          // Update counter & info
+          resultCountEl.textContent = total;
+          if (total === 0) {
+            pageInfo.textContent = "Tidak ada template untuk kategori ini.";
+          } else {
+            pageInfo.textContent =
+              "Menampilkan " +
+              (start + 1) +
+              "–" +
+              end +
+              " dari " +
+              total +
+              " template";
+          }
+
+          // Empty state
+          emptyState.classList.toggle("hidden", total > 0);
+
+          // Sembunyikan pagination jika hanya 1 halaman atau kosong
+          paginationWrap.classList.toggle("hidden", totalPages <= 1);
+
+          // Render tombol pagination
+          renderPaginationButtons(totalPages);
+
+          // Scroll ke area grid (jika bukan initial load)
+          if (scrollToGrid) {
+            const offset =
+              gridAnchor.getBoundingClientRect().top + window.scrollY - 140;
+            window.scrollTo({ top: offset, behavior: "smooth" });
+          }
+        }
+
+        /* -- Buat tombol Prev, angka, Next -- */
+        function renderPaginationButtons(totalPages) {
+          paginationNav.innerHTML = "";
+
+          const mkBtn = (html, opts) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className =
+              "page-btn border-ink-200 dark:border-ink-800 text-ink-700 dark:text-ink-200";
+            btn.innerHTML = html;
+            if (opts && opts.disabled) btn.disabled = true;
+            if (opts && opts.active) btn.classList.add("active");
+            if (opts && opts.label) btn.setAttribute("aria-label", opts.label);
+            if (opts && opts.page) btn.setAttribute("data-page", opts.page);
+            if (opts && opts.ariaCurrent)
+              btn.setAttribute("aria-current", "page");
+            return btn;
+          };
+
+          // Prev
+          const prevBtn = mkBtn(
+            '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span class="ml-1">Sebelumnya</span>',
+            { disabled: currentPage === 1, label: "Halaman sebelumnya" },
+          );
+          prevBtn.classList.add("page-btn-arrow");
+          prevBtn.addEventListener("click", function () {
+            if (currentPage > 1) {
+              currentPage--;
+              renderPage(true);
+            }
+          });
+          paginationNav.appendChild(prevBtn);
+
+          // Nomor halaman (dengan ellipsis jika banyak)
+          const pages = getPageNumbers(currentPage, totalPages);
+          pages.forEach(function (p) {
+            if (p === "...") {
+              const dots = document.createElement("span");
+              dots.className =
+                "px-2 text-ink-400 dark:text-ink-500 select-none";
+              dots.textContent = "…";
+              paginationNav.appendChild(dots);
+            } else {
+              const isActive = p === currentPage;
+              const btn = mkBtn(String(p), {
+                active: isActive,
+                page: p,
+                ariaCurrent: isActive ? "page" : null,
+                label: "Ke halaman " + p,
+              });
+              btn.addEventListener("click", function () {
+                if (p !== currentPage) {
+                  currentPage = p;
+                  renderPage(true);
+                }
+              });
+              paginationNav.appendChild(btn);
+            }
+          });
+
+          // Next
+          const nextBtn = mkBtn(
+            '<span class="mr-1">Berikutnya</span><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
+            {
+              disabled: currentPage === totalPages,
+              label: "Halaman berikutnya",
+            },
+          );
+          nextBtn.classList.add("page-btn-arrow");
+          nextBtn.addEventListener("click", function () {
+            if (currentPage < totalPages) {
+              currentPage++;
+              renderPage(true);
+            }
+          });
+          paginationNav.appendChild(nextBtn);
+        }
+
+        /* -- Hitung nomor halaman yang ditampilkan (dengan "..." jika banyak) -- */
+        function getPageNumbers(current, total) {
+          const delta = 1; // tampil 1 nomor di kiri & kanan current
+          const range = [];
+          const rangeWithDots = [];
+          let l;
+
+          for (let i = 1; i <= total; i++) {
+            if (
+              i === 1 ||
+              i === total ||
+              (i >= current - delta && i <= current + delta)
+            ) {
+              range.push(i);
+            }
+          }
+
+          range.forEach(function (i) {
+            if (l) {
+              if (i - l === 2) {
+                rangeWithDots.push(l + 1);
+              } else if (i - l !== 1) {
+                rangeWithDots.push("...");
+              }
+            }
+            rangeWithDots.push(i);
+            l = i;
+          });
+
+          return rangeWithDots;
+        }
+
+        /* -- Ganti filter -- */
+        filterButtons.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            filterButtons.forEach(function (b) {
+              b.classList.remove("active");
+            });
+            btn.classList.add("active");
+            currentFilter = btn.getAttribute("data-filter");
+            currentPage = 1;
+            buildFilteredList();
+            renderPage(false);
+          });
+        });
+
+        /* -- Init -- */
+        buildFilteredList();
+        renderPage(false);
+
+        /* ============================================================
+     PREVIEW MODAL
+     ============================================================ */
+        const modal = document.getElementById("previewModal");
+        const modalImage = document.getElementById("previewImage");
+        const modalName = document.getElementById("previewName");
+        const modalTag = document.getElementById("previewTag");
+        const modalDesc = document.getElementById("previewDesc");
+        const modalPrice = document.getElementById("previewPrice");
+        const modalWa = document.getElementById("previewWa");
+        const modalDemo = document.getElementById("previewDemo");
+        const closeBtn = document.getElementById("previewClose");
+        const closeBtn2 = document.getElementById("previewSecondaryClose");
+
+        function openPreview(card) {
+          const name = card.getAttribute("data-name");
+          const tag = card.getAttribute("data-tag");
+          const price = card.getAttribute("data-price");
+          const image = card.getAttribute("data-image");
+          const desc = card.getAttribute("data-desc");
+          const demo = card.getAttribute("data-demo");
+
+          modalImage.src = image;
+          modalImage.alt = "Preview template " + name;
+          modalName.textContent = name;
+          modalTag.textContent = tag;
+          modalDesc.textContent = desc;
+          modalPrice.textContent = price;
+
+          if (demo && demo !== "#") {
+            modalDemo.href = demo;
+            modalDemo.style.display = "";
+          } else {
+            modalDemo.style.display = "none";
+          }
+
+          const waText =
+            "Halo VELO, saya tertarik dengan template " +
+            name +
+            " (" +
+            tag +
+            ") — " +
+            price +
+            ". Mohon informasi lebih lanjut.";
+          modalWa.href =
+            "https://wa.me/" +
+            WA_NUMBER +
+            "?text=" +
+            encodeURIComponent(waText);
+
+          modal.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closePreview() {
+          modal.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+
+        allCards.forEach(function (card) {
+          card.querySelectorAll(".tpl-open").forEach(function (btn) {
+            btn.addEventListener("click", function (e) {
+              e.preventDefault();
+              openPreview(card);
+            });
+          });
+        });
+
+        closeBtn.addEventListener("click", closePreview);
+        closeBtn2.addEventListener("click", closePreview);
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closePreview();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("open"))
+            closePreview();
+        });
+
+        /* ---------- Tombol "Pilih" → WA ---------- */
+        document.querySelectorAll(".pilih-tpl").forEach(function (btn) {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const label = btn.getAttribute("data-wa");
+            const text =
+              "Halo VELO, saya ingin memilih template: " +
+              label +
+              ". Mohon informasi selanjutnya.";
+            window.open(
+              "https://wa.me/" +
+                WA_NUMBER +
+                "?text=" +
+                encodeURIComponent(text),
+              "_blank",
+            );
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

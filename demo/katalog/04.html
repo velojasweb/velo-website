@@ -1,0 +1,1908 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShotPro — Jasa Foto Produk untuk UMKM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            colors: {
+              ink: {
+                50: "#f8fafc",
+                100: "#f1f5f9",
+                200: "#e2e8f0",
+                300: "#cbd5e1",
+                400: "#94a3b8",
+                500: "#64748b",
+                600: "#475569",
+                700: "#334155",
+                800: "#1e293b",
+                900: "#0f172a",
+                950: "#020617",
+              },
+              brand: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#1e3a8a",
+                950: "#172554",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 8px;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .img-fallback {
+        background: #e2e8f0;
+      }
+      .grid-dots {
+        background-image: radial-gradient(
+          circle,
+          rgba(37, 99, 235, 0.14) 1px,
+          transparent 1px
+        );
+        background-size: 28px 28px;
+      }
+      .ba-handle {
+        cursor: ew-resize;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-white text-ink-900 antialiased">
+    <!-- ============== TOP STRIP ============== -->
+    <div class="bg-ink-900 text-white text-xs sm:text-[13px]">
+      <div
+        class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-center gap-2 text-center"
+      >
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        <span
+          >Promo bulan ini: <strong>gratis 5 foto retouch</strong> untuk order
+          pertama</span
+        >
+      </div>
+    </div>
+
+    <!-- ============== NAVBAR ============== -->
+    <header
+      class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-ink-200"
+    >
+      <nav class="max-w-7xl mx-auto px-4 h-20 flex items-center gap-6">
+        <a href="#" class="flex items-center gap-2.5 shrink-0">
+          <div
+            class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="3.5" />
+              <path stroke-linecap="round" d="M4 8h3l2-2h6l2 2h3v10H4V8Z" />
+            </svg>
+          </div>
+          <div class="leading-tight">
+            <p class="font-extrabold text-lg tracking-tight">ShotPro</p>
+            <p
+              class="text-[10px] tracking-[0.2em] text-brand-600 uppercase font-semibold"
+            >
+              Product Photography
+            </p>
+          </div>
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center gap-1 ml-6 text-sm font-medium text-ink-700"
+        >
+          <li>
+            <a
+              href="#portfolio"
+              class="px-3 py-2 hover:text-brand-600 transition"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a href="#paket" class="px-3 py-2 hover:text-brand-600 transition"
+              >Paket</a
+            >
+          </li>
+          <li>
+            <a
+              href="#kalkulator"
+              class="px-3 py-2 hover:text-brand-600 transition"
+              >Kalkulator</a
+            >
+          </li>
+          <li>
+            <a href="#proses" class="px-3 py-2 hover:text-brand-600 transition"
+              >Proses</a
+            >
+          </li>
+          <li>
+            <a href="#faq" class="px-3 py-2 hover:text-brand-600 transition"
+              >FAQ</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-3 ml-auto">
+          <a
+            href="#kalkulator"
+            class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-ink-200 text-ink-800 text-sm font-semibold hover:border-brand-500 hover:text-brand-600 transition"
+          >
+            Lihat Harga
+          </a>
+          <a
+            href="#kalkulator"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition"
+          >
+            Order Sekarang
+          </a>
+          <button
+            id="menuBtn"
+            aria-label="Menu"
+            class="lg:hidden w-10 h-10 rounded-full border border-ink-200 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden border-t border-ink-200 bg-white"
+      >
+        <div class="px-4 py-4 space-y-1 text-sm">
+          <a
+            href="#portfolio"
+            class="block px-4 py-3 rounded-xl hover:bg-ink-50"
+            >Portfolio</a
+          >
+          <a href="#paket" class="block px-4 py-3 rounded-xl hover:bg-ink-50"
+            >Paket</a
+          >
+          <a
+            href="#kalkulator"
+            class="block px-4 py-3 rounded-xl hover:bg-ink-50"
+            >Kalkulator</a
+          >
+          <a href="#proses" class="block px-4 py-3 rounded-xl hover:bg-ink-50"
+            >Proses</a
+          >
+          <a href="#faq" class="block px-4 py-3 rounded-xl hover:bg-ink-50"
+            >FAQ</a
+          >
+          <a
+            href="#kalkulator"
+            class="block mt-2 text-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold"
+            >Order Sekarang</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- ============== HERO ============== -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 grid-dots opacity-70"></div>
+      <div
+        class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-brand-100 rounded-full blur-3xl opacity-60 pointer-events-none"
+      ></div>
+      <div
+        class="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-brand-50 rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 pt-12 sm:pt-20 pb-16">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-xs font-semibold text-brand-700 mb-6"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse"
+              ></span>
+              Dipercaya 2.400+ UMKM di seluruh Indonesia
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]"
+            >
+              Foto produk yang<br />
+              <span class="text-brand-600">bikin orang klik beli.</span>
+            </h1>
+
+            <p class="mt-6 text-lg text-ink-600 leading-relaxed max-w-lg">
+              Kami bantu UMKM tampil profesional di marketplace. Foto bersih,
+              konsisten, siap upload ke Tokopedia, Shopee, dan Instagram — dalam
+              3 hari kerja.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#kalkulator"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-brand-600 text-white text-sm font-bold hover:bg-brand-700 transition shadow-lg shadow-brand-600/25"
+              >
+                Hitung Biaya Order
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14M13 6l6 6-6 6"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#portfolio"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-ink-200 text-ink-800 text-sm font-semibold hover:border-brand-500 hover:text-brand-600 transition"
+              >
+                Lihat Hasil Kerja
+              </a>
+            </div>
+
+            <div class="mt-10 flex items-center gap-6">
+              <div class="flex -space-x-3">
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&q=80"
+                  onerror="this.src = 'https://i.pravatar.cc/80?img=47'"
+                  alt=""
+                  class="w-10 h-10 rounded-full ring-2 ring-white object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=80&q=80"
+                  onerror="this.src = 'https://i.pravatar.cc/80?img=12'"
+                  alt=""
+                  class="w-10 h-10 rounded-full ring-2 ring-white object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80"
+                  onerror="this.src = 'https://i.pravatar.cc/80?img=32'"
+                  alt=""
+                  class="w-10 h-10 rounded-full ring-2 ring-white object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80"
+                  onerror="this.src = 'https://i.pravatar.cc/80?img=33'"
+                  alt=""
+                  class="w-10 h-10 rounded-full ring-2 ring-white object-cover"
+                />
+                <div
+                  class="w-10 h-10 rounded-full ring-2 ring-white bg-brand-600 text-white text-xs font-bold flex items-center justify-center"
+                >
+                  2k+
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center gap-1 text-brand-600">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="m12 2 3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 3.9 1.6-7.4-5.6-5 7.5-.7L12 2Z"
+                    />
+                  </svg>
+                  <span class="font-bold text-sm">4.9/5</span>
+                </div>
+                <p class="text-xs text-ink-500 mt-0.5">dari 847 ulasan</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero visual -->
+          <div class="lg:col-span-6">
+            <div
+              class="grid grid-cols-6 grid-rows-6 gap-3 sm:gap-4 h-[420px] sm:h-[560px]"
+            >
+              <div
+                class="col-span-4 row-span-3 rounded-2xl overflow-hidden img-fallback border border-ink-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/shot1/800/800';
+                  "
+                  alt="Skincare product"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-2 row-span-3 rounded-2xl overflow-hidden img-fallback border border-ink-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/shot2/600/600';
+                  "
+                  alt="Cosmetic"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-2 row-span-3 rounded-2xl overflow-hidden img-fallback border border-ink-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/shot3/600/600';
+                  "
+                  alt="Shoes"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-4 row-span-3 rounded-2xl overflow-hidden img-fallback border border-ink-200"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/shot4/800/800';
+                  "
+                  alt="Coffee packaging"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TRUST / BRANDS ============== -->
+    <section class="border-y border-ink-200 bg-ink-50/50 overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto px-4 py-6 flex items-center gap-10 overflow-x-auto no-scrollbar"
+      >
+        <span
+          class="shrink-0 text-[10px] tracking-[0.3em] text-ink-500 uppercase font-semibold"
+          >Klien kami</span
+        >
+        <div
+          class="flex items-center gap-10 text-ink-400 font-bold whitespace-nowrap text-lg"
+        >
+          <span>Tokopedia</span><span class="text-ink-300">·</span>
+          <span>Shopee</span><span class="text-ink-300">·</span>
+          <span>Lazada</span><span class="text-ink-300">·</span>
+          <span>Blibli</span><span class="text-ink-300">·</span>
+          <span>Bhinneka</span><span class="text-ink-300">·</span>
+          <span>Tiktok Shop</span><span class="text-ink-300">·</span>
+          <span>Bibli</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PORTFOLIO + BEFORE/AFTER ============== -->
+    <section id="portfolio" class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-brand-600 uppercase font-bold"
+          >
+            Portfolio
+          </p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Lihat bedanya sendiri
+          </h2>
+          <p class="mt-4 text-ink-600">
+            Geser slider di bawah untuk melihat transformasi foto sebelum dan
+            sesudah kami kerjakan.
+          </p>
+        </div>
+
+        <!-- Before/After Sliders -->
+        <div class="grid md:grid-cols-2 gap-6 mb-14">
+          <div
+            id="ba1"
+            class="relative rounded-3xl overflow-hidden aspect-square select-none bg-ink-100 group cursor-ew-resize"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1000&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/ba-after1/1000/1000';
+              "
+              class="absolute inset-0 w-full h-full object-cover"
+              alt="Sesudah"
+            />
+            <div
+              class="ba-clip absolute inset-0 overflow-hidden"
+              style="width: 50%"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1000&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/ba-before1/1000/1000';
+                "
+                class="absolute inset-0 w-full h-full object-cover"
+                style="width: 200%; max-width: none"
+                alt="Sebelum"
+              />
+            </div>
+            <div
+              class="ba-line absolute top-0 bottom-0 w-0.5 bg-white shadow-lg pointer-events-none"
+              style="left: 50%"
+            >
+              <div
+                class="ba-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-ink-800"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9 6-6 6 6 6M15 6l6 6-6 6"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span
+              class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-ink-900/80 backdrop-blur text-white text-[10px] font-bold uppercase tracking-wider"
+              >Sebelum</span
+            >
+            <span
+              class="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider"
+              >Sesudah</span
+            >
+          </div>
+
+          <div
+            id="ba2"
+            class="relative rounded-3xl overflow-hidden aspect-square select-none bg-ink-100 group cursor-ew-resize"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1000&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/ba-after2/1000/1000';
+              "
+              class="absolute inset-0 w-full h-full object-cover"
+              alt="Sesudah"
+            />
+            <div
+              class="ba-clip absolute inset-0 overflow-hidden"
+              style="width: 50%"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/ba-before2/1000/1000';
+                "
+                class="absolute inset-0 w-full h-full object-cover"
+                style="width: 200%; max-width: none"
+                alt="Sebelum"
+              />
+            </div>
+            <div
+              class="ba-line absolute top-0 bottom-0 w-0.5 bg-white shadow-lg pointer-events-none"
+              style="left: 50%"
+            >
+              <div
+                class="ba-handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-xl flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-ink-800"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9 6-6 6 6 6M15 6l6 6-6 6"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span
+              class="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-ink-900/80 backdrop-blur text-white text-[10px] font-bold uppercase tracking-wider"
+              >Sebelum</span
+            >
+            <span
+              class="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-brand-600 text-white text-[10px] font-bold uppercase tracking-wider"
+              >Sesudah</span
+            >
+          </div>
+        </div>
+
+        <!-- Portfolio grid -->
+        <div class="text-center mb-8">
+          <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+            Hasil dari klien kami
+          </h3>
+          <p class="mt-2 text-ink-500 text-sm">
+            Kategori produk yang sering kami kerjakan
+          </p>
+        </div>
+
+        <div
+          id="categoryPills"
+          class="flex flex-wrap justify-center gap-2 mb-8"
+        ></div>
+        <div
+          id="portfolioGrid"
+          class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== PAKET ============== -->
+    <section
+      id="paket"
+      class="py-20 sm:py-28 bg-ink-50/50 border-y border-ink-200"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-brand-600 uppercase font-bold"
+          >
+            Paket
+          </p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Harga jujur, hasil profesional
+          </h2>
+          <p class="mt-4 text-ink-600">
+            Semua paket termasuk konsultasi konsep, revisi minor, dan file siap
+            upload marketplace.
+          </p>
+        </div>
+
+        <div
+          id="packageGrid"
+          class="grid grid-cols-1 md:grid-cols-3 gap-6"
+        ></div>
+
+        <p class="text-center text-sm text-ink-500 mt-10">
+          Butuh jumlah besar atau langganan bulanan?
+          <a
+            href="#kalkulator"
+            class="text-brand-600 font-semibold hover:underline"
+            >Hitung di kalkulator</a
+          >
+          atau
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20ShotPro%2C%20saya%20butuh%20penawaran%20custom"
+            target="_blank"
+            class="text-brand-600 font-semibold hover:underline"
+            >chat tim kami</a
+          >.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============== KALKULATOR ORDER ============== -->
+    <section id="kalkulator" class="py-20 sm:py-28">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-brand-600 uppercase font-bold"
+          >
+            Kalkulator
+          </p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Hitung biaya order kamu
+          </h2>
+          <p class="mt-4 text-ink-600">
+            Atur jumlah produk, pilih layanan tambahan, dan lihat estimasi harga
+            secara real-time.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-6 lg:gap-8">
+          <!-- Form -->
+          <form
+            id="calcForm"
+            class="lg:col-span-3 p-6 sm:p-8 rounded-3xl border border-ink-200 bg-white"
+          >
+            <!-- Jumlah produk -->
+            <div>
+              <label
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+                >Jumlah Produk</label
+              >
+              <p class="text-xs text-ink-500 mt-1">
+                Berapa SKU / varian yang mau difoto?
+              </p>
+              <div class="mt-3 flex items-center gap-4">
+                <button
+                  type="button"
+                  onclick="changeQty(-5)"
+                  class="w-11 h-11 rounded-full border border-ink-200 hover:bg-ink-50 flex items-center justify-center"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" d="M5 12h14" />
+                  </svg>
+                </button>
+                <input
+                  id="qty"
+                  name="qty"
+                  type="number"
+                  min="5"
+                  max="500"
+                  value="20"
+                  class="w-24 text-center text-3xl font-extrabold border-0 outline-none bg-transparent"
+                />
+                <button
+                  type="button"
+                  onclick="changeQty(5)"
+                  class="w-11 h-11 rounded-full border border-ink-200 hover:bg-ink-50 flex items-center justify-center"
+                >
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" d="M12 5v14M5 12h14" />
+                  </svg>
+                </button>
+                <span class="text-sm text-ink-500">produk</span>
+              </div>
+              <input
+                id="qtyRange"
+                type="range"
+                min="5"
+                max="200"
+                value="20"
+                class="mt-4 w-full accent-brand-600"
+              />
+              <div class="flex justify-between text-xs text-ink-400 mt-1">
+                <span>5</span><span>200+</span>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-ink-100">
+              <!-- Paket -->
+              <label
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+                >Tingkat Editing</label
+              >
+              <div class="mt-3 grid grid-cols-3 gap-2">
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="tier"
+                    value="basic"
+                    class="peer sr-only"
+                  />
+                  <div
+                    class="text-center px-3 py-3 rounded-xl border border-ink-200 peer-checked:border-brand-600 peer-checked:bg-brand-50 peer-checked:text-brand-700 transition"
+                  >
+                    <p class="font-bold text-sm">Basic</p>
+                    <p class="text-[10px] text-ink-500 mt-0.5">
+                      Clean bg putih
+                    </p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="tier"
+                    value="standard"
+                    checked
+                    class="peer sr-only"
+                  />
+                  <div
+                    class="text-center px-3 py-3 rounded-xl border border-ink-200 peer-checked:border-brand-600 peer-checked:bg-brand-50 peer-checked:text-brand-700 transition"
+                  >
+                    <p class="font-bold text-sm">Standard</p>
+                    <p class="text-[10px] text-ink-500 mt-0.5">
+                      + Lifestyle shot
+                    </p>
+                  </div>
+                </label>
+                <label class="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="tier"
+                    value="premium"
+                    class="peer sr-only"
+                  />
+                  <div
+                    class="text-center px-3 py-3 rounded-xl border border-ink-200 peer-checked:border-brand-600 peer-checked:bg-brand-50 peer-checked:text-brand-700 transition"
+                  >
+                    <p class="font-bold text-sm">Premium</p>
+                    <p class="text-[10px] text-ink-500 mt-0.5">
+                      + Kreatif & moody
+                    </p>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Add-ons -->
+            <div class="mt-8 pt-8 border-t border-ink-100">
+              <label
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+                >Layanan Tambahan</label
+              >
+              <div class="mt-3 space-y-2" id="addonsList"></div>
+            </div>
+
+            <!-- Info Klien -->
+            <div class="mt-8 pt-8 border-t border-ink-100">
+              <label
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+                >Info Kontak</label
+              >
+              <div class="mt-3 grid sm:grid-cols-2 gap-3">
+                <input
+                  name="nama"
+                  required
+                  placeholder="Nama kamu *"
+                  class="px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 outline-none text-sm"
+                />
+                <input
+                  name="wa"
+                  required
+                  placeholder="No. WhatsApp *"
+                  class="px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 outline-none text-sm"
+                />
+                <input
+                  name="brand"
+                  placeholder="Nama brand / toko"
+                  class="sm:col-span-2 px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 outline-none text-sm"
+                />
+              </div>
+              <textarea
+                name="catatan"
+                rows="2"
+                placeholder="Catatan tambahan (jenis produk, referensi, dll)"
+                class="mt-3 w-full px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 outline-none text-sm resize-none"
+              ></textarea>
+            </div>
+          </form>
+
+          <!-- Summary -->
+          <div class="lg:col-span-2">
+            <div
+              class="sticky top-24 p-6 sm:p-8 rounded-3xl bg-ink-900 text-white"
+            >
+              <p
+                class="text-xs tracking-widest text-brand-300 uppercase font-bold"
+              >
+                Estimasi Biaya
+              </p>
+              <div class="mt-4 flex items-baseline gap-2">
+                <span class="text-sm text-white/60">Rp</span>
+                <span
+                  id="calcPrice"
+                  class="text-4xl sm:text-5xl font-extrabold tracking-tight font-mono"
+                  >0</span
+                >
+              </div>
+              <p id="calcPerItem" class="text-sm text-white/60 mt-2"></p>
+
+              <div class="mt-8 pt-6 border-t border-white/10 space-y-3 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-white/60">Paket</span
+                  ><span id="sumTier" class="font-semibold">Standard</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-white/60">Jumlah produk</span
+                  ><span id="sumQty" class="font-semibold">20</span>
+                </div>
+                <div
+                  id="sumAddonsBox"
+                  class="pt-3 border-t border-white/10 space-y-2"
+                ></div>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-white/10">
+                <p class="text-[11px] text-white/50 leading-relaxed">
+                  *Harga estimasi belum termasuk PPN. Biaya final akan
+                  dikonfirmasi tim kami setelah briefing.
+                </p>
+              </div>
+
+              <button
+                onclick="submitOrder()"
+                class="mt-6 w-full py-4 rounded-full bg-brand-500 hover:bg-brand-400 text-white text-sm font-bold transition"
+              >
+                Order via WhatsApp
+              </button>
+              <a
+                href="mailto:order@shotpro.id"
+                class="mt-2 block text-center py-3 text-xs text-white/60 hover:text-white transition"
+              >
+                atau kirim brief via email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PROSES ============== -->
+    <section
+      id="proses"
+      class="py-20 sm:py-28 bg-ink-50/50 border-y border-ink-200"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-brand-600 uppercase font-bold"
+          >
+            Proses
+          </p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Dari order sampai siap upload
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="p-6 rounded-2xl bg-white border border-ink-200">
+            <div class="flex items-center gap-3">
+              <span
+                class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center"
+                >1</span
+              >
+              <p
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+              >
+                Hari 1
+              </p>
+            </div>
+            <h3 class="mt-5 font-bold text-lg">Briefing & kirim produk</h3>
+            <p class="mt-2 text-sm text-ink-600 leading-relaxed">
+              Kamu kirim produk ke studio atau kami yang jemput (Jabodetabek).
+              Kami diskusikan konsep & referensi.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white border border-ink-200">
+            <div class="flex items-center gap-3">
+              <span
+                class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center"
+                >2</span
+              >
+              <p
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+              >
+                Hari 2-3
+              </p>
+            </div>
+            <h3 class="mt-5 font-bold text-lg">Sesi pemotretan</h3>
+            <p class="mt-2 text-sm text-ink-600 leading-relaxed">
+              Tim fotografer memotret semua produk dengan standar marketplace &
+              brand guideline kamu.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white border border-ink-200">
+            <div class="flex items-center gap-3">
+              <span
+                class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center"
+                >3</span
+              >
+              <p
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+              >
+                Hari 4-5
+              </p>
+            </div>
+            <h3 class="mt-5 font-bold text-lg">Editing & color grading</h3>
+            <p class="mt-2 text-sm text-ink-600 leading-relaxed">
+              Editing profesional, background removal, penyesuaian warna brand,
+              dan layout marketplace.
+            </p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white border border-ink-200">
+            <div class="flex items-center gap-3">
+              <span
+                class="w-10 h-10 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center"
+                >4</span
+              >
+              <p
+                class="text-xs tracking-widest text-ink-500 uppercase font-bold"
+              >
+                Hari 6-7
+              </p>
+            </div>
+            <h3 class="mt-5 font-bold text-lg">Kirim file siap upload</h3>
+            <p class="mt-2 text-sm text-ink-600 leading-relaxed">
+              File dikirim via Google Drive dalam format JPG & PNG transparan,
+              siap upload ke semua marketplace.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TESTIMONI ============== -->
+    <section class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-brand-600 uppercase font-bold"
+          >
+            Testimoni
+          </p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Kata mereka setelah order
+          </h2>
+        </div>
+
+        <div
+          id="testimonialGrid"
+          class="grid grid-cols-1 md:grid-cols-3 gap-5"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== FAQ ============== -->
+    <section
+      id="faq"
+      class="py-20 sm:py-28 bg-ink-50/50 border-y border-ink-200"
+    >
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-brand-600 uppercase font-bold"
+          >
+            FAQ
+          </p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Pertanyaan umum
+          </h2>
+        </div>
+        <div id="faqList" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- ============== LOKASI + MAP ============== -->
+    <section class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-stretch">
+          <div
+            class="lg:col-span-3 rounded-3xl overflow-hidden border border-ink-200 min-h-[380px] lg:min-h-[520px] relative bg-ink-100"
+          >
+            <iframe
+              src="https://www.google.com/maps?q=Kemang+Jakarta+Selatan&output=embed"
+              class="absolute inset-0 w-full h-full"
+              style="border: 0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Peta lokasi ShotPro Studio"
+            >
+            </iframe>
+          </div>
+
+          <div class="lg:col-span-2 flex flex-col justify-center">
+            <p
+              class="text-xs tracking-[0.3em] text-brand-600 uppercase font-bold"
+            >
+              Studio
+            </p>
+            <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
+              Mampir ke studio kami
+            </h2>
+            <p class="mt-5 text-ink-600 leading-relaxed">
+              Kami punya studio tetap di Kemang dengan backdrop lengkap,
+              lighting profesional, dan area uji produk. Untuk produk besar
+              seperti furniture atau kendaraan, kami menyediakan layanan foto
+              on-site.
+            </p>
+
+            <div class="mt-8 space-y-5">
+              <div class="pb-5 border-b border-ink-100">
+                <p class="text-xs tracking-widest text-ink-500 uppercase mb-1">
+                  Alamat Studio
+                </p>
+                <p class="font-semibold">
+                  Jl. Kemang Raya No. 18, Bangka<br />Jakarta Selatan 12730
+                </p>
+              </div>
+              <div class="pb-5 border-b border-ink-100">
+                <p class="text-xs tracking-widest text-ink-500 uppercase mb-1">
+                  Jam Operasional
+                </p>
+                <p class="font-semibold">Senin – Sabtu, 09.00 – 18.00 WIB</p>
+              </div>
+              <div>
+                <p class="text-xs tracking-widest text-ink-500 uppercase mb-1">
+                  Kontak
+                </p>
+                <p class="font-semibold">
+                  +62 812 3456 7890 · order@shotpro.id
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20ShotPro%2C%20saya%20ingin%20order%20foto%20produk"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1ebe5b] transition"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+                  />
+                </svg>
+                Chat WhatsApp
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Kemang+Jakarta+Selatan"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full border border-ink-200 text-ink-800 text-sm font-semibold hover:border-brand-500 hover:text-brand-600 transition"
+              >
+                Petunjuk Arah
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CTA ============== -->
+    <section class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="relative overflow-hidden rounded-3xl bg-brand-600 px-6 sm:px-12 py-14 sm:py-20 text-center"
+        >
+          <div class="absolute inset-0 grid-dots opacity-20"></div>
+          <div class="relative">
+            <h2
+              class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white"
+            >
+              Upgrade foto produk kamu minggu ini
+            </h2>
+            <p class="mt-4 text-white/80 max-w-xl mx-auto">
+              Konsultasi gratis, estimasi biaya transparan, dan hasil yang siap
+              upload.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+              <a
+                href="#kalkulator"
+                class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-brand-700 text-sm font-bold hover:bg-ink-50 transition"
+              >
+                Hitung Biaya Sekarang
+              </a>
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20ShotPro%2C%20saya%20ingin%20konsultasi"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+                  />
+                </svg>
+                Chat Tim Kami
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="border-t border-ink-200 bg-ink-50/50">
+      <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2.5">
+              <div
+                class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="3.5" />
+                  <path stroke-linecap="round" d="M4 8h3l2-2h6l2 2h3v10H4V8Z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-extrabold text-xl">ShotPro</p>
+                <p
+                  class="text-[10px] tracking-[0.2em] text-brand-600 uppercase font-semibold"
+                >
+                  Product Photography
+                </p>
+              </div>
+            </div>
+            <p class="mt-5 text-sm text-ink-600 max-w-sm leading-relaxed">
+              Studio foto produk yang fokus bantu UMKM Indonesia tampil
+              profesional di marketplace. Berdiri sejak 2019.
+            </p>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs tracking-[0.25em] text-ink-500 uppercase font-bold"
+            >
+              Layanan
+            </h4>
+            <ul class="mt-5 space-y-3 text-sm text-ink-600">
+              <li>
+                <a href="#paket" class="hover:text-brand-600 transition"
+                  >Paket Foto</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-600 transition"
+                  >Video Produk</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-600 transition"
+                  >Foto Model</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-brand-600 transition"
+                  >Langganan Bulanan</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs tracking-[0.25em] text-ink-500 uppercase font-bold"
+            >
+              Hubungi
+            </h4>
+            <ul class="mt-5 space-y-3 text-sm text-ink-600">
+              <li>
+                <a
+                  href="https://wa.me/6281234567890"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-brand-600 transition"
+                  >WhatsApp</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-brand-600 transition"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tiktok.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-brand-600 transition"
+                  >TikTok</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:order@shotpro.id"
+                  class="hover:text-brand-600 transition"
+                  >order@shotpro.id</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 pt-6 border-t border-ink-200 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-xs text-ink-500">
+            © 2026 ShotPro. Semua hak dilindungi.
+          </p>
+          <p class="text-xs text-ink-500">
+            Dibuat untuk UMKM yang serius jualan.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============== FLOATING WHATSAPP ============== -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20ShotPro%2C%20saya%20ingin%20order%20foto%20produk"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat WhatsApp"
+      class="fixed bottom-6 right-6 z-40 group"
+    >
+      <span
+        class="absolute right-0 bottom-0 w-14 h-14 rounded-full bg-[#25D366] opacity-50 animate-ping"
+      ></span>
+      <span
+        class="relative flex items-center gap-2.5 pl-3.5 pr-4 py-3 rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 hover:bg-[#1ebe5b] transition"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+          />
+        </svg>
+        <span class="text-sm font-semibold hidden sm:inline">Chat</span>
+      </span>
+    </a>
+
+    <!-- ============== TOAST ============== -->
+    <div
+      id="toast"
+      class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] px-6 py-3 rounded-full bg-ink-900 text-white text-sm font-medium shadow-xl"
+    ></div>
+
+    <script>
+      /* =========================================================
+   HELPER
+   ========================================================= */
+      function imgTag(src, fallbackSeed, alt, cls) {
+        const fb = `https://picsum.photos/seed/${fallbackSeed}/800/800`;
+        return `<img src="${src}" alt="${alt}" loading="lazy" class="${cls}" onerror="this.onerror=null;this.src='${fb}';" />`;
+      }
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => document.querySelectorAll(s);
+      const rp = (n) => n.toLocaleString("id-ID");
+
+      /* =========================================================
+   DATA
+   ========================================================= */
+      const portfolioCats = [
+        "Semua",
+        "Skincare",
+        "F&B",
+        "Fashion",
+        "Elektronik",
+      ];
+
+      const portfolioItems = [
+        {
+          id: 1,
+          title: "Glow Serum",
+          cat: "Skincare",
+          image:
+            "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=700&q=80",
+          fb: "pf1",
+        },
+        {
+          id: 2,
+          title: "Kopi Arabika",
+          cat: "F&B",
+          image:
+            "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=700&q=80",
+          fb: "pf2",
+        },
+        {
+          id: 3,
+          title: "Sneakers Pro",
+          cat: "Fashion",
+          image:
+            "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&q=80",
+          fb: "pf3",
+        },
+        {
+          id: 4,
+          title: "Headphone",
+          cat: "Elektronik",
+          image:
+            "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=700&q=80",
+          fb: "pf4",
+        },
+        {
+          id: 5,
+          title: "Body Lotion",
+          cat: "Skincare",
+          image:
+            "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700&q=80",
+          fb: "pf5",
+        },
+        {
+          id: 6,
+          title: "Granola Mix",
+          cat: "F&B",
+          image:
+            "https://images.unsplash.com/photo-1517093602195-b40af9688b46?w=700&q=80",
+          fb: "pf6",
+        },
+        {
+          id: 7,
+          title: "Tas Kanvas",
+          cat: "Fashion",
+          image:
+            "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=700&q=80",
+          fb: "pf7",
+        },
+        {
+          id: 8,
+          title: "Smart Watch",
+          cat: "Elektronik",
+          image:
+            "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=700&q=80",
+          fb: "pf8",
+        },
+      ];
+
+      const packages = [
+        {
+          name: "Starter",
+          qty: "10 produk",
+          price: 750000,
+          popular: false,
+          desc: "Untuk kamu yang baru mulai jualan online. Fokus tampil rapi di marketplace.",
+          features: [
+            "10 produk × 3 angle",
+            "Background putih bersih",
+            "Retouch dasar & color grading",
+            "File JPG resolusi tinggi",
+            "File PNG transparan",
+            "Durasi 3 hari kerja",
+          ],
+        },
+        {
+          name: "Growth",
+          qty: "30 produk",
+          price: 1950000,
+          popular: true,
+          desc: "Paling sering dipilih. Kombinasi clean shot + lifestyle untuk konten marketplace & sosmed.",
+          features: [
+            "30 produk × 4 angle",
+            "Background putih + lifestyle",
+            "Retouch premium & color grading",
+            "5 foto kreatif / moody",
+            "Video mini 15 detik (3 produk)",
+            "File JPG + PNG transparan",
+            "Free konsultasi konsep",
+            "Durasi 5 hari kerja",
+          ],
+        },
+        {
+          name: "Scale",
+          qty: "60 produk",
+          price: 3500000,
+          popular: false,
+          desc: "Untuk brand yang jualan serius dan butuh stok foto bulanan.",
+          features: [
+            "60 produk × 4 angle",
+            "Background putih + lifestyle + moody",
+            "Retouch premium & color grading",
+            "10 foto kreatif / moody",
+            "Video mini 15 detik (8 produk)",
+            "File JPG + PNG + RAW (optional)",
+            "Prioritas antrian",
+            "Free konsultasi + moodboard",
+            "Durasi 7 hari kerja",
+          ],
+        },
+      ];
+
+      const addons = [
+        {
+          id: "video",
+          label: "Video mini produk (15 dtk)",
+          price: 150000,
+          per: "produk",
+        },
+        {
+          id: "model",
+          label: "Foto dengan model",
+          price: 250000,
+          per: "produk",
+        },
+        {
+          id: "moody",
+          label: "Konsep kreatif / moody",
+          price: 75000,
+          per: "produk",
+        },
+        {
+          id: "raw",
+          label: "File RAW (unlimited)",
+          price: 350000,
+          per: "order",
+        },
+        { id: "express", label: "Express 24 jam", price: 500000, per: "order" },
+      ];
+
+      const testimonials = [
+        {
+          name: "Rina Wijaya",
+          role: "Owner — Skincare Lokal",
+          brand: "Glowé",
+          text: "Dulu foto produk saya apa adanya, sekarang jadi sekelas brand besar. Konversi Shopee naik 3x dalam sebulan setelah pakai ShotPro.",
+          avatar:
+            "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&q=80",
+          fb: "t1",
+        },
+        {
+          name: "Bagas Pratama",
+          role: "Founder — Kopi Nusantara",
+          brand: "Kopi Kita",
+          text: "Prosesnya profesional, komunikatif, dan hasilnya konsisten. Kami sekarang langganan bulanan untuk semua SKU baru.",
+          avatar:
+            "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&q=80",
+          fb: "t2",
+        },
+        {
+          name: "Sarah Amanda",
+          role: "Owner — Fashion Brand",
+          brand: "Amandine",
+          text: "Tim ShotPro paham banget estetika brand. Hasilnya bukan cuma bagus, tapi konsisten dengan moodboard kami. Worth it!",
+          avatar:
+            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80",
+          fb: "t3",
+        },
+      ];
+
+      const faqs = [
+        {
+          q: "Bagaimana cara kirim produk ke studio?",
+          a: "Untuk area Jabodetabek, kami bisa jemput produk gratis (minimal 10 produk). Untuk luar kota, produk bisa dikirim via ekspedisi atau kami sediakan opsi virtual shooting menggunakan sampel digital.",
+        },
+        {
+          q: "Apakah boleh minta revisi?",
+          a: "Tentu. Semua paket termasuk revisi minor (penyesuaian warna, crop, kontras) sampai kamu puas. Revisi mayor atau ganti konsep akan ada biaya tambahan.",
+        },
+        {
+          q: "File-nya boleh dipakai untuk keperluan apa saja?",
+          a: "Ya. Kamu mendapat hak pakai komersial penuh untuk semua marketplace, sosmed, website, dan iklan berbayar. Kami tidak akan pakai hasil fotomu untuk klien lain.",
+        },
+        {
+          q: "Berapa lama proses pengerjaannya?",
+          a: "Starter 3 hari kerja, Growth 5 hari kerja, Scale 7 hari kerja. Ada opsi express 24 jam dengan biaya tambahan.",
+        },
+        {
+          q: "Apakah bisa langganan bulanan?",
+          a: "Ya. Kami punya paket retainer mulai dari 50 produk/bulan dengan harga spesial. Chat tim kami untuk penawaran custom.",
+        },
+        {
+          q: "Bagaimana kalau produk saya tidak bisa dikirim?",
+          a: "Kami menyediakan layanan on-site photography untuk produk besar seperti furniture, kendaraan, atau alat berat. Tim akan datang ke lokasi kamu dengan peralatan portable.",
+        },
+      ];
+
+      /* =========================================================
+   PORTFOLIO
+   ========================================================= */
+      let portfolioFilter = "Semua";
+
+      function renderPortfolioPills() {
+        $("#categoryPills").innerHTML = portfolioCats
+          .map((c) => {
+            const active = portfolioFilter === c;
+            return `<button onclick="setPortfolioFilter('${c}')"
+      class="px-4 py-2 rounded-full text-sm font-semibold transition border ${
+        active
+          ? "bg-brand-600 text-white border-brand-600"
+          : "bg-white text-ink-700 border-ink-200 hover:border-brand-400 hover:text-brand-600"
+      }">${c}</button>`;
+          })
+          .join("");
+      }
+
+      function setPortfolioFilter(c) {
+        portfolioFilter = c;
+        renderPortfolioPills();
+        renderPortfolio();
+      }
+
+      function renderPortfolio() {
+        const list =
+          portfolioFilter === "Semua"
+            ? portfolioItems
+            : portfolioItems.filter((p) => p.cat === portfolioFilter);
+
+        $("#portfolioGrid").innerHTML = list
+          .map(
+            (p) => `
+    <div class="group relative rounded-2xl overflow-hidden aspect-square img-fallback border border-ink-200">
+      ${imgTag(p.image, p.fb, p.title, "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700")}
+      <div class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+      <div class="absolute inset-x-0 bottom-0 p-4 text-white opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition">
+        <p class="text-[10px] tracking-widest text-brand-300 uppercase font-bold">${p.cat}</p>
+        <p class="font-bold text-sm mt-0.5">${p.title}</p>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   PAKET
+   ========================================================= */
+      function renderPackages() {
+        $("#packageGrid").innerHTML = packages
+          .map(
+            (p) => `
+    <div class="relative flex flex-col rounded-3xl p-8 transition ${
+      p.popular
+        ? "bg-brand-600 text-white shadow-2xl shadow-brand-600/25 scale-[1.02]"
+        : "bg-white border border-ink-200 hover:border-brand-400"
+    }">
+      ${p.popular ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-ink-900 text-white text-[10px] font-bold uppercase tracking-wider">Paling Populer</span>` : ""}
+
+      <p class="text-xs tracking-widest uppercase font-bold ${p.popular ? "text-brand-100" : "text-brand-600"}">${p.name}</p>
+      <p class="mt-2 text-sm ${p.popular ? "text-white/70" : "text-ink-500"}">${p.qty}</p>
+
+      <div class="mt-6 pb-6 border-b ${p.popular ? "border-white/15" : "border-ink-100"}">
+        <div class="flex items-baseline gap-1">
+          <span class="text-sm ${p.popular ? "text-white/60" : "text-ink-500"}">Rp</span>
+          <span class="text-4xl font-extrabold tracking-tight font-mono">${rp(p.price)}</span>
+        </div>
+        <p class="text-xs mt-1 ${p.popular ? "text-white/60" : "text-ink-500"}">sekali order</p>
+      </div>
+
+      <p class="mt-6 text-sm leading-relaxed ${p.popular ? "text-white/85" : "text-ink-600"}">${p.desc}</p>
+
+      <ul class="mt-6 space-y-3 flex-1">
+        ${p.features
+          .map(
+            (f) => `
+          <li class="flex items-start gap-3 text-sm">
+            <span class="mt-0.5 shrink-0 w-4 h-4 rounded-full ${p.popular ? "bg-white/15 text-white" : "bg-brand-50 text-brand-600"} flex items-center justify-center">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>
+            </span>
+            <span class="${p.popular ? "text-white/85" : "text-ink-700"}">${f}</span>
+          </li>
+        `,
+          )
+          .join("")}
+      </ul>
+
+      <button onclick="pickPackage('${p.name}', ${p.price})" class="mt-8 w-full py-4 rounded-full text-sm font-bold transition ${
+        p.popular
+          ? "bg-white text-brand-700 hover:bg-ink-50"
+          : "bg-ink-900 text-white hover:bg-ink-800"
+      }">
+        Pilih Paket ${p.name}
+      </button>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      function pickPackage(name, price) {
+        document
+          .getElementById("kalkulator")
+          .scrollIntoView({ behavior: "smooth" });
+        showToast(`Paket ${name} dipilih. Silakan isi detail di kalkulator.`);
+      }
+
+      /* =========================================================
+   KALKULATOR
+   ========================================================= */
+      const tierPrices = { basic: 25000, standard: 35000, premium: 50000 };
+
+      function changeQty(delta) {
+        const input = $("#qty");
+        const range = $("#qtyRange");
+        const newVal = Math.max(
+          5,
+          Math.min(500, parseInt(input.value || 5) + delta),
+        );
+        input.value = newVal;
+        range.value = Math.min(200, newVal);
+        updateCalc();
+      }
+
+      function renderAddons() {
+        $("#addonsList").innerHTML = addons
+          .map(
+            (a) => `
+    <label class="flex items-center justify-between p-3 rounded-xl border border-ink-200 hover:border-brand-400 cursor-pointer transition">
+      <div class="flex items-center gap-3">
+        <input type="checkbox" data-addon="${a.id}" data-price="${a.price}" data-per="${a.per}" class="accent-brand-600 w-4 h-4" />
+        <span class="text-sm font-medium">${a.label}</span>
+      </div>
+      <span class="text-xs font-mono font-semibold text-ink-600">+Rp ${rp(a.price)}<span class="text-ink-400 font-sans">/${a.per}</span></span>
+    </label>
+  `,
+          )
+          .join("");
+
+        $$('#addonsList input[type="checkbox"]').forEach((c) =>
+          c.addEventListener("change", updateCalc),
+        );
+      }
+
+      function updateCalc() {
+        const qty = Math.max(5, parseInt($("#qty").value) || 0);
+        const tier =
+          document.querySelector('input[name="tier"]:checked')?.value ||
+          "standard";
+        const tierLabel = {
+          basic: "Basic",
+          standard: "Standard",
+          premium: "Premium",
+        }[tier];
+        const basePrice = tierPrices[tier] * qty;
+
+        let addonsPrice = 0;
+        const selectedAddons = [];
+        $$('#addonsList input[type="checkbox"]:checked').forEach((c) => {
+          const per = c.dataset.per;
+          const price = parseInt(c.dataset.price);
+          const amount = per === "produk" ? price * qty : price;
+          addonsPrice += amount;
+          selectedAddons.push({
+            label: c.parentElement.querySelector("span").textContent,
+            amount,
+          });
+        });
+
+        const total = basePrice + addonsPrice;
+
+        $("#calcPrice").textContent = rp(total);
+        $("#calcPerItem").textContent =
+          `≈ Rp ${rp(Math.round(total / qty))} per produk`;
+        $("#sumTier").textContent = tierLabel;
+        $("#sumQty").textContent = qty;
+
+        const box = $("#sumAddonsBox");
+        if (selectedAddons.length === 0) {
+          box.innerHTML = "";
+        } else {
+          box.innerHTML = selectedAddons
+            .map(
+              (a) => `
+      <div class="flex justify-between text-xs">
+        <span class="text-white/60">+ ${a.label}</span>
+        <span class="font-mono">Rp ${rp(a.amount)}</span>
+      </div>
+    `,
+            )
+            .join("");
+        }
+      }
+
+      function submitOrder() {
+        const form = $("#calcForm");
+        if (!form.reportValidity()) return;
+
+        const data = new FormData(form);
+        const qty = parseInt($("#qty").value);
+        const tier =
+          document.querySelector('input[name="tier"]:checked')?.value ||
+          "standard";
+        const tierLabel = {
+          basic: "Basic",
+          standard: "Standard",
+          premium: "Premium",
+        }[tier];
+
+        const addonLines = [];
+        $$('#addonsList input[type="checkbox"]:checked').forEach((c) => {
+          const label = c.parentElement.querySelector("span").textContent;
+          addonLines.push(`  · ${label}`);
+        });
+
+        const totalText = $("#calcPrice").textContent;
+
+        const text =
+          `Halo ShotPro, saya ingin order foto produk.\n\n` +
+          `*Nama:* ${data.get("nama")}\n` +
+          `*WhatsApp:* ${data.get("wa")}\n` +
+          `*Brand/Toko:* ${data.get("brand") || "-"}\n\n` +
+          `*Jumlah produk:* ${qty}\n` +
+          `*Tingkat editing:* ${tierLabel}\n` +
+          (addonLines.length
+            ? `*Add-on:*\n${addonLines.join("\n")}\n\n`
+            : "\n") +
+          `*Estimasi total:* Rp ${totalText}\n\n` +
+          `*Catatan:*\n${data.get("catatan") || "-"}`;
+
+        const url = `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank");
+        showToast("Membuka WhatsApp…");
+      }
+
+      /* =========================================================
+   TESTIMONI + FAQ
+   ========================================================= */
+      function renderTestimonials() {
+        $("#testimonialGrid").innerHTML = testimonials
+          .map(
+            (t) => `
+    <div class="p-7 rounded-2xl bg-white border border-ink-200">
+      <div class="flex gap-1 text-brand-600">
+        ${Array.from({ length: 5 })
+          .map(
+            () =>
+              `<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.5.7-5.6 5 1.6 7.4L12 18l-6.5 3.9 1.6-7.4-5.6-5 7.5-.7L12 2Z"/></svg>`,
+          )
+          .join("")}
+      </div>
+      <p class="mt-4 text-ink-700 leading-relaxed text-sm">"${t.text}"</p>
+      <div class="mt-6 flex items-center gap-3 pt-6 border-t border-ink-100">
+        <div class="w-11 h-11 rounded-full overflow-hidden img-fallback shrink-0">
+          ${imgTag(t.avatar, t.fb, t.name, "w-full h-full object-cover")}
+        </div>
+        <div>
+          <p class="font-semibold text-sm">${t.name}</p>
+          <p class="text-xs text-ink-500">${t.role} · <span class="text-brand-600 font-semibold">${t.brand}</span></p>
+        </div>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      function renderFaqs() {
+        $("#faqList").innerHTML = faqs
+          .map(
+            (f) => `
+    <details class="group rounded-2xl bg-white border border-ink-200 overflow-hidden">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none">
+        <span class="font-semibold text-ink-900 pr-4">${f.q}</span>
+        <span class="shrink-0 w-9 h-9 rounded-full border border-ink-200 group-open:bg-brand-600 group-open:border-brand-600 group-open:text-white flex items-center justify-center transition">
+          <svg class="w-4 h-4 group-open:rotate-45 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 text-sm text-ink-600 leading-relaxed">${f.a}</div>
+    </details>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   BEFORE/AFTER SLIDER
+   ========================================================= */
+      function initBASlider(el) {
+        const clip = el.querySelector(".ba-clip");
+        const line = el.querySelector(".ba-line");
+        const beforeImg = clip.querySelector("img");
+        let dragging = false;
+
+        const setPos = (clientX) => {
+          const rect = el.getBoundingClientRect();
+          let pct = ((clientX - rect.left) / rect.width) * 100;
+          pct = Math.max(0, Math.min(100, pct));
+          clip.style.width = pct + "%";
+          line.style.left = pct + "%";
+        };
+
+        const start = (e) => {
+          dragging = true;
+          setPos(e.touches ? e.touches[0].clientX : e.clientX);
+        };
+        const move = (e) => {
+          if (!dragging) return;
+          setPos(e.touches ? e.touches[0].clientX : e.clientX);
+        };
+        const end = () => {
+          dragging = false;
+        };
+
+        el.addEventListener("mousedown", start);
+        el.addEventListener("touchstart", start, { passive: true });
+        document.addEventListener("mousemove", move);
+        document.addEventListener("touchmove", move, { passive: true });
+        document.addEventListener("mouseup", end);
+        document.addEventListener("touchend", end);
+      }
+
+      /* =========================================================
+   TOAST
+   ========================================================= */
+      let toastTimer;
+      function showToast(msg) {
+        const el = $("#toast");
+        el.textContent = msg;
+        el.classList.remove("hidden");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => el.classList.add("hidden"), 2400);
+      }
+
+      /* =========================================================
+   EVENTS
+   ========================================================= */
+      $("#menuBtn").addEventListener("click", () =>
+        $("#mobileMenu").classList.toggle("hidden"),
+      );
+      $("#mobileMenu")
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () =>
+            $("#mobileMenu").classList.add("hidden"),
+          ),
+        );
+
+      $("#qty").addEventListener("input", (e) => {
+        $("#qtyRange").value = Math.min(200, parseInt(e.target.value) || 5);
+        updateCalc();
+      });
+      $("#qtyRange").addEventListener("input", (e) => {
+        $("#qty").value = e.target.value;
+        updateCalc();
+      });
+      $$('input[name="tier"]').forEach((r) =>
+        r.addEventListener("change", updateCalc),
+      );
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") $("#mobileMenu").classList.add("hidden");
+      });
+
+      /* =========================================================
+   INIT
+   ========================================================= */
+      renderPortfolioPills();
+      renderPortfolio();
+      renderPackages();
+      renderAddons();
+      renderTestimonials();
+      renderFaqs();
+      updateCalc();
+      initBASlider(document.getElementById("ba1"));
+      initBASlider(document.getElementById("ba2"));
+    </script>
+  </body>
+</html>

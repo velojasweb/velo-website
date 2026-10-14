@@ -1,0 +1,2456 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      JogjaRent — Rental PS, Motor, & Mobil Terlengkap di Yogyakarta
+    </title>
+    <meta
+      name="description"
+      content="Rental PS4, PS5, motor, dan mobil di Jogja. Antar jemput gratis area Jogja, harga transparan, booking via WhatsApp. Buka 24 jam."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              jakarta: ['"Plus Jakarta Sans"', "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              ink: {
+                50: "#f6f6f7",
+                100: "#ebebed",
+                200: "#d4d4d8",
+                300: "#a1a1aa",
+                400: "#71717a",
+                500: "#52525b",
+                600: "#3f3f46",
+                700: "#27272a",
+                800: "#1c1c20",
+                900: "#0f0f14",
+                950: "#07070a",
+              },
+              sun: {
+                300: "#fde047",
+                400: "#facc15",
+                500: "#eab308",
+                600: "#ca8a04",
+              },
+              playstation: {
+                light: "#e3f2fd",
+                main: "#2563eb",
+              },
+              moto: {
+                light: "#fef3c7",
+                main: "#d97706",
+              },
+              auto: {
+                light: "#dcfce7",
+                main: "#16a34a",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #facc15;
+        border-radius: 3px;
+      }
+
+      #navbar.scrolled {
+        background: rgba(15, 15, 20, 0.95);
+        backdrop-filter: blur(12px);
+      }
+
+      /* Yellow highlight */
+      .highlight {
+        background: linear-gradient(transparent 60%, #facc15 60%);
+        padding: 0 4px;
+      }
+
+      /* Marquee */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        animation: marquee 30s linear infinite;
+      }
+
+      /* Card hover */
+      .rent-card {
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .rent-card:hover {
+        transform: translateY(-6px);
+      }
+
+      /* Img zoom */
+      .img-zoom img {
+        transition: transform 0.6s ease;
+      }
+      .img-zoom:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Category colors */
+      .cat-ps {
+        border-top-color: #2563eb;
+      }
+      .cat-motor {
+        border-top-color: #d97706;
+      }
+      .cat-mobil {
+        border-top-color: #16a34a;
+      }
+
+      /* Pulse WA */
+      @keyframes pulse-green {
+        0% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        }
+      }
+      .pulse-wa {
+        animation: pulse-green 2s infinite;
+      }
+
+      /* Live indicator */
+      @keyframes blink {
+        50% {
+          opacity: 0.3;
+        }
+      }
+      .blink {
+        animation: blink 1.5s infinite;
+      }
+
+      /* Icon bounce */
+      @keyframes bounce-slow {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      .bounce-slow {
+        animation: bounce-slow 3s ease-in-out infinite;
+      }
+
+      /* Tab active */
+      .tab-btn.active {
+        background: #facc15;
+        color: #0f0f14;
+        border-color: #facc15;
+      }
+
+      /* Grid pattern */
+      .grid-pattern {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(250, 204, 21, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(250, 204, 21, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #facc15;
+        box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15);
+      }
+
+      /* FAQ */
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .faq-item.active .faq-content {
+        max-height: 300px;
+      }
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-700 antialiased overflow-x-hidden">
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="bg-ink-900 text-white text-xs">
+      <div
+        class="max-w-6xl mx-auto px-6 py-2.5 flex flex-wrap justify-center md:justify-between items-center gap-2"
+      >
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-green-500 blink"></span>
+            <span class="font-semibold">Buka 24 Jam</span>
+          </span>
+          <span class="hidden md:flex items-center gap-1.5">
+            <i class="fa-solid fa-phone text-sun-400"></i>
+            <span>0812-3456-7890</span>
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span
+            class="bg-sun-400 text-ink-900 px-2.5 py-1 rounded text-[10px] font-bold flex items-center gap-1"
+          >
+            <i class="fa-solid fa-truck-fast"></i> ANTAR JEMPUT GRATIS AREA
+            JOGJA
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav
+      id="navbar"
+      class="sticky top-0 z-50 bg-white transition-all border-b border-slate-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="flex items-center gap-2.5">
+          <div
+            class="w-11 h-11 rounded-xl bg-ink-900 flex items-center justify-center"
+          >
+            <span class="text-sun-400 font-black text-lg">JR</span>
+          </div>
+          <div>
+            <span class="text-lg font-black jakarta text-ink-900 leading-none"
+              >Jogja<span class="text-sun-500">Rent</span></span
+            >
+            <p
+              class="text-[10px] text-slate-500 font-medium tracking-wider mt-0.5"
+            >
+              PS • MOTOR • MOBIL
+            </p>
+          </div>
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700"
+        >
+          <li>
+            <a href="#kategori" class="hover:text-sun-600 transition"
+              >Kategori</a
+            >
+          </li>
+          <li>
+            <a href="#katalog" class="hover:text-sun-600 transition">Katalog</a>
+          </li>
+          <li>
+            <a href="#cara-sewa" class="hover:text-sun-600 transition"
+              >Cara Sewa</a
+            >
+          </li>
+          <li>
+            <a href="#testimoni" class="hover:text-sun-600 transition"
+              >Testimoni</a
+            >
+          </li>
+          <li><a href="#faq" class="hover:text-sun-600 transition">FAQ</a></li>
+        </ul>
+
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20JogjaRent%2C%20saya%20mau%20booking"
+          class="hidden sm:flex px-5 py-2.5 rounded-full bg-green-500 text-white text-sm font-bold hover:bg-green-600 transition shadow-lg shadow-green-500/25 items-center gap-2"
+        >
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          Booking WA
+        </a>
+
+        <button
+          id="mobileBtn"
+          class="lg:hidden w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-bars text-slate-700"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="lg:hidden hidden px-6 pb-4">
+        <div class="bg-white rounded-xl border border-slate-200 shadow-lg p-5">
+          <ul class="space-y-3 text-sm font-semibold">
+            <li>
+              <a
+                href="#kategori"
+                class="block py-2 text-slate-700 hover:text-sun-600"
+                >Kategori</a
+              >
+            </li>
+            <li>
+              <a
+                href="#katalog"
+                class="block py-2 text-slate-700 hover:text-sun-600"
+                >Katalog</a
+              >
+            </li>
+            <li>
+              <a
+                href="#cara-sewa"
+                class="block py-2 text-slate-700 hover:text-sun-600"
+                >Cara Sewa</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimoni"
+                class="block py-2 text-slate-700 hover:text-sun-600"
+                >Testimoni</a
+              >
+            </li>
+            <li>
+              <a
+                href="#faq"
+                class="block py-2 text-slate-700 hover:text-sun-600"
+                >FAQ</a
+              >
+            </li>
+            <li class="pt-2">
+              <a
+                href="https://wa.me/6281234567890"
+                class="block text-center py-3 rounded-full bg-green-500 text-white font-bold"
+                ><i class="fa-brands fa-whatsapp mr-1"></i> Booking via WA</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative bg-ink-950 text-white overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-60"></div>
+      <div
+        class="absolute top-0 -left-32 w-96 h-96 bg-sun-400/10 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 -right-32 w-96 h-96 bg-sun-400/10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 relative">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <!-- Left Content -->
+          <div class="lg:col-span-7" data-aos="fade-up">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sun-400/10 border border-sun-400/30 text-sun-400 text-xs font-bold mb-5"
+            >
+              <i class="fa-solid fa-fire"></i>
+              Rental #1 di Yogyakarta
+            </div>
+
+            <h1
+              class="text-4xl lg:text-6xl font-black jakarta leading-[1.05] mb-6"
+            >
+              Sewa <span class="text-sun-400">PS, Motor,</span><br />
+              & <span class="text-sun-400">Mobil</span> di Jogja
+            </h1>
+
+            <p class="text-lg text-slate-300 leading-relaxed mb-8 max-w-lg">
+              Mau nge-game bareng teman di kos? Explore Jogja pakai motor? Atau
+              liburan keluarga pakai mobil? Semua ada di JogjaRent.
+            </p>
+
+            <!-- Quick kategori -->
+            <div class="grid grid-cols-3 gap-3 mb-8">
+              <div
+                class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/50 transition"
+              >
+                <i class="fa-solid fa-gamepad text-blue-400 text-2xl mb-2"></i>
+                <p class="text-sm font-bold">Rental PS</p>
+                <p class="text-[10px] text-slate-400">PS3, PS4, PS5</p>
+              </div>
+              <div
+                class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition"
+              >
+                <i
+                  class="fa-solid fa-motorcycle text-amber-400 text-2xl mb-2"
+                ></i>
+                <p class="text-sm font-bold">Rental Motor</p>
+                <p class="text-[10px] text-slate-400">Matic & Bebek</p>
+              </div>
+              <div
+                class="p-4 rounded-xl bg-white/5 border border-white/10 hover:border-green-500/50 transition"
+              >
+                <i
+                  class="fa-solid fa-car-side text-green-400 text-2xl mb-2"
+                ></i>
+                <p class="text-sm font-bold">Rental Mobil</p>
+                <p class="text-[10px] text-slate-400">Lepas Kunci & Driver</p>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-col sm:flex-row gap-3 mb-6">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20JogjaRent%2C%20saya%20mau%20booking"
+                class="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-green-500 text-white font-bold hover:bg-green-600 transition shadow-xl shadow-green-500/30"
+              >
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Booking via WhatsApp
+              </a>
+              <a
+                href="#katalog"
+                class="flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-sun-400 text-ink-900 font-bold hover:bg-sun-300 transition"
+              >
+                <i class="fa-solid fa-list"></i>
+                Lihat Katalog
+              </a>
+            </div>
+
+            <!-- Trust -->
+            <div
+              class="flex flex-wrap items-center gap-5 text-xs text-slate-400 pt-5 border-t border-white/10"
+            >
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-star text-sun-400"></i>
+                <b class="text-white">4.9</b> (1.200+ review)
+              </span>
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-user-group text-sun-400"></i>
+                <b class="text-white">8.500+</b> pelanggan
+              </span>
+              <span class="flex items-center gap-1.5">
+                <i class="fa-solid fa-truck-fast text-sun-400"></i>
+                Antar jemput gratis
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: Visual Grid -->
+          <div
+            class="lg:col-span-5 relative h-[420px] hidden lg:block"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <!-- PS Image -->
+            <div
+              class="absolute top-0 right-0 w-[55%] h-[55%] rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-500/30 bounce-slow"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&q=80"
+                alt="PS5"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-2 left-2 px-2 py-1 rounded-md bg-blue-500 text-white text-[10px] font-bold"
+              >
+                PS5
+              </div>
+            </div>
+
+            <!-- Motor Image -->
+            <div
+              class="absolute bottom-8 left-0 w-[50%] h-[50%] rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-500/30"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=80"
+                alt="Motor"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-2 left-2 px-2 py-1 rounded-md bg-amber-500 text-white text-[10px] font-bold"
+              >
+                MOTOR
+              </div>
+            </div>
+
+            <!-- Mobil Image -->
+            <div
+              class="absolute bottom-0 right-8 w-[45%] h-[40%] rounded-2xl overflow-hidden shadow-2xl border-2 border-green-500/30"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80"
+                alt="Mobil"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-2 left-2 px-2 py-1 rounded-md bg-green-500 text-white text-[10px] font-bold"
+              >
+                MOBIL
+              </div>
+            </div>
+
+            <!-- Floating Badge -->
+            <div
+              class="absolute top-8 left-4 bg-sun-400 text-ink-900 rounded-xl px-4 py-3 shadow-xl"
+            >
+              <p
+                class="text-[10px] font-bold uppercase tracking-wider opacity-70"
+              >
+                Mulai dari
+              </p>
+              <p class="text-2xl font-black jakarta leading-none">
+                Rp 15rb<span class="text-xs font-bold">/jam</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <section class="bg-sun-400 py-3 overflow-hidden">
+      <div class="flex animate-marquee whitespace-nowrap text-ink-900">
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>ANTAR JEMPUT GRATIS AREA
+          JOGJA</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>BUKA 24 JAM</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>BAYAR SETELAH
+          TERIMA</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>UNIT BERSIH &
+          TERAWAT</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>BOOKING VIA WA 5
+          MENIT</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>ANTAR JEMPUT GRATIS AREA
+          JOGJA</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>BUKA 24 JAM</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>BAYAR SETELAH
+          TERIMA</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>UNIT BERSIH &
+          TERAWAT</span
+        >
+        <span class="text-sm font-black uppercase tracking-wider mx-8"
+          ><i class="fa-solid fa-check-circle mr-2"></i>BOOKING VIA WA 5
+          MENIT</span
+        >
+      </div>
+    </section>
+
+    <!-- ===================== 3 KATEGORI UTAMA ===================== -->
+    <section id="kategori" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-sun-600 text-xs font-black uppercase tracking-widest mb-3"
+            >3 Kategori Utama</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black jakarta text-ink-900 mb-4">
+            Pilih Sesuai Kebutuhan Anda
+          </h2>
+          <p class="text-slate-600">
+            Satu tempat untuk semua rental — hemat waktu, hemat tenaga.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- PS -->
+          <div
+            class="rent-card bg-white rounded-2xl border-2 border-slate-100 overflow-hidden cat-ps border-t-4"
+            data-aos="fade-up"
+          >
+            <div class="p-6">
+              <div
+                class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-5"
+              >
+                <i class="fa-solid fa-gamepad text-blue-600 text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-black jakarta text-ink-900 mb-2">
+                Rental PS
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                PS3, PS4, PS5 + 2 stik + 20 game populer. Bisa main di kos Anda
+                atau rental ruangan kami.
+              </p>
+              <ul
+                class="space-y-2 text-sm text-slate-700 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> PS3,
+                  PS4, PS5 ready
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 20+
+                  game populer
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> Bisa
+                  sewa ruangan (PS Cafe)
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Mulai dari
+                  </p>
+                  <p class="text-2xl font-black jakarta text-blue-600">
+                    Rp 15rb<span class="text-xs font-bold text-slate-500"
+                      >/jam</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Rental%20PS"
+                  class="px-4 py-2.5 rounded-lg bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Motor -->
+          <div
+            class="rent-card bg-white rounded-2xl border-2 border-slate-100 overflow-hidden cat-motor border-t-4"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="p-6">
+              <div
+                class="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center mb-5"
+              >
+                <i class="fa-solid fa-motorcycle text-amber-600 text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-black jakarta text-ink-900 mb-2">
+                Rental Motor
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                Motor matic & bebek. Cocok untuk explore Jogja, ke kampus, atau
+                keliling Malioboro.
+              </p>
+              <ul
+                class="space-y-2 text-sm text-slate-700 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i>
+                  Vario, Beat, NMAX, Aerox
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> 2
+                  helm SNI + jas hujan
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> Bisa
+                  harian, mingguan, bulanan
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Mulai dari
+                  </p>
+                  <p class="text-2xl font-black jakarta text-amber-600">
+                    Rp 65rb<span class="text-xs font-bold text-slate-500"
+                      >/hari</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Rental%20Motor"
+                  class="px-4 py-2.5 rounded-lg bg-amber-600 text-white text-xs font-bold hover:bg-amber-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobil -->
+          <div
+            class="rent-card bg-white rounded-2xl border-2 border-slate-100 overflow-hidden cat-mobil border-t-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="p-6">
+              <div
+                class="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center mb-5"
+              >
+                <i class="fa-solid fa-car-side text-green-600 text-3xl"></i>
+              </div>
+              <h3 class="text-xl font-black jakarta text-ink-900 mb-2">
+                Rental Mobil
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                Lepas kunci & dengan driver. Cocok untuk liburan keluarga atau
+                keperluan bisnis.
+              </p>
+              <ul
+                class="space-y-2 text-sm text-slate-700 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i>
+                  Avanza, Innova, Brio, Xenia
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Lepas
+                  kunci / + driver
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Free
+                  BBM (paket driver)
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Mulai dari
+                  </p>
+                  <p class="text-2xl font-black jakarta text-green-600">
+                    Rp 350rb<span class="text-xs font-bold text-slate-500"
+                      >/hari</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Rental%20Mobil"
+                  class="px-4 py-2.5 rounded-lg bg-green-600 text-white text-xs font-bold hover:bg-green-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KATALOG DENGAN TAB ===================== -->
+    <section id="katalog" class="py-16 lg:py-24 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <span
+            class="inline-block text-sun-600 text-xs font-black uppercase tracking-widest mb-3"
+            >Katalog & Harga</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black jakarta text-ink-900 mb-4">
+            Harga Transparan, Tanpa Biaya Tersembunyi
+          </h2>
+          <p class="text-slate-600">
+            Pilih kategori untuk melihat detail harga.
+          </p>
+        </div>
+
+        <!-- Tabs -->
+        <div
+          class="flex flex-wrap justify-center gap-3 mb-10"
+          data-aos="fade-up"
+        >
+          <button
+            class="tab-btn active px-5 py-2.5 text-sm font-bold rounded-full bg-ink-900 text-white border-2 border-ink-900 transition"
+            data-tab="ps"
+          >
+            <i class="fa-solid fa-gamepad mr-1.5"></i> Rental PS
+          </button>
+          <button
+            class="tab-btn px-5 py-2.5 text-sm font-bold rounded-full bg-white text-slate-700 border-2 border-slate-200 hover:border-ink-900 transition"
+            data-tab="motor"
+          >
+            <i class="fa-solid fa-motorcycle mr-1.5"></i> Rental Motor
+          </button>
+          <button
+            class="tab-btn px-5 py-2.5 text-sm font-bold rounded-full bg-white text-slate-700 border-2 border-slate-200 hover:border-ink-900 transition"
+            data-tab="mobil"
+          >
+            <i class="fa-solid fa-car-side mr-1.5"></i> Rental Mobil
+          </button>
+        </div>
+
+        <!-- Panel PS -->
+        <div class="tab-panel" data-panel="ps">
+          <div class="grid md:grid-cols-3 gap-5">
+            <!-- PS3 -->
+            <div
+              class="bg-white rounded-xl border border-slate-200 p-6 rent-card"
+              data-aos="fade-up"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-gamepad text-blue-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded"
+                  >PS3</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                PlayStation 3
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">2 stik + 30 game</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 2 stik
+                  wireless
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 30
+                  game (PES, GTA V, dll)
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> Bisa
+                  antar ke kos
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Per jam
+                  </p>
+                  <p class="text-2xl font-black jakarta text-blue-600">
+                    Rp 15rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    atau Rp 75rb/hari (12 jam)
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20PS3"
+                  class="px-4 py-2 rounded-lg bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+
+            <!-- PS4 -->
+            <div
+              class="bg-white rounded-xl border-2 border-sun-400 p-6 rent-card relative"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sun-400 text-ink-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap"
+              >
+                ⭐ Paling Diminati
+              </div>
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-gamepad text-blue-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-blue-700 bg-blue-100 px-2 py-1 rounded"
+                  >PS4</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                PlayStation 4 Pro
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">2 stik + 40 game</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 2 stik
+                  wireless
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 40
+                  game (FIFA 24, COD, dll)
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i>
+                  Kualitas 4K
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Per jam
+                  </p>
+                  <p class="text-2xl font-black jakarta text-blue-600">
+                    Rp 25rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    atau Rp 125rb/hari (12 jam)
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20PS4"
+                  class="px-4 py-2 rounded-lg bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+
+            <!-- PS5 -->
+            <div
+              class="bg-white rounded-xl border border-slate-200 p-6 rent-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-gamepad text-blue-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded"
+                  >PS5</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                PlayStation 5
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">2 stik + 25 game</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 2
+                  DualSense controller
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 25
+                  game terbaru
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-blue-500 text-xs"></i> 4K
+                  120fps
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Per jam
+                  </p>
+                  <p class="text-2xl font-black jakarta text-blue-600">
+                    Rp 40rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    atau Rp 200rb/hari (12 jam)
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20PS5"
+                  class="px-4 py-2 rounded-lg bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info tambahan PS -->
+          <div
+            class="mt-6 p-5 rounded-xl bg-blue-50 border-l-4 border-blue-500"
+            data-aos="fade-up"
+          >
+            <p class="text-sm text-slate-700">
+              <i class="fa-solid fa-info-circle text-blue-600 mr-1"></i>
+              <b>Include:</b> Kabel HDMI, colokan, 2 stik, 30-40 game. Bisa
+              request game tertentu. Minimal sewa 2 jam.
+              <b>Antar jemput gratis</b> area Kota Jogja (min. 3 jam).
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel Motor -->
+        <div class="tab-panel hidden" data-panel="motor">
+          <div class="grid md:grid-cols-3 gap-5">
+            <!-- Beat -->
+            <div
+              class="bg-white rounded-xl border border-slate-200 p-6 rent-card"
+              data-aos="fade-up"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-motorcycle text-amber-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-1 rounded"
+                  >HEMAT</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                Honda Beat
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">Matic 110cc • 2 helm</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> 2
+                  helm SNI
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> Jas
+                  hujan
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> Free
+                  antar area Jogja
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Per hari (24 jam)
+                  </p>
+                  <p class="text-2xl font-black jakarta text-amber-600">
+                    Rp 65rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    Rp 350rb/minggu • Rp 1.2jt/bulan
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Beat"
+                  class="px-4 py-2 rounded-lg bg-amber-600 text-white text-xs font-bold hover:bg-amber-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+
+            <!-- Vario -->
+            <div
+              class="bg-white rounded-xl border-2 border-sun-400 p-6 rent-card relative"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sun-400 text-ink-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap"
+              >
+                ⭐ Best Seller
+              </div>
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-motorcycle text-amber-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-1 rounded"
+                  >POPULER</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                Honda Vario 125
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">Matic 125cc • 2 helm</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> 2
+                  helm SNI
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> Jas
+                  hujan
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> Unit
+                  2022+, terawat
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Per hari (24 jam)
+                  </p>
+                  <p class="text-2xl font-black jakarta text-amber-600">
+                    Rp 85rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    Rp 450rb/minggu • Rp 1.5jt/bulan
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Vario"
+                  class="px-4 py-2 rounded-lg bg-amber-600 text-white text-xs font-bold hover:bg-amber-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+
+            <!-- NMAX -->
+            <div
+              class="bg-white rounded-xl border border-slate-200 p-6 rent-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-motorcycle text-amber-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded"
+                  >PREMIUM</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                Yamaha NMAX
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">Matic 155cc • 2 helm</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> 2
+                  helm SNI
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> Jas
+                  hujan premium
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-amber-500 text-xs"></i> Cocok
+                  untuk touring
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Per hari (24 jam)
+                  </p>
+                  <p class="text-2xl font-black jakarta text-amber-600">
+                    Rp 125rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    Rp 700rb/minggu • Rp 2.5jt/bulan
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20NMAX"
+                  class="px-4 py-2 rounded-lg bg-amber-600 text-white text-xs font-bold hover:bg-amber-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-6 p-5 rounded-xl bg-amber-50 border-l-4 border-amber-500"
+            data-aos="fade-up"
+          >
+            <p class="text-sm text-slate-700">
+              <i class="fa-solid fa-info-circle text-amber-600 mr-1"></i>
+              <b>Syarat:</b> KTP + SIM C + deposit 1 KTP asli atau motor
+              sendiri. <b>Antar jemput gratis</b> area Kota Jogja (min. 2 hari
+              sewa).
+            </p>
+          </div>
+        </div>
+
+        <!-- Panel Mobil -->
+        <div class="tab-panel hidden" data-panel="mobil">
+          <div class="grid md:grid-cols-3 gap-5">
+            <!-- Brio -->
+            <div
+              class="bg-white rounded-xl border border-slate-200 p-6 rent-card"
+              data-aos="fade-up"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-car-side text-green-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-1 rounded"
+                  >CITY CAR</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                Honda Brio
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">5 kursi • Matic</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Lepas
+                  kunci / + driver
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i>
+                  Asuransi all-risk
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Free
+                  antar (min. 2 hari)
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Lepas Kunci
+                  </p>
+                  <p class="text-2xl font-black jakarta text-green-600">
+                    Rp 350rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    + Driver: Rp 500rb/hari
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Brio"
+                  class="px-4 py-2 rounded-lg bg-green-600 text-white text-xs font-bold hover:bg-green-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+
+            <!-- Avanza -->
+            <div
+              class="bg-white rounded-xl border-2 border-sun-400 p-6 rent-card relative"
+              data-aos="fade-up"
+              data-aos-delay="50"
+            >
+              <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sun-400 text-ink-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap"
+              >
+                ⭐ Best Seller
+              </div>
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-car-side text-green-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-green-700 bg-green-100 px-2 py-1 rounded"
+                  >MPV</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                Toyota Avanza
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">7 kursi • Matic/Manual</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Lepas
+                  kunci / + driver
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i>
+                  Asuransi all-risk
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Cocok
+                  untuk keluarga
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Lepas Kunci
+                  </p>
+                  <p class="text-2xl font-black jakarta text-green-600">
+                    Rp 400rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    + Driver: Rp 600rb/hari (free BBM)
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Avanza"
+                  class="px-4 py-2 rounded-lg bg-green-600 text-white text-xs font-bold hover:bg-green-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+
+            <!-- Innova -->
+            <div
+              class="bg-white rounded-xl border border-slate-200 p-6 rent-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="flex items-start justify-between mb-4">
+                <div
+                  class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center"
+                >
+                  <i class="fa-solid fa-car-side text-green-600"></i>
+                </div>
+                <span
+                  class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded"
+                  >PREMIUM</span
+                >
+              </div>
+              <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+                Toyota Innova Reborn
+              </h3>
+              <p class="text-xs text-slate-500 mb-4">7 kursi • Diesel Matic</p>
+              <ul
+                class="space-y-1.5 text-sm text-slate-600 mb-5 pb-5 border-b border-slate-100"
+              >
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> +
+                  Driver saja (tidak lepas kunci)
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Free
+                  BBM + tol + parkir
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-green-500 text-xs"></i> Cocok
+                  untuk wisata
+                </li>
+              </ul>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5"
+                  >
+                    Dengan Driver
+                  </p>
+                  <p class="text-2xl font-black jakarta text-green-600">
+                    Rp 850rb
+                  </p>
+                  <p class="text-[10px] text-slate-500 mt-1">
+                    Include BBM + Tol + Parkir
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Booking%20Innova"
+                  class="px-4 py-2 rounded-lg bg-green-600 text-white text-xs font-bold hover:bg-green-700 transition"
+                >
+                  Booking
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-6 p-5 rounded-xl bg-green-50 border-l-4 border-green-500"
+            data-aos="fade-up"
+          >
+            <p class="text-sm text-slate-700">
+              <i class="fa-solid fa-info-circle text-green-600 mr-1"></i>
+              <b>Syarat Lepas Kunci:</b> KTP + SIM A + deposit Rp 500rb.
+              <b>Antar jemput gratis</b> area Kota Jogja (min. 3 hari sewa).
+              Free BBM untuk paket driver.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CARA SEWA ===================== -->
+    <section id="cara-sewa" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-sun-600 text-xs font-black uppercase tracking-widest mb-3"
+            >Cara Sewa</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black jakarta text-ink-900 mb-4">
+            Booking Cuma 3 Langkah, 5 Menit Selesai
+          </h2>
+          <p class="text-slate-600">
+            Tidak perlu aplikasi, tidak perlu bikin akun. Cukup WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 relative">
+          <div
+            class="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 border-t-2 border-dashed border-slate-300"
+          ></div>
+
+          <div class="text-center relative" data-aos="fade-up">
+            <div
+              class="w-24 h-24 mx-auto rounded-full bg-green-500 text-white flex items-center justify-center text-3xl mb-5 shadow-xl shadow-green-500/30 relative z-10"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 z-20 ml-8">
+              <span
+                class="w-8 h-8 rounded-full bg-ink-900 text-sun-400 flex items-center justify-center font-black text-xs"
+                >1</span
+              >
+            </div>
+            <h3 class="font-black jakarta text-ink-900 text-lg mb-2">
+              Chat WhatsApp
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Kirim pesan ke WA kami. Sebutkan: kategori, tanggal, durasi, dan
+              lokasi.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-24 h-24 mx-auto rounded-full bg-green-500 text-white flex items-center justify-center text-3xl mb-5 shadow-xl shadow-green-500/30 relative z-10"
+            >
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 z-20 ml-8">
+              <span
+                class="w-8 h-8 rounded-full bg-ink-900 text-sun-400 flex items-center justify-center font-black text-xs"
+                >2</span
+              >
+            </div>
+            <h3 class="font-black jakarta text-ink-900 text-lg mb-2">
+              Konfirmasi & Bayar
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Kami kirim detail harga & total. Bayar via transfer/QRIS/COD.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-24 h-24 mx-auto rounded-full bg-green-500 text-white flex items-center justify-center text-3xl mb-5 shadow-xl shadow-green-500/30 relative z-10"
+            >
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 z-20 ml-8">
+              <span
+                class="w-8 h-8 rounded-full bg-ink-900 text-sun-400 flex items-center justify-center font-black text-xs"
+                >3</span
+              >
+            </div>
+            <h3 class="font-black jakarta text-ink-900 text-lg mb-2">
+              Kami Antar
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Unit diantar ke lokasi Anda sesuai jadwal. Siap digunakan!
+            </p>
+          </div>
+        </div>
+
+        <!-- Info penting -->
+        <div
+          class="mt-12 p-6 rounded-2xl bg-sun-50 border-l-4 border-sun-500"
+          data-aos="fade-up"
+        >
+          <h4
+            class="font-black jakarta text-ink-900 mb-3 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-circle-info text-sun-600"></i>
+            Info Penting Sebelum Booking
+          </h4>
+          <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Antar jemput gratis area Kota Jogja</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Buka 24 jam — booking kapanpun</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Bayar setelah barang diterima (COD)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Unit rutin diservis & dibersihkan</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Bisa sewa harian, mingguan, bulanan</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Diskon khusus untuk sewa bulanan</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AREA LAYANAN ===================== -->
+    <section class="py-16 lg:py-24 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <span
+            class="inline-block text-sun-600 text-xs font-black uppercase tracking-widest mb-3"
+            >Area Layanan</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black jakarta text-ink-900 mb-4">
+            Antar Jemput Gratis Area Jogja
+          </h2>
+          <p class="text-slate-600">
+            Kami antar ke seluruh area Kota Yogyakarta & sekitarnya.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">Malioboro</p>
+              <p class="text-[10px] text-slate-500">Gratis antar</p>
+            </div>
+          </div>
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="30"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">UGM & UNY</p>
+              <p class="text-[10px] text-slate-500">Gratis antar</p>
+            </div>
+          </div>
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="60"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">
+                UIN Sunan Kalijaga
+              </p>
+              <p class="text-[10px] text-slate-500">Gratis antar</p>
+            </div>
+          </div>
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="90"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">
+                Kraton & Alun-Alun
+              </p>
+              <p class="text-[10px] text-slate-500">Gratis antar</p>
+            </div>
+          </div>
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">Prawirotaman</p>
+              <p class="text-[10px] text-slate-500">Gratis antar</p>
+            </div>
+          </div>
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="30"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">
+                Jalan Kaliurang
+              </p>
+              <p class="text-[10px] text-slate-500">Gratis antar</p>
+            </div>
+          </div>
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="60"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">Bandara YIA</p>
+              <p class="text-[10px] text-slate-500">+ Biaya tambahan</p>
+            </div>
+          </div>
+          <div
+            class="p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-3 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="90"
+          >
+            <i class="fa-solid fa-location-dot text-sun-500"></i>
+            <div>
+              <p class="font-bold jakarta text-ink-900 text-sm">
+                Bantul, Sleman
+              </p>
+              <p class="text-[10px] text-slate-500">Gratis antar</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-slate-600 mt-8" data-aos="fade-up">
+          <i class="fa-solid fa-info-circle text-sun-500 mr-1"></i>
+          Di luar area di atas?
+          <a
+            href="https://wa.me/6281234567890"
+            class="font-bold text-sun-600 hover:underline"
+            >Chat kami</a
+          >
+          untuk cek bisa dijangkau.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONI ===================== -->
+    <section id="testimoni" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <span
+            class="inline-block text-sun-600 text-xs font-black uppercase tracking-widest mb-3"
+            >Testimoni</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black jakarta text-ink-900 mb-4">
+            Apa Kata Pelanggan Kami
+          </h2>
+          <p class="text-slate-600">
+            8.500+ pelanggan sudah mempercayakan rental mereka ke JogjaRent.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <div
+            class="bg-white p-6 rounded-2xl border border-slate-100 rent-card"
+            data-aos="fade-up"
+          >
+            <div class="flex text-amber-500 text-sm mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-5">
+              "Sewa PS4 buat nge-game bareng teman kos. Diantar cepat, unitnya
+              bagus, game lengkap. Harga juga masuk kantong mahasiswa.
+              Recommended!"
+            </p>
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                class="w-10 h-10 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-sm text-ink-900">
+                  Bagas Pratama
+                </p>
+                <p class="text-[11px] text-slate-500">
+                  Mahasiswa UGM • Rental PS4
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl border border-slate-100 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex text-amber-500 text-sm mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-5">
+              "Liburan 3 hari di Jogja, sewa Vario. Diantar ke hotel area
+              Malioboro gratis, helm 2, kondisi motor mulus. BBM full. Puas
+              banget!"
+            </p>
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                class="w-10 h-10 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-sm text-ink-900">
+                  Sarah Amelia
+                </p>
+                <p class="text-[11px] text-slate-500">
+                  Wisatawan • Sewa Vario 3 hari
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl border border-slate-100 rent-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex text-amber-500 text-sm mb-3">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-5.5">
+              "Keluarga liburan dari Jakarta, sewa Innova + driver. Drivernya
+              ramah dan paham wisata Jogja. Include BBM, tol, parkir — jadi
+              gampang banget."
+            </p>
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop"
+                class="w-10 h-10 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-sm text-ink-900">
+                  Pak Hendra Kusuma
+                </p>
+                <p class="text-[11px] text-slate-500">
+                  Wisatawan Jakarta • Innova + Driver
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-slate-100"
+          data-aos="fade-up"
+        >
+          <div class="text-center">
+            <p class="text-3xl font-black jakarta text-sun-500 mb-1">8.500+</p>
+            <p class="text-xs text-slate-500 font-medium">Pelanggan Setia</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-black jakarta text-sun-500 mb-1">120+</p>
+            <p class="text-xs text-slate-500 font-medium">Unit Tersedia</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-black jakarta text-sun-500 mb-1">
+              4.9<span class="text-lg">/5</span>
+            </p>
+            <p class="text-xs text-slate-500 font-medium">Rating Google</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-black jakarta text-sun-500 mb-1">24/7</p>
+            <p class="text-xs text-slate-500 font-medium">Buka 24 Jam</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BOOKING FORM ===================== -->
+    <section id="booking" class="py-16 lg:py-24 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid lg:grid-cols-5 gap-8 items-start">
+          <!-- Left Info -->
+          <div class="lg:col-span-2" data-aos="fade-right">
+            <span
+              class="inline-block text-sun-600 text-xs font-black uppercase tracking-widest mb-3"
+              >Booking Sekarang</span
+            >
+            <h2
+              class="text-2xl lg:text-3xl font-black jakarta text-ink-900 mb-4"
+            >
+              Isi Form, Kami Langsung Balas
+            </h2>
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Atau langsung chat WA kami kalau lebih cepat. Kami balas dalam 5
+              menit (24 jam).
+            </p>
+
+            <div class="space-y-3 mb-6">
+              <a
+                href="https://wa.me/6281234567890"
+                class="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-200 hover:border-green-500 transition"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-brands fa-whatsapp text-white text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500">WhatsApp Booking</p>
+                  <p class="font-bold jakarta text-ink-900 text-sm">
+                    0812-3456-7890
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+62274123456"
+                class="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-200 hover:border-sun-500 transition"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-ink-900 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-phone text-sun-400"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500">Telepon</p>
+                  <p class="font-bold jakarta text-ink-900 text-sm">
+                    (0274) 123 456
+                  </p>
+                </div>
+              </a>
+
+              <div
+                class="flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-200"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-ink-900 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-location-dot text-sun-400"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500">Basecamp</p>
+                  <p class="font-bold jakarta text-ink-900 text-sm text-[12px]">
+                    Jl. Kaliurang KM 5, Sleman, DIY
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo -->
+            <div class="p-5 rounded-xl bg-sun-100 border-l-4 border-sun-500">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                <i class="fa-solid fa-gift text-sun-600 mr-1"></i>
+                <b>Promo Bulan Ini:</b> Sewa 3 hari = gratis 1 hari (khusus
+                motor & PS). Sewa mingguan dapat diskon 15%.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Form -->
+          <div
+            class="lg:col-span-3 bg-white p-6 lg:p-8 rounded-2xl border border-slate-200 shadow-xl"
+            data-aos="fade-left"
+          >
+            <h3 class="font-black jakarta text-ink-900 text-lg mb-1">
+              Form Booking
+            </h3>
+            <p class="text-xs text-slate-500 mb-6">
+              Kami akan konfirmasi via WhatsApp dalam 5 menit
+            </p>
+
+            <form class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Nama Lengkap *</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Nama Anda"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >No. WhatsApp *</label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="08xx xxxx xxxx"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                  >Kategori Rental *</label
+                >
+                <div class="grid grid-cols-3 gap-2">
+                  <label class="cursor-pointer">
+                    <input
+                      type="radio"
+                      name="kategori"
+                      class="peer sr-only"
+                      checked
+                    />
+                    <div
+                      class="py-3 rounded-xl border-2 border-slate-200 peer-checked:border-blue-600 peer-checked:bg-blue-50 text-xs font-bold text-slate-600 peer-checked:text-blue-700 text-center transition"
+                    >
+                      <i class="fa-solid fa-gamepad mr-1"></i> PS
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="kategori" class="peer sr-only" />
+                    <div
+                      class="py-3 rounded-xl border-2 border-slate-200 peer-checked:border-amber-600 peer-checked:bg-amber-50 text-xs font-bold text-slate-600 peer-checked:text-amber-700 text-center transition"
+                    >
+                      <i class="fa-solid fa-motorcycle mr-1"></i> Motor
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="kategori" class="peer sr-only" />
+                    <div
+                      class="py-3 rounded-xl border-2 border-slate-200 peer-checked:border-green-600 peer-checked:bg-green-50 text-xs font-bold text-slate-600 peer-checked:text-green-700 text-center transition"
+                    >
+                      <i class="fa-solid fa-car-side mr-1"></i> Mobil
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                  >Unit Spesifik (Opsional)</label
+                >
+                <input
+                  type="text"
+                  placeholder="Misal: PS5, Vario, Avanza"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                />
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Tanggal Mulai *</label
+                  >
+                  <input
+                    type="date"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Durasi *</label
+                  >
+                  <select
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-700"
+                  >
+                    <option>Pilih Durasi</option>
+                    <option>Beberapa jam (PS)</option>
+                    <option>1 Hari</option>
+                    <option>2-3 Hari</option>
+                    <option>1 Minggu</option>
+                    <option>1 Bulan atau lebih</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                  >Alamat Pengantaran *</label
+                >
+                <textarea
+                  rows="2"
+                  placeholder="Alamat lengkap + patokan (misal: kos dekat UGM, hotel Malioboro)"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                  >Catatan Tambahan</label
+                >
+                <textarea
+                  rows="2"
+                  placeholder="Misal: mau PS5, butuh driver, request game tertentu, dll"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-4 rounded-xl bg-green-500 text-white font-bold hover:bg-green-600 transition shadow-lg shadow-green-500/25 flex items-center justify-center gap-2"
+              >
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Kirim Booking via WhatsApp
+              </button>
+              <p class="text-[10px] text-slate-500 text-center">
+                Data Anda hanya digunakan untuk konfirmasi booking.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <span
+            class="inline-block text-sun-600 text-xs font-black uppercase tracking-widest mb-3"
+            >FAQ</span
+          >
+          <h2 class="text-3xl lg:text-4xl font-black jakarta text-ink-900 mb-3">
+            Pertanyaan Umum
+          </h2>
+          <p class="text-slate-600">
+            Belum ketemu jawabannya?
+            <a
+              href="https://wa.me/6281234567890"
+              class="text-sun-600 font-bold hover:underline"
+              >Chat kami →</a
+            >
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden active"
+            data-aos="fade-up"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-ink-900 text-sm pr-4"
+                >Apakah benar-benar gratis antar jemput?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-sun-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ya, gratis untuk area Kota Jogja (Malioboro, UGM, UNY, UIN,
+                Kraton, Prawirotaman, Kaliurang). Untuk area Sleman/Bantul luar
+                kota, ada biaya tambahan kecil. Bandara YIA ada biaya pickup
+                khusus.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-ink-900 text-sm pr-4"
+                >Syarat sewa motor apa saja?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-sun-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                KTP asli + SIM C aktif + deposit 1 KTP (bisa KTP sendiri atau
+                motor sendiri sebagai jaminan). Untuk mahasiswa tanpa SIM C,
+                bisa sewa dengan tambahan syarat (chat kami dulu).
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-ink-900 text-sm pr-4"
+                >Bisa sewa PS tanpa ruangan?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-sun-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Tentu! Kami antar PS ke kos/rumah Anda. Tinggal colok ke TV.
+                Sudah include 2 stik, kabel HDMI, dan 30-40 game. Minimal sewa 2
+                jam, free antar area Jogja untuk sewa min. 3 jam.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-ink-900 text-sm pr-4"
+                >Mobil bisa lepas kunci?</span
+              >
+              <i
+                class="fa-solid fa-sun-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Bisa untuk Brio dan Avanza. Syarat: KTP + SIM A aktif + deposit
+                Rp 500rb + minimal sewa 2 hari. Untuk Innova dan unit premium
+                lainnya, hanya tersedia dengan driver.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-ink-900 text-sm pr-4"
+                >Bagaimana sistem pembayarannya?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-sun-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Bayar di awal untuk unit lepas kunci (transfer/QRIS/COD). Untuk
+                paket driver, bayar DP 30% dan pelunasan setelah selesai. Kami
+                terima transfer bank, QRIS, GoPay, OVO, Dana.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-ink-900 text-sm pr-4"
+                >Ada diskon untuk sewa lama?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-sun-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ada! Sewa mingguan diskon 15%, sewa bulanan diskon 25-30%.
+                Khusus mahasiswa dengan KTM, ada diskon tambahan 10%. Chat kami
+                untuk info lengkap.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-ink-950 text-slate-400 pt-14 pb-8">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-12 h-12 rounded-xl bg-sun-400 flex items-center justify-center"
+              >
+                <span class="text-ink-900 font-black text-xl">JR</span>
+              </div>
+              <div>
+                <span class="text-xl font-black jakarta text-white leading-none"
+                  >Jogja<span class="text-sun-400">Rent</span></span
+                >
+                <p class="text-[10px] text-sun-400/70 tracking-wider mt-1">
+                  PS • MOTOR • MOBIL
+                </p>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed mb-5 max-w-md">
+              Rental terlengkap di Yogyakarta. Melayani mahasiswa, wisatawan,
+              dan keluarga sejak 2018. Antar jemput gratis, buka 24 jam, harga
+              transparan.
+            </p>
+            <div class="flex gap-2">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-green-500 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-pink-500 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-600 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-black transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold jakarta mb-4 text-sm">Kategori</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a href="#" class="hover:text-sun-400 transition"
+                  >Rental PlayStation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-sun-400 transition"
+                  >Rental Motor</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-sun-400 transition"
+                  >Rental Mobil</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-sun-400 transition"
+                  >Paket Wisata Jogja</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-sun-400 transition"
+                  >Corporate Rental</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold jakarta mb-4 text-sm">Kontak</h4>
+            <ul class="space-y-3 text-sm">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-location-dot text-sun-400 mt-1"></i>
+                <span>Jl. Kaliurang KM 5 No. 88, Sleman, Yogyakarta 55581</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-brands fa-whatsapp text-sun-400 mt-1"></i>
+                <span>0812-3456-7890</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-phone text-sun-400 mt-1"></i>
+                <span>(0274) 123 456</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-clock text-sun-400 mt-1"></i>
+                <span>Buka 24 Jam, Setiap Hari</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs"
+        >
+          <p>© 2025 JogjaRent. Sewa gampang, harga jujur.</p>
+          <div class="flex flex-wrap gap-x-5 gap-y-2 justify-center">
+            <span>NPWP: 10.123.456.7-089.000</span>
+            <a href="#" class="hover:text-sun-400 transition"
+              >Kebijakan Privasi</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== FLOATING WA ===================== -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20JogjaRent%2C%20saya%20mau%20booking"
+      class="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-green-500 text-white shadow-2xl pulse-wa flex items-center justify-center hover:scale-110 transition z-40"
+      aria-label="WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
+      <span
+        class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 border-2 border-white"
+      ></span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 600, once: true, offset: 60 });
+
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const mobileBtn = document.getElementById("mobileBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        const icon = mobileBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-xmark");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileBtn.querySelector("i");
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-xmark");
+        });
+      });
+
+      // Tabs
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetTab = btn.getAttribute("data-tab");
+
+          document.querySelectorAll(".tab-btn").forEach((b) => {
+            b.classList.remove(
+              "active",
+              "bg-ink-900",
+              "text-white",
+              "border-ink-900",
+            );
+            b.classList.add("bg-white", "text-slate-700", "border-slate-200");
+          });
+          btn.classList.remove(
+            "bg-white",
+            "text-slate-700",
+            "border-slate-200",
+          );
+          btn.classList.add(
+            "active",
+            "bg-ink-900",
+            "text-white",
+            "border-ink-900",
+          );
+
+          document.querySelectorAll(".tab-panel").forEach((p) => {
+            if (p.getAttribute("data-panel") === targetTab) {
+              p.classList.remove("hidden");
+            } else {
+              p.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      // FAQ
+      document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

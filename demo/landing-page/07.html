@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bimbel Cerdas — Bimbingan Belajar SD, SMP, SMA Terpercaya di Jakarta</title>
+    <meta name="description" content="Bimbel Cerdas menyediakan les privat, kelas reguler, dan persiapan UTBK untuk SD, SMP, SMA. Guru berpengalaman, kurikulum nasional + internasional. Trial gratis 1x pertemuan.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50:  '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        },
+                        sun: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 3px; }
+
+        #navbar.scrolled {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(30, 58, 138, 0.08);
+        }
+
+        /* Grid pattern */
+        .grid-pattern {
+            background-image:
+                linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Floating WA pulse */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .pulse-wa { animation: pulse-green 2s infinite; }
+
+        /* Card hover */
+        .card-hover { transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(30, 58, 138, 0.18); }
+
+        /* Img zoom */
+        .img-zoom img { transition: transform 0.6s ease; }
+        .img-zoom:hover img { transform: scale(1.05); }
+
+        /* Marquee */
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { animation: marquee 30s linear infinite; }
+
+        /* Blob */
+        @keyframes blob {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        .animate-blob { animation: blob 10s infinite; }
+        .animation-delay-3000 { animation-delay: 3s; }
+
+        /* Number decoration */
+        .big-number {
+            -webkit-text-stroke: 1px rgba(37, 99, 235, 0.15);
+            color: transparent;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        /* Graduation cap float */
+        @keyframes cap-float {
+            0%, 100% { transform: translateY(0) rotate(-8deg); }
+            50% { transform: translateY(-8px) rotate(-8deg); }
+        }
+        .cap-float { animation: cap-float 5s ease-in-out infinite; }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        /* Star shine */
+        @keyframes shine {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        .shine { animation: shine 1.8s infinite; }
+
+        /* FAQ */
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.active .faq-content { max-height: 300px; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+    </style>
+</head>
+
+<body class="bg-white text-slate-700 antialiased overflow-x-hidden">
+
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="bg-navy-900 text-white text-xs">
+        <div class="max-w-6xl mx-auto px-6 py-2.5 flex flex-wrap justify-center md:justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-sun-400"></i>
+                    <span class="font-semibold">0812-3456-7890</span>
+                </span>
+                <span class="hidden md:flex items-center gap-1.5">
+                    <i class="fa-solid fa-clock text-sun-400"></i>
+                    <span>Senin - Sabtu: 08.00 - 20.00 WIB</span>
+                </span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-sun-400 text-navy-900 px-2.5 py-1 rounded text-[10px] font-bold flex items-center gap-1">
+                    <i class="fa-solid fa-gift"></i> TRIAL GRATIS 1X
+                </span>
+                <span class="hidden md:inline">4 Cabang di Jakarta</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav id="navbar" class="sticky top-0 z-50 bg-white transition-all border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-navy-600 to-navy-800 flex items-center justify-center shadow-lg shadow-navy-600/30">
+                    <i class="fa-solid fa-graduation-cap text-sun-400 text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-extrabold jakarta text-navy-900 leading-none">Bimbel<span class="text-sun-500">Cerdas</span></span>
+                    <p class="text-[10px] text-slate-500 font-medium tracking-wider mt-0.5">SD • SMP • SMA</p>
+                </div>
+            </a>
+
+            <ul class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+                <li><a href="#program" class="hover:text-navy-600 transition">Program</a></li>
+                <li><a href="#guru" class="hover:text-navy-600 transition">Guru</a></li>
+                <li><a href="#harga" class="hover:text-navy-600 transition">Harga</a></li>
+                <li><a href="#hasil" class="hover:text-navy-600 transition">Hasil</a></li>
+                <li><a href="#faq" class="hover:text-navy-600 transition">FAQ</a></li>
+            </ul>
+
+            <a href="#trial" class="hidden sm:flex px-5 py-2.5 rounded-full bg-navy-600 text-white text-sm font-bold hover:bg-navy-700 transition shadow-lg shadow-navy-600/25 items-center gap-2">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                Daftar Trial Gratis
+            </a>
+
+            <button id="mobileBtn" class="lg:hidden w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
+                <i class="fa-solid fa-bars text-slate-700"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="lg:hidden hidden px-6 pb-4">
+            <div class="bg-white rounded-xl border border-slate-200 shadow-lg p-5">
+                <ul class="space-y-3 text-sm font-semibold">
+                    <li><a href="#program" class="block py-2 text-slate-700 hover:text-navy-600">Program</a></li>
+                    <li><a href="#guru" class="block py-2 text-slate-700 hover:text-navy-600">Guru</a></li>
+                    <li><a href="#harga" class="block py-2 text-slate-700 hover:text-navy-600">Harga</a></li>
+                    <li><a href="#hasil" class="block py-2 text-slate-700 hover:text-navy-600">Hasil</a></li>
+                    <li><a href="#faq" class="block py-2 text-slate-700 hover:text-navy-600">FAQ</a></li>
+                    <li class="pt-2"><a href="#trial" class="block text-center py-3 rounded-full bg-navy-600 text-white font-bold">Daftar Trial Gratis</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative pt-12 pb-20 overflow-hidden bg-gradient-to-b from-navy-50 to-white">
+        <div class="absolute inset-0 grid-pattern opacity-60"></div>
+        <div class="absolute top-0 -right-20 w-96 h-96 bg-navy-200/40 rounded-full blur-3xl animate-blob"></div>
+        <div class="absolute bottom-0 -left-20 w-96 h-96 bg-sun-300/40 rounded-full blur-3xl animate-blob animation-delay-3000"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <!-- Left -->
+                <div data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-100 text-navy-700 text-xs font-bold mb-5">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        Trial Gratis 1x Pertemuan
+                    </div>
+
+                    <h1 class="text-3xl lg:text-5xl font-extrabold jakarta text-navy-900 leading-tight mb-5">
+                        Anak Anda <span class="text-sun-500">Berprestasi</span>, Kami yang Bantu Wujudkan
+                    </h1>
+
+                    <p class="text-base lg:text-lg text-slate-600 leading-relaxed mb-6 max-w-lg">
+                        Bimbel Cerdas bantu anak Anda memahami pelajaran dengan cara yang menyenangkan. Guru berpengalaman, kelas kecil, dan laporan progres setiap bulan.
+                    </p>
+
+                    <!-- Feature pills -->
+                    <div class="flex flex-wrap gap-2 mb-7">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm">
+                            <i class="fa-solid fa-users text-navy-500"></i> Kelas Max 6 Anak
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm">
+                            <i class="fa-solid fa-user-graduate text-navy-500"></i> Guru S1/S2
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm">
+                            <i class="fa-solid fa-chart-line text-navy-500"></i> Laporan Bulanan
+                        </span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm">
+                            <i class="fa-solid fa-location-dot text-navy-500"></i> 4 Cabang Jaksel
+                        </span>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                        <a href="#trial" class="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-navy-600 text-white font-bold hover:bg-navy-700 transition shadow-xl shadow-navy-600/25">
+                            <i class="fa-solid fa-gift"></i>
+                            Daftar Trial Gratis
+                        </a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Bimbel%20Cerdas%2C%20saya%20mau%20tanya%20program" class="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white border-2 border-slate-200 text-navy-700 font-bold hover:border-navy-500 transition">
+                            <i class="fa-brands fa-whatsapp text-green-500 text-lg"></i>
+                            Tanya via WA
+                        </a>
+                    </div>
+
+                    <!-- Trust -->
+                    <div class="flex flex-wrap items-center gap-5 pt-5 border-t border-navy-100">
+                        <div class="flex items-center gap-2">
+                            <div class="flex -space-x-2">
+                                <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=100&h=100&fit=crop" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" class="w-8 h-8 rounded-full border-2 border-white object-cover" alt="">
+                                <div class="w-8 h-8 rounded-full border-2 border-white bg-navy-600 flex items-center justify-center text-white text-[10px] font-bold">+800</div>
+                            </div>
+                            <p class="text-xs text-slate-600"><b class="text-navy-900">800+</b> orang tua percaya</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex text-amber-500 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs font-bold text-navy-900">4.9<span class="text-slate-400 font-normal">/5</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl img-zoom">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Bimbel" class="w-full h-[400px] lg:h-[480px] object-cover">
+                        </div>
+
+                        <!-- Floating cap -->
+                        <div class="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-xl border border-navy-100 cap-float">
+                            <i class="fa-solid fa-graduation-cap text-navy-600 text-3xl"></i>
+                        </div>
+
+                        <!-- Floating card result -->
+                        <div class="absolute -bottom-4 -left-4 lg:-left-8 bg-white rounded-2xl p-4 shadow-2xl border border-navy-100 w-64">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-trophy text-green-600"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Hasil UTBK 2024</p>
+                                    <p class="text-sm font-bold jakarta text-navy-900">91% Lolos PTN</p>
+                                </div>
+                            </div>
+                            <p class="text-[10px] text-slate-500 leading-relaxed">Dari 320 siswa kelas 12 yang ikut program intensif</p>
+                        </div>
+
+                        <!-- Floating badge -->
+                        <div class="absolute top-6 -right-3 bg-sun-400 text-navy-900 rounded-2xl px-4 py-3 shadow-xl text-center">
+                            <p class="text-2xl font-black jakarta leading-none">12</p>
+                            <p class="text-[10px] uppercase tracking-wider mt-1 font-bold">Tahun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== MARQUEE ===================== -->
+    <section class="bg-navy-700 py-3 overflow-hidden">
+        <div class="flex animate-marquee whitespace-nowrap text-white">
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>TRIAL GRATIS 1X PERTEMUAN</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>KELAS MAX 6 ANAK</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>GURU S1/S2 BERPENGALAMAN</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>LAPORAN PROGRES BULANAN</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>GARANSI NILAI NAIK</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>TRIAL GRATIS 1X PERTEMUAN</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>KELAS MAX 6 ANAK</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>GURU S1/S2 BERPENGALAMAN</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>LAPORAN PROGRES BULANAN</span>
+            <span class="text-sm font-bold mx-8"><i class="fa-solid fa-check-circle text-sun-400 mr-2"></i>GARANSI NILAI NAIK</span>
+        </div>
+    </section>
+
+    <!-- ===================== MASALAH ORANG TUA ===================== -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block text-navy-600 text-xs font-bold uppercase tracking-widest mb-2">Jujur Saja Bunda/Pak...</span>
+                <h2 class="text-2xl lg:text-4xl font-extrabold jakarta text-navy-900 mb-6 leading-tight">
+                    Apakah Anak Anda Mengalami<br>
+                    <span class="text-sun-600">Salah Satu dari Ini?</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-10" data-aos="fade-up">
+                <div class="flex items-start gap-3 p-5 rounded-xl bg-navy-50 border border-navy-100">
+                    <i class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"></i>
+                    <p class="text-sm text-slate-700">Nilai ulangan <b>turun terus</b> meski sudah belajar tiap malam.</p>
+                </div>
+                <div class="flex items-start gap-3 p-5 rounded-xl bg-navy-50 border border-navy-100">
+                    <i class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"></i>
+                    <p class="text-sm text-slate-700">Kesulitan di mata pelajaran tertentu, <b>malu bertanya di sekolah</b>.</p>
+                </div>
+                <div class="flex items-start gap-3 p-5 rounded-xl bg-navy-50 border border-navy-100">
+                    <i class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"></i>
+                    <p class="text-sm text-slate-700">Anda <b>sibuk kerja</b>, tidak sempat menemani belajar setiap hari.</p>
+                </div>
+                <div class="flex items-start gap-3 p-5 rounded-xl bg-navy-50 border border-navy-100">
+                    <i class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"></i>
+                    <p class="text-sm text-slate-700">Anak <b>duduk kelas 6 / 9 / 12</b> tapi belum siap ujian akhir.</p>
+                </div>
+            </div>
+
+            <div class="text-center p-6 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-900 text-white" data-aos="fade-up">
+                <p class="text-lg leading-relaxed">
+                    Anda tidak sendirian. <b class="text-sun-400">800+ orang tua</b> pernah merasakan hal yang sama.
+                </p>
+                <p class="mt-3 text-slate-300 text-sm">Dan 90% dari mereka menemukan solusinya di Bimbel Cerdas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROGRAM ===================== -->
+    <section id="program" class="py-16 lg:py-24 bg-navy-50/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="inline-block text-navy-600 text-xs font-bold uppercase tracking-widest mb-2">Program Kami</span>
+                <h2 class="text-2xl lg:text-4xl font-extrabold jakarta text-navy-900 mb-3">
+                    Program untuk Setiap Jenjang
+                </h2>
+                <p class="text-slate-600">Pilih program sesuai jenjang & kebutuhan anak Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Program SD -->
+                <div class="card-hover p-6 rounded-2xl bg-white border-2 border-navy-100" data-aos="fade-up">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-100 flex items-center justify-center">
+                            <i class="fa-solid fa-pencil text-navy-600 text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-navy-600 bg-navy-50 px-2 py-1 rounded">SD KELAS 1-6</span>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">Bimbel SD</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Fokus Calistung (Baca, Tulis, Hitung) + Matematika & IPA dasar. Metode belajar sambil bermain.</p>
+                    <ul class="space-y-2 text-xs text-slate-600 mb-5 pb-5 border-b border-slate-100">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 2x seminggu, 90 menit</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Max 5 anak per kelas</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Laporan progres bulanan</li>
+                    </ul>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Mulai dari</p>
+                            <p class="text-xl font-black jakarta text-navy-900">Rp 450<span class="text-sm font-bold text-slate-500">rb/bln</span></p>
+                        </div>
+                        <a href="#trial" class="px-3 py-2 rounded-lg bg-navy-600 text-white text-xs font-bold hover:bg-navy-700 transition">
+                            Trial Gratis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Program SMP - Populer -->
+                <div class="card-hover p-6 rounded-2xl bg-gradient-to-br from-navy-700 to-navy-800 text-white relative overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+                    <div class="absolute -top-3 left-6 bg-sun-400 text-navy-900 text-[10px] font-bold px-3 py-1 rounded-full">PALING DIMINATI</div>
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 rounded-full bg-white/5"></div>
+                    <div class="relative">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur flex items-center justify-center">
+                                <i class="fa-solid fa-book-open text-sun-400 text-2xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-sun-400 bg-white/10 px-2 py-1 rounded">SMP KELAS 7-9</span>
+                        </div>
+                        <h3 class="font-bold jakarta text-white text-lg mb-2">Bimbel SMP</h3>
+                        <p class="text-sm text-navy-100 leading-relaxed mb-4">Matematika, IPA, IPS, B. Inggris. Persiapan UN & ANBK. Fokus pemahaman konsep, bukan hafalan.</p>
+                        <ul class="space-y-2 text-xs text-navy-100 mb-5 pb-5 border-b border-white/10">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> 2x seminggu, 90 menit</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> Max 6 anak per kelas</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> Try out UN tiap bulan</li>
+                        </ul>
+                        <div class="flex items-end justify-between">
+                            <div>
+                                <p class="text-[10px] text-navy-200 uppercase tracking-wider mb-0.5">Mulai dari</p>
+                                <p class="text-xl font-black jakarta text-sun-400">Rp 550<span class="text-sm font-bold text-navy-200">rb/bln</span></p>
+                            </div>
+                            <a href="#trial" class="px-3 py-2 rounded-lg bg-sun-400 text-navy-900 text-xs font-bold hover:bg-sun-300 transition">
+                                Trial Gratis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program SMA -->
+                <div class="card-hover p-6 rounded-2xl bg-white border-2 border-navy-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-100 flex items-center justify-center">
+                            <i class="fa-solid fa-flask text-navy-600 text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-navy-600 bg-navy-50 px-2 py-1 rounded">SMA KELAS 10-12</span>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">Bimbel SMA</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Saintek & Soshum. Fokus persiapan UTBK, Ujian Sekolah, dan olimpiade sains.</p>
+                    <ul class="space-y-2 text-xs text-slate-600 mb-5 pb-5 border-b border-slate-100">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 2x seminggu, 120 menit</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Max 6 anak per kelas</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Try out UTBK tiap 2 minggu</li>
+                    </ul>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Mulai dari</p>
+                            <p class="text-xl font-black jakarta text-navy-900">Rp 650<span class="text-sm font-bold text-slate-500">rb/bln</span></p>
+                        </div>
+                        <a href="#trial" class="px-3 py-2 rounded-lg bg-navy-600 text-white text-xs font-bold hover:bg-navy-700 transition">
+                            Trial Gratis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Les Privat -->
+                <div class="card-hover p-6 rounded-2xl bg-white border-2 border-navy-100" data-aos="fade-up">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-100 flex items-center justify-center">
+                            <i class="fa-solid fa-user-tie text-navy-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">Les Privat 1-on-1</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Guru datang ke rumah. Fokus mata pelajaran tertentu. Jadwal fleksibel.</p>
+                    <ul class="space-y-2 text-xs text-slate-600 mb-5 pb-5 border-b border-slate-100">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 1 guru : 1 murid</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Jadwal & materi custom</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Guru ke rumah (Jaksel)</li>
+                    </ul>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Mulai dari</p>
+                            <p class="text-xl font-black jakarta text-navy-900">Rp 175<span class="text-sm font-bold text-slate-500">rb/sesi</span></p>
+                        </div>
+                        <a href="#trial" class="px-3 py-2 rounded-lg bg-navy-600 text-white text-xs font-bold hover:bg-navy-700 transition">
+                            Tanya
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Intensif UTBK -->
+                <div class="card-hover p-6 rounded-2xl bg-white border-2 border-navy-100" data-aos="fade-up" data-aos-delay="50">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-100 flex items-center justify-center">
+                            <i class="fa-solid fa-bullseye text-navy-600 text-2xl"></i>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-red-600 bg-red-50 px-2 py-1 rounded">MUSIMAN</span>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">Intensif UTBK</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Program 3 bulan menjelang UTBK. Fokus strategi, try out, dan pembahasan mendalam.</p>
+                    <ul class="space-y-2 text-xs text-slate-600 mb-5 pb-5 border-b border-slate-100">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 3x seminggu, 120 menit</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 12x try out + pembahasan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Kelas max 8 anak</li>
+                    </ul>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Paket 3 bulan</p>
+                            <p class="text-xl font-black jakarta text-navy-900">Rp 2.4<span class="text-sm font-bold text-slate-500">jt</span></p>
+                        </div>
+                        <a href="#trial" class="px-3 py-2 rounded-lg bg-navy-600 text-white text-xs font-bold hover:bg-navy-700 transition">
+                            Info
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Online Class -->
+                <div class="card-hover p-6 rounded-2xl bg-white border-2 border-navy-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-navy-100 flex items-center justify-center">
+                            <i class="fa-solid fa-laptop text-navy-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">Kelas Online</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Live via Zoom + rekaman. Cocok untuk yang tinggal jauh atau mau jadwal fleksibel.</p>
+                    <ul class="space-y-2 text-xs text-slate-600 mb-5 pb-5 border-b border-slate-100">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Live Zoom + rekaman</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Max 8 anak per kelas</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Akses rekaman 30 hari</li>
+                    </ul>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider mb-0.5">Mulai dari</p>
+                            <p class="text-xl font-black jakarta text-navy-900">Rp 350<span class="text-sm font-bold text-slate-500">rb/bln</span></p>
+                        </div>
+                        <a href="#trial" class="px-3 py-2 rounded-lg bg-navy-600 text-white text-xs font-bold hover:bg-navy-700 transition">
+                            Trial Gratis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== GURU ===================== -->
+    <section id="guru" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="inline-block text-navy-600 text-xs font-bold uppercase tracking-widest mb-2">Tim Pengajar</span>
+                <h2 class="text-2xl lg:text-4xl font-extrabold jakarta text-navy-900 mb-3">
+                    Guru Berpengalaman & Bersertifikat
+                </h2>
+                <p class="text-slate-600">Semua guru kami adalah lulusan S1/S2 dari universitas terkemuka dengan pengalaman mengajar minimal 3 tahun.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Guru 1 -->
+                <div class="text-center" data-aos="fade-up">
+                    <div class="relative inline-block">
+                        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-navy-100 img-zoom">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Guru" class="w-full h-full object-cover">
+                        </div>
+                        <span class="absolute bottom-2 right-2 w-8 h-8 rounded-full bg-green-500 border-2 border-white flex items-center justify-center text-white text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-base mt-4 mb-1">Bu Sarah Wijaya, S.Pd.</h3>
+                    <p class="text-xs text-sun-600 font-bold uppercase tracking-wider mb-2">Matematika SD & SMP</p>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-2">S1 Pendidikan Matematika - UNJ. 8 tahun pengalaman mengajar.</p>
+                    <div class="flex justify-center text-amber-500 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Guru 2 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="50">
+                    <div class="relative inline-block">
+                        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-navy-100 img-zoom">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Guru" class="w-full h-full object-cover">
+                        </div>
+                        <span class="absolute bottom-2 right-2 w-8 h-8 rounded-full bg-green-500 border-2 border-white flex items-center justify-center text-white text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-base mt-4 mb-1">Pak Ahmad Fauzi, S.Si.</h3>
+                    <p class="text-xs text-sun-600 font-bold uppercase tracking-wider mb-2">Fisika SMA</p>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-2">S1 Fisika - ITB. 10 tahun pengalaman. Alumni olimpiade nasional.</p>
+                    <div class="flex justify-center text-amber-500 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Guru 3 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative inline-block">
+                        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-navy-100 img-zoom">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80" alt="Guru" class="w-full h-full object-cover">
+                        </div>
+                        <span class="absolute bottom-2 right-2 w-8 h-8 rounded-full bg-green-500 border-2 border-white flex items-center justify-center text-white text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-base mt-4 mb-1">Bu Maya Sari, M.Pd.</h3>
+                    <p class="text-xs text-sun-600 font-bold uppercase tracking-wider mb-2">Bahasa Inggris</p>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-2">S2 Pendidikan Bahasa - UI. IELTS 8.0. 7 tahun pengalaman.</p>
+                    <div class="flex justify-center text-amber-500 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Guru 4 -->
+                <div class="text-center" data-aos="fade-up" data-aos-delay="150">
+                    <div class="relative inline-block">
+                        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-navy-100 img-zoom">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Guru" class="w-full h-full object-cover">
+                        </div>
+                        <span class="absolute bottom-2 right-2 w-8 h-8 rounded-full bg-green-500 border-2 border-white flex items-center justify-center text-white text-xs">
+                            <i class="fa-solid fa-check"></i>
+                        </span>
+                    </div>
+                    <h3 class="font-bold jakarta text-navy-900 text-base mt-4 mb-1">Pak Budi Santoso, S.Kom.</h3>
+                    <p class="text-xs text-sun-600 font-bold uppercase tracking-wider mb-2">Matematika & Informatika</p>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-2">S1 Ilmu Komputer - IPB. 6 tahun pengalaman. Spesialis UTBK.</p>
+                    <div class="flex justify-center text-amber-500 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-10" data-aos="fade-up">
+                <p class="text-sm text-slate-600 mb-4">Total <b class="text-navy-900">24 guru</b> aktif di 4 cabang kami.</p>
+                <a href="#trial" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border-2 border-navy-200 text-navy-700 font-bold text-sm hover:border-navy-500 transition">
+                    <i class="fa-solid fa-users text-navy-500"></i>
+                    Lihat Semua Guru
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== HASIL / PRESTASI ===================== -->
+    <section id="hasil" class="py-16 lg:py-24 bg-gradient-to-br from-navy-800 to-navy-900 relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern opacity-10"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block text-sun-400 text-xs font-bold uppercase tracking-widest mb-2">Hasil Nyata</span>
+                <h2 class="text-2xl lg:text-4xl font-extrabold jakarta text-white mb-3">
+                    Angka yang Bicara Sendiri
+                </h2>
+                <p class="text-navy-100/80">Ratusan siswa kami buktikan hasilnya setiap tahun.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+                <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10" data-aos="zoom-in">
+                    <p class="text-4xl lg:text-5xl font-black jakarta text-sun-400 mb-2" data-counter="91">0</p>
+                    <p class="text-xs text-navy-100/80 font-medium uppercase tracking-wider">% Lolos PTN 2024</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10" data-aos="zoom-in" data-aos-delay="50">
+                    <p class="text-4xl lg:text-5xl font-black jakarta text-sun-400 mb-2" data-counter="94">0</p>
+                    <p class="text-xs text-navy-100/80 font-medium uppercase tracking-wider">% Nilai Naik</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10" data-aos="zoom-in" data-aos-delay="100">
+                    <p class="text-4xl lg:text-5xl font-black jakarta text-sun-400 mb-2">800<span class="text-2xl">+</span></p>
+                    <p class="text-xs text-navy-100/80 font-medium uppercase tracking-wider">Siswa Aktif</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10" data-aos="zoom-in" data-aos-delay="150">
+                    <p class="text-4xl lg:text-5xl font-black jakarta text-sun-400 mb-2">12</p>
+                    <p class="text-xs text-navy-100/80 font-medium uppercase tracking-wider">Tahun Pengalaman</p>
+                </div>
+            </div>
+
+            <!-- Highlight kampus -->
+            <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10" data-aos="fade-up">
+                <p class="text-xs text-navy-100/80 font-bold uppercase tracking-widest mb-4">Alumni kami diterima di:</p>
+                <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-white">
+                    <span class="font-bold text-lg">Universitas Indonesia</span>
+                    <span class="font-bold text-lg">Institut Teknologi Bandung</span>
+                    <span class="font-bold text-lg">Universitas Gadjah Mada</span>
+                    <span class="font-bold text-lg">IPB University</span>
+                    <span class="font-bold text-lg">Universitas Airlangga</span>
+                    <span class="font-bold text-lg">Universitas Brawijaya</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== HARGA ===================== -->
+    <section id="harga" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="inline-block text-navy-600 text-xs font-bold uppercase tracking-widest mb-2">Harga</span>
+                <h2 class="text-2xl lg:text-4xl font-extrabold jakarta text-navy-900 mb-3">
+                    Pilih Paket Sesuai Kebutuhan
+                </h2>
+                <p class="text-slate-600">Bayar bulanan, tidak ada biaya pendaftaran (trial gratis). Bisa stop kapan saja.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- Paket Reguler -->
+                <div class="p-7 rounded-2xl border-2 border-slate-200 bg-white" data-aos="fade-up">
+                    <div class="flex items-center justify-between mb-5">
+                        <h3 class="font-bold jakarta text-navy-900 text-lg">Reguler</h3>
+                        <i class="fa-solid fa-users text-2xl text-slate-300"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-5">Kelas kecil 5-6 anak</p>
+                    <div class="mb-6 pb-6 border-b border-slate-100">
+                        <span class="text-3xl font-black jakarta text-navy-900">Rp 550rb</span>
+                        <span class="text-sm text-slate-500">/bulan</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 8x pertemuan/bulan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 90-120 menit/pertemuan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 4 mata pelajaran</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Laporan bulanan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Modul belajar gratis</li>
+                    </ul>
+                    <a href="#trial" class="block text-center py-3 rounded-xl border-2 border-navy-600 text-navy-700 font-bold text-sm hover:bg-navy-600 hover:text-white transition">
+                        Mulai Trial Gratis
+                    </a>
+                </div>
+
+                <!-- Paket Premium -->
+                <div class="p-7 rounded-2xl bg-gradient-to-br from-navy-700 to-navy-800 text-white relative transform lg:scale-105 shadow-2xl shadow-navy-700/30" data-aos="fade-up" data-aos-delay="50">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-sun-400 text-navy-900 text-[10px] font-bold uppercase tracking-wider">
+                        Paling Populer
+                    </div>
+                    <div class="flex items-center justify-between mb-5">
+                        <h3 class="font-bold jakarta text-white text-lg">Premium</h3>
+                        <i class="fa-solid fa-crown text-2xl text-sun-400"></i>
+                    </div>
+                    <p class="text-xs text-navy-100 mb-5">Kelas super kecil 3-4 anak</p>
+                    <div class="mb-6 pb-6 border-b border-white/10">
+                        <span class="text-3xl font-black jakarta text-sun-400">Rp 850rb</span>
+                        <span class="text-sm text-navy-100">/bulan</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-sm text-navy-50">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> 12x pertemuan/bulan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> 90-120 menit/pertemuan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> Semua mata pelajaran</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> Laporan mingguan</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> Konsultasi psikolog anak</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sun-400"></i> Try out intensif</li>
+                    </ul>
+                    <a href="#trial" class="block text-center py-3 rounded-xl bg-sun-400 text-navy-900 font-bold text-sm hover:bg-sun-300 transition">
+                        Mulai Trial Gratis
+                    </a>
+                </div>
+
+                <!-- Paket Privat -->
+                <div class="p-7 rounded-2xl border-2 border-slate-200 bg-white" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between mb-5">
+                        <h3 class="font-bold jakarta text-navy-900 text-lg">Privat</h3>
+                        <i class="fa-solid fa-user-tie text-2xl text-slate-300"></i>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-5">1 guru : 1 murid (ke rumah)</p>
+                    <div class="mb-6 pb-6 border-b border-slate-100">
+                        <span class="text-3xl font-black jakarta text-navy-900">Rp 175rb</span>
+                        <span class="text-sm text-slate-500">/sesi</span>
+                    </div>
+                    <ul class="space-y-3 mb-7 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Guru ke rumah</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 90 menit/sesi</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> 1 mata pelajaran fokus</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Jadwal fleksibel</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-500"></i> Materi custom</li>
+                    </ul>
+                    <a href="#trial" class="block text-center py-3 rounded-xl border-2 border-navy-600 text-navy-700 font-bold text-sm hover:bg-navy-600 hover:text-white transition">
+                        Tanya Jadwal
+                    </a>
+                </div>
+            </div>
+
+            <!-- Info tambahan -->
+            <div class="mt-10 p-5 rounded-2xl bg-sun-50 border-l-4 border-sun-500 max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-gift text-sun-600 text-lg mt-0.5 flex-shrink-0"></i>
+                    <div class="text-sm text-slate-700">
+                        <p class="font-bold jakarta text-navy-900 mb-1">Promo Pendaftaran</p>
+                        <p><b>Diskon 20% untuk 3 bulan pertama</b> + <b>GRATIS biaya pendaftaran</b> (senilai Rp 250rb) untuk pendaftaran bulan ini. Kuota terbatas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONI ORANG TUA ===================== -->
+    <section class="py-16 lg:py-24 bg-navy-50/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                <span class="inline-block text-navy-600 text-xs font-bold uppercase tracking-widest mb-2">Testimoni Orang Tua</span>
+                <h2 class="text-2xl lg:text-4xl font-extrabold jakarta text-navy-900 mb-3">
+                    Apa Kata Orang Tua Murid
+                </h2>
+                <p class="text-slate-600">Bukan kami yang bilang — dengar langsung dari orang tua murid kami.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="bg-white p-6 rounded-2xl border border-navy-100 card-hover" data-aos="fade-up">
+                    <div class="flex text-amber-500 text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-5">"Anak saya dulu paling benci Matematika. Setelah 3 bulan di Bimbel Cerdas, nilainya naik dari 65 ke 88. Sekarang malah jadi pelajaran favoritnya!"</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full object-cover" alt="Parent">
+                        <div>
+                            <p class="font-bold jakarta text-sm text-navy-900">Ibu Rina Wijaya</p>
+                            <p class="text-[11px] text-slate-500">Orang tua murid SMP kelas 8</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-navy-100 card-hover" data-aos="fade-up" data-aos-delay="50">
+                    <div class="flex text-amber-500 text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-5">"Anak saya lolos UTBK di pilihan pertama (FK UI)! Terima kasih Bimbel Cerdas. Guru-gurunya sabar dan sangat mengerti karakter anak saya."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full object-cover" alt="Parent">
+                        <div>
+                            <p class="font-bold jakarta text-sm text-navy-900">Pak Hendra Kusuma</p>
+                            <p class="text-[11px] text-slate-500">Orang tua alumni kelas 12 (2024)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-navy-100 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex text-amber-500 text-sm mb-3">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-5">"Laporan progres bulanan-nya sangat detail. Saya jadi tahu persis di mana anak saya unggul dan di mana perlu bantuan. Pelayanannya profesional."</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full object-cover" alt="Parent">
+                        <div>
+                            <p class="font-bold jakarta text-sm text-navy-900">Ibu Sarah Amelia</p>
+                            <p class="text-[11px] text-slate-500">Orang tua murid SD kelas 5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PENDAFTARAN TRIAL ===================== -->
+    <section id="trial" class="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 -right-20 w-96 h-96 bg-sun-200/40 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 -left-20 w-96 h-96 bg-navy-200/40 rounded-full blur-3xl"></div>
+
+        <div class="max-w-5xl mx-auto px-6 relative">
+            <div class="grid lg:grid-cols-5 gap-8 items-start">
+                <!-- Left: Info -->
+                <div class="lg:col-span-2" data-aos="fade-right">
+                    <span class="inline-block text-navy-600 text-xs font-bold uppercase tracking-widest mb-2">Trial Gratis</span>
+                    <h2 class="text-2xl lg:text-3xl font-extrabold jakarta text-navy-900 mb-4">
+                        Coba Dulu 1x Pertemuan, Gratis
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Tidak perlu bayar apapun untuk mencoba. Kami yakin anak Anda akan suka, tapi kami ingin Anda buktikan sendiri.
+                    </p>
+
+                    <!-- Benefit -->
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <p class="text-sm text-slate-700">1x pertemuan gratis (90 menit)</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <p class="text-sm text-slate-700">Tes diagnostik awal untuk deteksi kelemahan</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <p class="text-sm text-slate-700">Konsultasi dengan guru & psikolog anak</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <p class="text-sm text-slate-700">Tanpa komitmen, tanpa kartu kredit</p>
+                        </div>
+                    </div>
+
+                    <!-- Kontak -->
+                    <div class="space-y-3">
+                        <a href="https://wa.me/6281234567890" class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 hover:border-green-500 transition">
+                            <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-brands fa-whatsapp text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">WhatsApp</p>
+                                <p class="font-bold jakarta text-navy-900 text-sm">0812-3456-7890</p>
+                            </div>
+                        </a>
+
+                        <a href="tel:+62217123456" class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-slate-200 hover:border-navy-500 transition">
+                            <div class="w-10 h-10 rounded-full bg-navy-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-phone text-white text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Telepon</p>
+                                <p class="font-bold jakarta text-navy-900 text-sm">(021) 7123 456</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="lg:col-span-3 bg-navy-50/50 p-6 lg:p-8 rounded-2xl border border-navy-100" data-aos="fade-left">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-sun-400 flex items-center justify-center">
+                            <i class="fa-solid fa-gift text-navy-900 text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold jakarta text-navy-900 text-lg">Formulir Pendaftaran Trial</h3>
+                            <p class="text-xs text-slate-500">Kami akan hubungi Anda via WhatsApp dalam 1x24 jam</p>
+                        </div>
+                    </div>
+
+                    <form class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Nama Orang Tua *</label>
+                                <input type="text" placeholder="Nama Bunda / Ayah" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">No. WhatsApp *</label>
+                                <input type="tel" placeholder="08xx xxxx xxxx" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm bg-white">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Nama Anak *</label>
+                                <input type="text" placeholder="Nama anak" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Jenjang *</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-700 bg-white">
+                                    <option>Pilih Jenjang</option>
+                                    <option>SD kelas 1-3</option>
+                                    <option>SD kelas 4-6</option>
+                                    <option>SMP kelas 7-9</option>
+                                    <option>SMA kelas 10-12</option>
+                                    <option>Alumni / Gap Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Mata Pelajaran yang Ingin Difokuskan</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" class="peer sr-only">
+                                    <div class="px-3 py-2 rounded-lg border-2 border-slate-200 peer-checked:border-navy-600 peer-checked:bg-white text-xs font-semibold text-slate-700 peer-checked:text-navy-700 text-center transition bg-white">Matematika</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" class="peer sr-only">
+                                    <div class="px-3 py-2 rounded-lg border-2 border-slate-200 peer-checked:border-navy-600 peer-checked:bg-white text-xs font-semibold text-slate-700 peer-checked:text-navy-700 text-center transition bg-white">IPA / Fisika</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" class="peer sr-only">
+                                    <div class="px-3 py-2 rounded-lg border-2 border-slate-200 peer-checked:border-navy-600 peer-checked:bg-white text-xs font-semibold text-slate-700 peer-checked:text-navy-700 text-center transition bg-white">B. Inggris</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" class="peer sr-only">
+                                    <div class="px-3 py-2 rounded-lg border-2 border-slate-200 peer-checked:border-navy-600 peer-checked:bg-white text-xs font-semibold text-slate-700 peer-checked:text-navy-700 text-center transition bg-white">B. Indonesia</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" class="peer sr-only">
+                                    <div class="px-3 py-2 rounded-lg border-2 border-slate-200 peer-checked:border-navy-600 peer-checked:bg-white text-xs font-semibold text-slate-700 peer-checked:text-navy-700 text-center transition bg-white">IPS / Sejarah</div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" class="peer sr-only">
+                                    <div class="px-3 py-2 rounded-lg border-2 border-slate-200 peer-checked:border-navy-600 peer-checked:bg-white text-xs font-semibold text-slate-700 peer-checked:text-navy-700 text-center transition bg-white">Belum tahu</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Cabang Pilihan *</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-700 bg-white">
+                                <option>Pilih Cabang</option>
+                                <option>Cabang Bintaro (Jaksel)</option>
+                                <option>Cabang Pondok Indah (Jaksel)</option>
+                                <option>Cabang Kebayoran (Jaksel)</option>
+                                <option>Cabang Ciputat (Tangsel)</option>
+                                <option>Kelas Online (Zoom)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Catatan / Kondisi Khusus Anak</label>
+                            <textarea rows="3" placeholder="Misal: anak sulit fokus, ada kondisi khusus, dll (opsional)" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm resize-none bg-white"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-navy-600 text-white font-bold hover:bg-navy-700 transition shadow-lg shadow-navy-600/25 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-gift"></i>
+                            Daftar Trial Gratis Sekarang
+                        </button>
+                        <p class="text-[10px] text-slate-500 text-center">Kami tidak akan spam. Data Anda hanya untuk keperluan pendaftaran.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="py-16 lg:py-24 bg-navy-50/50">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block text-navy-600 text-xs font-bold uppercase tracking-widest mb-2">FAQ</span>
+                <h2 class="text-2xl lg:text-4xl font-extrabold jakarta text-navy-900 mb-3">
+                    Pertanyaan Orang Tua
+                </h2>
+                <p class="text-slate-600">Belum ketemu jawabannya? <a href="https://wa.me/6281234567890" class="text-navy-600 font-semibold hover:underline">Chat kami →</a></p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden active" data-aos="fade-up">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left">
+                        <span class="font-bold jakarta text-navy-900 text-sm pr-4">Apakah trial-nya benar-benar gratis tanpa syarat?</span>
+                        <i class="fa-solid fa-chevron-down text-navy-500 faq-icon transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">Ya, 100% gratis. Anda dapat 1x pertemuan gratis (90 menit) + tes diagnostik + konsultasi dengan guru. Tidak ada komitmen untuk lanjut. Kalau cocok, baru daftar; kalau tidak cocok, tidak apa-apa.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left">
+                        <span class="font-bold jakarta text-navy-900 text-sm pr-4">Berapa jumlah anak per kelas?</span>
+                        <i class="fa-solid fa-chevron-down text-navy-500 faq-icon transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">Kelas Reguler maksimal 6 anak, kelas Premium maksimal 4 anak, kelas Online maksimal 8 anak. Dengan jumlah kecil, guru bisa fokus per anak.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left">
+                        <span class="font-bold jakarta text-navy-900 text-sm pr-4">Apakah bisa pilih jadwal?</span>
+                        <i class="fa-solid fa-chevron-down text-navy-500 faq-icon transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">Bisa. Kami punya jadwal weekday (Senin-Jumat) sore 15.00-19.00 dan weekend (Sabtu) 09.00-17.00. Anda pilih slot yang cocok. Bisa reschedule H-1 jika ada keperluan mendadak.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left">
+                        <span class="font-bold jakarta text-navy-900 text-sm pr-4">Bagaimana kalau anak saya tidak cocok dengan gurunya?</span>
+                        <i class="fa-solid fa-chevron-down text-navy-500 faq-icon transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">Kami sediakan 2x pertemuan gratis untuk memastikan anak cocok dengan guru. Kalau tidak cocok, kami akan ganti guru tanpa biaya tambahan. Kepuasan anak & orang tua prioritas kami.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left">
+                        <span class="font-bold jakarta text-navy-900 text-sm pr-4">Ada garansi nilai naik?</span>
+                        <i class="fa-solid fa-chevron-down text-navy-500 faq-icon transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">Ya. Kalau setelah 3 bulan mengikuti program dengan kehadiran minimal 90%, nilai anak tidak naik sama sekali, kami akan berikan 1 bulan gratis sampai nilainya naik. Ini komitmen kami.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-white rounded-2xl border border-navy-100 overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+                    <button class="faq-trigger w-full flex items-center justify-between p-5 text-left">
+                        <span class="font-bold jakarta text-navy-900 text-sm pr-4">Apakah bisa bayar per bulan, atau harus langsung paket?</span>
+                        <i class="fa-solid fa-chevron-down text-navy-500 faq-icon transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div class="faq-content">
+                        <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">Bayar bulanan, tidak harus paket panjang. Bisa stop kapan saja tanpa penalti. Untuk paket 3 atau 6 bulan, tersedia diskon 15-25%. Pembayaran bisa transfer atau QRIS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-navy-950 text-navy-100 pt-14 pb-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-2.5 mb-5">
+                        <div class="w-11 h-11 rounded-xl bg-navy-700 flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-sun-400 text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="text-lg font-extrabold jakarta text-white leading-none">Bimbel<span class="text-sun-400">Cerdas</span></span>
+                            <p class="text-[10px] text-sun-400/80 tracking-widest mt-0.5">SD • SMP • SMA • SEJAK 2013</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-navy-100/70 leading-relaxed mb-5 max-w-md">
+                        Bimbingan belajar terpercaya dengan 24 guru berpengalaman di 4 cabang Jakarta Selatan. Membantu 800+ siswa setiap tahun untuk prestasi lebih baik.
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-green-500 transition flex items-center justify-center text-sm">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-pink-500 transition flex items-center justify-center text-sm">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-600 transition flex items-center justify-center text-sm">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-red-500 transition flex items-center justify-center text-sm">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 hover:bg-black transition flex items-center justify-center text-sm">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold jakarta mb-4 text-sm">Program</h4>
+                    <ul class="space-y-2.5 text-sm text-navy-100/70">
+                        <li><a href="#" class="hover:text-sun-400 transition">Bimbel SD</a></li>
+                        <li><a href="#" class="hover:text-sun-400 transition">Bimbel SMP</a></li>
+                        <li><a href="#" class="hover:text-sun-400 transition">Bimbel SMA</a></li>
+                        <li><a href="#" class="hover:text-sun-400 transition">Les Privat</a></li>
+                        <li><a href="#" class="hover:text-sun-400 transition">Intensif UTBK</a></li>
+                        <li><a href="#" class="hover:text-sun-400 transition">Kelas Online</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold jakarta mb-4 text-sm">Cabang & Kontak</h4>
+                    <ul class="space-y-3 text-sm text-navy-100/70">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-sun-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-white text-xs mb-0.5">Bintaro (Pusat)</p>
+                                <p class="text-[11px]">Jl. Maleo Raya No. 8, Bintaro, Jaksel</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-sun-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-white text-xs mb-0.5">Pondok Indah</p>
+                                <p class="text-[11px]">Plaza PIM 2 Lt. 3, Jaksel</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-sun-400 mt-1"></i>
+                            <span>0812-3456-7890</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-envelope text-sun-400 mt-1"></i>
+                            <span>hello@bimbelcerdas.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-navy-100/60">
+                <p>© 2025 Bimbel Cerdas. Mendidik dengan ❤️ sejak 2013.</p>
+                <div class="flex gap-5">
+                    <span>NPWP: 08.901.234.5-067.000</span>
+                    <a href="#" class="hover:text-sun-400 transition">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================== FLOATING WA BUTTON ===================== -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Bimbel%20Cerdas%2C%20saya%20mau%20tanya%20program%20trial" class="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-green-500 text-white shadow-2xl pulse-wa flex items-center justify-center hover:scale-110 transition z-40" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 border-2 border-white"></span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 600, once: true, offset: 60 });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        const mobileBtn = document.getElementById('mobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
+        // Counter
+        const counters = document.querySelectorAll('[data-counter]');
+        const animateCounter = (el) => {
+            const target = +el.getAttribute('data-counter');
+            const step = target / (2000 / 16);
+            let current = 0;
+            const update = () => {
+                current += step;
+                if (current < target) {
+                    el.textContent = Math.floor(current);
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = target;
+                }
+            };
+            update();
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // FAQ
+        document.querySelectorAll('.faq-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const item = trigger.closest('.faq-item');
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

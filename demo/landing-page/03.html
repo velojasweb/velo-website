@@ -1,0 +1,1855 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Webinar GRATIS: Digital Marketing Masterclass 2025 — Daftar Sekarang!
+    </title>
+    <meta
+      name="description"
+      content="Webinar GRATIS 2 jam dengan praktisi digital marketing berpengalaman 10+ tahun. Pelajari strategi yang menghasilkan 8-figure revenue. Daftar sekarang, kursi terbatas!"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              jakarta: ['"Plus Jakarta Sans"', "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              navy: {
+                50: "#f2f5f9",
+                100: "#e2e9f0",
+                200: "#c5d2e0",
+                300: "#9bb0c6",
+                400: "#6a88a5",
+                500: "#4a6a89",
+                600: "#3a5470",
+                700: "#2c415a",
+                800: "#1f2f44",
+                900: "#0f1b2e",
+                950: "#080f1c",
+              },
+              yellow: {
+                300: "#fde047",
+                400: "#facc15",
+                500: "#eab308",
+                600: "#ca8a04",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f2f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #0f1b2e;
+        border-radius: 4px;
+      }
+
+      #navbar.scrolled {
+        background: rgba(8, 15, 28, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Grid pattern */
+      .grid-pattern {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(148, 163, 184, 0.05) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(148, 163, 184, 0.05) 1px,
+            transparent 1px
+          );
+        background-size: 50px 50px;
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Countdown Box */
+      .countdown-box {
+        background: linear-gradient(
+          180deg,
+          rgba(250, 204, 21, 0.1) 0%,
+          rgba(234, 179, 8, 0.05) 100%
+        );
+        border: 1px solid rgba(250, 204, 21, 0.3);
+      }
+
+      /* Speaker card glow */
+      .speaker-glow {
+        box-shadow: 0 0 60px rgba(250, 204, 21, 0.15);
+      }
+
+      /* Pulse animation */
+      @keyframes pulse-ring {
+        0% {
+          transform: scale(0.8);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+      .pulse-ring::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 9999px;
+        background: #facc15;
+        animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      /* Curriculum accordion */
+      .curriculum-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .curriculum-item.active .curriculum-content {
+        max-height: 300px;
+      }
+      .curriculum-item.active .curriculum-icon {
+        transform: rotate(180deg);
+      }
+
+      /* FAQ accordion */
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .faq-item.active .faq-content {
+        max-height: 300px;
+      }
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+
+      /* Seat counter */
+      @keyframes blink {
+        50% {
+          opacity: 0.5;
+        }
+      }
+      .blink {
+        animation: blink 1.5s infinite;
+      }
+
+      /* Star shine */
+      @keyframes shine {
+        0%,
+        100% {
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .shine {
+        animation: shine 2s infinite;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #facc15;
+        box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15);
+      }
+
+      /* Price strike */
+      .strike-through {
+        position: relative;
+        display: inline-block;
+      }
+      .strike-through::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -5%;
+        right: -5%;
+        height: 3px;
+        background: #ef4444;
+        transform: rotate(-8deg);
+      }
+
+      /* Blob */
+      @keyframes blob {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+      }
+      .animate-blob {
+        animation: blob 12s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-700 antialiased overflow-x-hidden">
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="bg-yellow-400 text-navy-900 text-xs font-bold">
+      <div
+        class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-center gap-3 text-center"
+      >
+        <span class="w-2 h-2 rounded-full bg-red-500 blink"></span>
+        <p>
+          🔥 <b>GRATIS!</b> Kuota terbatas — hanya untuk 500 pendaftar pertama
+          hari ini
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav
+      id="navbar"
+      class="sticky top-0 z-50 bg-navy-950 border-b border-white/5 py-4 transition-all"
+    >
+      <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5">
+          <div
+            class="w-9 h-9 rounded-lg bg-yellow-400 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-bullhorn text-navy-900 text-sm"></i>
+          </div>
+          <span class="text-lg font-bold jakarta text-white tracking-tight"
+            >Growth<span class="text-yellow-400">Class</span></span
+          >
+        </a>
+
+        <!-- CTA -->
+        <a
+          href="#daftar"
+          class="px-5 py-2.5 rounded-lg bg-yellow-400 text-navy-900 text-sm font-bold hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/20 flex items-center gap-2"
+        >
+          <i class="fa-solid fa-arrow-right-to-bracket text-xs"></i>
+          Daftar Gratis
+        </a>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative bg-navy-950 overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-40"></div>
+      <div
+        class="absolute top-0 right-0 w-[600px] h-[600px] bg-yellow-400/10 rounded-full filter blur-3xl animate-blob"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-navy-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"
+      ></div>
+
+      <div
+        class="relative max-w-6xl mx-auto px-6 pt-16 lg:pt-20 pb-24 lg:pb-32"
+      >
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div class="text-white" data-aos="fade-right">
+            <!-- Badge -->
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6"
+            >
+              <i class="fa-solid fa-circle text-[6px] shine"></i>
+              Live Webinar • GRATIS 100%
+            </div>
+
+            <h1
+              class="text-4xl lg:text-5xl xl:text-6xl font-extrabold jakarta leading-[1.1] tracking-tight mb-6"
+            >
+              Kuasai <span class="gradient-text">Digital Marketing</span> yang
+              Benar-Benar Menghasilkan
+            </h1>
+
+            <p class="text-lg text-slate-300 leading-relaxed mb-8 max-w-lg">
+              Pelajari strategi digital marketing yang sudah terbukti
+              menghasilkan <b class="text-white">Rp 8 Miliar+ revenue</b> untuk
+              klien-klien kami. Dalam 2 jam webinar gratis, tanpa teori
+              bertele-tele.
+            </p>
+
+            <!-- Event details -->
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-yellow-400/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-calendar text-yellow-400"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold"
+                  >
+                    Tanggal
+                  </p>
+                  <p class="text-sm font-bold">Sabtu, 15 Feb 2025</p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-yellow-400/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-clock text-yellow-400"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold"
+                  >
+                    Waktu
+                  </p>
+                  <p class="text-sm font-bold">19.30 - 21.30 WIB</p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-yellow-400/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-video text-yellow-400"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold"
+                  >
+                    Platform
+                  </p>
+                  <p class="text-sm font-bold">Zoom Meeting</p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-yellow-400/10 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-users text-yellow-400"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold"
+                  >
+                    Kuota
+                  </p>
+                  <p class="text-sm font-bold text-yellow-400">Terbatas!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-col sm:flex-row gap-3 mb-6">
+              <a
+                href="#daftar"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-yellow-400 text-navy-900 font-bold hover:bg-yellow-300 transition shadow-xl shadow-yellow-400/30"
+              >
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                Amankan Kursi Gratis Saya
+              </a>
+            </div>
+            <p class="text-xs text-slate-400 flex items-center gap-2">
+              <i class="fa-solid fa-lock text-yellow-400"></i>
+              Data Anda aman. Kami tidak akan spam email Anda.
+            </p>
+          </div>
+
+          <!-- Right - Countdown & Seat -->
+          <div class="relative" data-aos="fade-left" data-aos-delay="100">
+            <!-- Main card -->
+            <div
+              class="bg-white/5 backdrop-blur border border-white/10 rounded-3xl p-6 lg:p-8"
+            >
+              <!-- Seat indicator -->
+              <div
+                class="flex items-center justify-between mb-5 pb-5 border-b border-white/10"
+              >
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold mb-1"
+                  >
+                    Status Pendaftaran
+                  </p>
+                  <p class="text-white font-bold jakarta text-lg">
+                    Sisa <span class="text-yellow-400">127</span> kursi
+                  </p>
+                </div>
+                <div class="relative w-3 h-3">
+                  <span
+                    class="absolute inset-0 rounded-full bg-red-500 pulse-ring"
+                  ></span>
+                  <span class="absolute inset-0 rounded-full bg-red-500"></span>
+                </div>
+              </div>
+
+              <!-- Progress bar -->
+              <div class="mb-6">
+                <div
+                  class="w-full h-2 rounded-full bg-white/10 overflow-hidden"
+                >
+                  <div
+                    class="h-full w-3/4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full"
+                  ></div>
+                </div>
+                <p class="text-xs text-slate-400 mt-2">
+                  373 dari 500 kursi sudah terisi
+                </p>
+              </div>
+
+              <!-- Countdown -->
+              <p
+                class="text-xs uppercase tracking-wider text-slate-400 font-bold mb-3 text-center"
+              >
+                Webinar dimulai dalam
+              </p>
+              <div id="countdown" class="grid grid-cols-4 gap-3 mb-6">
+                <div class="countdown-box rounded-xl p-3 text-center">
+                  <p
+                    id="cd-days"
+                    class="text-3xl lg:text-4xl font-black jakarta text-yellow-400 leading-none"
+                  >
+                    00
+                  </p>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold mt-2"
+                  >
+                    Hari
+                  </p>
+                </div>
+                <div class="countdown-box rounded-xl p-3 text-center">
+                  <p
+                    id="cd-hours"
+                    class="text-3xl lg:text-4xl font-black jakarta text-yellow-400 leading-none"
+                  >
+                    00
+                  </p>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold mt-2"
+                  >
+                    Jam
+                  </p>
+                </div>
+                <div class="countdown-box rounded-xl p-3 text-center">
+                  <p
+                    id="cd-mins"
+                    class="text-3xl lg:text-4xl font-black jakarta text-yellow-400 leading-none"
+                  >
+                    00
+                  </p>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold mt-2"
+                  >
+                    Menit
+                  </p>
+                </div>
+                <div class="countdown-box rounded-xl p-3 text-center">
+                  <p
+                    id="cd-secs"
+                    class="text-3xl lg:text-4xl font-black jakarta text-yellow-400 leading-none"
+                  >
+                    00
+                  </p>
+                  <p
+                    class="text-[10px] uppercase tracking-wider text-slate-400 font-bold mt-2"
+                  >
+                    Detik
+                  </p>
+                </div>
+              </div>
+
+              <!-- Bonus -->
+              <div
+                class="p-4 rounded-xl bg-yellow-400/10 border border-yellow-400/30"
+              >
+                <div class="flex items-start gap-3">
+                  <i class="fa-solid fa-gift text-yellow-400 mt-0.5"></i>
+                  <div>
+                    <p class="text-yellow-400 font-bold text-sm mb-1">
+                      Bonus Khusus Peserta
+                    </p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                      E-book "50 Template Ads yang Converting" (senilai Rp
+                      350rb) — GRATIS untuk yang hadir live!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating badges -->
+            <div
+              class="absolute -top-4 -left-4 bg-yellow-400 text-navy-900 px-4 py-2 rounded-xl shadow-xl font-black text-xs uppercase tracking-wider rotate-[-6deg]"
+            >
+              🔥 100% Gratis
+            </div>
+            <div
+              class="absolute -bottom-4 -right-4 bg-white text-navy-900 px-4 py-2 rounded-xl shadow-xl font-bold text-xs rotate-[6deg]"
+            >
+              ⭐ 4.9/5 rating
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== AS SEEN ON ===================== -->
+    <section class="py-10 border-b border-slate-100 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <p
+          class="text-center text-xs font-semibold text-slate-400 uppercase tracking-widest mb-6"
+        >
+          Peserta kami dari perusahaan
+        </p>
+        <div
+          class="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 opacity-60"
+        >
+          <span class="text-lg font-bold text-slate-500">Tokopedia</span>
+          <span class="text-lg font-bold text-slate-500">Gojek</span>
+          <span class="text-lg font-bold text-slate-500">Shopee</span>
+          <span class="text-lg font-bold text-slate-500">Traveloka</span>
+          <span class="text-lg font-bold text-slate-500">Bukalapak</span>
+          <span class="text-lg font-bold text-slate-500">Blibli</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PAIN / HOOK ===================== -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <span
+            class="inline-block text-red-500 text-xs font-bold uppercase tracking-widest mb-3"
+            >Jujur Saja...</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-navy-900 mb-6 tracking-tight leading-tight"
+          >
+            Apakah Anda Mengalami<br />
+            <span class="text-red-500">Salah Satu dari Ini?</span>
+          </h2>
+        </div>
+
+        <div class="space-y-4 mb-10" data-aos="fade-up">
+          <div
+            class="flex items-start gap-4 p-5 rounded-xl bg-red-50 border border-red-100"
+          >
+            <i
+              class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"
+            ></i>
+            <p class="text-slate-700">
+              Sudah posting konten tiap hari tapi <b>engagement nol besar</b>,
+              apalagi conversion.
+            </p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-5 rounded-xl bg-red-50 border border-red-100"
+          >
+            <i
+              class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"
+            ></i>
+            <p class="text-slate-700">
+              Buang budget iklan <b>puluhan juta</b> tapi ROAS masih di bawah 1.
+            </p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-5 rounded-xl bg-red-50 border border-red-100"
+          >
+            <i
+              class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"
+            ></i>
+            <p class="text-slate-700">
+              Bingung <b>funnel mana yang harus dipakai</b> — ads, content,
+              email, atau apa?
+            </p>
+          </div>
+          <div
+            class="flex items-start gap-4 p-5 rounded-xl bg-red-50 border border-red-100"
+          >
+            <i
+              class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"
+            ></i>
+            <p class="text-slate-700">
+              Sudah ikut banyak kursus tapi <b>hasilnya nggak kelihatan</b> di
+              revenue.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="text-center p-6 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 text-white"
+          data-aos="fade-up"
+        >
+          <p class="text-lg leading-relaxed">
+            Masalahnya bukan Anda kurang usaha.<br />
+            Masalahnya adalah
+            <b class="text-yellow-400">strategi yang benar</b>.
+          </p>
+          <p class="mt-4 text-slate-300 text-sm">
+            Dan strategi itu bisa Anda pelajari dalam 2 jam — GRATIS.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT YOU'LL LEARN ===================== -->
+    <section class="py-20 lg:py-28 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-navy-700 text-xs font-bold uppercase tracking-widest mb-3"
+            >Yang Akan Anda Pelajari</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-navy-900 mb-4 tracking-tight"
+          >
+            Dalam 2 Jam, Anda Akan Menguasai
+          </h2>
+          <p class="text-slate-600 text-lg">
+            Langsung to-the-point, tanpa teori yang tidak aplikatif.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="p-7 rounded-2xl bg-white border border-slate-200 card-hover"
+            data-aos="fade-up"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center flex-shrink-0"
+              >
+                <span class="text-yellow-400 font-black jakarta text-lg"
+                  >01</span
+                >
+              </div>
+              <div>
+                <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">
+                  Formula Funnel 3-Lapis
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Framework yang kami gunakan untuk generate Rp 8M+ revenue.
+                  Bisa diterapkan untuk produk apapun.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl bg-white border border-slate-200 card-hover"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center flex-shrink-0"
+              >
+                <span class="text-yellow-400 font-black jakarta text-lg"
+                  >02</span
+                >
+              </div>
+              <div>
+                <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">
+                  Rahasia Meta Ads 2025
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Update terbaru algoritma Meta yang bikin CPM turun 40% dan
+                  ROAS naik 3x lipat.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl bg-white border border-slate-200 card-hover"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center flex-shrink-0"
+              >
+                <span class="text-yellow-400 font-black jakarta text-lg"
+                  >03</span
+                >
+              </div>
+              <div>
+                <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">
+                  Content Engine yang Viral
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Sistem produksi konten yang bisa bikin Anda konsisten viral
+                  tanpa burnout.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl bg-white border border-slate-200 card-hover"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center flex-shrink-0"
+              >
+                <span class="text-yellow-400 font-black jakarta text-lg"
+                  >04</span
+                >
+              </div>
+              <div>
+                <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">
+                  Email Sequence yang Converting
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Template 7 email yang menghasilkan 25%+ conversion rate untuk
+                  launching produk.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl bg-white border border-slate-200 card-hover"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center flex-shrink-0"
+              >
+                <span class="text-yellow-400 font-black jakarta text-lg"
+                  >05</span
+                >
+              </div>
+              <div>
+                <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">
+                  AI untuk Marketing
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Cara menggunakan AI (ChatGPT, Claude, Midjourney) untuk 10x
+                  output dengan 1/10 effort.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl bg-white border border-slate-200 card-hover"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center flex-shrink-0"
+              >
+                <span class="text-yellow-400 font-black jakarta text-lg"
+                  >06</span
+                >
+              </div>
+              <div>
+                <h3 class="font-bold jakarta text-navy-900 text-lg mb-2">
+                  Q&A Session Live
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Tanya langsung tentang tantangan marketing bisnis Anda. Tidak
+                  ada pertanyaan yang terlalu basic.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SPEAKER ===================== -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-navy-700 text-xs font-bold uppercase tracking-widest mb-3"
+            >Speaker</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-navy-900 mb-4 tracking-tight"
+          >
+            Belajar Langsung dari Praktisi
+          </h2>
+          <p class="text-slate-600 text-lg">
+            Bukan teoritis. Bukan akademisi. Praktisi yang masih aktif
+            menjalankan campaign setiap hari.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-10 items-center">
+          <!-- Photo -->
+          <div class="lg:col-span-2 relative" data-aos="fade-right">
+            <div class="relative speaker-glow rounded-3xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
+                alt="Speaker"
+                class="w-full h-[420px] object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-navy-950/60 to-transparent"
+              ></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <div class="bg-white/95 backdrop-blur rounded-xl p-4">
+                  <p
+                    class="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1"
+                  >
+                    Rating Peserta
+                  </p>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-amber-400 text-sm">
+                      <i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i
+                      ><i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="font-black jakarta text-navy-900">4.9</span>
+                    <span class="text-xs text-slate-500">(2.340 review)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="lg:col-span-3" data-aos="fade-left">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold mb-4"
+            >
+              <i class="fa-solid fa-microphone"></i>
+              Your Speaker
+            </div>
+            <h3
+              class="text-3xl lg:text-4xl font-extrabold jakarta text-navy-900 mb-3 tracking-tight"
+            >
+              Andi Wibowo
+            </h3>
+            <p class="text-lg text-slate-500 font-semibold mb-6">
+              Founder GrowthLab Indonesia • 12 Tahun di Digital Marketing
+            </p>
+
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Andi telah membantu 200+ brand (dari startup hingga enterprise)
+              untuk scale revenue mereka melalui digital marketing. Total
+              revenue yang dihasilkan bersama kliennya mencapai
+              <b class="text-navy-900">Rp 8 Miliar+</b>.
+            </p>
+
+            <p class="text-slate-600 leading-relaxed mb-8">
+              Sebelum mendirikan GrowthLab, Andi adalah Head of Growth di salah
+              satu unicorn Indonesia dan memimpin tim 30+ marketer untuk scale
+              user dari 100rb ke 5 juta.
+            </p>
+
+            <!-- Credentials -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50">
+                <i class="fa-solid fa-award text-yellow-500"></i>
+                <span class="text-sm font-semibold text-navy-900"
+                  >Meta Certified Media Buyer</span
+                >
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50">
+                <i class="fa-solid fa-award text-yellow-500"></i>
+                <span class="text-sm font-semibold text-navy-900"
+                  >Google Ads Certified</span
+                >
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50">
+                <i class="fa-solid fa-award text-yellow-500"></i>
+                <span class="text-sm font-semibold text-navy-900"
+                  >HubSpot Expert</span
+                >
+              </div>
+              <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50">
+                <i class="fa-solid fa-award text-yellow-500"></i>
+                <span class="text-sm font-semibold text-navy-900"
+                  >LinkedIn Top Voice 2024</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CURRICULUM ===================== -->
+    <section class="py-20 lg:py-28 bg-navy-950 relative overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-20"></div>
+      <div class="max-w-4xl mx-auto px-6 relative">
+        <div class="text-center mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-yellow-400 text-xs font-bold uppercase tracking-widest mb-3"
+            >Agenda Webinar</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-white mb-4 tracking-tight"
+          >
+            Apa Saja yang Akan Dibahas?
+          </h2>
+          <p class="text-slate-400 text-lg">
+            Kurikulum 2 jam yang padat, aplikatif, dan terstruktur.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            class="curriculum-item active bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden"
+            data-aos="fade-up"
+          >
+            <button
+              class="curriculum-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="w-8 h-8 rounded-lg bg-yellow-400 text-navy-900 flex items-center justify-center font-black text-xs flex-shrink-0"
+                  >01</span
+                >
+                <div>
+                  <p class="text-white font-bold text-sm">
+                    19.30 - 19.50 • Pembukaan & Mindset
+                  </p>
+                  <p class="text-xs text-slate-400">
+                    Mengapa 90% Marketer Gagal di 2025
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-down text-yellow-400 curriculum-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="curriculum-content">
+              <div class="px-5 pb-5 pl-16">
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Bongkar 3 kesalahan fundamental yang dilakukan hampir semua
+                  marketer di 2025 dan bagaimana cara menghindarinya.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="curriculum-item bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <button
+              class="curriculum-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="w-8 h-8 rounded-lg bg-yellow-400 text-navy-900 flex items-center justify-center font-black text-xs flex-shrink-0"
+                  >02</span
+                >
+                <div>
+                  <p class="text-white font-bold text-sm">
+                    19.50 - 20.20 • Formula Funnel 3-Lapis
+                  </p>
+                  <p class="text-xs text-slate-400">
+                    Funnel yang Bekerja untuk Semua Produk
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-down text-yellow-400 curriculum-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="curriculum-content">
+              <div class="px-5 pb-5 pl-16">
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Framework lengkap: TOFU (Awareness) → MOFU (Consideration) →
+                  BOFU (Conversion). Dengan contoh nyata dari 3 studi kasus.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="curriculum-item bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="curriculum-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="w-8 h-8 rounded-lg bg-yellow-400 text-navy-900 flex items-center justify-center font-black text-xs flex-shrink-0"
+                  >03</span
+                >
+                <div>
+                  <p class="text-white font-bold text-sm">
+                    20.20 - 20.50 • Live Demo: Meta Ads 2025
+                  </p>
+                  <p class="text-xs text-slate-400">
+                    Setting Campaign Step-by-Step
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-down text-yellow-400 curriculum-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="curriculum-content">
+              <div class="px-5 pb-5 pl-16">
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Live screen-sharing: setup Meta Ads campaign dari nol,
+                  targeting, creative, sampai optimasi. Semua ditunjukkan
+                  transparan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="curriculum-item bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button
+              class="curriculum-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="w-8 h-8 rounded-lg bg-yellow-400 text-navy-900 flex items-center justify-center font-black text-xs flex-shrink-0"
+                  >04</span
+                >
+                <div>
+                  <p class="text-white font-bold text-sm">
+                    20.50 - 21.20 • Q&A Live
+                  </p>
+                  <p class="text-xs text-slate-400">
+                    Tanya Apapun Seputar Digital Marketing
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-down text-yellow-400 curriculum-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="curriculum-content">
+              <div class="px-5 pb-5 pl-16">
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Sesi tanya jawab terbuka. Anda bisa tanya tentang tantangan
+                  bisnis spesifik, campaign yang tidak berjalan, atau apapun.
+                  Tidak ada pertanyaan yang terlalu basic.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="curriculum-item bg-white/5 backdrop-blur border border-white/10 rounded-2xl overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="curriculum-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="w-8 h-8 rounded-lg bg-yellow-400 text-navy-900 flex items-center justify-center font-black text-xs flex-shrink-0"
+                  >05</span
+                >
+                <div>
+                  <p class="text-white font-bold text-sm">
+                    21.20 - 21.30 • Bonus & Closing
+                  </p>
+                  <p class="text-xs text-slate-400">
+                    Penutup + Bonus Khusus Peserta Live
+                  </p>
+                </div>
+              </div>
+              <i
+                class="fa-solid fa-chevron-down text-yellow-400 curriculum-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="curriculum-content">
+              <div class="px-5 pb-5 pl-16">
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Closing power + pembagian bonus eksklusif: e-book template,
+                  checklist campaign, dan surprise lainnya untuk yang hadir live
+                  sampai akhir.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BONUS STACK ===================== -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-red-500 text-xs font-bold uppercase tracking-widest mb-3"
+            >Bonus Eksklusif</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-navy-900 mb-4 tracking-tight"
+          >
+            Daftar Hari Ini, Dapatkan Bonus
+          </h2>
+          <p class="text-slate-600 text-lg">
+            Total nilai bonus
+            <span class="font-bold text-red-500">Rp 1.750.000</span> — GRATIS
+            untuk peserta.
+          </p>
+        </div>
+
+        <div class="space-y-4 mb-10">
+          <div
+            class="flex items-center justify-between p-5 rounded-xl bg-slate-50 border border-slate-200"
+            data-aos="fade-up"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-file-lines text-yellow-400"></i>
+              </div>
+              <div>
+                <p class="font-bold jakarta text-navy-900 text-sm">
+                  E-book "50 Template Ads yang Converting"
+                </p>
+                <p class="text-xs text-slate-500">
+                  Siap pakai, tinggal copy-paste
+                </p>
+              </div>
+            </div>
+            <span class="text-sm font-bold text-slate-400 line-through"
+              >Rp 350rb</span
+            >
+          </div>
+
+          <div
+            class="flex items-center justify-between p-5 rounded-xl bg-slate-50 border border-slate-200"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-list-check text-yellow-400"></i>
+              </div>
+              <div>
+                <p class="font-bold jakarta text-navy-900 text-sm">
+                  Checklist "Funnel Audit 47 Poin"
+                </p>
+                <p class="text-xs text-slate-500">
+                  Audit funnel Anda sendiri dalam 30 menit
+                </p>
+              </div>
+            </div>
+            <span class="text-sm font-bold text-slate-400 line-through"
+              >Rp 400rb</span
+            >
+          </div>
+
+          <div
+            class="flex items-center justify-between p-5 rounded-xl bg-slate-50 border border-slate-200"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-envelope-open-text text-yellow-400"></i>
+              </div>
+              <div>
+                <p class="font-bold jakarta text-navy-900 text-sm">
+                  Swipe File: 7 Email Sequence Template
+                </p>
+                <p class="text-xs text-slate-500">
+                  Copy writing untuk launching produk
+                </p>
+              </div>
+            </div>
+            <span class="text-sm font-bold text-slate-400 line-through"
+              >Rp 500rb</span
+            >
+          </div>
+
+          <div
+            class="flex items-center justify-between p-5 rounded-xl bg-yellow-50 border-2 border-yellow-400"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-video text-navy-900"></i>
+              </div>
+              <div>
+                <p class="font-bold jakarta text-navy-900 text-sm">
+                  🎁 Rekaman Webinar 30 Hari
+                </p>
+                <p class="text-xs text-slate-600">
+                  Jika tidak bisa hadir live, tetap dapat rekaman
+                </p>
+              </div>
+            </div>
+            <span class="text-sm font-bold text-slate-400 line-through"
+              >Rp 500rb</span
+            >
+          </div>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-800 text-center"
+          data-aos="fade-up"
+        >
+          <p class="text-slate-300 mb-2">
+            Total nilai semua yang Anda dapatkan:
+          </p>
+          <p
+            class="text-3xl lg:text-4xl font-black jakarta text-white mb-2 strike-through"
+          >
+            Rp 1.750.000
+          </p>
+          <p class="text-2xl lg:text-3xl font-black jakarta text-yellow-400">
+            GRATIS 100%
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="py-20 lg:py-28 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-navy-700 text-xs font-bold uppercase tracking-widest mb-3"
+            >Testimoni</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-navy-900 mb-4 tracking-tight"
+          >
+            Apa Kata Peserta Sebelumnya?
+          </h2>
+          <p class="text-slate-600 text-lg">
+            Sudah 8.500+ orang mengikuti webinar ini. Ini hasil mereka.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+          >
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-6">
+              "Jujur awalnya skeptis, cuma webinar gratis. Tapi setelah apply
+              formula funnel-nya, ROAS iklan saya naik dari 1.2 ke 3.8 dalam 2
+              minggu. Gila!"
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-sm text-navy-900">
+                  Rizky Pratama
+                </p>
+                <p class="text-xs text-slate-500">Owner, Fashion Brand</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-6">
+              "Saya ikut 5 webinar bulan itu, dan cuma yang ini yang bikin saya
+              langsung take action. Bukan teori, tapi eksekusi. Terima kasih Mas
+              Andi!"
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-sm text-navy-900">
+                  Maya Anggraini
+                </p>
+                <p class="text-xs text-slate-500">
+                  Marketing Manager, B2B SaaS
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-6">
+              "Yang paling berharga buat saya adalah Q&A session-nya. Mas Andi
+              jawab pertanyaan saya yang sangat spesifik dengan detail. Worth
+              banget."
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold jakarta text-sm text-navy-900">
+                  Bagas Wibowo
+                </p>
+                <p class="text-xs text-slate-500">Founder, Digital Agency</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="py-20 lg:py-28 bg-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-navy-700 text-xs font-bold uppercase tracking-widest mb-3"
+            >FAQ</span
+          >
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-navy-900 mb-4 tracking-tight"
+          >
+            Pertanyaan Umum
+          </h2>
+          <p class="text-slate-600">
+            Belum ketemu jawabannya?
+            <a href="#" class="text-navy-700 font-semibold hover:underline"
+              >Chat tim kami →</a
+            >
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden active"
+            data-aos="fade-up"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-navy-900 text-sm pr-4"
+                >Apakah benar-benar gratis?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ya, 100% gratis. Tidak ada biaya tersembunyi. Kami hanya
+                menyediakan slot terbatas 500 peserta karena kapasitas Zoom. Di
+                akhir webinar akan ada penawaran program lanjutan, tapi murni
+                opsional — Anda tidak wajib membeli apapun.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-navy-900 text-sm pr-4"
+                >Saya pemula total, apakah bisa ikut?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Sangat bisa! Materi dirancang agar bisa diikuti oleh pemula
+                sekaligus tetap relevan untuk yang sudah berpengalaman. Kami
+                mulai dari fundamental, tapi cepat masuk ke strategi advanced.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-navy-900 text-sm pr-4"
+                >Bagaimana jika saya tidak bisa hadir live?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Tenang, rekaman akan dikirim ke email Anda dalam 24 jam setelah
+                webinar. Rekaman bisa diakses selama 30 hari. Tapi kami sangat
+                menyarankan hadir live karena ada Q&A session dan bonus
+                eksklusif khusus peserta live.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-navy-900 text-sm pr-4"
+                >Platform apa yang digunakan?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Webinar menggunakan Zoom Meeting. Link akan dikirim ke email dan
+                WhatsApp Anda H-1 dan 1 jam sebelum mulai. Anda tidak perlu
+                install apapun jika ikut lewat browser.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-2xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold jakarta text-navy-900 text-sm pr-4"
+                >Apakah akan ada sesi tanya jawab?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Tentu! Kami menyisihkan 30 menit khusus untuk Q&A. Anda bisa
+                bertanya apapun tentang digital marketing, bisnis Anda, atau
+                tantangan yang sedang dihadapi. Semua pertanyaan akan dijawab
+                langsung oleh Mas Andi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== REGISTRATION FORM (FINAL CTA) ===================== -->
+    <section
+      id="daftar"
+      class="py-20 lg:py-28 bg-navy-950 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 grid-pattern opacity-30"></div>
+      <div
+        class="absolute -top-20 -right-20 w-[500px] h-[500px] bg-yellow-400/10 rounded-full filter blur-3xl"
+      ></div>
+      <div
+        class="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-navy-500/20 rounded-full filter blur-3xl"
+      ></div>
+
+      <div class="max-w-5xl mx-auto px-6 relative">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-wider mb-5"
+          >
+            <span class="w-2 h-2 rounded-full bg-red-500 blink"></span>
+            Sisa 127 kursi • Update otomatis
+          </div>
+          <h2
+            class="text-3xl lg:text-5xl font-extrabold jakarta text-white mb-4 tracking-tight"
+          >
+            Amankan Kursi Gratis Anda Sekarang
+          </h2>
+          <p class="text-slate-300 text-lg max-w-2xl mx-auto">
+            Isi form di bawah ini untuk mendaftar. Kami akan kirim link webinar
+            ke email & WhatsApp Anda.
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          <!-- Form Card -->
+          <div class="bg-white rounded-3xl p-6 lg:p-8 shadow-2xl">
+            <!-- Progress mini -->
+            <div class="mb-6 pb-6 border-b border-slate-100">
+              <div class="flex justify-between items-center mb-2">
+                <span
+                  class="text-xs font-bold text-slate-500 uppercase tracking-wider"
+                  >Kursi terisi</span
+                >
+                <span class="text-xs font-bold text-red-500">373 / 500</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
+                <div
+                  class="h-full w-3/4 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full"
+                ></div>
+              </div>
+            </div>
+
+            <form class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider"
+                    >Nama Lengkap *</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Nama Anda"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider"
+                    >No. WhatsApp *</label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="08xx xxxx xxxx"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider"
+                  >Email Aktif *</label
+                >
+                <input
+                  type="email"
+                  placeholder="email@contoh.com"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                />
+                <p class="text-[10px] text-slate-500 mt-1.5">
+                  <i class="fa-solid fa-info-circle mr-1"></i>Link Zoom akan
+                  dikirim ke email ini
+                </p>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider"
+                  >Anda adalah... *</label
+                >
+                <select
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-700"
+                >
+                  <option>Pilih Profil</option>
+                  <option>Pemilik bisnis / Founder</option>
+                  <option>Marketing Manager / Staf</option>
+                  <option>Freelancer / Konsultan</option>
+                  <option>Content Creator</option>
+                  <option>Mahasiswa / Pelajar</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-2 uppercase tracking-wider"
+                  >Tantangan Terbesar Anda Saat Ini?</label
+                >
+                <textarea
+                  rows="3"
+                  placeholder="Ceritakan singkat (opsional) — agar sesi Q&A lebih relevan untuk Anda"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <div
+                class="flex items-start gap-3 p-4 rounded-xl bg-yellow-50 border border-yellow-200"
+              >
+                <input
+                  type="checkbox"
+                  id="wablast"
+                  class="mt-0.5 accent-yellow-500"
+                  checked
+                />
+                <label
+                  for="wablast"
+                  class="text-xs text-slate-700 leading-relaxed"
+                >
+                  <b>Ya, kirimkan pengingat H-1 dan H-1 jam via WhatsApp</b>
+                  supaya saya tidak lupa hadir.
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-4 rounded-xl bg-yellow-400 text-navy-900 font-black jakarta text-base hover:bg-yellow-300 transition shadow-lg shadow-yellow-400/30 flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                Daftar Sekarang - GRATIS
+              </button>
+
+              <p class="text-[10px] text-slate-500 text-center leading-relaxed">
+                Dengan mendaftar, Anda menyetujui
+                <a href="#" class="font-semibold text-navy-700 hover:underline"
+                  >Syarat & Ketentuan</a
+                >
+                dan
+                <a href="#" class="font-semibold text-navy-700 hover:underline"
+                  >Kebijakan Privasi</a
+                >
+                kami. Kami tidak akan menjual data Anda ke pihak ketiga.
+              </p>
+            </form>
+          </div>
+
+          <!-- Trust items -->
+          <div
+            class="grid grid-cols-3 gap-4 mt-8 text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="text-white">
+              <i
+                class="fa-solid fa-shield-halved text-yellow-400 text-xl mb-2"
+              ></i>
+              <p class="text-xs font-bold">Data Aman</p>
+            </div>
+            <div class="text-white">
+              <i class="fa-solid fa-users text-yellow-400 text-xl mb-2"></i>
+              <p class="text-xs font-bold">8.500+ Peserta</p>
+            </div>
+            <div class="text-white">
+              <i class="fa-solid fa-star text-yellow-400 text-xl mb-2"></i>
+              <p class="text-xs font-bold">Rating 4.9/5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-navy-950 border-t border-white/5 py-10 text-slate-400">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-9 h-9 rounded-lg bg-yellow-400 flex items-center justify-center"
+            >
+              <i class="fa-solid fa-bullhorn text-navy-900 text-sm"></i>
+            </div>
+            <span class="text-lg font-bold jakarta text-white tracking-tight"
+              >Growth<span class="text-yellow-400">Class</span></span
+            >
+          </div>
+
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs justify-center">
+            <a href="#" class="hover:text-yellow-400 transition"
+              >Syarat & Ketentuan</a
+            >
+            <a href="#" class="hover:text-yellow-400 transition"
+              >Kebijakan Privasi</a
+            >
+            <a href="#" class="hover:text-yellow-400 transition">Kontak</a>
+          </div>
+
+          <p class="text-xs">© 2025 GrowthClass Indonesia</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== STICKY MOBILE CTA ===================== -->
+    <div
+      class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 shadow-2xl z-40"
+    >
+      <div class="flex items-center gap-3">
+        <div class="flex-1">
+          <p
+            class="text-[10px] text-red-500 font-bold uppercase tracking-wider"
+          >
+            🔥 Sisa 127 kursi
+          </p>
+          <p class="text-xs text-slate-700 font-bold">Daftar gratis sekarang</p>
+        </div>
+        <a
+          href="#daftar"
+          class="px-5 py-2.5 rounded-lg bg-yellow-400 text-navy-900 font-bold text-sm whitespace-nowrap"
+        >
+          Daftar →
+        </a>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      // COUNTDOWN TIMER - target: 3 hari 5 jam dari sekarang (buat demo)
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 3);
+      targetDate.setHours(targetDate.getHours() + 5);
+
+      const cdDays = document.getElementById("cd-days");
+      const cdHours = document.getElementById("cd-hours");
+      const cdMins = document.getElementById("cd-mins");
+      const cdSecs = document.getElementById("cd-secs");
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate.getTime() - now;
+
+        if (distance < 0) {
+          cdDays.textContent = "00";
+          cdHours.textContent = "00";
+          cdMins.textContent = "00";
+          cdSecs.textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+        cdDays.textContent = String(days).padStart(2, "0");
+        cdHours.textContent = String(hours).padStart(2, "0");
+        cdMins.textContent = String(mins).padStart(2, "0");
+        cdSecs.textContent = String(secs).padStart(2, "0");
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // CURRICULUM ACCORDION
+      document.querySelectorAll(".curriculum-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".curriculum-item");
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".curriculum-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+
+      // FAQ ACCORDION
+      document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

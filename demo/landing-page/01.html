@@ -1,0 +1,1692 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow — Kelola Tim Remote dengan Lebih Produktif</title>
+    <meta
+      name="description"
+      content="TaskFlow adalah platform project management untuk tim remote. Kelola task, deadline, dan kolaborasi dalam satu dashboard. Coba gratis 14 hari, tanpa kartu kredit."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+            colors: {
+              brand: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#1e3a8a",
+                950: "#172554",
+              },
+              violet: {
+                500: "#8b5cf6",
+                600: "#7c3aed",
+                700: "#6d28d9",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8fafc;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      #navbar.scrolled {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      /* Grid pattern bg */
+      .grid-pattern {
+        background-image:
+          linear-gradient(
+            to right,
+            rgba(148, 163, 184, 0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(148, 163, 184, 0.08) 1px,
+            transparent 1px
+          );
+        background-size: 40px 40px;
+      }
+
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Glow */
+      .glow {
+        box-shadow: 0 0 60px rgba(37, 99, 235, 0.25);
+      }
+
+      /* Card hover */
+      .card-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.12);
+      }
+
+      /* Marquee */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        animation: marquee 30s linear infinite;
+      }
+
+      /* Pricing toggle */
+      .toggle-track {
+        transition: background-color 0.3s;
+      }
+      .toggle-dot {
+        transition: transform 0.3s;
+      }
+      .toggle-checked .toggle-track {
+        background-color: #2563eb;
+      }
+      .toggle-checked .toggle-dot {
+        transform: translateX(24px);
+      }
+
+      /* Accordion */
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .faq-item.active .faq-content {
+        max-height: 300px;
+      }
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+
+      /* Floating animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      .float {
+        animation: float 5s ease-in-out infinite;
+      }
+      .float-delay {
+        animation: float 5s ease-in-out infinite;
+        animation-delay: 2.5s;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+      }
+
+      /* Notification pop */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .pop-in {
+        animation: slideIn 0.4s ease-out;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-700 antialiased overflow-x-hidden">
+    <!-- ===================== NAVBAR (Minimal - Landing Page Style) ===================== -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 py-4 transition-all"
+    >
+      <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2.5">
+          <div
+            class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-bolt text-white text-sm"></i>
+          </div>
+          <span class="text-lg font-bold text-slate-900 tracking-tight"
+            >TaskFlow</span
+          >
+        </a>
+
+        <!-- Nav (Minimal - hanya penting) -->
+        <ul
+          class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600"
+        >
+          <li>
+            <a href="#fitur" class="hover:text-brand-600 transition">Fitur</a>
+          </li>
+          <li>
+            <a href="#cara-kerja" class="hover:text-brand-600 transition"
+              >Cara Kerja</a
+            >
+          </li>
+          <li>
+            <a href="#harga" class="hover:text-brand-600 transition">Harga</a>
+          </li>
+          <li>
+            <a href="#faq" class="hover:text-brand-600 transition">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- CTA -->
+        <div class="flex items-center gap-3">
+          <a
+            href="#"
+            class="hidden sm:block text-sm font-semibold text-slate-700 hover:text-brand-600 transition"
+            >Sign In</a
+          >
+          <a
+            href="#trial"
+            class="px-4 py-2.5 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition shadow-lg shadow-brand-600/20"
+          >
+            Try Free
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative pt-32 pb-20 lg:pt-40 overflow-hidden">
+      <!-- BG -->
+      <div class="absolute inset-0 grid-pattern opacity-60"></div>
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-brand-100 via-violet-50 to-transparent rounded-full blur-3xl opacity-60 -z-10"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <!-- Badge -->
+        <div class="flex justify-center mb-6" data-aos="fade-up">
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-medium hover:border-brand-300 transition group"
+          >
+            <span
+              class="px-2 py-0.5 rounded-full bg-brand-600 text-white font-semibold text-[10px] uppercase tracking-wider"
+              >Baru</span
+            >
+            <span class="text-slate-600"
+              >AI Assistant untuk tugas harian Anda</span
+            >
+            <i
+              class="fa-solid fa-arrow-right text-slate-400 group-hover:text-brand-600 group-hover:translate-x-0.5 transition"
+            ></i>
+          </a>
+        </div>
+
+        <!-- Heading -->
+        <div
+          class="text-center max-w-3xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="50"
+        >
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6"
+          >
+            Kelola Tim Remote Anda dengan
+            <span class="gradient-text">Lebih Produktif</span>
+          </h1>
+          <p
+            class="text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto"
+          >
+            TaskFlow menyatukan semua project, task, dan komunikasi tim dalam
+            satu dashboard. Tanpa ribet, tanpa pindah-pindah aplikasi.
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <a
+            href="#trial"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition shadow-xl shadow-brand-600/25"
+          >
+            Mulai Free Trial 14 Hari
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a
+            href="#"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold hover:border-slate-300 transition"
+          >
+            <i class="fa-solid fa-play text-brand-600 text-xs"></i>
+            Lihat Demo (2 menit)
+          </a>
+        </div>
+
+        <p
+          class="text-center text-xs text-slate-500 mb-16 flex items-center justify-center gap-2"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          <i class="fa-solid fa-check text-emerald-500"></i> Tanpa kartu kredit
+          <span class="text-slate-300">•</span>
+          <i class="fa-solid fa-check text-emerald-500"></i> Setup 2 menit
+          <span class="text-slate-300">•</span>
+          <i class="fa-solid fa-check text-emerald-500"></i> Batal kapan saja
+        </p>
+
+        <!-- Product Mockup -->
+        <div
+          class="relative max-w-5xl mx-auto"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <!-- Main dashboard mockup -->
+          <div
+            class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-2xl shadow-slate-900/10 bg-white"
+          >
+            <!-- Browser bar -->
+            <div
+              class="flex items-center gap-2 px-4 py-3 bg-slate-50 border-b border-slate-100"
+            >
+              <div class="flex gap-1.5">
+                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+              </div>
+              <div class="flex-1 flex justify-center">
+                <div
+                  class="px-3 py-1 rounded-md bg-white border border-slate-200 text-[10px] text-slate-400 flex items-center gap-1.5"
+                >
+                  <i class="fa-solid fa-lock text-[8px]"></i>
+                  app.taskflow.io/dashboard
+                </div>
+              </div>
+            </div>
+            <!-- App screenshot -->
+            <img
+              src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&q=80"
+              alt="TaskFlow Dashboard"
+              class="w-full h-auto"
+            />
+          </div>
+
+          <!-- Floating notification 1 -->
+          <div class="hidden lg:block absolute -left-8 top-24 float">
+            <div
+              class="bg-white rounded-xl p-4 shadow-xl border border-slate-100 flex items-center gap-3 w-60"
+            >
+              <div
+                class="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0"
+              >
+                <i class="fa-solid fa-check text-emerald-600"></i>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-slate-900">
+                  Task selesai!
+                </p>
+                <p class="text-[10px] text-slate-500">Design homepage</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating notification 2 -->
+          <div class="hidden lg:block absolute -right-8 bottom-20 float-delay">
+            <div
+              class="bg-white rounded-xl p-4 shadow-xl border border-slate-100 w-64"
+            >
+              <div class="flex items-center gap-2 mb-2">
+                <div
+                  class="w-6 h-6 rounded-full bg-gradient-to-br from-brand-500 to-violet-500 flex items-center justify-center text-white text-[10px] font-bold"
+                >
+                  SA
+                </div>
+                <div
+                  class="w-6 h-6 rounded-full bg-gradient-to-br from-pink-500 to-orange-500 flex items-center justify-center text-white text-[10px] font-bold -ml-2 border-2 border-white"
+                >
+                  BP
+                </div>
+                <span class="text-[10px] text-slate-500 ml-1"
+                  >3 anggota tim</span
+                >
+              </div>
+              <p class="text-xs font-semibold text-slate-900 mb-1">
+                Sprint Planning Q1
+              </p>
+              <div
+                class="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden"
+              >
+                <div
+                  class="w-3/4 h-full bg-gradient-to-r from-brand-500 to-violet-500 rounded-full"
+                ></div>
+              </div>
+              <p class="text-[10px] text-slate-500 mt-1">75% selesai</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRUST LOGOS ===================== -->
+    <section
+      class="py-12 border-y border-slate-100 bg-slate-50/50 overflow-hidden"
+    >
+      <p
+        class="text-center text-xs font-semibold text-slate-500 uppercase tracking-widest mb-8"
+      >
+        Dipercaya oleh 5.000+ tim di perusahaan terkemuka
+      </p>
+      <div class="overflow-hidden">
+        <div class="flex animate-marquee gap-16 whitespace-nowrap items-center">
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-google"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-microsoft"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-amazon"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-spotify"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-airbnb"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-shopify"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-slack"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-figma"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-google"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-microsoft"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-amazon"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-spotify"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-airbnb"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-shopify"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-slack"></i
+          ></span>
+          <span class="text-2xl font-bold text-slate-400"
+            ><i class="fa-brands fa-figma"></i
+          ></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROBLEM / PAIN POINT ===================== -->
+    <section class="py-20 lg:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-brand-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Masalah yang Sering Terjadi</span
+          >
+          <h2
+            class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-4"
+          >
+            Kelola Tim Remote Itu Susah?
+          </h2>
+          <p class="text-slate-600">
+            Kami paham. Ini yang biasanya bikin tim remote kacau.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="p-7 rounded-2xl border border-slate-100 bg-white"
+            data-aos="fade-up"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-5"
+            >
+              <i class="fa-solid fa-comments text-red-500 text-lg"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Chat Berserakan</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Info penting tenggelam di WhatsApp, Slack, dan email. Susah
+              dilacak, sering terlewat.
+            </p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-slate-100 bg-white"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center mb-5"
+            >
+              <i class="fa-solid fa-clock text-amber-500 text-lg"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Deadline Molor</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Tidak ada visibility siapa mengerjakan apa. Progress project cuma
+              ketebak.
+            </p>
+          </div>
+
+          <div
+            class="p-7 rounded-2xl border border-slate-100 bg-white"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-12 h-12 rounded-xl bg-violet-50 flex items-center justify-center mb-5"
+            >
+              <i class="fa-solid fa-user-slash text-violet-500 text-lg"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">
+              Meeting Terlalu Banyak
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Buang waktu di meeting status update yang seharusnya bisa dilihat
+              dari dashboard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FITUR UTAMA ===================== -->
+    <section id="fitur" class="py-20 lg:py-28 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+          <span
+            class="inline-block text-brand-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Solusi Kami</span
+          >
+          <h2
+            class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-4"
+          >
+            Semua yang Tim Anda Butuhkan
+          </h2>
+          <p class="text-slate-600">
+            Fitur yang dirancang untuk tim remote modern — simpel, powerful, dan
+            tidak bikin bingung.
+          </p>
+        </div>
+
+        <!-- Feature 1 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+          <div data-aos="fade-right">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold mb-4"
+            >
+              <i class="fa-solid fa-list-check"></i> Task Management
+            </div>
+            <h3
+              class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 tracking-tight"
+            >
+              Task Board yang Terlihat Semua Orang
+            </h3>
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Lihat semua task dalam Kanban board, list view, atau timeline.
+              Drag & drop untuk update status, semua real-time tanpa refresh.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-brand-600 mt-0.5"></i>
+                <span
+                  ><b>Multiple views</b> — Kanban, List, Calendar,
+                  Timeline</span
+                >
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-brand-600 mt-0.5"></i>
+                <span
+                  ><b>Drag & drop</b> — update status dalam hitungan detik</span
+                >
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-brand-600 mt-0.5"></i>
+                <span
+                  ><b>Custom fields</b> — sesuaikan dengan workflow tim
+                  Anda</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="relative" data-aos="fade-left">
+            <div
+              class="rounded-2xl overflow-hidden shadow-xl border border-slate-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+                alt="Task Board"
+                class="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+          <div class="relative order-2 lg:order-1" data-aos="fade-right">
+            <div
+              class="rounded-2xl overflow-hidden shadow-xl border border-slate-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                alt="Collaboration"
+                class="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+          <div class="order-1 lg:order-2" data-aos="fade-left">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-100 text-violet-700 text-xs font-semibold mb-4"
+            >
+              <i class="fa-solid fa-users"></i> Kolaborasi
+            </div>
+            <h3
+              class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 tracking-tight"
+            >
+              Diskusi Langsung di Dalam Task
+            </h3>
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Tidak perlu pindah ke chat lain. Comment, mention, dan share file
+              langsung di dalam task. Semua konteks tetap terjaga.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-violet-600 mt-0.5"></i>
+                <span
+                  ><b>Comment & mention</b> — tag rekan tim dengan @nama</span
+                >
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-violet-600 mt-0.5"></i>
+                <span><b>File sharing</b> — upload hingga 5GB per task</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-violet-600 mt-0.5"></i>
+                <span><b>Activity log</b> — lacak semua perubahan</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold mb-4"
+            >
+              <i class="fa-solid fa-chart-line"></i> Analytics
+            </div>
+            <h3
+              class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 tracking-tight"
+            >
+              Report Otomatis untuk Keputusan Cepat
+            </h3>
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Tidak perlu bikin report manual lagi. TaskFlow generate insight
+              project, workload, dan progress tim secara otomatis.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+                <span><b>Burndown chart</b> — pantau progress sprint</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+                <span><b>Workload view</b> — hindari burnout di tim</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm text-slate-700">
+                <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+                <span><b>Custom report</b> — export ke PDF atau Excel</span>
+              </li>
+            </ul>
+          </div>
+          <div class="relative" data-aos="fade-left">
+            <div
+              class="rounded-2xl overflow-hidden shadow-xl border border-slate-200"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                alt="Analytics"
+                class="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CARA KERJA ===================== -->
+    <section id="cara-kerja" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+          <span
+            class="inline-block text-brand-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Cara Kerja</span
+          >
+          <h2
+            class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-4"
+          >
+            Mulai dalam 3 Langkah Mudah
+          </h2>
+          <p class="text-slate-600">
+            Dari sign-up sampai tim Anda produktif, tidak sampai 10 menit.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 relative">
+          <!-- Connector line -->
+          <div
+            class="hidden md:block absolute top-8 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-brand-200 via-violet-200 to-brand-200"
+          ></div>
+
+          <div class="text-center relative" data-aos="fade-up">
+            <div
+              class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center text-white font-bold text-xl mb-5 shadow-lg shadow-brand-600/25 relative z-10"
+            >
+              1
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Buat Akun</h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Daftar dengan email kantor atau Google Workspace. Tidak perlu
+              kartu kredit.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center text-white font-bold text-xl mb-5 shadow-lg shadow-brand-600/25 relative z-10"
+            >
+              2
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Invite Tim</h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Undang anggota tim via email atau link. Mereka bisa langsung
+              kolaborasi.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center text-white font-bold text-xl mb-5 shadow-lg shadow-brand-600/25 relative z-10"
+            >
+              3
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Mulai Produktif</h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Buat project pertama, assign task, dan lihat tim Anda bekerja
+              lebih terstruktur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section
+      class="py-16 bg-gradient-to-br from-brand-700 to-violet-700 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 grid-pattern opacity-20"></div>
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white"
+        >
+          <div data-aos="fade-up">
+            <p class="text-4xl lg:text-5xl font-bold mb-2" data-counter="5000">
+              0
+            </p>
+            <p class="text-xs font-medium uppercase tracking-wider opacity-80">
+              Tim Aktif
+            </p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="50">
+            <p
+              class="text-4xl lg:text-5xl font-bold mb-2"
+              data-counter="120000"
+            >
+              0
+            </p>
+            <p class="text-xs font-medium uppercase tracking-wider opacity-80">
+              Task Selesai
+            </p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <p class="text-4xl lg:text-5xl font-bold mb-2">
+              99.9<span class="text-2xl">%</span>
+            </p>
+            <p class="text-xs font-medium uppercase tracking-wider opacity-80">
+              Uptime SLA
+            </p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="150">
+            <p class="text-4xl lg:text-5xl font-bold mb-2">
+              4.9<span class="text-2xl">/5</span>
+            </p>
+            <p class="text-xs font-medium uppercase tracking-wider opacity-80">
+              Rating Pengguna
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONI ===================== -->
+    <section class="py-20 lg:py-28 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-brand-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Testimoni</span
+          >
+          <h2
+            class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-4"
+          >
+            Dipercaya Ribuan Tim
+          </h2>
+          <p class="text-slate-600">
+            Bukan kami yang bilang — dengar langsung dari pengguna TaskFlow.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+          >
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-6">
+              "Sejak pakai TaskFlow, meeting status update kami turun 60%. Semua
+              orang bisa lihat progress sendiri tanpa harus tanya."
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-semibold text-sm text-slate-900">Sarah Wijaya</p>
+                <p class="text-xs text-slate-500">Head of Product, Tokopedia</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-6">
+              "Tim kami full remote tersebar di 5 negara. TaskFlow jadi 'kantor
+              virtual' kami. Setup cepat, tim langsung paham cara pakainya."
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-semibold text-sm text-slate-900">Budi Santoso</p>
+                <p class="text-xs text-slate-500">CTO, Fintech Startup</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-slate-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex text-amber-400 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed mb-6">
+              "Sebagai agency, kami handle 15+ klien paralel. TaskFlow
+              satu-satunya tool yang bisa handle kompleksitas ini tanpa bikin
+              tim overwhelmed."
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-semibold text-sm text-slate-900">
+                  Maya Anggraini
+                </p>
+                <p class="text-xs text-slate-500">Founder, Creative Agency</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary trust badges -->
+        <div
+          class="mt-14 flex flex-wrap justify-center items-center gap-8 text-xs text-slate-500"
+          data-aos="fade-up"
+        >
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+            <span>SOC 2 Type II Certified</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-lock text-emerald-500"></i>
+            <span>GDPR Compliant</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-server text-emerald-500"></i>
+            <span>99.9% Uptime SLA</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-headset text-emerald-500"></i>
+            <span>Support 24/7</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section id="harga" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <span
+            class="inline-block text-brand-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >Harga</span
+          >
+          <h2
+            class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-4"
+          >
+            Harga Simpel, Tanpa Kejutan
+          </h2>
+          <p class="text-slate-600">
+            Mulai gratis. Upgrade kapan saja. Batal kapan saja.
+          </p>
+        </div>
+
+        <!-- Billing Toggle -->
+        <div
+          class="flex items-center justify-center gap-4 mb-12"
+          data-aos="fade-up"
+        >
+          <span id="labelMonthly" class="text-sm font-semibold text-slate-900"
+            >Bulanan</span
+          >
+          <button
+            id="billingToggle"
+            class="relative w-14 h-8 rounded-full bg-slate-200 toggle-track"
+          >
+            <div
+              class="toggle-dot absolute top-1 left-1 w-6 h-6 rounded-full bg-white shadow-md"
+            ></div>
+          </button>
+          <span id="labelYearly" class="text-sm font-semibold text-slate-500"
+            >Tahunan</span
+          >
+          <span
+            class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-700 text-[10px] font-bold uppercase tracking-wider"
+            >Hemat 20%</span
+          >
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <!-- Starter -->
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white"
+            data-aos="fade-up"
+          >
+            <h3 class="font-bold text-slate-900 text-lg mb-1">Starter</h3>
+            <p class="text-sm text-slate-500 mb-6">
+              Untuk tim kecil yang baru mulai
+            </p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-slate-900 price-monthly"
+                >Rp 0</span
+              >
+              <span
+                class="text-4xl font-bold text-slate-900 price-yearly hidden"
+                >Rp 0</span
+              >
+              <span class="text-sm text-slate-500">/bulan</span>
+            </div>
+            <ul class="space-y-3 mb-8 text-sm text-slate-600">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> Hingga 5
+                anggota
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> Unlimited
+                task
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> 3 project
+                aktif
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> Storage 1GB
+              </li>
+              <li class="flex items-center gap-2 text-slate-300">
+                <i class="fa-solid fa-xmark"></i> Report analytics
+              </li>
+              <li class="flex items-center gap-2 text-slate-300">
+                <i class="fa-solid fa-xmark"></i> Priority support
+              </li>
+            </ul>
+            <a
+              href="#trial"
+              class="block text-center py-3 rounded-lg border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-brand-600 hover:text-brand-600 transition"
+            >
+              Mulai Gratis
+            </a>
+          </div>
+
+          <!-- Pro - Popular -->
+          <div
+            class="p-8 rounded-2xl bg-gradient-to-br from-brand-700 to-violet-700 text-white relative shadow-2xl shadow-brand-700/30 transform lg:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white text-brand-700 text-[10px] font-bold uppercase tracking-wider"
+            >
+              Paling Populer
+            </div>
+            <h3 class="font-bold text-lg mb-1">Professional</h3>
+            <p class="text-sm text-white/70 mb-6">
+              Untuk tim yang sedang berkembang
+            </p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold price-monthly">Rp 99rb</span>
+              <span class="text-4xl font-bold price-yearly hidden"
+                >Rp 79rb</span
+              >
+              <span class="text-sm text-white/70">/user/bulan</span>
+            </div>
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check"></i> Anggota tak terbatas
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check"></i> Unlimited project
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check"></i> Full analytics & reports
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check"></i> Storage 100GB
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check"></i> Integrasi (Slack, GitHub, dll)
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check"></i> Priority support
+              </li>
+            </ul>
+            <a
+              href="#trial"
+              class="block text-center py-3 rounded-lg bg-white text-brand-700 font-semibold text-sm hover:bg-slate-100 transition"
+            >
+              Mulai Trial 14 Hari
+            </a>
+          </div>
+
+          <!-- Enterprise -->
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3 class="font-bold text-slate-900 text-lg mb-1">Enterprise</h3>
+            <p class="text-sm text-slate-500 mb-6">
+              Untuk organisasi besar & enterprise
+            </p>
+            <div class="mb-6">
+              <span class="text-4xl font-bold text-slate-900">Custom</span>
+            </div>
+            <ul class="space-y-3 mb-8 text-sm text-slate-600">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> Semua fitur
+                Professional
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> SSO / SAML
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> Audit log &
+                compliance
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> Custom
+                contract
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> Dedicated
+                account manager
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-check text-emerald-500"></i> SLA 99.99%
+              </li>
+            </ul>
+            <a
+              href="#"
+              class="block text-center py-3 rounded-lg border-2 border-slate-200 text-slate-700 font-semibold text-sm hover:border-slate-900 transition"
+            >
+              Hubungi Sales
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center text-xs text-slate-500 mt-8" data-aos="fade-up">
+          <i class="fa-solid fa-shield-halved text-emerald-500 mr-1"></i>
+          Semua paket termasuk 14 hari free trial. Tidak perlu kartu kredit.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" class="py-20 lg:py-28 bg-slate-50">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-14" data-aos="fade-up">
+          <span
+            class="inline-block text-brand-600 text-xs font-bold uppercase tracking-widest mb-3"
+            >FAQ</span
+          >
+          <h2
+            class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-4"
+          >
+            Pertanyaan yang Sering Ditanya
+          </h2>
+          <p class="text-slate-600">
+            Belum ketemu jawabannya?
+            <a href="#" class="text-brand-600 font-semibold hover:underline"
+              >Chat tim support kami →</a
+            >
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden active"
+            data-aos="fade-up"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-semibold text-slate-900 text-sm pr-4"
+                >Apakah benar-benar gratis 14 hari tanpa kartu kredit?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ya, 100% gratis. Anda bisa coba semua fitur Professional selama
+                14 hari tanpa perlu input data kartu kredit. Setelah trial
+                berakhir, akun otomatis downgrade ke Starter (gratis) — tidak
+                ada tagihan mendadak.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-semibold text-slate-900 text-sm pr-4"
+                >Bagaimana cara invite anggota tim?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Cukup masukkan email anggota di menu "Team" atau bagikan link
+                undangan. Mereka akan menerima email dan bisa langsung bergabung
+                tanpa install apapun — TaskFlow berjalan penuh di browser.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-semibold text-slate-900 text-sm pr-4"
+                >Apakah data saya aman?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Kami bersertifikat SOC 2 Type II dan GDPR compliant. Semua data
+                dienkripsi AES-256 saat disimpan dan TLS 1.3 saat transit.
+                Server kami berada di Jakarta, Singapore, dan Frankfurt untuk
+                redundancy.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-semibold text-slate-900 text-sm pr-4"
+                >Bisa integrasi dengan tools lain?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ya! TaskFlow sudah terintegrasi native dengan Slack, Google
+                Calendar, GitHub, GitLab, Figma, Zoom, dan 50+ tools populer
+                lainnya. Tersedia juga REST API untuk integrasi custom.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-semibold text-slate-900 text-sm pr-4"
+                >Apakah ada diskon untuk startup atau nonprofit?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-slate-400 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Tentu! Kami menyediakan diskon 50% untuk startup tahap awal (< 2
+                tahun, < 10 orang) dan gratis selamanya untuk organisasi
+                nonprofit terdaftar. Hubungi sales kami untuk detailnya.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA (Lead Capture Form) ===================== -->
+    <section id="trial" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <div
+          class="rounded-3xl bg-gradient-to-br from-slate-900 via-brand-900 to-violet-900 p-8 lg:p-14 relative overflow-hidden"
+          data-aos="fade-up"
+        >
+          <div class="absolute inset-0 grid-pattern opacity-10"></div>
+          <div
+            class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-brand-500/20 blur-3xl"
+          ></div>
+          <div
+            class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-violet-500/20 blur-3xl"
+          ></div>
+
+          <div class="relative grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left -->
+            <div>
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur text-white text-xs font-semibold mb-5"
+              >
+                <i class="fa-solid fa-gift text-amber-400"></i>
+                Free Trial 14 Hari
+              </div>
+              <h2
+                class="text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight mb-5"
+              >
+                Siap Bikin Tim Anda<br />
+                <span
+                  class="bg-gradient-to-r from-brand-300 to-violet-300 bg-clip-text text-transparent"
+                  >Lebih Produktif?</span
+                >
+              </h2>
+              <p class="text-slate-300 mb-8 leading-relaxed">
+                Bergabung dengan 5.000+ tim yang sudah beralih ke TaskFlow. Coba
+                semua fitur Professional gratis selama 14 hari.
+              </p>
+
+              <div class="space-y-3 mb-8">
+                <div class="flex items-center gap-3 text-sm text-slate-200">
+                  <div
+                    class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  </div>
+                  <span>Akses semua fitur Premium</span>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-slate-200">
+                  <div
+                    class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  </div>
+                  <span>Anggota tim tidak terbatas</span>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-slate-200">
+                  <div
+                    class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  </div>
+                  <span>Tanpa kartu kredit</span>
+                </div>
+                <div class="flex items-center gap-3 text-sm text-slate-200">
+                  <div
+                    class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fa-solid fa-check text-emerald-400 text-xs"></i>
+                  </div>
+                  <span>Setup dalam 2 menit</span>
+                </div>
+              </div>
+
+              <!-- Avatar trust -->
+              <div
+                class="flex items-center gap-4 pt-6 border-t border-white/10"
+              >
+                <div class="flex -space-x-2">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                    class="w-9 h-9 rounded-full border-2 border-slate-900 object-cover"
+                    alt=""
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                    class="w-9 h-9 rounded-full border-2 border-slate-900 object-cover"
+                    alt=""
+                  />
+                  <img
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                    class="w-9 h-9 rounded-full border-2 border-slate-900 object-cover"
+                    alt=""
+                  />
+                  <div
+                    class="w-9 h-9 rounded-full border-2 border-slate-900 bg-white/10 backdrop-blur flex items-center justify-center text-white text-[10px] font-bold"
+                  >
+                    +5K
+                  </div>
+                </div>
+                <div>
+                  <div class="flex text-amber-400 text-xs">
+                    <i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i
+                    ><i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-0.5">
+                    4.9/5 dari 2.000+ review
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right - Form -->
+            <div
+              class="bg-white rounded-2xl p-7 lg:p-8 shadow-2xl"
+              data-aos="fade-left"
+              data-aos-delay="100"
+            >
+              <h3 class="font-bold text-slate-900 text-lg mb-1">
+                Mulai Free Trial
+              </h3>
+              <p class="text-xs text-slate-500 mb-6">
+                Tidak perlu kartu kredit
+              </p>
+
+              <form class="space-y-4">
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-700 mb-1.5"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-700 mb-1.5"
+                    >Email Kerja</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="john@perusahaan.com"
+                    class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-700 mb-1.5"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="Min. 8 karakter"
+                    class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-700 mb-1.5"
+                    >Ukuran Tim</label
+                  >
+                  <select
+                    class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm text-slate-700"
+                  >
+                    <option>Hanya saya</option>
+                    <option>2 - 5 orang</option>
+                    <option>6 - 20 orang</option>
+                    <option>21 - 50 orang</option>
+                    <option>50+ orang</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full py-3.5 rounded-lg bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 transition shadow-lg shadow-brand-600/25 flex items-center justify-center gap-2"
+                >
+                  Buat Akun Gratis
+                  <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+
+                <p
+                  class="text-[10px] text-slate-500 text-center leading-relaxed"
+                >
+                  Dengan mendaftar, Anda menyetujui
+                  <a
+                    href="#"
+                    class="text-brand-600 font-semibold hover:underline"
+                    >Syarat Layanan</a
+                  >
+                  dan
+                  <a
+                    href="#"
+                    class="text-brand-600 font-semibold hover:underline"
+                    >Kebijakan Privasi</a
+                  >
+                  kami.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER (Minimal) ===================== -->
+    <footer class="border-t border-slate-100 bg-white">
+      <div class="max-w-6xl mx-auto px-6 py-12">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8"
+        >
+          <div class="flex items-center gap-2.5">
+            <div
+              class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center"
+            >
+              <i class="fa-solid fa-bolt text-white text-sm"></i>
+            </div>
+            <span class="text-lg font-bold text-slate-900 tracking-tight"
+              >TaskFlow</span
+            >
+          </div>
+
+          <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-600">
+            <a href="#" class="hover:text-brand-600 transition">Fitur</a>
+            <a href="#" class="hover:text-brand-600 transition">Harga</a>
+            <a href="#" class="hover:text-brand-600 transition">Blog</a>
+            <a href="#" class="hover:text-brand-600 transition">Karier</a>
+            <a href="#" class="hover:text-brand-600 transition">Kontak</a>
+          </div>
+
+          <div class="flex gap-2">
+            <a
+              href="#"
+              class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand-600 hover:text-white transition text-sm"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a
+              href="#"
+              class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand-600 hover:text-white transition text-sm"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="#"
+              class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-brand-600 hover:text-white transition text-sm"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500"
+        >
+          <p>© 2025 TaskFlow, Inc. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-brand-600 transition">Privacy</a>
+            <a href="#" class="hover:text-brand-600 transition">Terms</a>
+            <a href="#" class="hover:text-brand-600 transition">Security</a>
+            <a href="#" class="hover:text-brand-600 transition">Status</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Chat Widget -->
+    <button
+      class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-brand-600 text-white shadow-2xl shadow-brand-600/40 flex items-center justify-center hover:bg-brand-700 hover:scale-105 transition z-40"
+      aria-label="Chat"
+    >
+      <i class="fa-solid fa-comment-dots text-xl"></i>
+      <span
+        class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white"
+      ></span>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+
+      // Navbar scroll
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      // Counter animation
+      const counters = document.querySelectorAll("[data-counter]");
+      const animateCounter = (el) => {
+        const target = +el.getAttribute("data-counter");
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        const update = () => {
+          current += step;
+          if (current < target) {
+            el.textContent = Math.floor(current).toLocaleString("id-ID") + "+";
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = target.toLocaleString("id-ID") + "+";
+          }
+        };
+        update();
+      };
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      counters.forEach((c) => counterObserver.observe(c));
+
+      // FAQ Accordion
+      document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+
+      // Pricing toggle
+      const billingToggle = document.getElementById("billingToggle");
+      const labelMonthly = document.getElementById("labelMonthly");
+      const labelYearly = document.getElementById("labelYearly");
+      let yearly = false;
+
+      billingToggle.addEventListener("click", () => {
+        yearly = !yearly;
+        billingToggle.classList.toggle("toggle-checked", yearly);
+
+        if (yearly) {
+          labelMonthly.classList.remove("text-slate-900");
+          labelMonthly.classList.add("text-slate-500");
+          labelYearly.classList.remove("text-slate-500");
+          labelYearly.classList.add("text-slate-900");
+        } else {
+          labelMonthly.classList.remove("text-slate-500");
+          labelMonthly.classList.add("text-slate-900");
+          labelYearly.classList.remove("text-slate-900");
+          labelYearly.classList.add("text-slate-500");
+        }
+
+        document.querySelectorAll(".price-monthly").forEach((el) => {
+          el.classList.toggle("hidden", yearly);
+        });
+        document.querySelectorAll(".price-yearly").forEach((el) => {
+          el.classList.toggle("hidden", !yearly);
+        });
+      });
+    </script>
+  </body>
+</html>

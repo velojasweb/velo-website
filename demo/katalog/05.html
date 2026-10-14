@@ -1,0 +1,2356 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Corner — Custom Cake & Pastry Bandung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ["Fraunces", "Georgia", "serif"],
+              sans: ["Quicksand", "system-ui", "sans-serif"],
+            },
+            colors: {
+              blush: {
+                50: "#fef7f7",
+                100: "#fdeef0",
+                200: "#fbdfe3",
+                300: "#f6c3cb",
+                400: "#ee9aa6",
+                500: "#e07384",
+                600: "#c95268",
+                700: "#a83e52",
+                800: "#8b3545",
+                900: "#752f3d",
+              },
+              rose: {
+                50: "#fdf5f3",
+                100: "#fbeae5",
+                200: "#f7d4cc",
+                300: "#f0b5a8",
+                400: "#e58d79",
+                500: "#d66b54",
+                600: "#c25040",
+                700: "#a33f34",
+                800: "#863730",
+                900: "#6f312b",
+              },
+              butter: {
+                50: "#fffef7",
+                100: "#fffce8",
+                200: "#fff8cc",
+                300: "#ffef9d",
+                400: "#ffe066",
+                500: "#f8c93b",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #fef7f7;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #f6c3cb;
+        border-radius: 8px;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .img-fallback {
+        background: #fdeef0;
+      }
+      .dotted-bg {
+        background-image: radial-gradient(
+          circle,
+          rgba(224, 115, 132, 0.18) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 22px 22px;
+      }
+      .wavy-divider {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q 12.5 0, 25 4 T 50 4 T 75 4 T 100 4' stroke='%23e07384' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+        background-repeat: repeat-x;
+        height: 12px;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans bg-blush-50 text-blush-900 antialiased">
+    <!-- ============== TOP STRIP ============== -->
+    <div class="bg-blush-900 text-blush-100 text-xs sm:text-[13px]">
+      <div
+        class="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-center gap-2 text-center"
+      >
+        <span
+          class="w-1.5 h-1.5 rounded-full bg-butter-400 animate-pulse"
+        ></span>
+        Free delivery area Bandung · Order custom H-3 minimal
+      </div>
+    </div>
+
+    <!-- ============== NAVBAR ============== -->
+    <header
+      class="sticky top-0 z-40 bg-blush-50/90 backdrop-blur-md border-b border-blush-200/70"
+    >
+      <nav class="max-w-7xl mx-auto px-4 h-20 flex items-center gap-6">
+        <a href="#" class="flex items-center gap-3 shrink-0">
+          <div
+            class="w-11 h-11 rounded-full bg-blush-400 flex items-center justify-center"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 3c-1.5 3-4 5-4 8 0 2.2 1.8 4 4 4s4-1.8 4-4c0-3-2.5-5-4-8Zm-7 9c-.5 1.5-.5 3 .5 4.5.5.8 1.4 1.5 2.5 1.5h12c1.1 0 2-.7 2.5-1.5 1-1.5 1-3 .5-4.5H5Z"
+              />
+            </svg>
+          </div>
+          <div class="leading-tight">
+            <p class="font-serif text-2xl font-semibold tracking-tight">
+              Sweet Corner
+            </p>
+            <p
+              class="text-[10px] tracking-[0.28em] text-blush-600 uppercase font-semibold"
+            >
+              Custom Cake & Pastry
+            </p>
+          </div>
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center gap-1 ml-6 text-sm font-medium text-blush-800"
+        >
+          <li>
+            <a href="#menu" class="px-3 py-2 hover:text-blush-500 transition"
+              >Menu</a
+            >
+          </li>
+          <li>
+            <a
+              href="#kategori"
+              class="px-3 py-2 hover:text-blush-500 transition"
+              >Kategori</a
+            >
+          </li>
+          <li>
+            <a
+              href="#kalkulator"
+              class="px-3 py-2 hover:text-blush-500 transition"
+              >Kue Custom</a
+            >
+          </li>
+          <li>
+            <a href="#galeri" class="px-3 py-2 hover:text-blush-500 transition"
+              >Galeri</a
+            >
+          </li>
+          <li>
+            <a href="#cerita" class="px-3 py-2 hover:text-blush-500 transition"
+              >Cerita</a
+            >
+          </li>
+        </ul>
+
+        <div class="hidden md:flex flex-1 max-w-xs ml-auto">
+          <div class="relative w-full">
+            <svg
+              class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-blush-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path stroke-linecap="round" d="m20 20-3.5-3.5" />
+            </svg>
+            <input
+              id="search"
+              type="text"
+              placeholder="Cari kue atau pastry…"
+              class="w-full pl-10 pr-4 py-2.5 text-sm rounded-full bg-white border border-blush-200 focus:border-blush-400 outline-none transition placeholder:text-blush-400"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 ml-auto md:ml-0">
+          <button
+            onclick="openCart()"
+            aria-label="Keranjang"
+            class="relative w-11 h-11 rounded-full bg-white hover:bg-blush-100 border border-blush-200 flex items-center justify-center transition"
+          >
+            <svg
+              class="w-[18px] h-[18px] text-blush-800"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13 5.4 5M7 13l-2 5h14M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+              />
+            </svg>
+            <span
+              id="cartCount"
+              class="hidden absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-blush-500 text-white text-[10px] font-bold flex items-center justify-center"
+            ></span>
+          </button>
+          <a
+            href="#kalkulator"
+            class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blush-500 text-white text-sm font-bold hover:bg-blush-600 transition"
+          >
+            Order Custom
+          </a>
+          <button
+            id="menuBtn"
+            aria-label="Menu"
+            class="lg:hidden w-11 h-11 rounded-full bg-white border border-blush-200 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-blush-800"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden border-t border-blush-200/70 bg-blush-50"
+      >
+        <div class="px-4 py-4 space-y-1 text-sm">
+          <div class="relative mb-3">
+            <svg
+              class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-blush-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path stroke-linecap="round" d="m20 20-3.5-3.5" />
+            </svg>
+            <input
+              id="searchMobile"
+              type="text"
+              placeholder="Cari kue…"
+              class="w-full pl-10 pr-4 py-2.5 text-sm rounded-full bg-white border border-blush-200 outline-none"
+            />
+          </div>
+          <a href="#menu" class="block px-4 py-3 rounded-xl hover:bg-white"
+            >Menu</a
+          >
+          <a href="#kategori" class="block px-4 py-3 rounded-xl hover:bg-white"
+            >Kategori</a
+          >
+          <a
+            href="#kalkulator"
+            class="block px-4 py-3 rounded-xl hover:bg-white"
+            >Kue Custom</a
+          >
+          <a href="#galeri" class="block px-4 py-3 rounded-xl hover:bg-white"
+            >Galeri</a
+          >
+          <a href="#cerita" class="block px-4 py-3 rounded-xl hover:bg-white"
+            >Cerita</a
+          >
+          <a
+            href="#kalkulator"
+            class="block mt-2 text-center px-4 py-3 rounded-xl bg-blush-500 text-white font-bold"
+            >Order Custom</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- ============== HERO ============== -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 dotted-bg opacity-60"></div>
+      <div
+        class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blush-200 rounded-full blur-3xl opacity-60 pointer-events-none"
+      ></div>
+      <div
+        class="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-butter-200 rounded-full blur-3xl opacity-50 pointer-events-none"
+      ></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 pt-12 sm:pt-20 pb-16">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-6">
+            <div
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-blush-200 text-xs font-semibold text-blush-600 mb-6"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-blush-400 animate-pulse"
+              ></span>
+              Homemade since 2016 · Bandung
+            </div>
+
+            <h1
+              class="font-serif text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.02] tracking-tight text-blush-900"
+            >
+              Setiap gigitan,<br />
+              <em class="text-blush-500 italic">manis yang personal.</em>
+            </h1>
+
+            <p
+              class="mt-6 text-blush-700/80 text-base sm:text-lg leading-relaxed max-w-lg"
+            >
+              Kue custom handmade dengan bahan premium — dari ulang tahun si
+              kecil, gender reveal, sampai wedding cake. Dibuat dengan cinta,
+              disesuaikan dengan ceritamu.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#kalkulator"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-blush-500 text-white text-sm font-bold hover:bg-blush-600 transition shadow-lg shadow-blush-500/25"
+              >
+                Buat Kue Custom
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14M13 6l6 6-6 6"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#menu"
+                class="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-blush-300 text-blush-800 text-sm font-semibold hover:bg-white transition"
+              >
+                Lihat Menu
+              </a>
+            </div>
+
+            <div class="mt-10 grid grid-cols-3 gap-6 max-w-md">
+              <div>
+                <p class="font-serif text-3xl font-semibold text-blush-600">
+                  9
+                </p>
+                <p class="text-xs text-blush-700/70 mt-1">Tahun homemade</p>
+              </div>
+              <div class="border-l border-blush-200 pl-6">
+                <p class="font-serif text-3xl font-semibold text-blush-600">
+                  5.400+
+                </p>
+                <p class="text-xs text-blush-700/70 mt-1">Kue terkirim</p>
+              </div>
+              <div class="border-l border-blush-200 pl-6">
+                <p class="font-serif text-3xl font-semibold text-blush-600">
+                  4.9
+                </p>
+                <p class="text-xs text-blush-700/70 mt-1">Rating</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div
+              class="grid grid-cols-12 grid-rows-6 gap-3 sm:gap-4 h-[440px] sm:h-[560px]"
+            >
+              <div
+                class="col-span-7 row-span-4 rounded-3xl overflow-hidden img-fallback"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/cake-hero1/900/900';
+                  "
+                  alt="Birthday cake"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-5 row-span-3 rounded-3xl overflow-hidden img-fallback"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/cake-hero2/700/700';
+                  "
+                  alt="Cupcake"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-5 row-span-3 rounded-3xl overflow-hidden img-fallback"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=700&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/cake-hero3/700/700';
+                  "
+                  alt="Dessert"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                class="col-span-7 row-span-2 rounded-3xl overflow-hidden img-fallback"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1568051243851-f9b136146e97?w=900&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/cake-hero4/900/900';
+                  "
+                  alt="Bakery"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== KATEGORI ============== -->
+    <section
+      id="kategori"
+      class="py-16 sm:py-20 bg-white border-y border-blush-100"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-end justify-between gap-4 mb-10">
+          <div>
+            <p
+              class="text-xs tracking-[0.3em] text-blush-500 uppercase font-bold"
+            >
+              Kategori
+            </p>
+            <h2
+              class="mt-3 font-serif text-4xl sm:text-5xl font-semibold tracking-tight"
+            >
+              Mau cari yang mana?
+            </h2>
+          </div>
+          <p class="hidden md:block text-sm text-blush-700/70 max-w-sm">
+            Dari kue ulang tahun sampai pastry untuk sarapan — semua homemade
+            dengan bahan premium.
+          </p>
+        </div>
+
+        <div
+          id="categoryGrid"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== MENU ============== -->
+    <section id="menu" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8"
+        >
+          <div>
+            <p
+              class="text-xs tracking-[0.3em] text-blush-500 uppercase font-bold"
+            >
+              Menu
+            </p>
+            <h2
+              class="mt-3 font-serif text-4xl sm:text-5xl font-semibold tracking-tight"
+            >
+              Pilihan favorit pelanggan
+            </h2>
+            <p class="mt-3 text-sm text-blush-700/70">
+              Menampilkan
+              <span id="resultCount" class="font-semibold text-blush-900"
+                >0</span
+              >
+              item
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="relative">
+              <select
+                id="sortSelect"
+                class="appearance-none pl-4 pr-9 py-2.5 text-sm rounded-full bg-white border border-blush-200 outline-none focus:border-blush-400 cursor-pointer"
+              >
+                <option value="populer">Paling Populer</option>
+                <option value="termurah">Harga Terendah</option>
+                <option value="termahal">Harga Tertinggi</option>
+                <option value="baru">Terbaru</option>
+              </select>
+              <svg
+                class="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-blush-400"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m6 9 6 6 6-6"
+                />
+              </svg>
+            </div>
+            <button
+              id="resetBtn"
+              class="px-4 py-2.5 text-sm rounded-full border border-blush-200 bg-white hover:border-blush-400 transition"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="categoryPills"
+          class="flex gap-2 overflow-x-auto no-scrollbar pb-2 mb-8"
+        ></div>
+
+        <div
+          id="productGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5"
+        ></div>
+
+        <div id="emptyState" class="hidden text-center py-20">
+          <p class="font-serif text-2xl font-semibold">Tidak ditemukan</p>
+          <p class="mt-2 text-sm text-blush-700/70">
+            Coba ubah kata kunci atau kategori.
+          </p>
+          <button
+            onclick="resetFilters()"
+            class="mt-6 px-6 py-3 rounded-full bg-blush-500 text-white text-sm font-bold"
+          >
+            Reset filter
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== KALKULATOR KUE CUSTOM ============== -->
+    <section
+      id="kalkulator"
+      class="py-20 sm:py-28 bg-white border-y border-blush-100"
+    >
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-blush-500 uppercase font-bold"
+          >
+            Kue Custom
+          </p>
+          <h2
+            class="mt-3 font-serif text-4xl sm:text-5xl font-semibold tracking-tight"
+          >
+            Rancang kue impianmu
+          </h2>
+          <p class="mt-4 text-blush-700/70">
+            Pilih ukuran, rasa, tema, dan topping. Harga muncul otomatis — kirim
+            ke WhatsApp untuk konfirmasi.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-6 lg:gap-8">
+          <!-- Builder -->
+          <div
+            class="lg:col-span-3 p-6 sm:p-8 rounded-3xl border border-blush-200 bg-blush-50/50"
+          >
+            <!-- Step 1: Ukuran -->
+            <div>
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-white text-xs font-bold flex items-center justify-center"
+                  >1</span
+                >
+                <p
+                  class="text-xs tracking-widest text-blush-700 uppercase font-bold"
+                >
+                  Ukuran Kue
+                </p>
+              </div>
+              <div
+                class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2"
+                id="sizeOptions"
+              ></div>
+            </div>
+
+            <!-- Step 2: Rasa -->
+            <div class="mt-8 pt-8 border-t border-blush-200">
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-white text-xs font-bold flex items-center justify-center"
+                  >2</span
+                >
+                <p
+                  class="text-xs tracking-widest text-blush-700 uppercase font-bold"
+                >
+                  Rasa
+                </p>
+              </div>
+              <div
+                class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2"
+                id="flavorOptions"
+              ></div>
+            </div>
+
+            <!-- Step 3: Tema / Desain -->
+            <div class="mt-8 pt-8 border-t border-blush-200">
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-white text-xs font-bold flex items-center justify-center"
+                  >3</span
+                >
+                <p
+                  class="text-xs tracking-widest text-blush-700 uppercase font-bold"
+                >
+                  Tema / Desain
+                </p>
+              </div>
+              <div
+                class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2"
+                id="themeOptions"
+              ></div>
+            </div>
+
+            <!-- Step 4: Add-ons -->
+            <div class="mt-8 pt-8 border-t border-blush-200">
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-white text-xs font-bold flex items-center justify-center"
+                  >4</span
+                >
+                <p
+                  class="text-xs tracking-widest text-blush-700 uppercase font-bold"
+                >
+                  Ekstra (opsional)
+                </p>
+              </div>
+              <div class="mt-4 space-y-2" id="addonsList"></div>
+            </div>
+
+            <!-- Step 5: Info Kontak -->
+            <div class="mt-8 pt-8 border-t border-blush-200">
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-7 h-7 rounded-full bg-blush-400 text-white text-xs font-bold flex items-center justify-center"
+                  >5</span
+                >
+                <p
+                  class="text-xs tracking-widest text-blush-700 uppercase font-bold"
+                >
+                  Info Kontak
+                </p>
+              </div>
+              <div class="mt-4 grid sm:grid-cols-2 gap-3">
+                <input
+                  name="nama"
+                  placeholder="Nama kamu *"
+                  class="px-4 py-3 rounded-xl border border-blush-200 bg-white focus:border-blush-400 outline-none text-sm"
+                />
+                <input
+                  name="wa"
+                  placeholder="No. WhatsApp *"
+                  class="px-4 py-3 rounded-xl border border-blush-200 bg-white focus:border-blush-400 outline-none text-sm"
+                />
+                <input
+                  name="tanggal"
+                  type="date"
+                  class="px-4 py-3 rounded-xl border border-blush-200 bg-white focus:border-blush-400 outline-none text-sm"
+                />
+                <input
+                  name="tulisan"
+                  placeholder="Tulisan di kue (opsional)"
+                  class="px-4 py-3 rounded-xl border border-blush-200 bg-white focus:border-blush-400 outline-none text-sm"
+                />
+              </div>
+              <textarea
+                name="catatan"
+                rows="2"
+                placeholder="Catatan tambahan (referensi, warna favorit, alergi, dll)"
+                class="mt-3 w-full px-4 py-3 rounded-xl border border-blush-200 bg-white focus:border-blush-400 outline-none text-sm resize-none"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="lg:col-span-2">
+            <div
+              class="sticky top-24 p-6 sm:p-8 rounded-3xl bg-blush-900 text-blush-100"
+            >
+              <p
+                class="text-xs tracking-widest text-butter-300 uppercase font-bold"
+              >
+                Estimasi Harga
+              </p>
+              <div class="mt-4 flex items-baseline gap-1.5">
+                <span class="text-sm text-blush-200/60">Rp</span>
+                <span
+                  id="calcPrice"
+                  class="text-4xl sm:text-5xl font-serif font-semibold tracking-tight"
+                  >0</span
+                >
+              </div>
+              <p class="text-xs text-blush-200/60 mt-2">
+                *estimasi belum termasuk pajak
+              </p>
+
+              <div
+                id="cakePreview"
+                class="mt-6 rounded-2xl overflow-hidden aspect-[4/3] img-fallback bg-blush-800"
+              >
+                <img
+                  id="cakePreviewImg"
+                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80"
+                  onerror="
+                    this.onerror = null;
+                    this.src =
+                      'https://picsum.photos/seed/cake-preview/600/450';
+                  "
+                  class="w-full h-full object-cover"
+                  alt="Preview kue"
+                />
+              </div>
+
+              <div
+                class="mt-6 pt-6 border-t border-blush-100/15 space-y-2.5 text-sm"
+              >
+                <div class="flex justify-between">
+                  <span class="text-blush-200/60">Ukuran</span
+                  ><span id="sumSize" class="font-semibold">20 cm</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-blush-200/60">Rasa</span
+                  ><span id="sumFlavor" class="font-semibold">-</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-blush-200/60">Tema</span
+                  ><span id="sumTheme" class="font-semibold">-</span>
+                </div>
+                <div
+                  id="sumAddonsBox"
+                  class="pt-3 border-t border-blush-100/15 space-y-2"
+                ></div>
+              </div>
+
+              <button
+                onclick="submitCake()"
+                class="mt-7 w-full py-4 rounded-full bg-butter-400 hover:bg-butter-300 text-blush-900 text-sm font-bold transition"
+              >
+                Order via WhatsApp
+              </button>
+              <p
+                class="mt-3 text-[11px] text-blush-200/50 text-center leading-relaxed"
+              >
+                Kami akan konfirmasi ketersediaan & harga final dalam 1 jam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== GALERI ============== -->
+    <section id="galeri" class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p
+            class="text-xs tracking-[0.3em] text-blush-500 uppercase font-bold"
+          >
+            Galeri
+          </p>
+          <h2
+            class="mt-3 font-serif text-4xl sm:text-5xl font-semibold tracking-tight"
+          >
+            Kue-kue yang sudah kami buat
+          </h2>
+          <div class="mt-4 mx-auto w-32 wavy-divider"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div
+            class="col-span-2 row-span-2 rounded-3xl overflow-hidden aspect-square img-fallback"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=1000&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-cake1/1000/1000';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-cake2/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-cake3/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1587248720327-8eb72564be1e?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-cake4/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="rounded-3xl overflow-hidden aspect-square img-fallback">
+            <img
+              src="https://images.unsplash.com/photo-1519869325930-281384150729?w=600&q=80"
+              onerror="
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/gal-cake5/600/600';
+              "
+              alt=""
+              class="w-full h-full object-cover hover:scale-105 transition duration-700"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== CERITA ============== -->
+    <section id="cerita" class="py-20 sm:py-28 bg-blush-900 text-blush-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div
+            class="grid grid-cols-12 grid-rows-6 gap-3 sm:gap-4 h-[440px] sm:h-[560px]"
+          >
+            <div
+              class="col-span-8 row-span-4 rounded-3xl overflow-hidden img-fallback bg-blush-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=900&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/baker1/900/900';
+                "
+                alt="Baker at work"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="col-span-4 row-span-3 rounded-3xl overflow-hidden img-fallback bg-blush-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=600&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/baker2/600/600';
+                "
+                alt="Ingredients"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="col-span-4 row-span-3 rounded-3xl overflow-hidden img-fallback bg-blush-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/baker3/600/600';
+                "
+                alt="Pastry"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="col-span-8 row-span-2 rounded-3xl overflow-hidden img-fallback bg-blush-800"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=900&q=80"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'https://picsum.photos/seed/baker4/900/900';
+                "
+                alt="Cake details"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div>
+            <p
+              class="text-xs tracking-[0.3em] text-butter-300 uppercase font-bold"
+            >
+              Cerita Kami
+            </p>
+            <h2
+              class="mt-4 font-serif text-4xl sm:text-5xl font-semibold leading-tight"
+            >
+              Dari dapur rumah,<br />untuk momen bahagiamu.
+            </h2>
+            <div class="mt-6 w-32 wavy-divider opacity-70"></div>
+
+            <div class="mt-8 space-y-5 text-blush-100/85 leading-relaxed">
+              <p>
+                Sweet Corner dimulai tahun 2016 di dapur rumah Ibu Ani — awalnya
+                cuma bikin kue untuk ulang tahun keponakan. Ternyata rasanya
+                bikin orang jatuh cinta dan mulai banyak yang pesan.
+              </p>
+              <p>
+                Sembilan tahun kemudian, kami masih di dapur yang sama, dengan
+                resep yang sama, dan komitmen yang sama:
+                <em class="text-butter-300"
+                  >bahan premium, tanpa bahan pengawet, dibuat dengan sabar</em
+                >.
+              </p>
+            </div>
+
+            <div
+              class="mt-10 pt-8 border-t border-blush-100/15 grid grid-cols-3 gap-6"
+            >
+              <div>
+                <p class="font-serif text-3xl font-semibold text-butter-300">
+                  100%
+                </p>
+                <p class="text-xs text-blush-200/70 mt-1">Butter asli</p>
+              </div>
+              <div>
+                <p class="font-serif text-3xl font-semibold text-butter-300">
+                  0%
+                </p>
+                <p class="text-xs text-blush-200/70 mt-1">Pengawet</p>
+              </div>
+              <div>
+                <p class="font-serif text-3xl font-semibold text-butter-300">
+                  H-1
+                </p>
+                <p class="text-xs text-blush-200/70 mt-1">Fresh made</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TESTIMONI ============== -->
+    <section class="py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-blush-500 uppercase font-bold"
+          >
+            Testimoni
+          </p>
+          <h2
+            class="mt-3 font-serif text-4xl sm:text-5xl font-semibold tracking-tight"
+          >
+            Kata pelanggan setia
+          </h2>
+          <div class="mt-4 mx-auto w-32 wavy-divider"></div>
+        </div>
+        <div
+          id="testimonialGrid"
+          class="grid grid-cols-1 md:grid-cols-3 gap-5"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ============== FAQ ============== -->
+    <section class="py-20 sm:py-28 bg-white border-y border-blush-100">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-14">
+          <p
+            class="text-xs tracking-[0.3em] text-blush-500 uppercase font-bold"
+          >
+            FAQ
+          </p>
+          <h2
+            class="mt-3 font-serif text-4xl sm:text-5xl font-semibold tracking-tight"
+          >
+            Pertanyaan umum
+          </h2>
+        </div>
+        <div id="faqList" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- ============== LOKASI + MAP ============== -->
+    <section id="lokasi" class="py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p
+            class="text-xs tracking-[0.3em] text-blush-500 uppercase font-bold"
+          >
+            Kunjungi
+          </p>
+          <h2
+            class="mt-3 font-serif text-4xl sm:text-5xl font-semibold tracking-tight"
+          >
+            Mampir ke toko kami
+          </h2>
+          <div class="mt-4 mx-auto w-32 wavy-divider"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-stretch">
+          <div
+            class="lg:col-span-3 rounded-3xl overflow-hidden border border-blush-200 min-h-[380px] lg:min-h-[520px] relative bg-blush-100"
+          >
+            <iframe
+              src="https://www.google.com/maps?q=Dago+Bandung&output=embed"
+              class="absolute inset-0 w-full h-full"
+              style="border: 0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Peta lokasi Sweet Corner"
+            >
+            </iframe>
+          </div>
+
+          <div class="lg:col-span-2 flex flex-col justify-center">
+            <p class="text-blush-700/80 leading-relaxed">
+              Toko kami buka setiap hari untuk kamu yang mau beli langsung atau
+              lihat display cake. Untuk kue custom, wajib pre-order H-3.
+            </p>
+
+            <div class="mt-6 space-y-5">
+              <div class="pb-5 border-b border-blush-200">
+                <p
+                  class="text-xs tracking-widest text-blush-500 uppercase mb-1"
+                >
+                  Alamat Toko
+                </p>
+                <p class="font-semibold">
+                  Jl. Ir. H. Juanda No. 108, Dago<br />Bandung 40132
+                </p>
+              </div>
+              <div class="pb-5 border-b border-blush-200">
+                <p
+                  class="text-xs tracking-widest text-blush-500 uppercase mb-1"
+                >
+                  Jam Buka
+                </p>
+                <p class="font-semibold">Senin – Minggu, 08.00 – 20.00 WIB</p>
+              </div>
+              <div>
+                <p
+                  class="text-xs tracking-widest text-blush-500 uppercase mb-1"
+                >
+                  Kontak
+                </p>
+                <p class="font-semibold">
+                  +62 812 3456 7890 · hello@sweetcorner.id
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Sweet%20Corner%2C%20saya%20ingin%20order%20kue"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1ebe5b] transition"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+                  />
+                </svg>
+                Chat WhatsApp
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Dago+Bandung"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full border border-blush-300 text-blush-800 text-sm font-semibold hover:border-blush-500 hover:text-blush-600 transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 22s7-7 7-13a7 7 0 1 0-14 0c0 6 7 13 7 13Z"
+                  />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+                Petunjuk Arah
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FOOTER ============== -->
+    <footer class="bg-blush-900 text-blush-100">
+      <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-11 h-11 rounded-full bg-blush-400 flex items-center justify-center"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 3c-1.5 3-4 5-4 8 0 2.2 1.8 4 4 4s4-1.8 4-4c0-3-2.5-5-4-8Zm-7 9c-.5 1.5-.5 3 .5 4.5.5.8 1.4 1.5 2.5 1.5h12c1.1 0 2-.7 2.5-1.5 1-1.5 1-3 .5-4.5H5Z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="font-serif text-2xl font-semibold">Sweet Corner</p>
+                <p
+                  class="text-[10px] tracking-[0.28em] text-butter-300 uppercase"
+                >
+                  Custom Cake & Pastry
+                </p>
+              </div>
+            </div>
+            <p class="mt-5 text-sm text-blush-200/70 max-w-sm leading-relaxed">
+              Kue dan pastry homemade dengan bahan premium. Melayani custom cake
+              untuk ulang tahun, gender reveal, wedding, dan corporate event.
+            </p>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs tracking-[0.25em] text-butter-300 uppercase font-bold"
+            >
+              Menu
+            </h4>
+            <ul class="mt-5 space-y-3 text-sm text-blush-200/80">
+              <li>
+                <a href="#menu" class="hover:text-butter-300 transition"
+                  >Katalog Kue</a
+                >
+              </li>
+              <li>
+                <a href="#kalkulator" class="hover:text-butter-300 transition"
+                  >Kue Custom</a
+                >
+              </li>
+              <li>
+                <a href="#galeri" class="hover:text-butter-300 transition"
+                  >Galeri</a
+                >
+              </li>
+              <li>
+                <a href="#cerita" class="hover:text-butter-300 transition"
+                  >Cerita Kami</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs tracking-[0.25em] text-butter-300 uppercase font-bold"
+            >
+              Hubungi
+            </h4>
+            <ul class="mt-5 space-y-3 text-sm text-blush-200/80">
+              <li>
+                <a
+                  href="https://wa.me/6281234567890"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-butter-300 transition"
+                  >WhatsApp</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-butter-300 transition"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tiktok.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="hover:text-butter-300 transition"
+                  >TikTok</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@sweetcorner.id"
+                  class="hover:text-butter-300 transition"
+                  >hello@sweetcorner.id</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 pt-6 border-t border-blush-100/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-xs text-blush-200/50">
+            © 2026 Sweet Corner. Semua hak dilindungi.
+          </p>
+          <p class="text-xs text-blush-200/50 italic font-serif text-base">
+            Life is short. Eat the cake.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============== FLOATING WHATSAPP ============== -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20Sweet%20Corner%2C%20saya%20ingin%20order%20kue"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat WhatsApp"
+      class="fixed bottom-6 right-6 z-40 group"
+    >
+      <span
+        class="absolute right-0 bottom-0 w-14 h-14 rounded-full bg-[#25D366] opacity-50 animate-ping"
+      ></span>
+      <span
+        class="relative flex items-center gap-2.5 pl-3.5 pr-4 py-3 rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 hover:bg-[#1ebe5b] transition"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"
+          />
+        </svg>
+        <span class="text-sm font-semibold hidden sm:inline">Chat</span>
+      </span>
+    </a>
+
+    <!-- ============== CART DRAWER ============== -->
+    <div id="cartDrawer" class="hidden fixed inset-0 z-50">
+      <div
+        class="absolute inset-0 bg-blush-900/60 backdrop-blur-sm"
+        onclick="closeCart()"
+      ></div>
+      <div
+        class="absolute right-0 top-0 h-full w-full max-w-md bg-blush-50 border-l border-blush-200 flex flex-col"
+      >
+        <div
+          class="flex items-center justify-between px-6 py-5 border-b border-blush-200"
+        >
+          <h3 class="font-serif text-2xl font-semibold">Pesanan Kamu</h3>
+          <button
+            onclick="closeCart()"
+            class="w-10 h-10 rounded-full hover:bg-blush-100 flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-blush-700"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+        <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
+        <div
+          id="cartFooter"
+          class="border-t border-blush-200 p-6 space-y-3"
+        ></div>
+      </div>
+    </div>
+
+    <!-- ============== QUICK VIEW ============== -->
+    <div id="quickView" class="hidden fixed inset-0 z-50">
+      <div
+        class="absolute inset-0 bg-blush-900/60 backdrop-blur-sm"
+        onclick="closeQuickView()"
+      ></div>
+      <div class="relative h-full w-full flex items-center justify-center p-4">
+        <div
+          class="w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-blush-50 border border-blush-200 shadow-2xl"
+        >
+          <div id="quickViewContent"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== TOAST ============== -->
+    <div
+      id="toast"
+      class="hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-[60] px-6 py-3 rounded-full bg-blush-900 text-white text-sm font-medium shadow-xl"
+    ></div>
+
+    <script>
+      /* =========================================================
+   DATA
+   ========================================================= */
+      const categories = [
+        {
+          name: "Birthday Cake",
+          desc: "Ulang tahun & anniversary",
+          count: "12 varian",
+          image:
+            "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80",
+          fb: "cat-bday",
+        },
+        {
+          name: "Cupcake",
+          desc: "Satuan & box",
+          count: "8 varian",
+          image:
+            "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=600&q=80",
+          fb: "cat-cupcake",
+        },
+        {
+          name: "Cheesecake",
+          desc: "Slice & whole cake",
+          count: "5 varian",
+          image:
+            "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+          fb: "cat-cheese",
+        },
+        {
+          name: "Pastry",
+          desc: "Croissant, danish, dll",
+          count: "10 varian",
+          image:
+            "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80",
+          fb: "cat-pastry",
+        },
+        {
+          name: "Cookies",
+          desc: "Satuan & toples",
+          count: "6 varian",
+          image:
+            "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80",
+          fb: "cat-cookies",
+        },
+        {
+          name: "Wedding Cake",
+          desc: "2-5 tier",
+          count: "Custom",
+          image:
+            "https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&q=80",
+          fb: "cat-wedding",
+        },
+      ];
+
+      const products = [
+        {
+          id: 1,
+          name: "Birthday Cake Klasik",
+          category: "Birthday Cake",
+          price: 250000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 632,
+          badge: "Best Seller",
+          flavor: "Vanilla & Buttercream",
+          size: "20 cm",
+          desc: "Kue ulang tahun klasik dengan buttercream lembut. Bisa request tulisan & warna tema.",
+          image:
+            "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80",
+          fb: "p-bday",
+        },
+        {
+          id: 2,
+          name: "Chocolate Fudge Cake",
+          category: "Birthday Cake",
+          price: 280000,
+          oldPrice: 0,
+          rating: 4.8,
+          reviews: 412,
+          badge: "",
+          flavor: "Dark Chocolate",
+          size: "20 cm",
+          desc: "Cake cokelat pekat dengan fudge ganache. Favorit pencinta cokelat.",
+          image:
+            "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80",
+          fb: "p-choco",
+        },
+        {
+          id: 3,
+          name: "Rainbow Cake",
+          category: "Birthday Cake",
+          price: 320000,
+          oldPrice: 380000,
+          rating: 4.9,
+          reviews: 289,
+          badge: "Promo",
+          flavor: "Vanilla 6 lapis",
+          size: "20 cm",
+          desc: "Kue rainbow dengan 6 lapis warna cerah. Instagrammable & disukai anak-anak.",
+          image:
+            "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80",
+          fb: "p-rainbow",
+        },
+        {
+          id: 4,
+          name: "Cupcake Box isi 6",
+          category: "Cupcake",
+          price: 85000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 876,
+          badge: "Best Seller",
+          flavor: "Mix flavor",
+          size: "6 pcs",
+          desc: "Box isi 6 cupcake dengan frosting buttercream. Tersedia mix rasa atau pilih 1 rasa.",
+          image:
+            "https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=600&q=80",
+          fb: "p-cup1",
+        },
+        {
+          id: 5,
+          name: "Cupcake Box isi 12",
+          category: "Cupcake",
+          price: 160000,
+          oldPrice: 0,
+          rating: 4.8,
+          reviews: 412,
+          badge: "",
+          flavor: "Mix flavor",
+          size: "12 pcs",
+          desc: "Box isi 12 cupcake — cocok untuk hampers, kantor, atau acara kecil.",
+          image:
+            "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&q=80",
+          fb: "p-cup2",
+        },
+        {
+          id: 6,
+          name: "Basque Cheesecake",
+          category: "Cheesecake",
+          price: 280000,
+          oldPrice: 0,
+          rating: 5.0,
+          reviews: 567,
+          badge: "Best Seller",
+          flavor: "Original",
+          size: "18 cm",
+          desc: "Cheesecake gaya Basque dengan permukaan karamelisasi. Creamy di dalam, smoky di luar.",
+          image:
+            "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+          fb: "p-basque",
+        },
+        {
+          id: 7,
+          name: "Blueberry Cheesecake",
+          category: "Cheesecake",
+          price: 310000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 289,
+          badge: "Baru",
+          flavor: "Blueberry",
+          size: "18 cm",
+          desc: "Cheesecake lembut dengan topping blueberry compote homemade.",
+          image:
+            "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600&q=80",
+          fb: "p-blueberry",
+        },
+        {
+          id: 8,
+          name: "Butter Croissant",
+          category: "Pastry",
+          price: 22000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 512,
+          badge: "",
+          flavor: "Butter",
+          size: "1 pcs",
+          desc: "Croissant butter Prancis dipanggang fresh setiap pagi. Renyah di luar, lembut di dalam.",
+          image:
+            "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80",
+          fb: "p-crois",
+        },
+        {
+          id: 9,
+          name: "Chocolate Danish",
+          category: "Pastry",
+          price: 26000,
+          oldPrice: 0,
+          rating: 4.7,
+          reviews: 212,
+          badge: "",
+          flavor: "Chocolate",
+          size: "1 pcs",
+          desc: "Pastry Denmark dengan filling cokelat Belgia dan topping almond slice.",
+          image:
+            "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",
+          fb: "p-danish",
+        },
+        {
+          id: 10,
+          name: "Cookies Toples 500g",
+          category: "Cookies",
+          price: 95000,
+          oldPrice: 120000,
+          rating: 4.8,
+          reviews: 389,
+          badge: "Promo",
+          flavor: "Choco chips",
+          size: "500g",
+          desc: "Cookies choco chips dalam toples kaca. Sempurna untuk hampers atau snack tamu.",
+          image:
+            "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80",
+          fb: "p-cookie1",
+        },
+        {
+          id: 11,
+          name: "Nastar Premium",
+          category: "Cookies",
+          price: 135000,
+          oldPrice: 0,
+          rating: 4.9,
+          reviews: 476,
+          badge: "Best Seller",
+          flavor: "Nanas",
+          size: "500g",
+          desc: "Nastar nanas asli dengan butter Wijsman. Renyah dan lumer di mulut.",
+          image:
+            "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80",
+          fb: "p-nastar",
+        },
+        {
+          id: 12,
+          name: "Wedding Cake 3 Tier",
+          category: "Wedding Cake",
+          price: 2500000,
+          oldPrice: 0,
+          rating: 5.0,
+          reviews: 98,
+          badge: "Signature",
+          flavor: "Custom",
+          size: "3 tier",
+          desc: "Wedding cake 3 tier custom dengan tema & warna sesuai request. Free konsultasi desain.",
+          image:
+            "https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&q=80",
+          fb: "p-wedding",
+        },
+      ];
+
+      const testimonials = [
+        {
+          name: "Dinda Ayu",
+          role: "Ibu dua anak",
+          text: "Kue ulang tahun anak saya pesan di Sweet Corner dan rasanya juara! Anak-anak suka banget, dan desainnya persis seperti yang saya request.",
+          avatar:
+            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80",
+          fb: "t1",
+        },
+        {
+          name: "Rendra Wibowo",
+          role: "Corporate Event Planner",
+          text: "Sudah 2 tahun langganan untuk corporate events. Tim Sweet Corner selalu on-time dan kualitasnya konsisten. Recommended banget!",
+          avatar:
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80",
+          fb: "t2",
+        },
+        {
+          name: "Amira Salsabila",
+          role: "Bride",
+          text: "Wedding cake kami dari Sweet Corner dan jadi salah satu highlight di resepsi. Tamu banyak yang tanya vendor. Terima kasih banyak!",
+          avatar:
+            "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&q=80",
+          fb: "t3",
+        },
+      ];
+
+      const faqs = [
+        {
+          q: "Berapa lama sebelumnya minimal order kue custom?",
+          a: "Untuk kue custom biasa, minimal H-3. Untuk wedding cake atau kue dengan desain kompleks, kami sarankan H-7 sampai H-14. Untuk order mendesak, silakan chat kami — tergantung slot yang tersedia.",
+        },
+        {
+          q: "Apakah bisa request rasa atau desain tertentu?",
+          a: "Tentu! Itu justru spesialisasi kami. Kamu bisa kirim referensi foto atau moodboard, ceritakan tema acara, dan kami akan rancang sesuai visimu.",
+        },
+        {
+          q: "Apakah bahan-bahannya halal & aman?",
+          a: "Semua bahan kami halal dan food-grade. Kami menggunakan butter asli, telur segar, dan tanpa pengawet. Untuk kebutuhan bebas gluten atau bebas gula, kami juga menyediakan opsi khusus.",
+        },
+        {
+          q: "Bagaimana pengiriman kue? Apakah aman?",
+          a: "Kami mengantar dengan mobil khusus ber-AC dan packaging anti-guncang. Untuk area Bandung, gratis ongkir. Luar kota bisa menggunakan ekspedisi khusus kue.",
+        },
+        {
+          q: "Apakah bisa cicil atau DP?",
+          a: "Ya. Untuk order di atas Rp 500.000, kamu bisa bayar DP 50% untuk mengunci tanggal. Pelunasan dilakukan H-1 sebelum pengiriman.",
+        },
+        {
+          q: "Kalau ada masalah dengan kue, bagaimana?",
+          a: "Kepuasan kamu prioritas kami. Kalau ada masalah kualitas, hubungi kami dalam 24 jam — kami akan ganti atau refund sesuai kebijakan kami.",
+        },
+      ];
+
+      /* =========================================================
+   HELPER
+   ========================================================= */
+      function imgTag(src, fallbackSeed, alt, cls) {
+        const fb = `https://picsum.photos/seed/${fallbackSeed}/800/800`;
+        return `<img src="${src}" alt="${alt}" loading="lazy" class="${cls}" onerror="this.onerror=null;this.src='${fb}';" />`;
+      }
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => document.querySelectorAll(s);
+      const rp = (n) => n.toLocaleString("id-ID");
+
+      /* =========================================================
+   KATEGORI
+   ========================================================= */
+      function renderCategoryGrid() {
+        $("#categoryGrid").innerHTML = categories
+          .map(
+            (c) => `
+    <button onclick="setCategory('${c.name}')" class="group text-left relative overflow-hidden rounded-3xl aspect-[4/5] img-fallback">
+      ${imgTag(c.image, c.fb, c.name, "absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700")}
+      <div class="absolute inset-0 bg-gradient-to-t from-blush-900/85 via-blush-900/30 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-4 text-white">
+        <p class="font-serif text-lg font-semibold">${c.name}</p>
+        <p class="text-[10px] text-butter-300 font-bold uppercase tracking-wider mt-0.5">${c.count}</p>
+        <p class="text-[11px] text-white/70 mt-1">${c.desc}</p>
+      </div>
+    </button>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   PILLS
+   ========================================================= */
+      function renderPills() {
+        const all = ["Semua", ...categories.map((c) => c.name)];
+        $("#categoryPills").innerHTML = all
+          .map((c) => {
+            const active = state.category === c;
+            return `<button onclick="setCategory('${c}')"
+      class="shrink-0 px-5 py-2.5 text-sm rounded-full font-semibold transition border ${
+        active
+          ? "bg-blush-500 text-white border-blush-500"
+          : "bg-white text-blush-800 border-blush-200 hover:border-blush-400"
+      }">${c}</button>`;
+          })
+          .join("");
+      }
+
+      function setCategory(cat) {
+        state.category = cat;
+        renderPills();
+        renderProducts();
+        document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+      }
+
+      /* =========================================================
+   STATE
+   ========================================================= */
+      const state = {
+        category: "Semua",
+        search: "",
+        sort: "populer",
+        cart: [],
+      };
+
+      /* =========================================================
+   PRODUK
+   ========================================================= */
+      function getFiltered() {
+        let list = [...products];
+        if (state.category !== "Semua")
+          list = list.filter((p) => p.category === state.category);
+        if (state.search.trim()) {
+          const q = state.search.toLowerCase();
+          list = list.filter(
+            (p) =>
+              p.name.toLowerCase().includes(q) ||
+              p.category.toLowerCase().includes(q) ||
+              p.desc.toLowerCase().includes(q),
+          );
+        }
+        switch (state.sort) {
+          case "termurah":
+            list.sort((a, b) => a.price - b.price);
+            break;
+          case "termahal":
+            list.sort((a, b) => b.price - a.price);
+            break;
+          case "baru":
+            list.sort((a, b) => b.id - a.id);
+            break;
+          default:
+            list.sort((a, b) => b.reviews - a.reviews);
+        }
+        return list;
+      }
+
+      function productCard(p) {
+        const discount = p.oldPrice
+          ? Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100)
+          : 0;
+        return `
+    <article class="group flex flex-col rounded-3xl overflow-hidden bg-white border border-blush-100 hover:border-blush-300 transition">
+      <div class="relative aspect-[4/5] bg-blush-100 overflow-hidden img-fallback">
+        ${imgTag(p.image, p.fb, p.name, "w-full h-full object-cover group-hover:scale-105 transition duration-700")}
+        ${
+          p.badge
+            ? `<span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                p.badge === "Best Seller"
+                  ? "bg-blush-500 text-white"
+                  : p.badge === "Promo"
+                    ? "bg-rose-500 text-white"
+                    : p.badge === "Baru"
+                      ? "bg-blush-900 text-white"
+                      : "bg-butter-400 text-blush-900"
+              }">${p.badge}</span>`
+            : ""
+        }
+        ${discount ? `<span class="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-white text-blush-900 text-[10px] font-bold">-${discount}%</span>` : ""}
+
+        <button onclick="openQuickView(${p.id})" class="absolute inset-x-4 bottom-4 py-2.5 rounded-full bg-white/95 backdrop-blur text-blush-900 text-xs font-bold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition">
+          Lihat Detail
+        </button>
+      </div>
+
+      <div class="p-5 flex flex-col flex-1">
+        <p class="text-[10px] tracking-[0.2em] text-blush-500 uppercase font-bold">${p.category}</p>
+        <h3 class="mt-1.5 font-serif text-xl font-semibold leading-snug">${p.name}</h3>
+        <p class="mt-1 text-xs text-blush-500 italic">${p.flavor} · ${p.size}</p>
+        <p class="mt-3 text-xs text-blush-700/80 leading-relaxed line-clamp-2">${p.desc}</p>
+
+        <div class="mt-auto pt-4 flex items-end justify-between gap-2">
+          <div>
+            <p class="font-serif text-lg font-semibold">Rp ${rp(p.price)}</p>
+            ${p.oldPrice ? `<p class="text-xs text-blush-400 line-through">Rp ${rp(p.oldPrice)}</p>` : ""}
+          </div>
+          <button onclick="addToCart(${p.id})" aria-label="Tambah" class="w-10 h-10 rounded-full bg-blush-500 hover:bg-blush-600 text-white flex items-center justify-center transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div>
+    </article>`;
+      }
+
+      function renderProducts() {
+        const list = getFiltered();
+        const el = $("#productGrid");
+        $("#resultCount").textContent = list.length;
+        if (list.length === 0) {
+          el.innerHTML = "";
+          $("#emptyState").classList.remove("hidden");
+          return;
+        }
+        $("#emptyState").classList.add("hidden");
+        el.innerHTML = list.map(productCard).join("");
+      }
+
+      function resetFilters() {
+        state.category = "Semua";
+        state.search = "";
+        state.sort = "populer";
+        $("#search").value = "";
+        $("#searchMobile").value = "";
+        $("#sortSelect").value = "populer";
+        renderPills();
+        renderProducts();
+      }
+
+      /* =========================================================
+   CART
+   ========================================================= */
+      function addToCart(id) {
+        const item = state.cart.find((c) => c.id === id);
+        if (item) item.qty += 1;
+        else state.cart.push({ id, qty: 1 });
+        renderCart();
+        updateCartCount();
+        showToast(`"${products.find((p) => p.id === id).name}" ditambahkan`);
+      }
+
+      function updateQty(id, delta) {
+        const item = state.cart.find((c) => c.id === id);
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) state.cart = state.cart.filter((c) => c.id !== id);
+        renderCart();
+        updateCartCount();
+      }
+
+      function removeFromCart(id) {
+        state.cart = state.cart.filter((c) => c.id !== id);
+        renderCart();
+        updateCartCount();
+      }
+
+      function renderCart() {
+        const el = $("#cartItems");
+        const footer = $("#cartFooter");
+
+        if (state.cart.length === 0) {
+          el.innerHTML = `<div class="text-center py-16">
+      <div class="mx-auto w-16 h-16 rounded-full bg-blush-100 flex items-center justify-center">
+        <svg class="w-7 h-7 text-blush-400" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l3-8H5.4M7 13 5.4 5M7 13l-2 5h14M9 21a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm9 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/></svg>
+      </div>
+      <p class="mt-4 font-serif text-xl font-semibold">Keranjang masih kosong</p>
+      <p class="mt-2 text-sm text-blush-600">Yuk pilih kue favoritmu.</p>
+    </div>`;
+          footer.innerHTML = "";
+          return;
+        }
+
+        el.innerHTML = state.cart
+          .map((c) => {
+            const p = products.find((x) => x.id === c.id);
+            return `
+      <div class="flex gap-3 p-3 rounded-2xl bg-white border border-blush-100">
+        <div class="w-20 h-20 rounded-xl overflow-hidden img-fallback shrink-0">
+          ${imgTag(p.image, p.fb, p.name, "w-full h-full object-cover")}
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="font-serif font-semibold text-sm truncate">${p.name}</p>
+          <p class="text-xs text-blush-500">${p.flavor}</p>
+          <div class="mt-2 flex items-center justify-between gap-2">
+            <div class="flex items-center rounded-full border border-blush-200 bg-blush-50">
+              <button onclick="updateQty(${p.id}, -1)" class="w-7 h-7 text-sm hover:bg-blush-100 rounded-l-full">−</button>
+              <span class="w-7 text-center text-xs font-semibold">${c.qty}</span>
+              <button onclick="updateQty(${p.id}, 1)" class="w-7 h-7 text-sm hover:bg-blush-100 rounded-r-full">+</button>
+            </div>
+            <p class="text-sm font-bold">Rp ${rp(p.price * c.qty)}</p>
+          </div>
+        </div>
+        <button onclick="removeFromCart(${p.id})" class="self-start text-blush-400 hover:text-rose-500 transition text-xs">Hapus</button>
+      </div>`;
+          })
+          .join("");
+
+        const total = state.cart.reduce(
+          (s, c) => s + products.find((p) => p.id === c.id).price * c.qty,
+          0,
+        );
+        const itemCount = state.cart.reduce((s, c) => s + c.qty, 0);
+
+        const lines = state.cart
+          .map((c) => {
+            const p = products.find((x) => x.id === c.id);
+            return `• ${p.name} x${c.qty} = Rp ${rp(p.price * c.qty)}`;
+          })
+          .join("\n");
+
+        const waText = encodeURIComponent(
+          `Halo Sweet Corner, saya ingin pesan:\n\n${lines}\n\nTotal: Rp ${rp(total)}\n\nMohon konfirmasi ketersediaan. Terima kasih!`,
+        );
+        const waLink = `https://wa.me/6281234567890?text=${waText}`;
+
+        footer.innerHTML = `
+    <div class="flex items-center justify-between pb-3 border-b border-blush-200">
+      <span class="text-sm text-blush-700">Total (${itemCount} item)</span>
+      <span class="font-serif text-2xl font-semibold">Rp ${rp(total)}</span>
+    </div>
+    <a href="${waLink}" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-4 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] text-white text-sm font-bold transition">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"/></svg>
+      Pesan via WhatsApp
+    </a>
+    <button onclick="state.cart=[];renderCart();updateCartCount();" class="w-full py-2 text-xs text-blush-500 hover:text-blush-800 transition">Kosongkan</button>
+  `;
+      }
+
+      function updateCartCount() {
+        const n = state.cart.reduce((s, c) => s + c.qty, 0);
+        const el = $("#cartCount");
+        el.textContent = n;
+        el.classList.toggle("hidden", n === 0);
+      }
+
+      /* =========================================================
+   QUICK VIEW
+   ========================================================= */
+      function openQuickView(id) {
+        const p = products.find((x) => x.id === id);
+        const discount = p.oldPrice
+          ? Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100)
+          : 0;
+        const waText = encodeURIComponent(
+          `Halo Sweet Corner, saya mau tanya tentang *${p.name}* (Rp ${rp(p.price)}). Apakah ready?`,
+        );
+        const waLink = `https://wa.me/6281234567890?text=${waText}`;
+
+        $("#quickViewContent").innerHTML = `
+    <div class="grid md:grid-cols-2">
+      <div class="relative aspect-square md:aspect-auto md:min-h-full bg-blush-100 img-fallback">
+        ${imgTag(p.image, p.fb, p.name, "absolute inset-0 w-full h-full object-cover")}
+        <button onclick="closeQuickView()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center md:hidden">
+          <svg class="w-5 h-5 text-blush-900" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <div class="p-8 sm:p-10 flex flex-col">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="text-[10px] tracking-[0.3em] text-blush-500 uppercase font-bold">${p.category}</p>
+            <h3 class="mt-2 font-serif text-3xl font-semibold leading-tight">${p.name}</h3>
+            <p class="mt-1 text-sm text-blush-500 italic">${p.flavor} · ${p.size}</p>
+          </div>
+          <button onclick="closeQuickView()" class="hidden md:flex w-10 h-10 rounded-full hover:bg-blush-100 items-center justify-center">
+            <svg class="w-5 h-5 text-blush-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+
+        <p class="mt-6 text-blush-700 leading-relaxed text-sm">${p.desc}</p>
+
+        <div class="mt-6 flex items-baseline gap-3">
+          <span class="font-serif text-4xl font-semibold">Rp ${rp(p.price)}</span>
+          ${p.oldPrice ? `<span class="text-blush-400 line-through text-sm">Rp ${rp(p.oldPrice)}</span>` : ""}
+          ${discount ? `<span class="px-2.5 py-1 rounded-full bg-rose-100 text-rose-600 text-xs font-bold">-${discount}%</span>` : ""}
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-blush-200 grid grid-cols-3 gap-4 text-center">
+          <div><p class="text-[10px] tracking-widest text-blush-500 uppercase font-bold">Rating</p><p class="font-serif text-xl font-semibold mt-1">${p.rating}</p></div>
+          <div class="border-x border-blush-200"><p class="text-[10px] tracking-widest text-blush-500 uppercase font-bold">Terjual</p><p class="font-serif text-xl font-semibold mt-1">${p.reviews}+</p></div>
+          <div><p class="text-[10px] tracking-widest text-blush-500 uppercase font-bold">Fresh</p><p class="font-serif text-xl font-semibold mt-1">H-1</p></div>
+        </div>
+
+        <div class="mt-8 space-y-2.5">
+          <button onclick="addToCart(${p.id}); closeQuickView();" class="w-full py-4 rounded-full bg-blush-500 hover:bg-blush-600 text-white text-sm font-bold transition">
+            Tambah ke Pesanan
+          </button>
+          <a href="${waLink}" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full py-4 rounded-full border border-blush-300 text-blush-800 text-sm font-semibold hover:border-blush-500 hover:text-blush-600 transition">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.9-5.2c-.4-.7-.7-1.5-.7-2.2 0-.7.4-1.4.7-1.7.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 1.8c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a8 8 0 0 0 3.6 3c.3.1.5.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.3 0 .2 0 .8-.3 1.4Z"/></svg>
+            Tanya via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+        $("#quickView").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+      function closeQuickView() {
+        $("#quickView").classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      /* =========================================================
+   CART DRAWER
+   ========================================================= */
+      function openCart() {
+        renderCart();
+        $("#cartDrawer").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+      function closeCart() {
+        $("#cartDrawer").classList.add("hidden");
+        document.body.style.overflow = "";
+      }
+
+      /* =========================================================
+   KALKULATOR KUE CUSTOM
+   ========================================================= */
+      const cakeSizes = [
+        {
+          id: "s16",
+          label: "16 cm",
+          sub: "6-8 porsi",
+          price: 180000,
+          img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80",
+        },
+        {
+          id: "s18",
+          label: "18 cm",
+          sub: "8-12 porsi",
+          price: 220000,
+          img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+        },
+        {
+          id: "s20",
+          label: "20 cm",
+          sub: "12-16 porsi",
+          price: 280000,
+          img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80",
+        },
+        {
+          id: "s24",
+          label: "24 cm",
+          sub: "20-25 porsi",
+          price: 380000,
+          img: "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80",
+        },
+      ];
+
+      const cakeFlavors = [
+        { id: "vanilla", label: "Vanilla", price: 0 },
+        { id: "choco", label: "Chocolate", price: 0 },
+        { id: "redvelvet", label: "Red Velvet", price: 20000 },
+        { id: "cheese", label: "Cheese", price: 25000 },
+        { id: "matcha", label: "Matcha", price: 30000 },
+        { id: "taro", label: "Taro", price: 20000 },
+      ];
+
+      const cakeThemes = [
+        { id: "polos", label: "Polos / Elegan", price: 0 },
+        { id: "karakter", label: "Karakter / Karakter", price: 80000 },
+        { id: "floral", label: "Floral / Bunga", price: 60000 },
+        { id: "tiered", label: "Drip Cake / Drip", price: 40000 },
+        { id: "macaron", label: "Topping Macaron", price: 70000 },
+        { id: "foto", label: "Edible Photo", price: 90000 },
+      ];
+
+      const cakeAddons = [
+        { id: "lilin", label: "Lilin & pisin set", price: 15000 },
+        { id: "topper", label: "Topper custom", price: 35000 },
+        { id: "giftbox", label: "Gift box premium", price: 40000 },
+        { id: "tasting", label: "Tasting box (sebelum order)", price: 80000 },
+        { id: "delivery", label: "Pengiriman luar Bandung", price: 120000 },
+        { id: "express", label: "Express (H-1)", price: 100000 },
+      ];
+
+      const cakeState = {
+        size: "s20",
+        flavor: "choco",
+        theme: "polos",
+        addons: [],
+      };
+
+      function renderSizeOptions() {
+        $("#sizeOptions").innerHTML = cakeSizes
+          .map(
+            (s) => `
+    <label class="cursor-pointer">
+      <input type="radio" name="cakeSize" value="${s.id}" ${cakeState.size === s.id ? "checked" : ""} class="peer sr-only" />
+      <div class="text-center px-3 py-3 rounded-xl border-2 border-blush-200 bg-white peer-checked:border-blush-500 peer-checked:bg-blush-100 transition">
+        <p class="font-serif text-xl font-semibold">${s.label}</p>
+        <p class="text-[10px] text-blush-500 mt-0.5">${s.sub}</p>
+        <p class="text-xs font-bold text-blush-700 mt-1">Rp ${rp(s.price)}</p>
+      </div>
+    </label>
+  `,
+          )
+          .join("");
+
+        $$('input[name="cakeSize"]').forEach((el) =>
+          el.addEventListener("change", (e) => {
+            cakeState.size = e.target.value;
+            updateCake();
+          }),
+        );
+      }
+
+      function renderFlavorOptions() {
+        $("#flavorOptions").innerHTML = cakeFlavors
+          .map(
+            (f) => `
+    <label class="cursor-pointer">
+      <input type="radio" name="cakeFlavor" value="${f.id}" ${cakeState.flavor === f.id ? "checked" : ""} class="peer sr-only" />
+      <div class="flex items-center justify-between px-3 py-2.5 rounded-xl border-2 border-blush-200 bg-white peer-checked:border-blush-500 peer-checked:bg-blush-100 transition">
+        <span class="text-sm font-semibold">${f.label}</span>
+        <span class="text-xs font-bold text-blush-500">${f.price === 0 ? "Gratis" : "+" + rp(f.price)}</span>
+      </div>
+    </label>
+  `,
+          )
+          .join("");
+
+        $$('input[name="cakeFlavor"]').forEach((el) =>
+          el.addEventListener("change", (e) => {
+            cakeState.flavor = e.target.value;
+            updateCake();
+          }),
+        );
+      }
+
+      function renderThemeOptions() {
+        $("#themeOptions").innerHTML = cakeThemes
+          .map(
+            (t) => `
+    <label class="cursor-pointer">
+      <input type="radio" name="cakeTheme" value="${t.id}" ${cakeState.theme === t.id ? "checked" : ""} class="peer sr-only" />
+      <div class="flex items-center justify-between px-3 py-2.5 rounded-xl border-2 border-blush-200 bg-white peer-checked:border-blush-500 peer-checked:bg-blush-100 transition">
+        <span class="text-sm font-semibold">${t.label}</span>
+        <span class="text-xs font-bold text-blush-500">${t.price === 0 ? "Gratis" : "+" + rp(t.price)}</span>
+      </div>
+    </label>
+  `,
+          )
+          .join("");
+
+        $$('input[name="cakeTheme"]').forEach((el) =>
+          el.addEventListener("change", (e) => {
+            cakeState.theme = e.target.value;
+            updateCake();
+          }),
+        );
+      }
+
+      function renderCakeAddons() {
+        $("#addonsList").innerHTML = cakeAddons
+          .map(
+            (a) => `
+    <label class="flex items-center justify-between p-3 rounded-xl border border-blush-200 bg-white hover:border-blush-400 cursor-pointer transition">
+      <div class="flex items-center gap-3">
+        <input type="checkbox" data-cake-addon="${a.id}" data-price="${a.price}" class="accent-blush-500 w-4 h-4" />
+        <span class="text-sm font-medium">${a.label}</span>
+      </div>
+      <span class="text-xs font-bold text-blush-600">+Rp ${rp(a.price)}</span>
+    </label>
+  `,
+          )
+          .join("");
+
+        $$('#addonsList input[type="checkbox"]').forEach((c) =>
+          c.addEventListener("change", updateCake),
+        );
+      }
+
+      function updateCake() {
+        const size =
+          cakeSizes.find((s) => s.id === cakeState.size) || cakeSizes[2];
+        const flavor =
+          cakeFlavors.find((f) => f.id === cakeState.flavor) || cakeFlavors[0];
+        const theme =
+          cakeThemes.find((t) => t.id === cakeState.theme) || cakeThemes[0];
+
+        let total = size.price + flavor.price + theme.price;
+        const selectedAddons = [];
+
+        $$('#addonsList input[type="checkbox"]:checked').forEach((c) => {
+          const price = parseInt(c.dataset.price);
+          total += price;
+          selectedAddons.push({
+            label: c.parentElement.querySelector("span").textContent,
+            amount: price,
+          });
+        });
+
+        $("#calcPrice").textContent = rp(total);
+        $("#sumSize").textContent = size.label + " · " + size.sub;
+        $("#sumFlavor").textContent = flavor.label;
+        $("#sumTheme").textContent = theme.label;
+
+        $("#cakePreviewImg").src = size.img;
+        $("#cakePreviewImg").onerror = function () {
+          this.onerror = null;
+          this.src =
+            "https://picsum.photos/seed/cake-preview-" + size.id + "/600/450";
+        };
+
+        const box = $("#sumAddonsBox");
+        if (selectedAddons.length === 0) box.innerHTML = "";
+        else
+          box.innerHTML = selectedAddons
+            .map(
+              (a) => `
+    <div class="flex justify-between text-xs">
+      <span class="text-blush-200/60">+ ${a.label}</span>
+      <span class="font-semibold">Rp ${rp(a.amount)}</span>
+    </div>
+  `,
+            )
+            .join("");
+      }
+
+      function submitCake() {
+        const form = document.querySelector("#kalkulator");
+        const nama = form.querySelector('input[name="nama"]').value.trim();
+        const wa = form.querySelector('input[name="wa"]').value.trim();
+        const tanggal = form.querySelector('input[name="tanggal"]').value;
+        const tulisan = form
+          .querySelector('input[name="tulisan"]')
+          .value.trim();
+        const catatan = form
+          .querySelector('textarea[name="catatan"]')
+          .value.trim();
+
+        if (!nama || !wa) {
+          showToast("Mohon isi nama & WhatsApp dulu ya.");
+          return;
+        }
+
+        const size = cakeSizes.find((s) => s.id === cakeState.size);
+        const flavor = cakeFlavors.find((f) => f.id === cakeState.flavor);
+        const theme = cakeThemes.find((t) => t.id === cakeState.theme);
+
+        const addonLines = [];
+        $$('#addonsList input[type="checkbox"]:checked').forEach((c) => {
+          const label = c.parentElement.querySelector("span").textContent;
+          addonLines.push(
+            `  · ${label} (+Rp ${rp(parseInt(c.dataset.price))})`,
+          );
+        });
+
+        const text =
+          `Halo Sweet Corner, saya ingin order kue custom.\n\n` +
+          `*Nama:* ${nama}\n` +
+          `*WhatsApp:* ${wa}\n` +
+          `*Tanggal dibutuhkan:* ${tanggal || "-"}\n\n` +
+          `*Ukuran:* ${size.label} (${size.sub})\n` +
+          `*Rasa:* ${flavor.label}\n` +
+          `*Tema:* ${theme.label}\n` +
+          (addonLines.length
+            ? `*Tambahan:*\n${addonLines.join("\n")}\n\n`
+            : "\n") +
+          `*Tulisan di kue:* ${tulisan || "-"}\n` +
+          `*Catatan:* ${catatan || "-"}\n\n` +
+          `*Estimasi total:* Rp ${$("#calcPrice").textContent}`;
+
+        const url = `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank");
+        showToast("Membuka WhatsApp…");
+      }
+
+      /* =========================================================
+   TESTIMONI + FAQ
+   ========================================================= */
+      function renderTestimonials() {
+        $("#testimonialGrid").innerHTML = testimonials
+          .map(
+            (t) => `
+    <div class="p-7 rounded-3xl bg-white border border-blush-100">
+      <div class="font-serif text-5xl text-blush-300 leading-none">"</div>
+      <p class="mt-4 text-blush-800 leading-relaxed text-sm">${t.text}</p>
+      <div class="mt-6 flex items-center gap-3 pt-6 border-t border-blush-100">
+        <div class="w-12 h-12 rounded-full overflow-hidden img-fallback shrink-0">
+          ${imgTag(t.avatar, t.fb, t.name, "w-full h-full object-cover")}
+        </div>
+        <div>
+          <p class="font-bold text-sm">${t.name}</p>
+          <p class="text-xs text-blush-500">${t.role}</p>
+        </div>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      function renderFaqs() {
+        $("#faqList").innerHTML = faqs
+          .map(
+            (f) => `
+    <details class="group rounded-2xl bg-blush-50 border border-blush-200 overflow-hidden">
+      <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none">
+        <span class="font-semibold text-blush-900 pr-4">${f.q}</span>
+        <span class="shrink-0 w-9 h-9 rounded-full border border-blush-300 group-open:bg-blush-500 group-open:border-blush-500 group-open:text-white flex items-center justify-center transition">
+          <svg class="w-4 h-4 group-open:rotate-45 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>
+        </span>
+      </summary>
+      <div class="px-6 pb-6 text-sm text-blush-700/90 leading-relaxed">${f.a}</div>
+    </details>
+  `,
+          )
+          .join("");
+      }
+
+      /* =========================================================
+   TOAST
+   ========================================================= */
+      let toastTimer;
+      function showToast(msg) {
+        const el = $("#toast");
+        el.textContent = msg;
+        el.classList.remove("hidden");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => el.classList.add("hidden"), 2400);
+      }
+
+      /* =========================================================
+   EVENTS
+   ========================================================= */
+      ["search", "searchMobile"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener("input", (e) => {
+          state.search = e.target.value;
+          ["search", "searchMobile"].forEach((o) => {
+            if (o !== id) document.getElementById(o).value = e.target.value;
+          });
+          renderProducts();
+        });
+      });
+
+      $("#sortSelect").addEventListener("change", (e) => {
+        state.sort = e.target.value;
+        renderProducts();
+      });
+      $("#resetBtn").addEventListener("click", resetFilters);
+      $("#menuBtn").addEventListener("click", () =>
+        $("#mobileMenu").classList.toggle("hidden"),
+      );
+      $("#mobileMenu")
+        .querySelectorAll("a")
+        .forEach((a) =>
+          a.addEventListener("click", () =>
+            $("#mobileMenu").classList.add("hidden"),
+          ),
+        );
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeQuickView();
+          closeCart();
+          $("#mobileMenu").classList.add("hidden");
+        }
+      });
+
+      /* =========================================================
+   INIT
+   ========================================================= */
+      renderCategoryGrid();
+      renderPills();
+      renderProducts();
+      renderSizeOptions();
+      renderFlavorOptions();
+      renderThemeOptions();
+      renderCakeAddons();
+      renderTestimonials();
+      renderFaqs();
+      renderCart();
+      updateCartCount();
+      updateCake();
+    </script>
+  </body>
+</html>

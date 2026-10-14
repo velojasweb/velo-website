@@ -1,0 +1,2563 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batikku — Batik Tulis & Cap Premium Buatan Pengrajin Lokal</title>
+    <meta
+      name="description"
+      content="Batikku menyediakan batik tulis, cap, dan kombinasi langsung dari pengrajin Pekalongan & Solo. Kualitas premium, harga pengrajin, free ongkir seluruh Indonesia."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              earth: {
+                50: "#faf6f1",
+                100: "#f2e8dc",
+                200: "#e4d0b8",
+                300: "#d4b28c",
+                400: "#c39066",
+                500: "#b77749",
+                600: "#a9613c",
+                700: "#8c4a33",
+                800: "#723d2f",
+                900: "#5f342a",
+                950: "#341a15",
+              },
+              gold: {
+                50: "#fdfaf3",
+                100: "#fbf0dd",
+                200: "#f5deb5",
+                300: "#edc782",
+                400: "#e4ac4f",
+                500: "#d9942b",
+                600: "#bd7420",
+                700: "#9c551d",
+                800: "#80441f",
+                900: "#6a391c",
+              },
+              cream: {
+                50: "#fefdfb",
+                100: "#fbf8f1",
+                200: "#f5efdd",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #8c4a33;
+        border-radius: 3px;
+      }
+
+      #navbar.scrolled {
+        background: rgba(254, 253, 251, 0.98);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 2px 20px rgba(95, 52, 42, 0.08);
+      }
+
+      /* Batik pattern subtle */
+      .batik-pattern {
+        background-image:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(140, 74, 51, 0.06) 0%,
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(217, 148, 43, 0.06) 0%,
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 60% 40%,
+            rgba(140, 74, 51, 0.04) 0%,
+            transparent 25%
+          );
+      }
+
+      /* Product card hover */
+      .product-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .product-card:hover {
+        transform: translateY(-6px);
+      }
+      .product-card:hover img {
+        transform: scale(1.08);
+      }
+
+      .product-card img {
+        transition: transform 0.7s ease;
+      }
+
+      /* Gradient text */
+      .gold-gradient {
+        background: linear-gradient(135deg, #d9942b 0%, #8c4a33 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Floating WA */
+      @keyframes pulse-green {
+        0% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        }
+      }
+      .pulse-wa {
+        animation: pulse-green 2s infinite;
+      }
+
+      /* Marquee */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        animation: marquee 35s linear infinite;
+      }
+
+      /* Ornament */
+      .ornament-line {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .ornament-line::before,
+      .ornament-line::after {
+        content: "";
+        width: 50px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #d9942b, transparent);
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #8c4a33;
+        box-shadow: 0 0 0 3px rgba(140, 74, 51, 0.1);
+      }
+
+      /* Rotating batik stamp */
+      @keyframes rotate-stamp {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .rotate-stamp {
+        animation: rotate-stamp 20s linear infinite;
+      }
+
+      /* Tag badge */
+      .tag-new {
+        background: linear-gradient(135deg, #d9942b, #bd7420);
+      }
+    </style>
+  </head>
+
+  <body class="bg-cream-50 text-slate-700 antialiased overflow-x-hidden">
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="bg-earth-900 text-cream-100 text-xs">
+      <div
+        class="max-w-6xl mx-auto px-6 py-2.5 flex flex-wrap justify-center md:justify-between items-center gap-2"
+      >
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1.5">
+            <i class="fa-solid fa-phone text-gold-400"></i>
+            <span class="font-semibold">0812-3456-7890</span>
+          </span>
+          <span class="hidden md:flex items-center gap-1.5">
+            <i class="fa-solid fa-truck text-gold-400"></i>
+            <span>Free Ongkir seluruh Indonesia (min. 2 pcs)</span>
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span
+            class="bg-gold-500 text-earth-900 px-2.5 py-1 rounded text-[10px] font-bold flex items-center gap-1"
+          >
+            <i class="fa-solid fa-certificate"></i> 100% ASLI PENGRAJIN
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav
+      id="navbar"
+      class="sticky top-0 z-50 bg-cream-50 transition-all border-b border-earth-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <div
+            class="w-11 h-11 rounded-full bg-gradient-to-br from-earth-700 to-earth-800 flex items-center justify-center relative"
+          >
+            <i class="fa-solid fa-leaf text-gold-400 text-lg"></i>
+          </div>
+          <div>
+            <span
+              class="text-xl font-bold font-serif text-earth-900 leading-none"
+              >Batik<span class="text-gold-600">ku</span></span
+            >
+            <p
+              class="text-[10px] text-slate-500 font-medium tracking-[0.2em] mt-0.5"
+            >
+              PEKALONGAN • SOLO
+            </p>
+          </div>
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700"
+        >
+          <li>
+            <a href="#koleksi" class="hover:text-earth-700 transition"
+              >Koleksi</a
+            >
+          </li>
+          <li>
+            <a href="#kategori" class="hover:text-earth-700 transition"
+              >Kategori</a
+            >
+          </li>
+          <li>
+            <a href="#motif" class="hover:text-earth-700 transition">Motif</a>
+          </li>
+          <li>
+            <a href="#testimoni" class="hover:text-earth-700 transition"
+              >Testimoni</a
+            >
+          </li>
+          <li>
+            <a href="#panduan" class="hover:text-earth-700 transition"
+              >Panduan</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-2">
+          <a
+            href="#kontak"
+            class="hidden sm:flex w-10 h-10 rounded-full bg-cream-100 hover:bg-earth-100 transition items-center justify-center text-earth-700"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Batikku%2C%20saya%20mau%20tanya%20koleksi"
+            class="hidden sm:flex px-5 py-2.5 rounded-full bg-green-500 text-white text-sm font-bold hover:bg-green-600 transition shadow-lg shadow-green-500/25 items-center gap-2"
+          >
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            Order WA
+          </a>
+          <button
+            id="mobileBtn"
+            class="lg:hidden w-10 h-10 rounded-lg bg-cream-100 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-bars text-earth-700"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="lg:hidden hidden px-6 pb-4 bg-cream-50">
+        <div class="bg-white rounded-xl border border-earth-100 shadow-lg p-5">
+          <ul class="space-y-3 text-sm font-medium">
+            <li>
+              <a
+                href="#koleksi"
+                class="block py-2 text-slate-700 hover:text-earth-700"
+                >Koleksi</a
+              >
+            </li>
+            <li>
+              <a
+                href="#kategori"
+                class="block py-2 text-slate-700 hover:text-earth-700"
+                >Kategori</a
+              >
+            </li>
+            <li>
+              <a
+                href="#motif"
+                class="block py-2 text-slate-700 hover:text-earth-700"
+                >Motif</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimoni"
+                class="block py-2 text-slate-700 hover:text-earth-700"
+                >Testimoni</a
+              >
+            </li>
+            <li>
+              <a
+                href="#panduan"
+                class="block py-2 text-slate-700 hover:text-earth-700"
+                >Panduan</a
+              >
+            </li>
+            <li class="pt-2">
+              <a
+                href="https://wa.me/6281234567890"
+                class="block text-center py-3 rounded-full bg-green-500 text-white font-bold"
+                ><i class="fa-brands fa-whatsapp mr-1"></i> Order via WA</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative pt-10 pb-20 overflow-hidden batik-pattern">
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div data-aos="fade-up">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-earth-100 text-earth-800 text-xs font-bold mb-5"
+            >
+              <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+              Langsung dari Pengrajin Pekalongan
+            </div>
+
+            <h1
+              class="text-4xl lg:text-6xl font-bold font-serif text-earth-900 leading-[1.1] mb-6"
+            >
+              Batik <span class="gold-gradient italic">Premium</span> untuk
+              Momen Istimewa
+            </h1>
+
+            <p
+              class="text-base lg:text-lg text-slate-600 leading-relaxed mb-7 max-w-lg"
+            >
+              Koleksi batik tulis, cap, dan kombinasi dengan motif klasik &
+              modern. Dikerjakan tangan oleh pengrajin berpengalaman 20+ tahun.
+              Harga langsung pengrajin, tanpa perantara.
+            </p>
+
+            <!-- Feature icons -->
+            <div class="grid grid-cols-2 gap-3 mb-8 max-w-md">
+              <div class="flex items-center gap-2.5">
+                <div
+                  class="w-9 h-9 rounded-lg bg-earth-100 flex items-center justify-center flex-shrink-0"
+                >
+                  <i
+                    class="fa-solid fa-hand-holding-heart text-earth-700 text-sm"
+                  ></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-earth-900">100% Handmade</p>
+                  <p class="text-[10px] text-slate-500">Tulis & cap tangan</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div
+                  class="w-9 h-9 rounded-lg bg-earth-100 flex items-center justify-center flex-shrink-0"
+                >
+                  <i
+                    class="fa-solid fa-shield-halved text-earth-700 text-sm"
+                  ></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-earth-900">
+                    Kualitas Premium
+                  </p>
+                  <p class="text-[10px] text-slate-500">Katun primisima</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div
+                  class="w-9 h-9 rounded-lg bg-earth-100 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-truck text-earth-700 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-earth-900">Free Ongkir</p>
+                  <p class="text-[10px] text-slate-500">Seluruh Indonesia</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <div
+                  class="w-9 h-9 rounded-lg bg-earth-100 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-rotate-left text-earth-700 text-sm"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-earth-900">Garansi Tukar</p>
+                  <p class="text-[10px] text-slate-500">
+                    3 hari setelah terima
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-col sm:flex-row gap-3 mb-7">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Batikku%2C%20saya%20mau%20lihat%20katalog"
+                class="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-earth-800 text-white font-bold hover:bg-earth-900 transition shadow-xl shadow-earth-800/25"
+              >
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Minta Katalog via WA
+              </a>
+              <a
+                href="#koleksi"
+                class="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white border-2 border-earth-200 text-earth-800 font-bold hover:border-earth-500 transition"
+              >
+                <i class="fa-solid fa-images text-gold-600"></i>
+                Lihat Koleksi
+              </a>
+            </div>
+
+            <!-- Trust -->
+            <div class="flex items-center gap-5 pt-5 border-t border-earth-100">
+              <div class="flex items-center gap-2">
+                <div class="flex text-amber-500 text-xs">
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <span class="text-xs font-bold text-earth-900"
+                  >4.9<span class="text-slate-400 font-normal">/5</span></span
+                >
+              </div>
+              <span class="text-earth-200">|</span>
+              <p class="text-xs text-slate-500">
+                <b class="text-earth-900">15.000+</b> pelanggan setia sejak 2015
+              </p>
+            </div>
+          </div>
+
+          <!-- Right - Visual collage -->
+          <div
+            class="relative h-[500px] lg:h-[560px]"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <!-- Main image -->
+            <div
+              class="absolute top-0 right-0 w-[70%] h-[70%] rounded-2xl overflow-hidden shadow-2xl product-card"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&q=80"
+                alt="Batik Wanita"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Secondary image -->
+            <div
+              class="absolute bottom-0 left-0 w-[55%] h-[55%] rounded-2xl overflow-hidden shadow-2xl border-4 border-cream-50 product-card"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600&q=80"
+                alt="Batik Pria"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Floating badge -->
+            <div
+              class="absolute bottom-20 right-4 bg-white rounded-2xl shadow-xl border border-earth-100 p-4 w-56"
+            >
+              <div class="flex items-center gap-3 mb-2">
+                <div
+                  class="w-10 h-10 rounded-lg bg-gold-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-award text-white"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider font-bold"
+                  >
+                    Kualitas
+                  </p>
+                  <p class="text-xs font-bold font-serif text-earth-900">
+                    Primisima Premium
+                  </p>
+                </div>
+              </div>
+              <p class="text-[10px] text-slate-500 leading-relaxed">
+                Kain katun primisima, tidak luntur, tidak panas
+              </p>
+            </div>
+
+            <!-- Rotating stamp -->
+            <div
+              class="absolute top-10 left-4 w-16 h-16 rounded-full bg-earth-800 flex items-center justify-center"
+            >
+              <svg
+                class="w-20 h-20 absolute rotate-stamp"
+                viewBox="0 0 100 100"
+              >
+                <defs>
+                  <path
+                    id="circle-path"
+                    d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+                  />
+                </defs>
+                <text class="fill-gold-400 text-[10px] font-bold">
+                  <textPath href="#circle-path">
+                    • HANDMADE WITH LOVE • SINCE 2015 •
+                  </textPath>
+                </text>
+              </svg>
+              <i
+                class="fa-solid fa-leaf text-gold-400 text-lg relative z-10"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE INFO ===================== -->
+    <section class="bg-earth-800 py-3.5 overflow-hidden">
+      <div class="flex animate-marquee whitespace-nowrap text-cream-100">
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>100% BATIK
+          TULIS & CAP ASLI</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>FREE
+          ONGKIR SELURUH INDONESIA</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>HARGA
+          LANGSUNG PENGRAJIN</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>GARANSI
+          TUKAR 3 HARI</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>BISA
+          CUSTOM MOTIF & UKURAN</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>100% BATIK
+          TULIS & CAP ASLI</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>FREE
+          ONGKIR SELURUH INDONESIA</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>HARGA
+          LANGSUNG PENGRAJIN</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>GARANSI
+          TUKAR 3 HARI</span
+        >
+        <span class="text-sm font-bold mx-8"
+          ><i class="fa-solid fa-check-circle text-gold-400 mr-2"></i>BISA
+          CUSTOM MOTIF & UKURAN</span
+        >
+      </div>
+    </section>
+
+    <!-- ===================== KATEGORI ===================== -->
+    <section id="kategori" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <div
+            class="ornament-line text-gold-600 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+          >
+            <span>Kategori Produk</span>
+          </div>
+          <h2
+            class="text-2xl lg:text-4xl font-bold font-serif text-earth-900 mb-4"
+          >
+            Pilih Sesuai Kebutuhan Anda
+          </h2>
+          <p class="text-slate-600">
+            Dari kemeja formal, dress wanita, hingga kain untuk seragam
+            keluarga.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Kemeja Batik -->
+          <a
+            href="https://wa.me/6281234567890?text=Kategori%20Kemeja%20Batik"
+            class="group block p-6 rounded-2xl bg-cream-50 border border-earth-100 hover:border-earth-400 hover:bg-white transition"
+            data-aos="fade-up"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-earth-800 flex items-center justify-center mb-4 group-hover:scale-110 transition"
+            >
+              <i class="fa-solid fa-shirt text-gold-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-base mb-1">
+              Kemeja Batik
+            </h3>
+            <p class="text-xs text-slate-500 mb-3">Lengan pendek & panjang</p>
+            <p class="text-xs font-bold text-gold-700">Mulai Rp 185rb</p>
+          </a>
+
+          <!-- Dress Wanita -->
+          <a
+            href="https://wa.me/6281234567890?text=Kategori%20Dress%20Wanita"
+            class="group block p-6 rounded-2xl bg-cream-50 border border-earth-100 hover:border-earth-400 hover:bg-white transition"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-earth-800 flex items-center justify-center mb-4 group-hover:scale-110 transition"
+            >
+              <i class="fa-solid fa-person-dress text-gold-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-base mb-1">
+              Dress Wanita
+            </h3>
+            <p class="text-xs text-slate-500 mb-3">Modern & klasik</p>
+            <p class="text-xs font-bold text-gold-700">Mulai Rp 320rb</p>
+          </a>
+
+          <!-- Kain Batik -->
+          <a
+            href="https://wa.me/6281234567890?text=Kategori%20Kain%20Batik"
+            class="group block p-6 rounded-2xl bg-cream-50 border border-earth-100 hover:border-earth-400 hover:bg-white transition"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-earth-800 flex items-center justify-center mb-4 group-hover:scale-110 transition"
+            >
+              <i class="fa-solid fa-scroll text-gold-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-base mb-1">
+              Kain Batik
+            </h3>
+            <p class="text-xs text-slate-500 mb-3">2m x 1.1m siap jahit</p>
+            <p class="text-xs font-bold text-gold-700">Mulai Rp 150rb</p>
+          </a>
+
+          <!-- Seragam Keluarga -->
+          <a
+            href="https://wa.me/6281234567890?text=Kategori%20Seragam%20Keluarga"
+            class="group block p-6 rounded-2xl bg-gradient-to-br from-earth-800 to-earth-900 text-white relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div
+              class="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-gold-500/20"
+            ></div>
+            <div class="relative">
+              <div
+                class="w-14 h-14 rounded-2xl bg-gold-500 flex items-center justify-center mb-4 group-hover:scale-110 transition"
+              >
+                <i class="fa-solid fa-users text-earth-900 text-xl"></i>
+              </div>
+              <h3 class="font-bold font-serif text-white text-base mb-1">
+                Seragam Keluarga
+              </h3>
+              <p class="text-xs text-cream-100/70 mb-3">
+                Paket hemat min. 4 pcs
+              </p>
+              <p class="text-xs font-bold text-gold-400">Diskon 15%</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KOLEKSI PRODUK ===================== -->
+    <section id="koleksi" class="py-16 lg:py-24 bg-cream-50 batik-pattern">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <div
+            class="ornament-line text-gold-600 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+          >
+            <span>Best Seller</span>
+          </div>
+          <h2
+            class="text-2xl lg:text-4xl font-bold font-serif text-earth-900 mb-4"
+          >
+            Koleksi Paling Diminati
+          </h2>
+          <p class="text-slate-600">
+            Koleksi terlaris yang paling sering dipesan pelanggan kami.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Product 1 -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&q=80"
+                alt="Kemeja Batik"
+                class="w-full h-72 object-cover"
+              />
+              <span
+                class="absolute top-4 left-4 tag-new text-white text-[10px] font-bold px-3 py-1 rounded-full"
+                >BEST SELLER</span
+              >
+              <button
+                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center hover:bg-white transition"
+              >
+                <i class="fa-regular fa-heart text-earth-700 text-sm"></i>
+              </button>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider font-bold text-gold-600 mb-1"
+                  >
+                    Kemeja Lengan Panjang
+                  </p>
+                  <h3
+                    class="font-bold font-serif text-earth-900 text-lg leading-tight"
+                  >
+                    Batik Tulis Sogan Klasik
+                  </h3>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-3">
+                Motif sogan klasik Solo, warna cokelat-emas, bahan primisima
+                halus.
+              </p>
+
+              <div
+                class="flex items-center gap-3 mb-4 text-[10px] text-slate-500"
+              >
+                <span class="flex items-center gap-1"
+                  ><i class="fa-solid fa-star text-amber-500"></i> 4.9
+                  (324)</span
+                >
+                <span class="text-earth-200">|</span>
+                <span
+                  ><i class="fa-solid fa-fire text-orange-500 mr-1"></i>Terjual
+                  850+</span
+                >
+              </div>
+
+              <div
+                class="flex items-end justify-between pt-4 border-t border-slate-100"
+              >
+                <div>
+                  <p class="text-[10px] text-slate-400 line-through">
+                    Rp 285.000
+                  </p>
+                  <p class="text-xl font-black font-serif text-earth-900">
+                    Rp 235<span class="text-xs font-bold text-slate-500"
+                      >rb</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Order%20Batik%20Tulis%20Sogan%20Klasik"
+                  class="px-4 py-2.5 rounded-full bg-green-500 text-white text-xs font-bold hover:bg-green-600 transition inline-flex items-center gap-1.5"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80"
+                alt="Dress Batik"
+                class="w-full h-72 object-cover"
+              />
+              <span
+                class="absolute top-4 left-4 bg-earth-800 text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full"
+                >NEW</span
+              >
+              <button
+                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center hover:bg-white transition"
+              >
+                <i class="fa-regular fa-heart text-earth-700 text-sm"></i>
+              </button>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider font-bold text-gold-600 mb-1"
+                  >
+                    Dress Modern
+                  </p>
+                  <h3
+                    class="font-bold font-serif text-earth-900 text-lg leading-tight"
+                  >
+                    Dress Batik Pekalongan Modern
+                  </h3>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-3">
+                Dress modern dengan aksen batik, motif bunga Pekalongan. Cocok
+                untuk acara formal & semi-formal.
+              </p>
+
+              <div
+                class="flex items-center gap-3 mb-4 text-[10px] text-slate-500"
+              >
+                <span class="flex items-center gap-1"
+                  ><i class="fa-solid fa-star text-amber-500"></i> 4.8
+                  (187)</span
+                >
+                <span class="text-earth-200">|</span>
+                <span
+                  ><i class="fa-solid fa-fire text-orange-500 mr-1"></i>Terjual
+                  420+</span
+                >
+              </div>
+
+              <div
+                class="flex items-end justify-between pt-4 border-t border-slate-100"
+              >
+                <div>
+                  <p class="text-[10px] text-slate-500">Harga</p>
+                  <p class="text-xl font-black font-serif text-earth-900">
+                    Rp 425<span class="text-xs font-bold text-slate-500"
+                      >rb</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Order%20Dress%20Batik%20Modern"
+                  class="px-4 py-2.5 rounded-full bg-green-500 text-white text-xs font-bold hover:bg-green-600 transition inline-flex items-center gap-1.5"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80"
+                alt="Kain Batik"
+                class="w-full h-72 object-cover"
+              />
+              <span
+                class="absolute top-4 left-4 bg-earth-800 text-gold-400 text-[10px] font-bold px-3 py-1 rounded-full"
+                >FAVORIT</span
+              >
+              <button
+                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center hover:bg-white transition"
+              >
+                <i class="fa-regular fa-heart text-earth-700 text-sm"></i>
+              </button>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider font-bold text-gold-600 mb-1"
+                  >
+                    Kain Siap Jahit
+                  </p>
+                  <h3
+                    class="font-bold font-serif text-earth-900 text-lg leading-tight"
+                  >
+                    Kain Batik Cap Parang
+                  </h3>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-3">
+                Kain ukuran 2m x 1.1m, motif parang klasik. Bisa custom jahit
+                kemeja/dress.
+              </p>
+
+              <div
+                class="flex items-center gap-3 mb-4 text-[10px] text-slate-500"
+              >
+                <span class="flex items-center gap-1"
+                  ><i class="fa-solid fa-star text-amber-500"></i> 4.9
+                  (412)</span
+                >
+                <span class="text-earth-200">|</span>
+                <span
+                  ><i class="fa-solid fa-fire text-orange-500 mr-1"></i>Terjual
+                  1.200+</span
+                >
+              </div>
+
+              <div
+                class="flex items-end justify-between pt-4 border-t border-slate-100"
+              >
+                <div>
+                  <p class="text-[10px] text-slate-500">Harga per 2m</p>
+                  <p class="text-xl font-black font-serif text-earth-900">
+                    Rp 185<span class="text-xs font-bold text-slate-500"
+                      >rb</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Order%20Kain%20Batik%20Cap%20Parang"
+                  class="px-4 py-2.5 rounded-full bg-green-500 text-white text-xs font-bold hover:bg-green-600 transition inline-flex items-center gap-1.5"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80"
+                alt="Kemeja Pria"
+                class="w-full h-72 object-cover"
+              />
+              <button
+                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center hover:bg-white transition"
+              >
+                <i class="fa-regular fa-heart text-earth-700 text-sm"></i>
+              </button>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider font-bold text-gold-600 mb-1"
+                  >
+                    Kemeja Lengan Pendek
+                  </p>
+                  <h3
+                    class="font-bold font-serif text-earth-900 text-lg leading-tight"
+                  >
+                    Batik Kawung Kombinasi
+                  </h3>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-3">
+                Motif kawung dengan kombinasi warna navy. Cocok untuk kerja &
+                semi-formal.
+              </p>
+
+              <div
+                class="flex items-center gap-3 mb-4 text-[10px] text-slate-500"
+              >
+                <span class="flex items-center gap-1"
+                  ><i class="fa-solid fa-star text-amber-500"></i> 4.9
+                  (521)</span
+                >
+                <span class="text-earth-200">|</span>
+                <span
+                  ><i class="fa-solid fa-fire text-orange-500 mr-1"></i>Terjual
+                  1.500+</span
+                >
+              </div>
+
+              <div
+                class="flex items-end justify-between pt-4 border-t border-slate-100"
+              >
+                <div>
+                  <p class="text-[10px] text-slate-500">Harga</p>
+                  <p class="text-xl font-black font-serif text-earth-900">
+                    Rp 195<span class="text-xs font-bold text-slate-500"
+                      >rb</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Order%20Batik%20Kawung"
+                  class="px-4 py-2.5 rounded-full bg-green-500 text-white text-xs font-bold hover:bg-green-600 transition inline-flex items-center gap-1.5"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=600&q=80"
+                alt="Outer Batik"
+                class="w-full h-72 object-cover"
+              />
+              <span
+                class="absolute top-4 left-4 tag-new text-white text-[10px] font-bold px-3 py-1 rounded-full"
+                >NEW ARRIVAL</span
+              >
+              <button
+                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center hover:bg-white transition"
+              >
+                <i class="fa-regular fa-heart text-earth-700 text-sm"></i>
+              </button>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider font-bold text-gold-600 mb-1"
+                  >
+                    Outer Wanita
+                  </p>
+                  <h3
+                    class="font-bold font-serif text-earth-900 text-lg leading-tight"
+                  >
+                    Outer Batik Tulis Premium
+                  </h3>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-3">
+                Outer dengan batik tulis tangan, motif Mega Mendung. Cocok untuk
+                hijab & non-hijab.
+              </p>
+
+              <div
+                class="flex items-center gap-3 mb-4 text-[10px] text-slate-500"
+              >
+                <span class="flex items-center gap-1"
+                  ><i class="fa-solid fa-star text-amber-500"></i> 4.8
+                  (89)</span
+                >
+                <span class="text-earth-200">|</span>
+                <span
+                  ><i class="fa-solid fa-fire text-orange-500 mr-1"></i>Terjual
+                  320+</span
+                >
+              </div>
+
+              <div
+                class="flex items-end justify-between pt-4 border-t border-slate-100"
+              >
+                <div>
+                  <p class="text-[10px] text-slate-500">Harga</p>
+                  <p class="text-xl font-black font-serif text-earth-900">
+                    Rp 375<span class="text-xs font-bold text-slate-500"
+                      >rb</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Order%20Outer%20Batik"
+                  class="px-4 py-2.5 rounded-full bg-green-500 text-white text-xs font-bold hover:bg-green-600 transition inline-flex items-center gap-1.5"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div
+            class="product-card bg-white rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600&q=80"
+                alt="Seragam Keluarga"
+                class="w-full h-72 object-cover"
+              />
+              <span
+                class="absolute top-4 left-4 bg-gold-500 text-earth-900 text-[10px] font-bold px-3 py-1 rounded-full"
+                >DISKON 15%</span
+              >
+              <button
+                class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center hover:bg-white transition"
+              >
+                <i class="fa-regular fa-heart text-earth-700 text-sm"></i>
+              </button>
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <div>
+                  <p
+                    class="text-[10px] uppercase tracking-wider font-bold text-gold-600 mb-1"
+                  >
+                    Paket Hemat
+                  </p>
+                  <h3
+                    class="font-bold font-serif text-earth-900 text-lg leading-tight"
+                  >
+                    Seragam Keluarga Batik
+                  </h3>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500 mb-3">
+                Paket seragam keluarga (min. 4 pcs) dengan pilihan motif sama
+                atau berbeda.
+              </p>
+
+              <div
+                class="flex items-center gap-3 mb-4 text-[10px] text-slate-500"
+              >
+                <span class="flex items-center gap-1"
+                  ><i class="fa-solid fa-star text-amber-500"></i> 5.0
+                  (156)</span
+                >
+                <span class="text-earth-200">|</span>
+                <span
+                  ><i class="fa-solid fa-users text-earth-500 mr-1"></i>Paling
+                  cocok untuk acara</span
+                >
+              </div>
+
+              <div
+                class="flex items-end justify-between pt-4 border-t border-slate-100"
+              >
+                <div>
+                  <p class="text-[10px] text-slate-500">Mulai dari</p>
+                  <p class="text-xl font-black font-serif text-earth-900">
+                    Rp 165<span class="text-xs font-bold text-slate-500"
+                      >rb/pcs</span
+                    >
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/6281234567890?text=Order%20Seragam%20Keluarga"
+                  class="px-4 py-2.5 rounded-full bg-green-500 text-white text-xs font-bold hover:bg-green-600 transition inline-flex items-center gap-1.5"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12" data-aos="fade-up">
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Batikku%2C%20saya%20mau%20lihat%20katalog%20lengkap"
+            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-earth-800 text-white font-bold hover:bg-earth-900 transition shadow-xl"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            Minta Katalog Lengkap (150+ Motif)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MOTIF ===================== -->
+    <section id="motif" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <div
+            class="ornament-line text-gold-600 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+          >
+            <span>Filosofi Motif</span>
+          </div>
+          <h2
+            class="text-2xl lg:text-4xl font-bold font-serif text-earth-900 mb-4"
+          >
+            Setiap Motif Punya Cerita
+          </h2>
+          <p class="text-slate-600">
+            Motif batik bukan sekadar gambar — ada makna dan filosofi di
+            baliknya.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div
+            class="text-center p-6 rounded-2xl bg-cream-50 border border-earth-100 product-card"
+            data-aos="fade-up"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 rounded-full bg-earth-800 flex items-center justify-center"
+            >
+              <i class="fa-solid fa-crown text-gold-400 text-2xl"></i>
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-base mb-2">
+              Parang
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Simbol kekuatan & kepemimpinan. Motif tertua di Indonesia, dulunya
+              khusus raja.
+            </p>
+          </div>
+
+          <div
+            class="text-center p-6 rounded-2xl bg-cream-50 border border-earth-100 product-card"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 rounded-full bg-earth-800 flex items-center justify-center"
+            >
+              <i class="fa-solid fa-circle-dot text-gold-400 text-2xl"></i>
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-base mb-2">
+              Kawung
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Simbol kesucian & kesempurnaan. Empat bulatan melambangkan 4 arah
+              mata angin.
+            </p>
+          </div>
+
+          <div
+            class="text-center p-6 rounded-2xl bg-cream-50 border border-earth-100 product-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 rounded-full bg-earth-800 flex items-center justify-center"
+            >
+              <i class="fa-solid fa-cloud text-gold-400 text-2xl"></i>
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-base mb-2">
+              Mega Mendung
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Khas Cirebon. Melambangkan kesabaran & ketenangan hati seperti
+              awan pembawa hujan.
+            </p>
+          </div>
+
+          <div
+            class="text-center p-6 rounded-2xl bg-cream-50 border border-earth-100 product-card"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div
+              class="w-20 h-20 mx-auto mb-4 rounded-full bg-earth-800 flex items-center justify-center"
+            >
+              <i class="fa-solid fa-flower text-gold-400 text-2xl"></i>
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-base mb-2">
+              Truntum
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Simbol cinta yang tumbuh kembali. Dulu dikenakan orang tua
+              pengantin Jawa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KEUNGGULAN ===================== -->
+    <section
+      class="py-16 lg:py-24 bg-earth-800 text-cream-100 relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 opacity-[0.05]"
+        style="
+          background-image: radial-gradient(
+            circle,
+            #d9942b 1px,
+            transparent 1px
+          );
+          background-size: 30px 30px;
+        "
+      ></div>
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <div
+              class="ornament-line text-gold-400 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+            >
+              <span>Kenapa Batikku</span>
+            </div>
+            <h2
+              class="text-2xl lg:text-4xl font-bold font-serif text-white mb-6"
+            >
+              Bukan Sekadar Jual Batik
+            </h2>
+            <p class="text-cream-100/80 leading-relaxed mb-8">
+              Kami bekerja langsung dengan 12 pengrajin batik di Pekalongan,
+              Solo, dan Yogyakarta. Setiap lembar kain dikerjakan tangan dengan
+              standar tinggi — mulai dari pemilihan kain, pewarnaan alam, hingga
+              proses finishing.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-check text-earth-900 text-xs"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm mb-1">
+                    Bahan Katun Primisima
+                  </p>
+                  <p class="text-xs text-cream-100/70">
+                    Kain halus, tidak panas, tidak mudah kusut, dan tahan lama
+                    hingga bertahun-tahun.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-check text-earth-900 text-xs"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm mb-1">
+                    Pewarna Alami & Anti Luntur
+                  </p>
+                  <p class="text-xs text-cream-100/70">
+                    Menggunakan pewarna alam untuk motif klasik, dan pewarna
+                    premium anti luntur untuk motif modern.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-check text-earth-900 text-xs"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm mb-1">
+                    Custom Size & Motif
+                  </p>
+                  <p class="text-xs text-cream-100/70">
+                    Bisa custom ukuran sesuai badan Anda (S-XXXL atau lebih).
+                    Bisa juga custom motif khusus.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-check text-earth-900 text-xs"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-white text-sm mb-1">
+                    Garansi Tukar 3 Hari
+                  </p>
+                  <p class="text-xs text-cream-100/70">
+                    Tidak puas dengan motif atau ukuran? Tukar gratis dalam 3
+                    hari setelah barang diterima.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative" data-aos="fade-left">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400&q=80"
+                  alt="Batik Pria"
+                  class="w-full h-56 object-cover product-card"
+                />
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-2xl mt-8">
+                <img
+                  src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&q=80"
+                  alt="Batik Wanita"
+                  class="w-full h-56 object-cover product-card"
+                />
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400&q=80"
+                  alt="Kain Batik"
+                  class="w-full h-56 object-cover product-card"
+                />
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-2xl mt-8">
+                <img
+                  src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&q=80"
+                  alt="Outer"
+                  class="w-full h-56 object-cover product-card"
+                />
+              </div>
+            </div>
+
+            <!-- Floating badge -->
+            <div
+              class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-2xl px-5 py-3 border-2 border-gold-500"
+            >
+              <div class="flex items-center gap-2">
+                <i
+                  class="fa-solid fa-hand-holding-heart text-gold-600 text-lg"
+                ></i>
+                <div>
+                  <p
+                    class="text-[10px] text-slate-500 uppercase tracking-wider font-bold"
+                  >
+                    Dukung
+                  </p>
+                  <p class="text-xs font-bold font-serif text-earth-900">
+                    Pengrajin Lokal
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CARA ORDER ===================== -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <div
+            class="ornament-line text-gold-600 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+          >
+            <span>Cara Order</span>
+          </div>
+          <h2
+            class="text-2xl lg:text-4xl font-bold font-serif text-earth-900 mb-4"
+          >
+            Pesan Cuma 3 Langkah
+          </h2>
+          <p class="text-slate-600">
+            Tanpa aplikasi, tanpa daftar akun. Cukup WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 relative">
+          <div
+            class="hidden md:block absolute top-12 left-[20%] right-[20%] h-0.5 border-t-2 border-dashed border-earth-300"
+          ></div>
+
+          <div class="text-center relative" data-aos="fade-up">
+            <div
+              class="w-24 h-24 mx-auto rounded-full bg-earth-800 text-gold-400 flex items-center justify-center text-3xl mb-5 shadow-xl shadow-earth-800/30 relative z-10"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 z-20 ml-8">
+              <span
+                class="w-8 h-8 rounded-full bg-gold-500 text-earth-900 flex items-center justify-center font-black text-xs"
+                >1</span
+              >
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-lg mb-2">
+              Chat WhatsApp
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Kirim pesan ke WA kami. Kami akan kirim katalog lengkap + harga.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="w-24 h-24 mx-auto rounded-full bg-earth-800 text-gold-400 flex items-center justify-center text-3xl mb-5 shadow-xl shadow-earth-800/30 relative z-10"
+            >
+              <i class="fa-solid fa-ruler-combined"></i>
+            </div>
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 z-20 ml-8">
+              <span
+                class="w-8 h-8 rounded-full bg-gold-500 text-earth-900 flex items-center justify-center font-black text-xs"
+                >2</span
+              >
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-lg mb-2">
+              Pilih Motif & Ukuran
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Pilih motif favorit & ukuran. Bisa request custom ukuran & motif
+              khusus.
+            </p>
+          </div>
+
+          <div
+            class="text-center relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-24 h-24 mx-auto rounded-full bg-earth-800 text-gold-400 flex items-center justify-center text-3xl mb-5 shadow-xl shadow-earth-800/30 relative z-10"
+            >
+              <i class="fa-solid fa-box-open"></i>
+            </div>
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 z-20 ml-8">
+              <span
+                class="w-8 h-8 rounded-full bg-gold-500 text-earth-900 flex items-center justify-center font-black text-xs"
+                >3</span
+              >
+            </div>
+            <h3 class="font-bold font-serif text-earth-900 text-lg mb-2">
+              Kami Kirim
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto">
+              Bayar via transfer/COD. Kami kirim ke seluruh Indonesia.
+            </p>
+          </div>
+        </div>
+
+        <!-- Info penting -->
+        <div
+          class="mt-12 p-6 rounded-2xl bg-cream-100 border-l-4 border-gold-500"
+          data-aos="fade-up"
+        >
+          <h4
+            class="font-bold font-serif text-earth-900 mb-3 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-circle-info text-gold-600"></i>
+            Info Pengiriman & Pembayaran
+          </h4>
+          <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Free ongkir min. 2 pcs (JNE/J&T/SiCepat)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Estimasi kirim 1-3 hari kerja</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Pembayaran: Transfer BCA/Mandiri/BNI atau COD</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Bisa juga QRIS & e-wallet (GoPay/OVO/Dana)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Custom size & motif: tambah 3-7 hari kerja</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Dikirim dengan packaging cantik + kartu ucapan gratis</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONI ===================== -->
+    <section id="testimoni" class="py-16 lg:py-24 bg-cream-50 batik-pattern">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <div
+            class="ornament-line text-gold-600 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+          >
+            <span>Testimoni Pelanggan</span>
+          </div>
+          <h2
+            class="text-2xl lg:text-4xl font-bold font-serif text-earth-900 mb-4"
+          >
+            Cerita dari Pelanggan Kami
+          </h2>
+          <p class="text-slate-600">
+            15.000+ pelanggan sudah mempercayakan batik mereka ke Batikku.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <div
+            class="bg-white p-7 rounded-2xl border border-earth-100 product-card"
+            data-aos="fade-up"
+          >
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p
+              class="text-slate-700 text-sm leading-relaxed italic mb-5 font-serif"
+            >
+              "Bahan primisimanya benar-benar halus, nggak panas dipakai. Motif
+              sogan-nya cantik banget dan rapi. Terima kasih Batikku!"
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-earth-100">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold font-serif text-sm text-earth-900">
+                  Ibu Ratna K.
+                </p>
+                <p class="text-[11px] text-slate-500">
+                  Surabaya • Order 3 kemeja
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-earth-100 product-card"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p
+              class="text-slate-700 text-sm leading-relaxed italic mb-5 font-serif"
+            >
+              "Custom ukuran karena badan saya agak besar. Dijahitkan pas
+              banget! Pelayanan via WA juga cepat dan ramah. Recommended!"
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-earth-100">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold font-serif text-sm text-earth-900">
+                  Pak Budi S.
+                </p>
+                <p class="text-[11px] text-slate-500">Jakarta • Custom size</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-7 rounded-2xl border border-earth-100 product-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex text-amber-500 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p
+              class="text-slate-700 text-sm leading-relaxed italic mb-5 font-serif"
+            >
+              "Order seragam keluarga 6 orang untuk acara syukuran. Semua puas!
+              Bahannya adem, motifnya cantik, dan packing rapi. Pasti order
+              lagi."
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-earth-100">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                class="w-11 h-11 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold font-serif text-sm text-earth-900">
+                  Ibu Dewi A.
+                </p>
+                <p class="text-[11px] text-slate-500">
+                  Bandung • Seragam keluarga
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div
+          class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-earth-200"
+          data-aos="fade-up"
+        >
+          <div class="text-center">
+            <p class="text-3xl font-black font-serif text-earth-900 mb-1">
+              15.000+
+            </p>
+            <p class="text-xs text-slate-500 font-medium">Pelanggan Setia</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-black font-serif text-earth-900 mb-1">
+              150+
+            </p>
+            <p class="text-xs text-slate-500 font-medium">Motif Pilihan</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-black font-serif text-earth-900 mb-1">12</p>
+            <p class="text-xs text-slate-500 font-medium">Pengrajin Partner</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl font-black font-serif text-earth-900 mb-1">
+              4.9<span class="text-lg">/5</span>
+            </p>
+            <p class="text-xs text-slate-500 font-medium">Rating Google</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PANDUAN UKURAN ===================== -->
+    <section id="panduan" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <div
+            class="ornament-line text-gold-600 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+          >
+            <span>Panduan Ukuran</span>
+          </div>
+          <h2
+            class="text-2xl lg:text-4xl font-bold font-serif text-earth-900 mb-4"
+          >
+            Bingung Pilih Ukuran?
+          </h2>
+          <p class="text-slate-600">
+            Ikuti panduan di bawah supaya tidak salah ukuran.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Table Kemeja Pria -->
+          <div
+            class="bg-cream-50 rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+          >
+            <div class="bg-earth-800 text-white p-4">
+              <h3
+                class="font-bold font-serif text-base flex items-center gap-2"
+              >
+                <i class="fa-solid fa-shirt text-gold-400"></i>
+                Kemeja Pria
+              </h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-cream-100 text-earth-900">
+                  <tr>
+                    <th
+                      class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider"
+                    >
+                      Ukuran
+                    </th>
+                    <th
+                      class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider"
+                    >
+                      LD (cm)
+                    </th>
+                    <th
+                      class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider"
+                    >
+                      PB (cm)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-earth-100">
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">S</td>
+                    <td class="px-4 py-3 text-slate-600">100</td>
+                    <td class="px-4 py-3 text-slate-600">68</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">M</td>
+                    <td class="px-4 py-3 text-slate-600">106</td>
+                    <td class="px-4 py-3 text-slate-600">70</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">L</td>
+                    <td class="px-4 py-3 text-slate-600">112</td>
+                    <td class="px-4 py-3 text-slate-600">72</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">XL</td>
+                    <td class="px-4 py-3 text-slate-600">118</td>
+                    <td class="px-4 py-3 text-slate-600">74</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">XXL</td>
+                    <td class="px-4 py-3 text-slate-600">124</td>
+                    <td class="px-4 py-3 text-slate-600">76</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="p-4 bg-gold-50 border-t border-earth-100">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                <i class="fa-solid fa-ruler text-gold-600 mr-1"></i>
+                <b>LD</b> = Lebar Dada, <b>PB</b> = Panjang Badan. Ukuran custom
+                (XXXL+) bisa request.
+              </p>
+            </div>
+          </div>
+
+          <!-- Table Dress Wanita -->
+          <div
+            class="bg-cream-50 rounded-2xl overflow-hidden border border-earth-100"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="bg-earth-800 text-white p-4">
+              <h3
+                class="font-bold font-serif text-base flex items-center gap-2"
+              >
+                <i class="fa-solid fa-person-dress text-gold-400"></i>
+                Dress & Kemeja Wanita
+              </h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-cream-100 text-earth-900">
+                  <tr>
+                    <th
+                      class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider"
+                    >
+                      Ukuran
+                    </th>
+                    <th
+                      class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider"
+                    >
+                      LD (cm)
+                    </th>
+                    <th
+                      class="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider"
+                    >
+                      PB (cm)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-earth-100">
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">S</td>
+                    <td class="px-4 py-3 text-slate-600">92</td>
+                    <td class="px-4 py-3 text-slate-600">120</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">M</td>
+                    <td class="px-4 py-3 text-slate-600">98</td>
+                    <td class="px-4 py-3 text-slate-600">125</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">L</td>
+                    <td class="px-4 py-3 text-slate-600">104</td>
+                    <td class="px-4 py-3 text-slate-600">130</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">XL</td>
+                    <td class="px-4 py-3 text-slate-600">110</td>
+                    <td class="px-4 py-3 text-slate-600">135</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-semibold">XXL</td>
+                    <td class="px-4 py-3 text-slate-600">116</td>
+                    <td class="px-4 py-3 text-slate-600">140</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="p-4 bg-gold-50 border-t border-earth-100">
+              <p class="text-xs text-slate-700 leading-relaxed">
+                <i class="fa-solid fa-info-circle text-gold-600 mr-1"></i>
+                Untuk dress panjang, PB lebih panjang 10-15 cm dari tabel di
+                atas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips -->
+        <div
+          class="mt-8 p-6 rounded-2xl bg-earth-50 border border-earth-200"
+          data-aos="fade-up"
+        >
+          <h4
+            class="font-bold font-serif text-earth-900 mb-3 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-lightbulb text-gold-600"></i>
+            Tips Anti Salah Ukuran
+          </h4>
+          <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-700">
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Ukur badan langsung (jangan pakai baju tebal)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Kalau ragu, ambil 1 size lebih besar</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Chat WA kami untuk konsultasi gratis</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i
+                class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"
+              ></i>
+              <span>Custom ukuran tersedia (biaya sama)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ORDER FORM ===================== -->
+    <section class="py-16 lg:py-24 bg-earth-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid lg:grid-cols-5 gap-8 items-start">
+          <!-- Left -->
+          <div class="lg:col-span-2" data-aos="fade-right">
+            <span
+              class="inline-block text-gold-600 text-xs font-bold uppercase tracking-widest mb-2"
+              >Form Order</span
+            >
+            <h2
+              class="text-2xl lg:text-3xl font-bold font-serif text-earth-900 mb-4"
+            >
+              Isi Form atau Chat WA
+            </h2>
+            <p class="text-slate-600 leading-relaxed mb-6">
+              Kalau lebih nyaman isi form, silakan isi data di samping. Kami
+              akan hubungi Anda via WhatsApp untuk konfirmasi.
+            </p>
+
+            <div class="space-y-3">
+              <a
+                href="https://wa.me/6281234567890"
+                class="flex items-center gap-3 p-4 rounded-xl bg-white border border-earth-100 hover:border-green-500 transition"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-brands fa-whatsapp text-white text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500">WhatsApp Order</p>
+                  <p class="font-bold font-serif text-earth-900 text-sm">
+                    0812-3456-7890
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="https://instagram.com/batikku"
+                class="flex items-center gap-3 p-4 rounded-xl bg-white border border-earth-100 hover:border-earth-500 transition"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-brands fa-instagram text-white text-lg"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500">Instagram</p>
+                  <p class="font-bold font-serif text-earth-900 text-sm">
+                    @batikku.id
+                  </p>
+                </div>
+              </a>
+
+              <div
+                class="flex items-center gap-3 p-4 rounded-xl bg-white border border-earth-100"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-earth-800 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-location-dot text-gold-400"></i>
+                </div>
+                <div>
+                  <p class="text-xs text-slate-500">Workshop</p>
+                  <p
+                    class="font-bold font-serif text-earth-900 text-sm text-[12px]"
+                  >
+                    Jl. Kauman No. 45, Pekalongan
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form -->
+          <div
+            class="lg:col-span-3 bg-white p-6 lg:p-8 rounded-2xl border border-earth-100 shadow-xl"
+            data-aos="fade-left"
+          >
+            <h3 class="font-bold font-serif text-earth-900 text-lg mb-1">
+              Form Pemesanan Batik
+            </h3>
+            <p class="text-xs text-slate-500 mb-6">
+              Semua kolom bertanda * wajib diisi
+            </p>
+
+            <form class="space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Nama Pemesan *</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Nama Anda"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >No. WhatsApp *</label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="08xx xxxx xxxx"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                  >Jenis Produk *</label
+                >
+                <select
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-700"
+                >
+                  <option>Pilih Jenis Produk</option>
+                  <option>Kemeja Batik Pria</option>
+                  <option>Kemeja Batik Wanita</option>
+                  <option>Dress Batik</option>
+                  <option>Outer Batik</option>
+                  <option>Kain Batik (2m)</option>
+                  <option>Seragam Keluarga</option>
+                  <option>Lainnya</option>
+                </select>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Motif Pilihan</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Misal: Sogan, Parang, Kawung"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Ukuran *</label
+                  >
+                  <select
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-700"
+                  >
+                    <option>Pilih Ukuran</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                    <option>Custom (akan dikonfirmasi)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Jumlah (pcs) *</label
+                  >
+                  <input
+                    type="number"
+                    placeholder="Misal: 2"
+                    min="1"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                    >Kota Tujuan</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Misal: Surabaya"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                  >Alamat Pengiriman *</label
+                >
+                <textarea
+                  rows="2"
+                  placeholder="Alamat lengkap + kode pos"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider"
+                  >Catatan / Request Khusus</label
+                >
+                <textarea
+                  rows="2"
+                  placeholder="Misal: mau custom ukuran, motif khusus, dll"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-3.5 rounded-xl bg-green-500 text-white font-bold hover:bg-green-600 transition shadow-lg shadow-green-500/25 flex items-center justify-center gap-2"
+              >
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Kirim Pesanan via WhatsApp
+              </button>
+              <p class="text-[10px] text-slate-500 text-center">
+                Data Anda hanya digunakan untuk konfirmasi pesanan.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <div
+            class="ornament-line text-gold-600 text-xs font-bold uppercase tracking-[0.3em] mb-4"
+          >
+            <span>FAQ</span>
+          </div>
+          <h2
+            class="text-2xl lg:text-4xl font-bold font-serif text-earth-900 mb-4"
+          >
+            Pertanyaan Umum
+          </h2>
+          <p class="text-slate-600">
+            Belum ketemu jawabannya?
+            <a
+              href="https://wa.me/6281234567890"
+              class="text-gold-600 font-semibold hover:underline"
+              >Chat kami →</a
+            >
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            class="faq-item bg-cream-50 rounded-2xl border border-earth-100 overflow-hidden active"
+            data-aos="fade-up"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold font-serif text-earth-900 text-sm pr-4"
+                >Apakah batiknya benar-benar asli buatan pengrajin?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-600 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Ya, 100% asli. Kami bekerja langsung dengan 12 pengrajin batik
+                di Pekalongan, Solo, dan Yogyakarta. Setiap batik dikerjakan
+                tangan (bukan printing pabrik) dan kami sediakan garansi
+                keaslian.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-cream-50 rounded-2xl border border-earth-100 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold font-serif text-earth-900 text-sm pr-4"
+                >Bisa custom ukuran & motif?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-600 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Bisa! Custom ukuran (S-XXXL atau di luar itu) tidak ada biaya
+                tambahan. Custom motif khusus ada biaya tambahan Rp 50rb-pcs,
+                dengan waktu pengerjaan 3-7 hari lebih lama.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-cream-50 rounded-2xl border border-earth-100 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold font-serif text-earth-900 text-sm pr-4"
+                >Apakah bahannya panas dipakai?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-600 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Tidak. Kami menggunakan katun primisima premium yang halus dan
+                menyerap keringat. Banyak pelanggan kami justru pilih batik
+                karena lebih adem dari kemeja biasa.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-cream-50 rounded-2xl border border-earth-100 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold font-serif text-earth-900 text-sm pr-4"
+                >Berapa lama pengiriman?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-600 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Untuk produk ready stock: 1-3 hari kerja (JNE/J&T/SiCepat).
+                Untuk custom ukuran/motif: tambah 3-7 hari kerja. Kami kirim
+                dari Pekalongan/Jakarta tergantung stok.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-cream-50 rounded-2xl border border-earth-100 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold font-serif text-earth-900 text-sm pr-4"
+                >Bagaimana kalau salah ukuran?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-600 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Kami sediakan garansi tukar ukuran 3 hari setelah barang
+                diterima (kondisi belum dipakai/dicuci). Untuk custom size,
+                mohon ukur dengan teliti karena tidak bisa ditukar.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-cream-50 rounded-2xl border border-earth-100 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span class="font-bold font-serif text-earth-900 text-sm pr-4"
+                >Bisa wholesale / reseller?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-600 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                Bisa! Kami welcome untuk reseller & dropshipper. Min. order 10
+                pcs untuk harga reseller (diskon hingga 30%). Chat WA kami untuk
+                info detail program reseller.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer id="kontak" class="bg-earth-900 text-cream-100 pt-14 pb-8">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-11 h-11 rounded-full bg-earth-800 border border-gold-500/30 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-leaf text-gold-400 text-lg"></i>
+              </div>
+              <div>
+                <span
+                  class="text-xl font-bold font-serif text-white leading-none"
+                  >Batik<span class="text-gold-400">ku</span></span
+                >
+                <p class="text-[10px] text-gold-400/80 tracking-[0.2em] mt-0.5">
+                  PEKALONGAN • SOLO • JOGJA
+                </p>
+              </div>
+            </div>
+            <p class="text-sm text-cream-100/70 leading-relaxed mb-5 max-w-md">
+              Batik tulis, cap, dan kombinasi langsung dari pengrajin lokal.
+              Kualitas premium dengan harga pengrajin. Dukung produk lokal,
+              dukung pengrajin Indonesia.
+            </p>
+            <div class="flex gap-2">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-green-500 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-pink-500 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-600 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-red-500 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-lg bg-white/5 hover:bg-black transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold font-serif mb-4 text-sm">
+              Kategori
+            </h4>
+            <ul class="space-y-2.5 text-sm text-cream-100/70">
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Kemeja Batik</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Dress & Kemeja Wanita</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Outer Batik</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Kain Siap Jahit</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Seragam Keluarga</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition">Aksesoris</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold font-serif mb-4 text-sm">Kontak</h4>
+            <ul class="space-y-3 text-sm text-cream-100/70">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-location-dot text-gold-400 mt-1"></i>
+                <span>Jl. Kauman No. 45, Pekalongan, Jawa Tengah 51111</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-brands fa-whatsapp text-gold-400 mt-1"></i>
+                <span>0812-3456-7890</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-brands fa-instagram text-gold-400 mt-1"></i>
+                <span>@batikku.id</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-clock text-gold-400 mt-1"></i>
+                <span>Setiap hari 08.00 - 20.00 WIB</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-cream-100/60"
+        >
+          <p>© 2025 Batikku. Dukung Produk Lokal Indonesia 🇮🇩</p>
+          <div class="flex gap-5">
+            <span>NPWP: 07.890.123.4-056.000</span>
+            <a href="#" class="hover:text-gold-400 transition"
+              >Kebijakan Privasi</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== FLOATING WA BUTTON ===================== -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20Batikku%2C%20saya%20mau%20tanya%20koleksi"
+      class="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-green-500 text-white shadow-2xl pulse-wa flex items-center justify-center hover:scale-110 transition z-40"
+      aria-label="WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
+      <span
+        class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-red-500 border-2 border-white"
+      ></span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 600, once: true, offset: 60 });
+
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const mobileBtn = document.getElementById("mobileBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        const icon = mobileBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-xmark");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileBtn.querySelector("i");
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-xmark");
+        });
+      });
+
+      // FAQ
+      document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

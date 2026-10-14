@@ -1,0 +1,2308 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Momen Kita — Wedding Photography & Films Jakarta</title>
+    <meta
+      name="description"
+      content="Momen Kita adalah wedding photographer Jakarta dengan gaya candid, timeless, dan cinematic. Melayani 500+ pasangan sejak 2014. Konsultasi gratis untuk cek tanggal."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              cream: {
+                50: "#fdfbf7",
+                100: "#faf5ec",
+                200: "#f3e8d5",
+                300: "#e9d5b3",
+                400: "#d9bb85",
+              },
+              brown: {
+                50: "#f7f4f1",
+                100: "#ebe3dc",
+                200: "#d7c8bb",
+                300: "#bda593",
+                400: "#a3836e",
+                500: "#8c6a55",
+                600: "#735647",
+                700: "#5e473d",
+                800: "#4a3933",
+                900: "#2e2420",
+                950: "#1a1310",
+              },
+              gold: {
+                300: "#e2c9a1",
+                400: "#cbaa78",
+                500: "#b8935f",
+                600: "#9c7a48",
+                700: "#7c6138",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #b8935f;
+        border-radius: 3px;
+      }
+
+      #navbar.scrolled {
+        background: rgba(253, 251, 247, 0.95);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 2px 20px rgba(46, 36, 32, 0.08);
+      }
+
+      /* Elegant serif italic */
+      .serif-italic {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+      }
+
+      /* Gradient text */
+      .gold-text {
+        background: linear-gradient(135deg, #b8935f 0%, #9c7a48 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Ornament */
+      .ornament {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .ornament::before,
+      .ornament::after {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #b8935f, transparent);
+      }
+
+      /* Portfolio hover */
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .portfolio-item img {
+        transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .portfolio-item:hover img {
+        transform: scale(1.08);
+      }
+      .portfolio-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(26, 19, 16, 0.8) 0%,
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      .portfolio-item:hover::after {
+        opacity: 1;
+      }
+      .portfolio-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 24px;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.5s ease;
+        z-index: 2;
+      }
+      .portfolio-item:hover .portfolio-caption {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      /* Marquee */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        animation: marquee 40s linear infinite;
+      }
+
+      /* Floating WA */
+      @keyframes pulse-green {
+        0% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        }
+      }
+      .pulse-wa {
+        animation: pulse-green 2s infinite;
+      }
+
+      /* Slow zoom */
+      @keyframes slow-zoom {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.06);
+        }
+      }
+      .slow-zoom {
+        animation: slow-zoom 20s ease-in-out infinite;
+      }
+
+      /* Divider SVG */
+      .divider svg {
+        display: block;
+        width: 100%;
+        height: 50px;
+      }
+
+      /* Big number */
+      .big-serif {
+        font-family: "Playfair Display", serif;
+        font-weight: 400;
+        line-height: 0.9;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #b8935f;
+        box-shadow: 0 0 0 3px rgba(184, 147, 95, 0.15);
+      }
+
+      /* Timeline */
+      .timeline-line {
+        background: linear-gradient(
+          180deg,
+          transparent,
+          #b8935f 20%,
+          #b8935f 80%,
+          transparent
+        );
+      }
+
+      /* FAQ */
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .faq-item.active .faq-content {
+        max-height: 300px;
+      }
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+
+      /* Nav underline */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1px;
+        background: #b8935f;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Instagram-style grid */
+      .insta-grid img {
+        transition: all 0.6s ease;
+      }
+      .insta-grid:hover img {
+        transform: scale(1.06);
+      }
+      .insta-grid::after {
+        content: "\f16d";
+        font-family: "Font Awesome 6 Brands";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(26, 19, 16, 0.7);
+        color: white;
+        font-size: 24px;
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      .insta-grid:hover::after {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="bg-cream-50 text-slate-700 antialiased overflow-x-hidden">
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="bg-brown-950 text-cream-100 text-xs">
+      <div
+        class="max-w-7xl mx-auto px-6 py-2.5 flex flex-wrap justify-center md:justify-between items-center gap-2"
+      >
+        <div class="flex items-center gap-5">
+          <span class="flex items-center gap-1.5">
+            <i class="fa-brands fa-whatsapp text-gold-400"></i>
+            <span class="font-semibold">0812-3456-7890</span>
+          </span>
+          <span class="hidden md:flex items-center gap-1.5">
+            <i class="fa-solid fa-envelope text-gold-400"></i>
+            <span>hello@momenkita.id</span>
+          </span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a
+            href="#"
+            class="flex items-center gap-1.5 hover:text-gold-400 transition"
+          >
+            <i class="fa-brands fa-instagram"></i>
+            <span>@momenkita.id</span>
+          </a>
+          <span class="opacity-30">|</span>
+          <a
+            href="#"
+            class="flex items-center gap-1.5 hover:text-gold-400 transition"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+            <span>@momenkita</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav
+      id="navbar"
+      class="sticky top-0 z-50 bg-cream-50 transition-all border-b border-cream-200"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <div
+            class="w-11 h-11 rounded-full border-2 border-gold-500 flex items-center justify-center"
+          >
+            <i class="fa-solid fa-camera-retro text-gold-600 text-lg"></i>
+          </div>
+          <div>
+            <span
+              class="text-xl font-bold font-serif text-brown-900 leading-none italic"
+              >Momen Kita</span
+            >
+            <p
+              class="text-[9px] text-brown-600 font-medium tracking-[0.25em] mt-0.5"
+            >
+              WEDDING STORIES
+            </p>
+          </div>
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center gap-8 text-xs font-semibold text-brown-800 tracking-widest uppercase"
+        >
+          <li>
+            <a href="#portfolio" class="nav-link hover:text-gold-600 transition"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="nav-link hover:text-gold-600 transition"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a href="#paket" class="nav-link hover:text-gold-600 transition"
+              >Paket</a
+            >
+          </li>
+          <li>
+            <a href="#proses" class="nav-link hover:text-gold-600 transition"
+              >Proses</a
+            >
+          </li>
+          <li>
+            <a href="#testimoni" class="nav-link hover:text-gold-600 transition"
+              >Testimoni</a
+            >
+          </li>
+        </ul>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a
+            href="https://wa.me/6281234567890"
+            class="text-xs font-semibold text-brown-800 hover:text-gold-600 transition flex items-center gap-2 tracking-wider uppercase"
+          >
+            <i class="fa-brands fa-whatsapp text-green-600"></i> Chat
+          </a>
+          <a
+            href="#booking"
+            class="px-5 py-2.5 rounded-full bg-brown-900 text-cream-100 text-xs font-bold tracking-wider uppercase hover:bg-brown-800 transition"
+          >
+            Cek Tanggal
+          </a>
+        </div>
+
+        <button
+          id="mobileBtn"
+          class="lg:hidden w-10 h-10 rounded-md border border-cream-200 flex items-center justify-center"
+        >
+          <i class="fa-solid fa-bars text-brown-800"></i>
+        </button>
+      </div>
+
+      <div id="mobileMenu" class="lg:hidden hidden px-6 pb-4">
+        <div class="bg-white rounded-xl border border-cream-200 shadow-lg p-5">
+          <ul class="space-y-3 text-sm font-medium">
+            <li>
+              <a
+                href="#portfolio"
+                class="block py-2 text-brown-800 hover:text-gold-600"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="block py-2 text-brown-800 hover:text-gold-600"
+                >Tentang</a
+              >
+            </li>
+            <li>
+              <a
+                href="#paket"
+                class="block py-2 text-brown-800 hover:text-gold-600"
+                >Paket</a
+              >
+            </li>
+            <li>
+              <a
+                href="#proses"
+                class="block py-2 text-brown-800 hover:text-gold-600"
+                >Proses</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimoni"
+                class="block py-2 text-brown-800 hover:text-gold-600"
+                >Testimoni</a
+              >
+            </li>
+            <li class="pt-2">
+              <a
+                href="#booking"
+                class="block text-center py-3 rounded-full bg-brown-900 text-cream-100 text-sm font-bold"
+                >Cek Tanggal</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="relative h-[90vh] min-h-[600px] overflow-hidden">
+      <!-- Background Image dengan slow zoom -->
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80"
+          alt="Wedding"
+          class="w-full h-full object-cover slow-zoom"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-brown-950/50 via-brown-950/30 to-brown-950/70"
+        ></div>
+      </div>
+
+      <!-- Content -->
+      <div
+        class="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center items-center text-center"
+      >
+        <div
+          class="ornament text-gold-300 text-xs font-bold tracking-[0.4em] mb-6"
+          data-aos="fade-up"
+        >
+          <span>JAKARTA • BALI • YOGYAKARTA</span>
+        </div>
+
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-serif text-cream-100 leading-tight mb-6 max-w-4xl"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Setiap Momen <span class="serif-italic gold-text">Berharga</span
+          ><br />
+          Layak Dikenang Selamanya
+        </h1>
+
+        <p
+          class="text-base lg:text-lg text-cream-200/90 leading-relaxed mb-10 max-w-xl"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Kami mengabadikan cerita cinta Anda dengan gaya candid, timeless, dan
+          cinematic. Dari persiapan hingga resepsi — setiap detik kami rekam
+          dengan hati.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-3 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <a
+            href="#portfolio"
+            class="inline-flex items-center gap-2 px-7 py-3.5 bg-cream-100 text-brown-900 font-bold text-xs tracking-widest uppercase hover:bg-white transition"
+          >
+            <i class="fa-solid fa-images"></i>
+            Lihat Portfolio
+          </a>
+          <a
+            href="#booking"
+            class="inline-flex items-center gap-2 px-7 py-3.5 border border-cream-100/60 text-cream-100 font-bold text-xs tracking-widest uppercase hover:bg-white/10 transition backdrop-blur"
+          >
+            <i class="fa-solid fa-calendar-heart"></i>
+            Cek Tanggal Tersedia
+          </a>
+        </div>
+
+        <!-- Trust info -->
+        <div
+          class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-cream-100 text-xs"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-heart text-gold-400"></i>
+            <span><b class="text-white">500+</b> pasangan bahagia</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-star text-gold-400"></i>
+            <span><b class="text-white">4.9/5</b> dari 320 review</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-award text-gold-400"></i>
+            <span><b class="text-white">11 tahun</b> pengalaman</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream-100 text-[10px] tracking-widest"
+      >
+        <span>SCROLL</span>
+        <div
+          class="w-px h-10 bg-gradient-to-b from-gold-400 to-transparent"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ===================== QUOTE ===================== -->
+    <section class="py-16 lg:py-24 bg-cream-50">
+      <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
+        <i class="fa-solid fa-quote-left text-gold-500 text-3xl mb-6"></i>
+        <p
+          class="text-xl lg:text-3xl font-serif italic text-brown-900 leading-relaxed mb-6"
+        >
+          "Cinta bukan tentang melihat satu sama lain, tapi tentang melihat ke
+          arah yang sama — dan kami di sini untuk mengabadikannya."
+        </p>
+        <div
+          class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em]"
+        >
+          <span>MOMEN KITA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO GRID ===================== -->
+    <section id="portfolio" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+          <div
+            class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em] mb-4"
+          >
+            <span>Portfolio Terpilih</span>
+          </div>
+          <h2 class="text-3xl lg:text-5xl font-serif text-brown-900 mb-4">
+            Kisah yang Kami <span class="serif-italic gold-text">Abadikan</span>
+          </h2>
+          <p class="text-brown-600 text-sm">
+            Setiap pasangan punya cerita unik. Ini beberapa di antaranya.
+          </p>
+        </div>
+
+        <!-- Filter -->
+        <div
+          class="flex flex-wrap justify-center gap-2 mb-10"
+          data-aos="fade-up"
+        >
+          <button
+            class="filter-btn active px-5 py-2 text-xs font-bold tracking-widest uppercase bg-brown-900 text-cream-100 rounded-full transition"
+            data-filter="all"
+          >
+            Semua
+          </button>
+          <button
+            class="filter-btn px-5 py-2 text-xs font-bold tracking-widest uppercase border border-cream-300 text-brown-700 hover:border-brown-900 rounded-full transition"
+            data-filter="wedding"
+          >
+            Wedding
+          </button>
+          <button
+            class="filter-btn px-5 py-2 text-xs font-bold tracking-widest uppercase border border-cream-300 text-brown-700 hover:border-brown-900 rounded-full transition"
+            data-filter="prewedding"
+          >
+            Pre-Wedding
+          </button>
+          <button
+            class="filter-btn px-5 py-2 text-xs font-bold tracking-widest uppercase border border-cream-300 text-brown-700 hover:border-brown-900 rounded-full transition"
+            data-filter="engagement"
+          >
+            Engagement
+          </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4"
+        >
+          <!-- 1. Big Item -->
+          <div
+            class="portfolio-item portfolio-card col-span-2 row-span-2 rounded-md"
+            data-category="wedding"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80"
+              alt="Wedding"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Wedding
+              </p>
+              <h3 class="text-cream-100 font-serif text-2xl italic">
+                Dita & Bima
+              </h3>
+              <p class="text-cream-200/80 text-xs mt-1">Jakarta • 2024</p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div
+            class="portfolio-item portfolio-card rounded-md"
+            data-category="prewedding"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80"
+              alt="Prewedding"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Pre-Wedding
+              </p>
+              <h3 class="text-cream-100 font-serif text-lg italic">
+                Sinta & Andi
+              </h3>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div
+            class="portfolio-item portfolio-card rounded-md"
+            data-category="wedding"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80"
+              alt="Wedding"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Wedding
+              </p>
+              <h3 class="text-cream-100 font-serif text-lg italic">
+                Nadia & Rizky
+              </h3>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div
+            class="portfolio-item portfolio-card rounded-md"
+            data-category="engagement"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600&q=80"
+              alt="Engagement"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Engagement
+              </p>
+              <h3 class="text-cream-100 font-serif text-lg italic">
+                Rina & Reza
+              </h3>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div
+            class="portfolio-item portfolio-card rounded-md"
+            data-category="prewedding"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&q=80"
+              alt="Prewedding"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Pre-Wedding
+              </p>
+              <h3 class="text-cream-100 font-serif text-lg italic">
+                Amara & Kevin
+              </h3>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div
+            class="portfolio-item portfolio-card rounded-md"
+            data-category="wedding"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=80"
+              alt="Wedding"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Wedding
+              </p>
+              <h3 class="text-cream-100 font-serif text-lg italic">
+                Laras & Yoga
+              </h3>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div
+            class="portfolio-item portfolio-card rounded-md"
+            data-category="engagement"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=600&q=80"
+              alt="Engagement"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Engagement
+              </p>
+              <h3 class="text-cream-100 font-serif text-lg italic">
+                Vania & Dimas
+              </h3>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div
+            class="portfolio-item portfolio-card rounded-md"
+            data-category="wedding"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80"
+              alt="Wedding"
+              class="w-full h-full object-cover aspect-square"
+            />
+            <div class="portfolio-caption">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-1"
+              >
+                Wedding
+              </p>
+              <h3 class="text-cream-100 font-serif text-lg italic">
+                Sekar & Wisnu
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12" data-aos="fade-up">
+          <a
+            href="https://instagram.com/momenkita.id"
+            class="inline-flex items-center gap-3 px-7 py-3.5 border-2 border-brown-900 text-brown-900 text-xs font-bold tracking-widest uppercase hover:bg-brown-900 hover:text-cream-100 transition"
+          >
+            <i class="fa-brands fa-instagram text-lg"></i>
+            Lihat Semua di Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT PHOTOGRAPHER ===================== -->
+    <section
+      id="about"
+      class="py-16 lg:py-24 bg-cream-100 relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <!-- Left: Images -->
+          <div class="lg:col-span-5 relative" data-aos="fade-right">
+            <div class="relative">
+              <div class="rounded-md overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1552168324-d612d77725e3?w=600&q=80"
+                  alt="Photographer"
+                  class="w-full h-[460px] object-cover"
+                />
+              </div>
+
+              <!-- Overlapping small image -->
+              <div
+                class="absolute -bottom-6 -right-6 w-44 h-44 rounded-md overflow-hidden shadow-2xl border-4 border-cream-100 hidden md:block"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&q=80"
+                  alt="Detail"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Badge -->
+              <div
+                class="absolute -top-4 -left-4 bg-brown-900 text-cream-100 rounded-md py-3 px-5 shadow-xl"
+              >
+                <p class="text-2xl font-serif italic leading-none gold-text">
+                  2014
+                </p>
+                <p class="text-[9px] tracking-widest uppercase mt-1 opacity-80">
+                  Sejak
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="lg:col-span-7" data-aos="fade-left">
+            <div
+              class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em] mb-4"
+            >
+              <span>Tentang Kami</span>
+            </div>
+            <h2
+              class="text-3xl lg:text-4xl font-serif text-brown-900 mb-6 leading-tight"
+            >
+              Kami Bukan Sekadar
+              <span class="serif-italic gold-text">Fotografer</span> — Kami
+              Pendengar Cerita Anda
+            </h2>
+
+            <p class="text-brown-700 leading-relaxed mb-5">
+              Momen Kita didirikan pada 2014 oleh suami-istri
+              <b>Dimas & Sarah</b>. Berawal dari hobi memotret pernikahan
+              sahabat, kami jatuh cinta pada momen-momen jujur yang tidak bisa
+              diulang.
+            </p>
+
+            <p class="text-brown-700 leading-relaxed mb-8">
+              Selama 11 tahun, kami telah memotret lebih dari
+              <b>500 pasangan</b> di Jakarta, Bali, Yogyakarta, dan beberapa
+              negara Asia. Kami percaya foto pernikahan yang bagus bukan soal
+              pose — tapi soal cerita yang jujur.
+            </p>
+
+            <!-- Values -->
+            <div class="grid sm:grid-cols-2 gap-4 mb-8">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-heart text-gold-500 mt-1"></i>
+                <div>
+                  <p class="font-bold text-brown-900 text-sm">
+                    Candid & Natural
+                  </p>
+                  <p class="text-xs text-brown-600">
+                    Tidak banyak pose, kami biarkan momen mengalir.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-camera text-gold-500 mt-1"></i>
+                <div>
+                  <p class="font-bold text-brown-900 text-sm">
+                    Timeless Editing
+                  </p>
+                  <p class="text-xs text-brown-600">
+                    Warna hangat yang tidak lekang zaman.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-film text-gold-500 mt-1"></i>
+                <div>
+                  <p class="font-bold text-brown-900 text-sm">Cinematic Film</p>
+                  <p class="text-xs text-brown-600">
+                    Video sinematik dengan cerita yang mengalir.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-clock text-gold-500 mt-1"></i>
+                <div>
+                  <p class="font-bold text-brown-900 text-sm">
+                    On-Time Delivery
+                  </p>
+                  <p class="text-xs text-brown-600">
+                    Preview 3 hari, full set 21 hari kerja.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="#booking"
+              class="inline-flex items-center gap-2 px-7 py-3.5 bg-brown-900 text-cream-100 text-xs font-bold tracking-widest uppercase hover:bg-brown-800 transition"
+            >
+              <i class="fa-solid fa-comments"></i>
+              Kenalan dengan Kami
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MARQUEE INSTAGRAM ===================== -->
+    <section class="py-10 bg-brown-950 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 text-center mb-6">
+        <p class="text-cream-100 text-xs font-bold tracking-[0.3em] uppercase">
+          <i class="fa-brands fa-instagram text-gold-400 mr-2"></i>
+          Follow @momenkita.id untuk update harian
+        </p>
+      </div>
+      <div class="overflow-hidden">
+        <div class="flex animate-marquee gap-3 whitespace-nowrap">
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <!-- Duplicate -->
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="w-48 h-48 flex-shrink-0 insta-grid relative overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&q=80"
+              alt=""
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PAKET ===================== -->
+    <section id="paket" class="py-16 lg:py-24 bg-cream-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <div
+            class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em] mb-4"
+          >
+            <span>Paket & Harga</span>
+          </div>
+          <h2 class="text-3xl lg:text-5xl font-serif text-brown-900 mb-4">
+            Investasi untuk
+            <span class="serif-italic gold-text">Kenangan Seumur Hidup</span>
+          </h2>
+          <p class="text-brown-600 text-sm">
+            Harga transparan, tanpa biaya tersembunyi. Bisa custom sesuai
+            kebutuhan.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Paket Intimate -->
+          <div
+            class="bg-white p-8 rounded-md border border-cream-200 hover:shadow-xl transition"
+            data-aos="fade-up"
+          >
+            <div class="text-center mb-6">
+              <p
+                class="text-gold-600 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Untuk Intimate Wedding
+              </p>
+              <h3 class="text-2xl font-serif italic text-brown-900 mb-1">
+                Intimate
+              </h3>
+              <p class="text-xs text-brown-500">
+                Akad & Resepsi (max 100 tamu)
+              </p>
+            </div>
+            <div class="text-center py-6 border-y border-cream-200 mb-6">
+              <p
+                class="text-[10px] text-brown-500 uppercase tracking-wider mb-1"
+              >
+                Mulai dari
+              </p>
+              <p class="text-4xl font-serif italic text-brown-900">
+                Rp 8.5<span class="text-lg">jt</span>
+              </p>
+            </div>
+            <ul class="space-y-3 mb-7 text-sm text-brown-700">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> 1
+                fotografer + 1 asisten
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> 6 jam
+                liputan
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> 200+ foto
+                edited (high-res)
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> Album 20x20
+                (20 halaman)
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> USB
+                flashdisk eksklusif
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> Preview 3
+                hari
+              </li>
+            </ul>
+            <a
+              href="#booking"
+              class="block text-center py-3.5 border border-brown-900 text-brown-900 text-xs font-bold tracking-widest uppercase hover:bg-brown-900 hover:text-cream-100 transition"
+            >
+              Pilih Paket Ini
+            </a>
+          </div>
+
+          <!-- Paket Complete - Popular -->
+          <div
+            class="bg-brown-900 p-8 rounded-md relative transform lg:scale-105 shadow-2xl"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div
+              class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold-500 text-brown-900 text-[9px] font-bold tracking-widest uppercase whitespace-nowrap"
+            >
+              Paling Populer
+            </div>
+            <div class="text-center mb-6">
+              <p
+                class="text-gold-400 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Untuk Wedding Lengkap
+              </p>
+              <h3 class="text-2xl font-serif italic text-cream-100 mb-1">
+                Complete
+              </h3>
+              <p class="text-xs text-cream-200/70">Full Day Coverage</p>
+            </div>
+            <div class="text-center py-6 border-y border-white/10 mb-6">
+              <p
+                class="text-[10px] text-cream-200/70 uppercase tracking-wider mb-1"
+              >
+                Mulai dari
+              </p>
+              <p class="text-4xl font-serif italic text-gold-400">
+                Rp 15<span class="text-lg">jt</span>
+              </p>
+            </div>
+            <ul class="space-y-3 mb-7 text-sm text-cream-100/90">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-400 mt-1"></i> 2
+                fotografer + 1 videografer
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-400 mt-1"></i> 10 jam
+                liputan (full day)
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-400 mt-1"></i> 500+ foto
+                edited (high-res)
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-400 mt-1"></i> Cinematic
+                video 5-7 menit
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-400 mt-1"></i> Album
+                premium 30x30 (30 halaman)
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-400 mt-1"></i> Same day
+                edit (SDE) video
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-400 mt-1"></i> Frame foto
+                40x60 + USB box
+              </li>
+            </ul>
+            <a
+              href="#booking"
+              class="block text-center py-3.5 bg-gold-500 text-brown-900 text-xs font-bold tracking-widest uppercase hover:bg-gold-400 transition"
+            >
+              Pilih Paket Ini
+            </a>
+          </div>
+
+          <!-- Paket Pre-Wedding -->
+          <div
+            class="bg-white p-8 rounded-md border border-cream-200 hover:shadow-xl transition"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="text-center mb-6">
+              <p
+                class="text-gold-600 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Untuk Pre-Wedding Only
+              </p>
+              <h3 class="text-2xl font-serif italic text-brown-900 mb-1">
+                Pre-Wedding
+              </h3>
+              <p class="text-xs text-brown-500">Photo session before wedding</p>
+            </div>
+            <div class="text-center py-6 border-y border-cream-200 mb-6">
+              <p
+                class="text-[10px] text-brown-500 uppercase tracking-wider mb-1"
+              >
+                Mulai dari
+              </p>
+              <p class="text-4xl font-serif italic text-brown-900">
+                Rp 5.5<span class="text-lg">jt</span>
+              </p>
+            </div>
+            <ul class="space-y-3 mb-7 text-sm text-brown-700">
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> 1
+                fotografer
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> 4 jam sesi
+                (2 lokasi)
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> 100+ foto
+                edited (high-res)
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> 2 outfit +
+                styling advise
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> Save the
+                date design
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-gold-500 mt-1"></i> Preview 3
+                hari
+              </li>
+            </ul>
+            <a
+              href="#booking"
+              class="block text-center py-3.5 border border-brown-900 text-brown-900 text-xs font-bold tracking-widest uppercase hover:bg-brown-900 hover:text-cream-100 transition"
+            >
+              Pilih Paket Ini
+            </a>
+          </div>
+        </div>
+
+        <p class="text-center text-xs text-brown-500 mt-8" data-aos="fade-up">
+          <i class="fa-solid fa-circle-info text-gold-500 mr-1"></i>
+          Harga di atas belum termasuk biaya akomodasi & transportasi luar
+          Jakarta. Untuk custom paket, silakan chat kami.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== PROSES ===================== -->
+    <section id="proses" class="py-16 lg:py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <div
+            class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em] mb-4"
+          >
+            <span>Proses Kami</span>
+          </div>
+          <h2 class="text-3xl lg:text-5xl font-serif text-brown-900 mb-4">
+            Perjalanan dari
+            <span class="serif-italic gold-text">Konsultasi ke Album</span>
+          </h2>
+          <p class="text-brown-600 text-sm">
+            Proses yang menyenangkan dan bebas stres untuk Anda.
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Timeline line -->
+          <div
+            class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px timeline-line -translate-x-1/2"
+          ></div>
+
+          <!-- Step 1 -->
+          <div
+            class="md:grid md:grid-cols-2 md:gap-12 mb-8 relative"
+            data-aos="fade-up"
+          >
+            <div class="md:text-right md:pr-12 mb-4 md:mb-0">
+              <p
+                class="text-gold-600 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Langkah 01
+              </p>
+              <h3 class="text-2xl font-serif italic text-brown-900 mb-3">
+                Konsultasi Gratis
+              </h3>
+              <p class="text-sm text-brown-600 leading-relaxed">
+                Kami kenalan dulu via Zoom atau kopi darat. Ceritakan konsep
+                pernikahan Anda, kami kasih saran & rekomendasi. Bebas tanpa
+                komitmen.
+              </p>
+            </div>
+            <div class="hidden md:block"></div>
+            <div
+              class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-cream-100 border-2 border-gold-500 items-center justify-center text-brown-900 font-serif italic text-sm z-10"
+            >
+              01
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="md:grid md:grid-cols-2 md:gap-12 mb-8 relative"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="hidden md:block"></div>
+            <div class="md:pl-12 mb-4 md:mb-0">
+              <p
+                class="text-gold-600 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Langkah 02
+              </p>
+              <h3 class="text-2xl font-serif italic text-brown-900 mb-3">
+                Booking & DP
+              </h3>
+              <p class="text-sm text-brown-600 leading-relaxed">
+                Pilih paket, tanda tangan kontrak, dan bayar DP 30% untuk lock
+                tanggal. Sisanya bisa dicicil hingga H-7.
+              </p>
+            </div>
+            <div
+              class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-cream-100 border-2 border-gold-500 items-center justify-center text-brown-900 font-serif italic text-sm z-10"
+            >
+              02
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="md:grid md:grid-cols-2 md:gap-12 mb-8 relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="md:text-right md:pr-12 mb-4 md:mb-0">
+              <p
+                class="text-gold-600 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Langkah 03
+              </p>
+              <h3 class="text-2xl font-serif italic text-brown-900 mb-3">
+                Pre-Wedding Session
+              </h3>
+              <p class="text-sm text-brown-600 leading-relaxed">
+                Foto pre-wedding di lokasi pilihan Anda. Kami bantu saran
+                outfit, lokasi, dan waktu terbaik (golden hour, tentunya).
+              </p>
+            </div>
+            <div class="hidden md:block"></div>
+            <div
+              class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-cream-100 border-2 border-gold-500 items-center justify-center text-brown-900 font-serif italic text-sm z-10"
+            >
+              03
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div
+            class="md:grid md:grid-cols-2 md:gap-12 mb-8 relative"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="hidden md:block"></div>
+            <div class="md:pl-12 mb-4 md:mb-0">
+              <p
+                class="text-gold-600 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Langkah 04
+              </p>
+              <h3 class="text-2xl font-serif italic text-brown-900 mb-3">
+                Hari-H Wedding
+              </h3>
+              <p class="text-sm text-brown-600 leading-relaxed">
+                Tim kami datang 1 jam sebelum acara. Liputan full day dari
+                persiapan hingga resepsi selesai. Anda tinggal menikmati momen.
+              </p>
+            </div>
+            <div
+              class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-cream-100 border-2 border-gold-500 items-center justify-center text-brown-900 font-serif italic text-sm z-10"
+            >
+              04
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div
+            class="md:grid md:grid-cols-2 md:gap-12 relative"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="md:text-right md:pr-12 mb-4 md:mb-0">
+              <p
+                class="text-gold-600 text-[10px] font-bold tracking-widest uppercase mb-2"
+              >
+                Langkah 05
+              </p>
+              <h3 class="text-2xl font-serif italic text-brown-900 mb-3">
+                Album Selesai
+              </h3>
+              <p class="text-sm text-brown-600 leading-relaxed">
+                Preview dalam 3 hari. Album & video final dalam 21 hari kerja.
+                Kami kirim via kurir ke rumah Anda.
+              </p>
+            </div>
+            <div class="hidden md:block"></div>
+            <div
+              class="hidden md:flex absolute left-1/2 top-2 -translate-x-1/2 w-10 h-10 rounded-full bg-gold-500 border-2 border-gold-500 items-center justify-center text-brown-900 font-serif italic text-sm z-10"
+            >
+              <i class="fa-solid fa-check text-xs"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-14" data-aos="fade-up">
+          <a
+            href="#booking"
+            class="inline-flex items-center gap-2 px-7 py-3.5 bg-brown-900 text-cream-100 text-xs font-bold tracking-widest uppercase hover:bg-brown-800 transition"
+          >
+            <i class="fa-solid fa-calendar-heart"></i>
+            Mulai Konsultasi Gratis
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONI ===================== -->
+    <section id="testimoni" class="py-16 lg:py-24 bg-cream-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+          <div
+            class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em] mb-4"
+          >
+            <span>Testimoni</span>
+          </div>
+          <h2 class="text-3xl lg:text-5xl font-serif text-brown-900 mb-4">
+            Kata <span class="serif-italic gold-text">Pasangan Kami</span>
+          </h2>
+          <p class="text-brown-600 text-sm">
+            Cerita jujur dari mereka yang sudah kami abadikan.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Testimoni 1 -->
+          <div class="bg-white p-7 rounded-md" data-aos="fade-up">
+            <div class="flex text-gold-500 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p
+              class="text-brown-700 text-sm leading-relaxed italic font-serif mb-6"
+            >
+              "Awalnya nervous banget karena aku dan suami nggak biasa difoto.
+              Tapi tim Momen Kita bikin kita relax banget, kayak lagi
+              jalan-jalan biasa. Hasilnya jujur, natural, dan kami suka banget!"
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-cream-200">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                class="w-12 h-12 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold font-serif italic text-sm text-brown-900">
+                  Dita & Bima
+                </p>
+                <p class="text-[11px] text-brown-500">
+                  Wedding di Jakarta, Nov 2024
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimoni 2 -->
+          <div
+            class="bg-white p-7 rounded-md"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="flex text-gold-500 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p
+              class="text-brown-700 text-sm leading-relaxed italic font-serif mb-6"
+            >
+              "Yang paling aku suka adalah mereka benar-benar dengerin cerita
+              kita. Hasil fotonya bukan cuma cantik, tapi bener-bener menangkap
+              'kita' banget. Sampai nangis pas lihat albumnya."
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-cream-200">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&h=100&fit=crop"
+                class="w-12 h-12 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold font-serif italic text-sm text-brown-900">
+                  Sinta & Andi
+                </p>
+                <p class="text-[11px] text-brown-500">
+                  Wedding di Bali, Sep 2024
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimoni 3 -->
+          <div
+            class="bg-white p-7 rounded-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex text-gold-500 text-sm mb-4">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+              ><i class="fa-solid fa-star"></i>
+            </div>
+            <p
+              class="text-brown-700 text-sm leading-relaxed italic font-serif mb-6"
+            >
+              "Profesional banget! Datang on-time, nggak pernah complain, dan
+              bisa handle keluarga besar yang ribut 😅. Videonya juga cinematic,
+              jadi kayak nonton film pendek. Recommended!"
+            </p>
+            <div class="flex items-center gap-3 pt-5 border-t border-cream-200">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                class="w-12 h-12 rounded-full object-cover"
+                alt="Client"
+              />
+              <div>
+                <p class="font-bold font-serif italic text-sm text-brown-900">
+                  Nadia & Rizky
+                </p>
+                <p class="text-[11px] text-brown-500">
+                  Wedding di Yogyakarta, Jul 2024
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BOOKING FORM ===================== -->
+    <section
+      id="booking"
+      class="py-16 lg:py-24 bg-white relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-gold-300/20 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-96 h-96 bg-brown-300/20 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <div class="grid lg:grid-cols-5 gap-12 items-start">
+          <!-- Left: Info -->
+          <div class="lg:col-span-2" data-aos="fade-right">
+            <div
+              class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em] mb-4"
+            >
+              <span>Cek Tanggal</span>
+            </div>
+            <h2
+              class="text-3xl lg:text-4xl font-serif text-brown-900 mb-5 leading-tight"
+            >
+              Tanggal Anda
+              <span class="serif-italic gold-text">Masih Tersedia?</span>
+            </h2>
+            <p class="text-brown-600 leading-relaxed mb-8">
+              Kirim detail tanggal & lokasi acara Anda. Kami akan cek
+              ketersediaan dan kirimkan penawaran terbaik dalam 1x24 jam.
+              Gratis, tanpa komitmen.
+            </p>
+
+            <!-- Contact -->
+            <div class="space-y-3 mb-6">
+              <a
+                href="https://wa.me/6281234567890"
+                class="flex items-center gap-3 p-4 rounded-md bg-cream-50 border border-cream-200 hover:border-green-500 transition"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-brands fa-whatsapp text-white text-lg"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] text-brown-500 uppercase tracking-wider font-bold"
+                  >
+                    WhatsApp (Fast Response)
+                  </p>
+                  <p class="font-bold font-serif text-brown-900">
+                    0812-3456-7890
+                  </p>
+                </div>
+              </a>
+
+              <a
+                href="https://instagram.com/momenkita.id"
+                class="flex items-center gap-3 p-4 rounded-md bg-cream-50 border border-cream-200 hover:border-gold-500 transition"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-brands fa-instagram text-white text-lg"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] text-brown-500 uppercase tracking-wider font-bold"
+                  >
+                    Instagram (DM)
+                  </p>
+                  <p class="font-bold font-serif text-brown-900">
+                    @momenkita.id
+                  </p>
+                </div>
+              </a>
+
+              <div
+                class="flex items-center gap-3 p-4 rounded-md bg-cream-50 border border-cream-200"
+              >
+                <div
+                  class="w-11 h-11 rounded-full bg-brown-900 flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-envelope text-gold-400"></i>
+                </div>
+                <div>
+                  <p
+                    class="text-[10px] text-brown-500 uppercase tracking-wider font-bold"
+                  >
+                    Email
+                  </p>
+                  <p class="font-bold font-serif text-brown-900 text-sm">
+                    hello@momenkita.id
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="p-5 rounded-md bg-gold-500/10 border-l-2 border-gold-500"
+            >
+              <p class="text-xs text-brown-700 leading-relaxed">
+                <i class="fa-solid fa-lightbulb text-gold-600 mr-1"></i>
+                <b>Tips:</b> Booking 6-12 bulan sebelum tanggal wedding untuk
+                mengamankan slot populer (Sabtu-Minggu).
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div
+            class="lg:col-span-3 bg-cream-50 p-8 lg:p-10 rounded-md border border-cream-200"
+            data-aos="fade-left"
+          >
+            <h3 class="text-2xl font-serif italic text-brown-900 mb-2">
+              Formulir Booking
+            </h3>
+            <p class="text-xs text-brown-500 mb-8">
+              Isi detail di bawah ini, kami balas dalam 1x24 jam.
+            </p>
+
+            <form class="space-y-5">
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    class="block text-[10px] font-bold text-brown-800 mb-2 uppercase tracking-widest"
+                    >Nama Lengkap *</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Nama Anda / Pasangan"
+                    class="w-full px-4 py-3 rounded-md border border-cream-300 text-sm bg-white"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-bold text-brown-800 mb-2 uppercase tracking-widest"
+                    >No. WhatsApp *</label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="08xx xxxx xxxx"
+                    class="w-full px-4 py-3 rounded-md border border-cream-300 text-sm bg-white"
+                  />
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    class="block text-[10px] font-bold text-brown-800 mb-2 uppercase tracking-widest"
+                    >Tanggal Acara *</label
+                  >
+                  <input
+                    type="date"
+                    class="w-full px-4 py-3 rounded-md border border-cream-300 text-sm bg-white"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-[10px] font-bold text-brown-800 mb-2 uppercase tracking-widest"
+                    >Lokasi Acara *</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Misal: Jakarta, Bali"
+                    class="w-full px-4 py-3 rounded-md border border-cream-300 text-sm bg-white"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-bold text-brown-800 mb-2 uppercase tracking-widest"
+                  >Jenis Acara *</label
+                >
+                <select
+                  class="w-full px-4 py-3 rounded-md border border-cream-300 text-sm text-brown-700 bg-white"
+                >
+                  <option>Pilih Jenis Acara</option>
+                  <option>Wedding (Akad + Resepsi)</option>
+                  <option>Wedding (Resepsi saja)</option>
+                  <option>Pre-Wedding Only</option>
+                  <option>Engagement / Lamaran</option>
+                  <option>Anniversary / Renewal Vows</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-bold text-brown-800 mb-2 uppercase tracking-widest"
+                  >Paket yang Diminati</label
+                >
+                <select
+                  class="w-full px-4 py-3 rounded-md border border-cream-300 text-sm text-brown-700 bg-white"
+                >
+                  <option>Pilih Paket</option>
+                  <option>Intimate (Rp 8.5jt)</option>
+                  <option>Complete (Rp 15jt)</option>
+                  <option>Pre-Wedding (Rp 5.5jt)</option>
+                  <option>Belum tahu, mau diskusi dulu</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  class="block text-[10px] font-bold text-brown-800 mb-2 uppercase tracking-widest"
+                  >Ceritakan Konsep Anda (Opsional)</label
+                >
+                <textarea
+                  rows="4"
+                  placeholder="Misal: intimate wedding dengan 50 tamu, tema garden party, outdoor..."
+                  class="w-full px-4 py-3 rounded-md border border-cream-300 text-sm bg-white resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-4 rounded-md bg-brown-900 text-cream-100 text-xs font-bold tracking-widest uppercase hover:bg-brown-800 transition flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-paper-plane"></i>
+                Kirim & Cek Ketersediaan
+              </button>
+              <p class="text-[10px] text-brown-500 text-center">
+                Kami tidak akan spam. Data Anda hanya untuk keperluan booking.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="py-16 lg:py-24 bg-cream-50">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <div
+            class="ornament text-gold-600 text-[10px] font-bold tracking-[0.3em] mb-4"
+          >
+            <span>FAQ</span>
+          </div>
+          <h2 class="text-3xl lg:text-4xl font-serif text-brown-900 mb-3">
+            Pertanyaan Umum
+          </h2>
+          <p class="text-brown-600 text-sm">
+            Belum ketemu jawabannya?
+            <a
+              href="https://wa.me/6281234567890"
+              class="text-gold-600 font-semibold hover:underline"
+              >Chat kami →</a
+            >
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div
+            class="faq-item bg-white rounded-md border border-cream-200 overflow-hidden active"
+            data-aos="fade-up"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span
+                class="font-bold font-serif italic text-brown-900 text-base pr-4"
+                >Berapa lama sebelum hari-H saya harus booking?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-brown-600 leading-relaxed">
+                Idealnya 6-12 bulan sebelumnya, terutama untuk tanggal populer
+                (Sabtu-Minggu atau tanggal cantik). Untuk weekday atau
+                off-season, 3-4 bulan biasanya masih tersedia. Kalau mepet,
+                tetap chat kami — kadang ada slot kosong.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-md border border-cream-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span
+                class="font-bold font-serif italic text-brown-900 text-base pr-4"
+                >Apakah bisa custom paket?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-brown-600 leading-relaxed">
+                Tentu! Paket di atas hanya starting point. Kami sering custom
+                sesuai budget & kebutuhan — misalnya tambah drone, tambah jam,
+                atau kurangi album. Silakan ceritakan kebutuhan Anda, kami akan
+                kasih penawaran terbaik.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-md border border-cream-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span
+                class="font-bold font-serif italic text-brown-900 text-base pr-4"
+                >Apakah bisa foto di luar Jakarta?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-brown-600 leading-relaxed">
+                Bisa banget! Kami sudah banyak liputan di Bali, Yogyakarta,
+                Bandung, Lombok, dan bahkan luar negeri (Singapura, Malaysia,
+                Jepang). Ada tambahan biaya akomodasi + transportasi yang kami
+                sampaikan transparan di awal.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-md border border-cream-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span
+                class="font-bold font-serif italic text-brown-900 text-base pr-4"
+                >Bagaimana sistem pembayarannya?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-brown-600 leading-relaxed">
+                DP 30% untuk lock tanggal. Cicilan 40% bisa dibayar kapan saja
+                sebelum H-30. Pelunasan 30% paling lambat H-7. Kami terima
+                transfer bank, QRIS, atau kartu kredit (ada biaya admin kecil).
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-md border border-cream-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span
+                class="font-bold font-serif italic text-brown-900 text-base pr-4"
+                >Kalau saya nggak bisa pose, gimana?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-brown-600 leading-relaxed">
+                Justru itu spesialisasi kami. Kami tidak akan minta Anda pose
+                kaku. Kami akan bikin Anda ngobrol, ketawa, dan bergerak
+                natural. 90% klien kami bilang "ternyata foto itu gampang ya".
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="faq-item bg-white rounded-md border border-cream-200 overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-5 text-left"
+            >
+              <span
+                class="font-bold font-serif italic text-brown-900 text-base pr-4"
+                >Apakah ada garansi jika hasil tidak memuaskan?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-500 faq-icon transition-transform flex-shrink-0"
+              ></i>
+            </button>
+            <div class="faq-content">
+              <p class="px-5 pb-5 text-sm text-brown-600 leading-relaxed">
+                Kami sediakan revisi editing gratis (maksimal 2x) jika ada
+                catatan. Untuk kerusakan file karena kelalaian kami, kami akan
+                re-shoot gratis. Untuk ketidakpuasan gaya editing, kami akan
+                kerja sama sampai Anda puas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="py-20 lg:py-28 relative overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1600&q=80"
+          alt="Wedding"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-brown-950/80"></div>
+      </div>
+
+      <div
+        class="max-w-4xl mx-auto px-6 text-center relative"
+        data-aos="fade-up"
+      >
+        <div
+          class="ornament text-gold-400 text-[10px] font-bold tracking-[0.4em] mb-6 justify-center inline-flex"
+        >
+          <span>MULAI CERITA ANDA</span>
+        </div>
+        <h2
+          class="text-3xl lg:text-5xl font-serif text-cream-100 mb-6 leading-tight"
+        >
+          Hari Spesial Anda,
+          <span class="serif-italic gold-text">Kami yang Abadikan</span>
+        </h2>
+        <p
+          class="text-cream-200/90 text-base lg:text-lg mb-10 max-w-2xl mx-auto"
+        >
+          Konsultasi gratis, tanpa komitmen. Ceritakan cerita cinta Anda, kami
+          bantu wujudkan dalam foto & video yang tak lekang zaman.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Momen%20Kita%2C%20saya%20mau%20konsultasi%20wedding"
+            class="inline-flex items-center gap-2 px-7 py-3.5 bg-gold-500 text-brown-900 text-xs font-bold tracking-widest uppercase hover:bg-gold-400 transition"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            Chat WhatsApp
+          </a>
+          <a
+            href="#booking"
+            class="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-cream-100/40 text-cream-100 text-xs font-bold tracking-widest uppercase hover:bg-white/10 transition backdrop-blur"
+          >
+            <i class="fa-solid fa-calendar-heart"></i>
+            Cek Tanggal
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="bg-brown-950 text-cream-200/70 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-12 h-12 rounded-full border-2 border-gold-500 flex items-center justify-center"
+              >
+                <i class="fa-solid fa-camera-retro text-gold-400 text-lg"></i>
+              </div>
+              <div>
+                <span
+                  class="text-xl font-bold font-serif italic text-cream-100 leading-none"
+                  >Momen Kita</span
+                >
+                <p
+                  class="text-[9px] text-gold-400/80 font-medium tracking-[0.25em] mt-1"
+                >
+                  WEDDING STORIES SINCE 2014
+                </p>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed mb-5 max-w-md">
+              Wedding photographer & filmmaker Jakarta dengan gaya candid,
+              timeless, dan cinematic. Sudah memotret 500+ pasangan di seluruh
+              Indonesia.
+            </p>
+            <div class="flex gap-2">
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white/5 hover:bg-green-500 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white/5 hover:bg-gradient-to-br hover:from-pink-500 hover:to-purple-600 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white/5 hover:bg-black transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white/5 hover:bg-red-600 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-600 transition flex items-center justify-center text-sm"
+              >
+                <i class="fa-brands fa-pinterest"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4
+              class="text-cream-100 font-bold font-serif italic mb-5 text-base"
+            >
+              Layanan
+            </h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Wedding Photography</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Wedding Videography</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Pre-Wedding Session</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Engagement / Lamaran</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Anniversary Shoot</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-gold-400 transition"
+                  >Same Day Edit</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-cream-100 font-bold font-serif italic mb-5 text-base"
+            >
+              Kontak
+            </h4>
+            <ul class="space-y-4 text-sm">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot text-gold-400 mt-1"></i>
+                <span
+                  >Jl. Senopati Raya No. 68, Kebayoran Baru, Jakarta Selatan
+                  12190</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-brands fa-whatsapp text-gold-400 mt-1"></i>
+                <span>0812-3456-7890</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-envelope text-gold-400 mt-1"></i>
+                <span>hello@momenkita.id</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-clock text-gold-400 mt-1"></i>
+                <span>Senin - Sabtu, 09.00 - 18.00 WIB</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs"
+        >
+          <p>
+            © 2025 Momen Kita Photography. Seluruh hak cipta dilindungi. Made
+            with ❤️ di Jakarta.
+          </p>
+          <div class="flex flex-wrap gap-x-6 gap-y-2">
+            <span>NPWP: 09.012.345.6-078.000</span>
+            <a href="#" class="hover:text-gold-400 transition"
+              >Kebijakan Privasi</a
+            >
+            <a href="#" class="hover:text-gold-400 transition"
+              >Syarat & Ketentuan</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== FLOATING WA ===================== -->
+    <a
+      href="https://wa.me/6281234567890?text=Halo%20Momen%20Kita%2C%20saya%20mau%20konsultasi%20wedding"
+      class="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-green-500 text-white shadow-2xl pulse-wa flex items-center justify-center hover:scale-110 transition z-40"
+      aria-label="WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 40) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      const mobileBtn = document.getElementById("mobileBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        const icon = mobileBtn.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-xmark");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          const icon = mobileBtn.querySelector("i");
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-xmark");
+        });
+      });
+
+      // Portfolio filter
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => {
+            b.classList.remove("active", "bg-brown-900", "text-cream-100");
+            b.classList.add("border", "border-cream-300", "text-brown-700");
+          });
+          btn.classList.remove("border", "border-cream-300", "text-brown-700");
+          btn.classList.add("active", "bg-brown-900", "text-cream-100");
+
+          const filter = btn.getAttribute("data-filter");
+          portfolioCards.forEach((card) => {
+            if (
+              filter === "all" ||
+              card.getAttribute("data-category") === filter
+            ) {
+              card.style.display = "block";
+              setTimeout(() => {
+                card.style.opacity = "1";
+              }, 10);
+            } else {
+              card.style.opacity = "0";
+              setTimeout(() => (card.style.display = "none"), 250);
+            }
+          });
+        });
+      });
+
+      // FAQ
+      document.querySelectorAll(".faq-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const item = trigger.closest(".faq-item");
+          const isActive = item.classList.contains("active");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("active"));
+          if (!isActive) item.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

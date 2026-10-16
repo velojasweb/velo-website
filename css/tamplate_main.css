@@ -1,0 +1,217 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+.reveal[data-delay="1"] {
+  transition-delay: 0.08s;
+}
+.reveal[data-delay="2"] {
+  transition-delay: 0.16s;
+}
+.reveal[data-delay="3"] {
+  transition-delay: 0.24s;
+}
+.reveal[data-delay="4"] {
+  transition-delay: 0.32s;
+}
+.reveal[data-delay="5"] {
+  transition-delay: 0.4s;
+}
+
+#navbar {
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+#navbar.scrolled {
+  box-shadow: 0 8px 30px -12px rgba(16, 19, 25, 0.18);
+}
+
+#mobileMenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+}
+#mobileMenu.open {
+  max-height: 560px;
+  opacity: 1;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  width: 22px;
+  background: currentColor;
+  border-radius: 999px;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+.burger span + span {
+  margin-top: 5px;
+}
+.burger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.tpl-preview {
+  overflow: hidden;
+}
+.tpl-preview img {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tpl-card:hover .tpl-preview img {
+  transform: scale(1.06);
+}
+
+.tpl-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 19, 25, 0.55);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+}
+.tpl-card:hover .tpl-overlay {
+  opacity: 1;
+}
+
+.filter-btn {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.filter-btn.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+/* Pagination */
+.page-btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.page-btn:not(:disabled):hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.page-btn:not(:disabled):active {
+  transform: scale(0.95);
+}
+.page-btn.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.page-btn-arrow {
+  padding: 0 14px;
+}
+
+#previewModal {
+  display: none;
+}
+#previewModal.open {
+  display: flex;
+}
+#previewModal.open .modal-card {
+  animation: popIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#backToTop {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd2dd;
+  border-radius: 999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #2a3040;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

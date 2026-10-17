@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Halaman Tidak Ditemukan | VELO</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/png" href="/assets/img/logo.png" />
+    <link rel="apple-touch-icon" href="/assets/img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+            colors: {
+              ink: {
+                50: "#f6f7f9",
+                100: "#eceef2",
+                200: "#d5d9e2",
+                300: "#b0b8c9",
+                400: "#8590a8",
+                500: "#66738e",
+                600: "#505b75",
+                700: "#41495f",
+                800: "#383e50",
+                900: "#1b1f2a",
+                950: "#101319",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("velo-theme");
+          if (
+            saved === "dark" ||
+            (!saved &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+
+  <body
+    class="bg-white text-ink-900 dark:bg-ink-950 dark:text-ink-100 antialiased min-h-screen flex flex-col"
+  >
+    <!-- Navbar simple -->
+    <header class="w-full border-b border-ink-100 dark:border-ink-900/50">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center">
+        <a
+          href="/"
+          class="flex items-center gap-2.5"
+          aria-label="VELO Web Development"
+        >
+          <img
+            src="/assets/img/logo.png"
+            alt="Logo VELO"
+            class="w-9 h-9 rounded-lg object-cover ring-1 ring-ink-900/5 dark:ring-white/10"
+            onerror="this.style.display = 'none'"
+          />
+          <span class="text-lg font-extrabold tracking-tight"
+            >VELO<span class="text-blue-600">.</span></span
+          >
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main
+      class="flex-grow flex items-center justify-center px-6 py-20 relative overflow-hidden"
+    >
+      <!-- Background glow -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-3xl rounded-full pointer-events-none -z-10"
+      ></div>
+
+      <div class="text-center max-w-lg mx-auto z-10">
+        <p
+          class="text-sm font-bold tracking-[.18em] text-blue-600 uppercase mb-4"
+        >
+          Error 404
+        </p>
+
+        <h1
+          class="text-[100px] sm:text-[140px] font-extrabold leading-none tracking-tighter bg-gradient-to-br from-ink-900 to-ink-500 dark:from-white dark:to-ink-600 bg-clip-text text-transparent select-none"
+        >
+          404
+        </h1>
+
+        <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold tracking-tight">
+          Halaman tidak ditemukan
+        </h2>
+
+        <p class="mt-4 text-ink-600 dark:text-ink-400 leading-relaxed">
+          Sepertinya Anda salah masuk link, atau halaman ini sudah dipindahkan.
+          Jangan khawatir, mari kembali ke jalur yang benar.
+        </p>
+
+        <div
+          class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+        >
+          <a
+            href="/"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 active:scale-[.97] transition"
+          >
+            <svg
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            Kembali ke Beranda
+          </a>
+          <a
+            href="/#kontak"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-ink-200 dark:border-ink-800 text-sm font-semibold hover:bg-ink-50 dark:hover:bg-ink-900 active:scale-[.97] transition"
+          >
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer simple -->
+    <footer class="w-full border-t border-ink-100 dark:border-ink-900/50 py-6">
+      <div
+        class="max-w-7xl mx-auto px-6 text-center text-xs text-ink-500 dark:text-ink-500"
+      >
+        © <span id="year"></span> VELO Web Development. Seluruh hak cipta
+        dilindungi.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

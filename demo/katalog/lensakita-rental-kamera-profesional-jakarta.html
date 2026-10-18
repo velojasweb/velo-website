@@ -76,7 +76,8 @@
         box-shadow: 0 0 40px -8px rgba(250, 204, 21, 0.45);
       }
     </style>
-  </head>
+    <link rel="icon" type="image/png" href="/assets/img/logo.png" />
+</head>
 
   <body class="font-sans bg-ink-950 text-ink-100 antialiased">
     <!-- ============== TOP STRIP ============== -->
@@ -312,7 +313,7 @@
                 Lihat Semua Gear
               </a>
               <a
-                href="https://wa.me/6281234567890?text=Halo%20LensaKita%2C%20saya%20ingin%20tanya%20ketersediaan%20gear"
+                href="https://wa.me/6282364967594?text=Halo%20LensaKita%2C%20saya%20ingin%20tanya%20ketersediaan%20gear"
                 target="_blank"
                 rel="noopener"
                 class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-ink-700 text-ink-100 text-sm font-semibold hover:border-volt-400 hover:text-volt-400 transition"
@@ -811,7 +812,7 @@
 
             <div class="mt-7 flex flex-wrap gap-3">
               <a
-                href="https://wa.me/6281234567890?text=Halo%20LensaKita%2C%20saya%20ingin%20tanya%20stok%20gear"
+                href="https://wa.me/6282364967594?text=Halo%20LensaKita%2C%20saya%20ingin%20tanya%20stok%20gear"
                 target="_blank"
                 rel="noopener"
                 class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-sm font-semibold hover:bg-[#1ebe5b] transition"
@@ -869,7 +870,7 @@
               penawaran dalam 15 menit.
             </p>
             <a
-              href="https://wa.me/6281234567890?text=Halo%20LensaKita%2C%20saya%20butuh%20gear%20untuk%20project%20minggu%20ini"
+              href="https://wa.me/6282364967594?text=Halo%20LensaKita%2C%20saya%20butuh%20gear%20untuk%20project%20minggu%20ini"
               target="_blank"
               rel="noopener"
               class="mt-8 inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-ink-950 text-volt-400 text-sm font-bold hover:bg-ink-900 transition"
@@ -958,7 +959,7 @@
             <ul class="mt-5 space-y-3 text-sm text-ink-400">
               <li>
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/6282364967594"
                   target="_blank"
                   rel="noopener"
                   class="hover:text-volt-400 transition"
@@ -1009,7 +1010,7 @@
 
     <!-- ============== FLOATING WHATSAPP ============== -->
     <a
-      href="https://wa.me/6281234567890?text=Halo%20LensaKita%2C%20saya%20ingin%20tanya%20ketersediaan%20gear"
+      href="https://wa.me/6282364967594?text=Halo%20LensaKita%2C%20saya%20ingin%20tanya%20ketersediaan%20gear"
       target="_blank"
       rel="noopener"
       aria-label="Chat WhatsApp"
@@ -1724,7 +1725,7 @@
         const waText = encodeURIComponent(
           `Halo LensaKita, saya ingin booking gear berikut:\n\n${lines}${dateInfo}\n\nTotal estimasi: ${rupiah(total)}\n\nMohon konfirmasi ketersediaan. Terima kasih!`,
         );
-        const waLink = `https://wa.me/6281234567890?text=${waText}`;
+        const waLink = `https://wa.me/6282364967594?text=${waText}`;
 
         footer.innerHTML = `
     <div class="flex items-center justify-between pb-3 border-b border-ink-800">
@@ -1757,7 +1758,7 @@
         const waText = encodeURIComponent(
           `Halo LensaKita, saya ingin tanya ketersediaan *${p.name}* (${rupiah(p.price)}/hari). Apakah ready?`,
         );
-        const waLink = `https://wa.me/6281234567890?text=${waText}`;
+        const waLink = `https://wa.me/6282364967594?text=${waText}`;
 
         $("#quickViewContent").innerHTML = `
     <div class="grid md:grid-cols-2">
@@ -1937,5 +1938,9 @@
       renderList();
       updateListCount();
     </script>
-  </body>
+    <!-- VELO Footer Watermark -->
+  <footer style="text-align: center; padding: 24px 16px; border-top: 1px solid #e5e7eb; margin-top: 40px; font-family: system-ui, sans-serif; font-size: 13px; color: #6b7280;">
+    Designed by <a href="https://velojasweb.my.id" target="_blank" style="font-weight: bold; color: #2563eb; text-decoration: none;">VELO</a>
+  </footer>
+</body>
 </html>
